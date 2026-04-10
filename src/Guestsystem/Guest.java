@@ -26,7 +26,7 @@ public class Guest {
  }
  public static Guest login(String username,String password){
         if (username==null  ||  password==null){
-            System.out.println("INVALID INPUT.");
+            System.out.println("Invalid input.");
         }
 
         for(Guest g :HotelDatabase.guests){
