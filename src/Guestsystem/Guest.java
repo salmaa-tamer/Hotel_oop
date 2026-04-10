@@ -47,7 +47,7 @@ public class Guest {
             }
         }
         if(!found){
-            System.out.println("no rooms available.");
+            System.out.println("No rooms available.");
         }
     }
     public void makeReservation(Room room){
@@ -74,7 +74,7 @@ public class Guest {
     }
     public void checkout(Reservation reservation){
         if (reservation==null){
-            System.out.println("no reservation.");
+            System.out.println("No reservation.");
             return;
         }
         Bill bill =reservation.generateBill();                            //person 4
