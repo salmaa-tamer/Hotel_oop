@@ -35,7 +35,7 @@ public class Guest {
                 return g;
             }
         }
-        System.out.println("Login failed, please try again.");
+        System.out.println("Login failed.");
         return null;
     }
     public void viewAvailableRooms(){                         //person 3
