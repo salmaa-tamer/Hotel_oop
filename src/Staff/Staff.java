@@ -1,3 +1,5 @@
+package Staff;
+
 import java.time.LocalDate;
 
 public abstract class Staff{
@@ -6,7 +8,7 @@ public abstract class Staff{
     private String password;
     private LocalDate dateOfBirth;
     private int workingHours;
-    private Role role;
+    protected Role role;
 
 
     Staff(){}
