@@ -1,8 +1,4 @@
 package GuestandRoomSystem;
 
 public enum ReservationStatus {
-    PENDING,
-    CONFIRMED ,
-    CANCELLED ,
-    COMPLETED
-}
+    PENDING, CONFIRMED , CANCELLED , COMPLETED   }

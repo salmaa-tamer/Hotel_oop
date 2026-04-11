@@ -50,7 +50,7 @@ public class Guest {
             System.out.println("No rooms available.");
         }
     }
-    public void makeReservation(Room room){
+    public void makeReservation(Room room,LocalDate checkIn, LocalDate checkOut){
 
         if (room==null){
             System.out.print("Invalid room.");
@@ -60,7 +60,7 @@ public class Guest {
             System.out.println("Room is not available.");
             return;
         }
-        Reservation reservation =new Reservation(this,room);         //person 4
+        Reservation reservation =new Reservation(this,room,checkIn,checkOut);         //person 4
         HotelDatabase.reservation.add(reservation);
         System.out.println("Reservation created.");
     }
@@ -72,12 +72,12 @@ public class Guest {
         reservation.cancel();                                        //person 4
         System.out.println("Reservation cancelled.");
     }
-    public void checkout(Reservation reservation){
+    public void checkout(Reservation reservation, PaymentMethod paymentMethod){
         if (reservation==null){
             System.out.println("No reservation.");
             return;
         }
-        Bill bill =reservation.generateBill();                            //person 4
+        Bill bill =reservation.generateBill( paymentMethod);                            //person 4
         double total =bill.getTotalAmount();                              //person 4
         if (balance>=total){
             balance -= total;

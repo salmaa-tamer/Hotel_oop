@@ -11,12 +11,14 @@ public Reservation(Guest guest,Room room,LocalDate checkInDate,LocalDate checkOu
 setGuest (guest);
 setRoom (room);
 setCheckInDate(checkInDate);
-setCheckOutDate(checkOutDate);}
+setCheckOutDate(checkOutDate);
+this.status=ReservationStatus.PENDING;}
 
     private void setCheckInDate(LocalDate checkInDate) {
         if (checkInDate==null){
             throw new InvalidReservationException("Check in date can't be empty");
         }
+        this.checkInDate=checkInDate;
     }
 
 
@@ -27,7 +29,7 @@ setCheckOutDate(checkOutDate);}
         this.guest = guest;}
 
     public void setRoom(Room room) {
-        if (guest==null){
+        if (room ==null){
             throw new InvalidReservationException("invalid room");
         }
         this.room = room;}
@@ -63,11 +65,26 @@ setCheckOutDate(checkOutDate);}
 
     public void complete(){
             this.status= ReservationStatus.COMPLETED ; }
-    public void calculateTotalPrice(){
 
-
+    public ReservationStatus getStatus() {
+        return status;
     }
 
+    public double CalculateTotalPrice(){
+    long nights=checkOutDate.toEpochDay()-checkInDate.toEpochDay();
+   double TotalPrice= room.CalculateTotalPrice((int)nights);
+   return TotalPrice ;
+    }
+    public Bill generateBill(PaymentMethod paymentMethod){
+    Bill MyBill=new Bill(this,paymentMethod);
+    return MyBill;
+    }
+    @Override
+public String toString(){
+    return "Guest:"+guest.username +
+    "\nRoom:"+ room.getRoomnumber()+
+    "\nStatus:"+getStatus();
+}
 }
 
 
