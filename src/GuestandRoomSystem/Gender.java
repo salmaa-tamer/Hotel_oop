@@ -1,4 +1,4 @@
-package Guestsystem;
+package GuestandRoomSystem;
 
 public enum Gender {
     MALE,
