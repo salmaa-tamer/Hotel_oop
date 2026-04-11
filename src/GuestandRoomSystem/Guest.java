@@ -1,4 +1,4 @@
-package Guestsystem;
+package GuestandRoomSystem;
 import java.time.LocalDate;
 public class Guest {
     final String username;
@@ -41,7 +41,7 @@ public class Guest {
     public void viewAvailableRooms(){                         //person 3
         boolean found = false;
         for (Room r : HotelDatabase.rooms){
-            if(r.isAvailable()){                                    //person 3
+            if(r.Isavailable()){                                    //person 3
                 System.out.println(r);
                 found=true;
             }
@@ -56,7 +56,7 @@ public class Guest {
             System.out.print("Invalid room.");
             return;
         }
-        if (!room.isAvailable()){
+        if (!room.Isavailable()){
             System.out.println("Room is not available.");
             return;
         }
