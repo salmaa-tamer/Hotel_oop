@@ -13,5 +13,9 @@ public class HotelDatabase {
 
     // The Dummy Data
     public static void loadDummyData() {
-       }
+        // Room Types
+        RoomType single = new RoomType("Single", 1, 100.0, 1);
+        RoomType suite = new RoomType("Suite", 4, 350.0, 2);
+
+    }
 }
