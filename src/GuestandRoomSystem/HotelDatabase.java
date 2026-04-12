@@ -33,6 +33,9 @@ public class HotelDatabase {
         guests.add(guest1);
         guests.add(guest2);
 
+        // Reservations
+        Reservation res1 = new Reservation(guest1, room1, LocalDate.now().plusDays(1), LocalDate.now().plusDays(5));
+        reservations.add(res1);
 
     }
 }
