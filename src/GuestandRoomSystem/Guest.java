@@ -1,4 +1,6 @@
 package GuestandRoomSystem;
+import exceptions.RoomNotAvailableException;
+
 import java.time.LocalDate;
 public class Guest {
     final String username;
@@ -50,18 +52,17 @@ public class Guest {
             System.out.println("No rooms available.");
         }
     }
-    public void makeReservation(Room room,LocalDate checkIn, LocalDate checkOut){
+    public void makeReservation(Room room,LocalDate checkIn, LocalDate checkOut) throws RoomNotAvailableException {
 
         if (room==null){
             System.out.print("Invalid room.");
             return;
         }
         if (!room.Isavailable()){
-            System.out.println("Room is not available.");
-            return;
+            throw new exceptions.RoomNotAvailableException("Room is not available for booking.");
         }
         Reservation reservation =new Reservation(this,room,checkIn,checkOut);         //person 4
-        HotelDatabase.reservation.add(reservation);
+        HotelDatabase.reservations.add(reservation);
         System.out.println("Reservation created.");
     }
     public void cancelReservation(Reservation reservation){
@@ -85,7 +86,7 @@ public class Guest {
             System.out.println("Payment successful.");
         }
         else {
-            System.out.println("Balance is not enough.");
+            throw new exceptions.InvalidPaymentException("Guest balance is not enough to cover the bill.");
         }
     }
 
