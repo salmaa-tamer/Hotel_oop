@@ -26,5 +26,13 @@ public class HotelDatabase {
         Room room2 = new Room(201, true, 2, suite, new ArrayList<>(Arrays.asList(wifi, pool)), 400.0);
         rooms.add(room1);
         rooms.add(room2);
+
+        // Guests
+        Guest guest1 = new Guest("Ahmed", "password123", LocalDate.of(1984, 4, 4), 1500.0, "5th settlement New Cairo , Egypt", Gender.MALE, "Single");
+        Guest guest2 = new Guest("Fady", "24601", LocalDate.of(1999, 8, 15), 500.0, "EL Sheikh Zayed Cairo , Egypt", Gender.MALE, "Suite");
+        guests.add(guest1);
+        guests.add(guest2);
+
+
     }
 }
