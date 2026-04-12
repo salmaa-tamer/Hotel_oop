@@ -17,5 +17,8 @@ public class HotelDatabase {
         RoomType single = new RoomType("Single", 1, 100.0, 1);
         RoomType suite = new RoomType("Suite", 4, 350.0, 2);
 
+        // Amenities
+        Amenity wifi = new Amenity(1, "WiFi", 10.0);
+        Amenity pool = new Amenity(2, "Pool Access", 25.0);
     }
 }
