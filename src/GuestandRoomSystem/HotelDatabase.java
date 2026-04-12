@@ -20,5 +20,11 @@ public class HotelDatabase {
         // Amenities
         Amenity wifi = new Amenity(1, "WiFi", 10.0);
         Amenity pool = new Amenity(2, "Pool Access", 25.0);
+
+        // Rooms
+        Room room1 = new Room(101, true, 1, single, new ArrayList<>(Arrays.asList(wifi)), 120.0);
+        Room room2 = new Room(201, true, 2, suite, new ArrayList<>(Arrays.asList(wifi, pool)), 400.0);
+        rooms.add(room1);
+        rooms.add(room2);
     }
 }
