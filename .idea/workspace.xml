@@ -4,12 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="5ee7e85f-402c-4284-99a9-20d687d3675b" name="Changes" comment="created a dummy reservation">
+    <list default="true" id="5ee7e85f-402c-4284-99a9-20d687d3675b" name="Changes" comment="Added CRUD operation methods for Rooms, added staff class methods">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Staff/Admin.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/StaffSystem/Admin.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Staff/Receptionist.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/StaffSystem/Receptionist.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Staff/Role.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/StaffSystem/Role.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Staff/Staff.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/StaffSystem/Staff.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -174,7 +170,15 @@
       <option name="project" value="LOCAL" />
       <updated>1776010282046</updated>
     </task>
-    <option name="localTasksCounter" value="11" />
+    <task id="LOCAL-00011" summary="Added CRUD operation methods for Rooms, added staff class methods">
+      <option name="closed" value="true" />
+      <created>1776106446620</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1776106446620</updated>
+    </task>
+    <option name="localTasksCounter" value="12" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -199,6 +203,7 @@
     <MESSAGE value="Rooms dummy data added" />
     <MESSAGE value="Guests dummy data added" />
     <MESSAGE value="created a dummy reservation" />
-    <option name="LAST_COMMIT_MESSAGE" value="created a dummy reservation" />
+    <MESSAGE value="Added CRUD operation methods for Rooms, added staff class methods" />
+    <option name="LAST_COMMIT_MESSAGE" value="Added CRUD operation methods for Rooms, added staff class methods" />
   </component>
 </project>
