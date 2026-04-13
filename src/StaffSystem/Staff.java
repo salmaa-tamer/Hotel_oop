@@ -42,6 +42,9 @@ public abstract class Staff{
         }
         this.password = password;
     }
+    public String getPassword(){
+        return password;
+    }
 
     public void setDateOfBirth(LocalDate dateOfBirth) {
         this.dateOfBirth = dateOfBirth;
@@ -64,19 +67,21 @@ public abstract class Staff{
     }
 
     public boolean login(String username, String password){
-        // check if any staff member has a username and password which match user inputs
-        // yes: successful login
-        // no: throw an exception
-        return true;  //temporary return to avoid errors until logic is implemented
+        for ( Staff employee: HotelDatabase.staff){
+            if(employee.getUsername().equals(username) && employee.getPassword().equals(password)){
+                return true;
+            }
+        }
+        throw new IllegalArgumentException("Invalid login");
     }
 
     public void viewGuests(){
         for(Guest guest : HotelDatabase.guests){
-            System.out.println(guest.getUsername());
+            System.out.println(guest.toString());
         }
     }
 
-    public void viewRooms(){
+    public void readRooms(){
         for(Room room : HotelDatabase.rooms){
             System.out.println(room.toString());
         }

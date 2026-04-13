@@ -6,8 +6,9 @@
   <component name="ChangeListManager">
     <list default="true" id="5ee7e85f-402c-4284-99a9-20d687d3675b" name="Changes" comment="created a dummy reservation">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/GuestandRoomSystem/HotelDatabase.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/GuestandRoomSystem/HotelDatabase.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/exceptions/RoomNotAvailableException.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/exceptions/RoomNotAvailableException.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/StaffSystem/Admin.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/StaffSystem/Admin.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/StaffSystem/Receptionist.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/StaffSystem/Receptionist.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/StaffSystem/Staff.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/StaffSystem/Staff.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -74,7 +75,7 @@
     "SHARE_PROJECT_CONFIGURATION_FILES": "true",
     "codeWithMe.voiceChat.enabledByDefault": "false",
     "com.intellij.ml.llm.matterhorn.ej.ui.settings.DefaultModelSelectionForGA.v1": "true",
-    "git-widget-placeholder": "main",
+    "git-widget-placeholder": "Reem__Staff",
     "ignore.virus.scanning.warn.message": "true",
     "junie.onboarding.icon.badge.shown": "true",
     "kotlin-language-version-configured": "true",
