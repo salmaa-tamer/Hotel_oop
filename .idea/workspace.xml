@@ -6,10 +6,8 @@
   <component name="ChangeListManager">
     <list default="true" id="5ee7e85f-402c-4284-99a9-20d687d3675b" name="Changes" comment="created a dummy reservation">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Staff/Admin.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/StaffSystem/Admin.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Staff/Receptionist.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/StaffSystem/Receptionist.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Staff/Role.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/StaffSystem/Role.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Staff/Staff.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/StaffSystem/Staff.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/GuestandRoomSystem/HotelDatabase.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/GuestandRoomSystem/HotelDatabase.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/exceptions/RoomNotAvailableException.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/exceptions/RoomNotAvailableException.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -72,11 +70,22 @@
     "ModuleVcsDetector.initialDetectionPerformed": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "RunOnceActivity.git.unshallow": "true",
+    "RunOnceActivity.typescript.service.memoryLimit.init": "true",
     "SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "git-widget-placeholder": "Reem__Staff",
+    "codeWithMe.voiceChat.enabledByDefault": "false",
+    "com.intellij.ml.llm.matterhorn.ej.ui.settings.DefaultModelSelectionForGA.v1": "true",
+    "git-widget-placeholder": "main",
     "ignore.virus.scanning.warn.message": "true",
+    "junie.onboarding.icon.badge.shown": "true",
     "kotlin-language-version-configured": "true",
-    "settings.editor.selected.configurable": "copyright"
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "settings.editor.selected.configurable": "copyright",
+    "to.speed.mode.migration.done": "true",
+    "vue.rearranger.settings.migration": "true"
   }
 }]]></component>
   <component name="SharedIndexes">
@@ -93,6 +102,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1775907403289</updated>
+      <workItem from="1776106978748" duration="833000" />
     </task>
     <task id="LOCAL-00001" summary="updated Reservation">
       <option name="closed" value="true" />
@@ -176,6 +186,9 @@
     </task>
     <option name="localTasksCounter" value="11" />
     <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
     <option name="TAB_STATES">
