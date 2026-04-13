@@ -1,5 +1,9 @@
-package Staff;
+package StaffSystem;
 
+import GuestandRoomSystem.Guest;
+import GuestandRoomSystem.HotelDatabase;
+import GuestandRoomSystem.Reservation;
+import GuestandRoomSystem.Room;
 import java.time.LocalDate;
 
 public abstract class Staff{
@@ -22,6 +26,9 @@ public abstract class Staff{
 
 
     public void setUsername(String username) {
+        if (username== null || username.length()<8){
+            throw new IllegalArgumentException("Username must be at least 8 characters");
+        }
         this.username = username;
     }
 
@@ -30,11 +37,10 @@ public abstract class Staff{
     }
 
     public void setPassword(String password){
+        if( password == null || password.length()<8){
+            throw new IllegalArgumentException("Password must be at least 8 characters");
+        }
         this.password = password;
-    }
-
-    public String getPassword(){
-        return password;
     }
 
     public void setDateOfBirth(LocalDate dateOfBirth) {
@@ -59,20 +65,26 @@ public abstract class Staff{
 
     public boolean login(String username, String password){
         // check if any staff member has a username and password which match user inputs
-        // yes: succesful login
+        // yes: successful login
         // no: throw an exception
         return true;  //temporary return to avoid errors until logic is implemented
     }
 
     public void viewGuests(){
-        //print guests from arraylist in database class
+        for(Guest guest : HotelDatabase.guests){
+            System.out.println(guest.getUsername());
+        }
     }
 
     public void viewRooms(){
-        //print rooms from arraylist in database class
+        for(Room room : HotelDatabase.rooms){
+            System.out.println(room.toString());
+        }
     }
 
     public void viewReservations(){
-        //print reservations from arraylist in database class
+       for (Reservation reservation : HotelDatabase.reservations){
+           System.out.println(reservation);
+       }
     }
 }

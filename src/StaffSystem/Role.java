@@ -1,4 +1,4 @@
-package Staff;
+package StaffSystem;
 
 public enum Role{
     ADMIN,

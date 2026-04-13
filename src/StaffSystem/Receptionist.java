@@ -1,6 +1,10 @@
-package Staff;
+package StaffSystem;
 
 import java.time.LocalDate;
+import GuestandRoomSystem.Reservation;
+import  GuestandRoomSystem.ReservationStatus;
+
+
 
 public class Receptionist extends Staff{
 
@@ -13,6 +17,8 @@ public class Receptionist extends Staff{
         super(username, password, dateOfBirth, workingHours);
         this.role=Role.RECEPTIONIST;
     }
+
+
 
 
 }
