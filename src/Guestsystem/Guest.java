@@ -21,7 +21,7 @@ public class Guest {
      this.roomPreference=roomPreference;
  }
  public void register(){
-        HotelDatabase.guests.add(this);                 //person 5
+        HotelDatabase.guests.add(this);
         System.out.println("Guest registered successfully.");
  }
  public static Guest login(String username,String password){
@@ -38,10 +38,10 @@ public class Guest {
         System.out.println("Login failed.");
         return null;
     }
-    public void viewAvailableRooms(){                         //person 3
+    public void viewAvailableRooms(){
         boolean found = false;
         for (Room r : HotelDatabase.rooms){
-            if(r.isAvailable()){                                    //person 3
+            if(r.isAvailable()){
                 System.out.println(r);
                 found=true;
             }
@@ -60,7 +60,7 @@ public class Guest {
             System.out.println("Room is not available.");
             return;
         }
-        Reservation reservation =new Reservation(this,room);         //person 4
+        Reservation reservation =new Reservation(this,room);
         HotelDatabase.reservation.add(reservation);
         System.out.println("Reservation created.");
     }
@@ -69,7 +69,7 @@ public class Guest {
             System.out.println("No reservation to cancel.");
             return;
         }
-        reservation.cancel();                                        //person 4
+        reservation.cancel();
         System.out.println("Reservation cancelled.");
     }
     public void checkout(Reservation reservation){
@@ -77,11 +77,11 @@ public class Guest {
             System.out.println("No reservation.");
             return;
         }
-        Bill bill =reservation.generateBill();                            //person 4
-        double total =bill.getTotalAmount();                              //person 4
+        Bill bill =reservation.generateBill();
+        double total =bill.getTotalAmount();
         if (balance>=total){
             balance -= total;
-            reservation.complete();                                        //person 4
+            reservation.complete();
             System.out.println("Payment successful.");
         }
         else {
