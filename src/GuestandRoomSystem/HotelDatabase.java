@@ -1,25 +1,36 @@
 package GuestandRoomSystem;
 
+import StaffSystem.Staff;
+
 import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.Arrays;
 
 public class HotelDatabase {
-    // Arraylist
+    // 1. The ArrayLists
     public static ArrayList<Guest> guests = new ArrayList<>();
     public static ArrayList<Room> rooms = new ArrayList<>();
     public static ArrayList<Reservation> reservations = new ArrayList<>();
     public static ArrayList<Bill> bills = new ArrayList<>();
+    public static ArrayList<Staff> staff = new ArrayList<>();
+    public static ArrayList<RoomType> roomTypes = new ArrayList<>();
+    public static ArrayList<Amenity> amenities = new ArrayList<>();
 
-    // The Dummy Data
+    // 3. The Dummy Data
     public static void loadDummyData() {
         // Room Types
         RoomType single = new RoomType("Single", 1, 100.0, 1);
         RoomType suite = new RoomType("Suite", 4, 350.0, 2);
 
+        roomTypes.add(single);
+        roomTypes.add(suite);
+
         // Amenities
         Amenity wifi = new Amenity(1, "WiFi", 10.0);
         Amenity pool = new Amenity(2, "Pool Access", 25.0);
+
+        amenities.add(wifi);
+        amenities.add(pool);
 
         // Rooms
         Room room1 = new Room(101, true, 1, single, new ArrayList<>(Arrays.asList(wifi)), 120.0);
