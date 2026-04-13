@@ -1,4 +1,6 @@
-package Guestsystem;
+package GuestandRoomSystem;
+import exceptions.RoomNotAvailableException;
+
 import java.time.LocalDate;
 public class Guest {
     final String username;
@@ -41,7 +43,7 @@ public class Guest {
     public void viewAvailableRooms(){                         //person 3
         boolean found = false;
         for (Room r : HotelDatabase.rooms){
-            if(r.isAvailable()){                                    //person 3
+            if(r.Isavailable()){                                    //person 3
                 System.out.println(r);
                 found=true;
             }
@@ -50,18 +52,17 @@ public class Guest {
             System.out.println("No rooms available.");
         }
     }
-    public void makeReservation(Room room){
+    public void makeReservation(Room room,LocalDate checkIn, LocalDate checkOut) throws RoomNotAvailableException {
 
         if (room==null){
             System.out.print("Invalid room.");
             return;
         }
-        if (!room.isAvailable()){
-            System.out.println("Room is not available.");
-            return;
+        if (!room.Isavailable()){
+            throw new exceptions.RoomNotAvailableException("Room is not available for booking.");
         }
-        Reservation reservation =new Reservation(this,room);         //person 4
-        HotelDatabase.reservation.add(reservation);
+        Reservation reservation =new Reservation(this,room,checkIn,checkOut);         //person 4
+        HotelDatabase.reservations.add(reservation);
         System.out.println("Reservation created.");
     }
     public void cancelReservation(Reservation reservation){
@@ -72,12 +73,12 @@ public class Guest {
         reservation.cancel();                                        //person 4
         System.out.println("Reservation cancelled.");
     }
-    public void checkout(Reservation reservation){
+    public void checkout(Reservation reservation, PaymentMethod paymentMethod){
         if (reservation==null){
             System.out.println("No reservation.");
             return;
         }
-        Bill bill =reservation.generateBill();                            //person 4
+        Bill bill =reservation.generateBill( paymentMethod);                            //person 4
         double total =bill.getTotalAmount();                              //person 4
         if (balance>=total){
             balance -= total;
@@ -85,7 +86,7 @@ public class Guest {
             System.out.println("Payment successful.");
         }
         else {
-            System.out.println("Balance is not enough.");
+            throw new exceptions.InvalidPaymentException("Guest balance is not enough to cover the bill.");
         }
     }
 

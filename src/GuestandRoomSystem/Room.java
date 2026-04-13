@@ -1,4 +1,4 @@
-package RoomSystem;
+package GuestandRoomSystem;
 
 import java.util.List;
 
@@ -11,6 +11,14 @@ public class Room {
     private List<Amenity> amenities;
     private double pricepernight;
 
+    public Room(int roomid, boolean status, int floor, RoomType roomtype, List<Amenity> amenities, double pricepernight) {
+        this.roomid = roomid;
+        isavailable = status;
+       setFloor(floor);
+        this.roomtype = roomtype;
+        this.amenities = amenities;
+       setPricepernight(pricepernight);
+    }
     public double getPricepernight() {
         return pricepernight;
     }
@@ -22,8 +30,25 @@ public class Room {
     public int getFloor() {
         return floor;
     }
+    public List<Amenity> getAmenities() {
+        return amenities;
+    }
 
+    public RoomType getRoomtype() {
+        return roomtype;
+    }
+
+    public int getRoomnumber() {
+        return roomnumber;
+    }
+
+    public boolean Isavailable() {
+        return isavailable;
+    }
     public void setFloor(int floor) {
+        if(floor<0){
+            throw new IllegalArgumentException("Invalid floor");
+        }
         this.floor = floor;
     }
 
@@ -32,15 +57,10 @@ public class Room {
     }
 
     public void setPricepernight(double pricepernight) {
+        if(pricepernight<=0){
+            throw new IllegalArgumentException("Invalid price");
+        }
         this.pricepernight = pricepernight;
-    }
-
-    public List<Amenity> getAmenities() {
-        return amenities;
-    }
-
-    public RoomType getRoomtype() {
-        return roomtype;
     }
 
     public void setRoomid(int roomid) {
@@ -55,22 +75,7 @@ public class Room {
         this.amenities = amenities;
     }
 
-    public int getRoomnumber() {
-        return roomnumber;
-    }
 
-    public boolean isIsavailable() {
-        return isavailable;
-    }
-
-    public Room(int roomid, boolean status, int floor, RoomType roomtype, List<Amenity> amenities, double pricepernight) {
-        this.roomid = roomid;
-        isavailable = status;
-        this.floor = floor;
-        this.roomtype = roomtype;
-        this.amenities = amenities;
-        this.pricepernight = pricepernight;
-    }
     public void addamenity(Amenity a){
         if(a!=null) {
             amenities.add(a);
@@ -79,12 +84,13 @@ public class Room {
     public void removeamenity(Amenity a){
       amenities.remove(a);
     }
+
     public double CalculateTotalPrice(int nights){
         if (nights < 1) {
             throw new IllegalArgumentException("Nights must be at least 1");
         }
         double additionalprice=0;
-        for(int i=0; i<=amenities.size();i++){
+        for(int i=0; i < amenities.size(); i++){
             additionalprice = additionalprice +amenities.get(i).getAdditionalcost();
         }
         double Total= (roomtype.getBaseprice()+additionalprice)*nights;
