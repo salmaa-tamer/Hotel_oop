@@ -15,7 +15,7 @@ public class Guest {
     public Guest(String username, String password, LocalDate dateOfBirth, double balance
                , String address, Gender gender, String roomPreference) {
      this.username=username;
-     this.password=password;
+     setPassword(password);
      this.dateOfBirth=dateOfBirth;
      this.balance=balance;
      this.address =address;
@@ -29,10 +29,11 @@ public class Guest {
  public static Guest login(String username,String password){
         if (username==null  ||  password==null){
             System.out.println("Invalid input.");
+            return null;
         }
 
         for(Guest g :HotelDatabase.guests){
-            if (username.equals(g.getUsername()) && password.equals(g.getPassword())){
+            if (username.equals(g.username) && password.equals(g.password)){
                 System.out.println("Login successful.");
                 return g;
             }
@@ -94,12 +95,33 @@ public class Guest {
     public String getUsername(){
         return username;
     }
-    public String getPassword(){
-        return password;
+    public void setPassword(String password){
+        this.password=password;
+    }
+    public LocalDate getDateOfBirth(){
+        return dateOfBirth;
     }
     public double getBalance(){
         return balance;
     }
+    public String getAddress(){
+        return address;
+    }
+    public Gender getGender() {
+        return gender;
+    }
+    public String getRoomPreference(){
+        return roomPreference;
+    }
 
-
+    public String toString(){
+        return "Guest{" +
+                "username= '" +username+'\'' +
+                ", dateOfBirth=" + dateOfBirth +
+                ", balance=" + balance +
+                ", address='" + address + '\'' +
+                ", gender=" + gender +
+                ", roomPreference='" + roomPreference + '\'' +
+                '}';
+    }
 }
