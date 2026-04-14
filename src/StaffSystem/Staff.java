@@ -42,7 +42,7 @@ public abstract class Staff{
         }
         this.password = password;
     }
-    public String getPassword(){
+    private String getPassword(){
         return password;
     }
 
@@ -75,19 +75,19 @@ public abstract class Staff{
         throw new IllegalArgumentException("Invalid login");
     }
 
-    public void viewGuests(){
+    public void readAllGuests(){
         for(Guest guest : HotelDatabase.guests){
             System.out.println(guest.toString());
         }
     }
 
-    public void readRooms(){
+    public void readAllRooms(){
         for(Room room : HotelDatabase.rooms){
             System.out.println(room.toString());
         }
     }
 
-    public void viewReservations(){
+    public void readAllReservations(){
        for (Reservation reservation : HotelDatabase.reservations){
            System.out.println(reservation);
        }
