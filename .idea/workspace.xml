@@ -1,10 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="5ee7e85f-402c-4284-99a9-20d687d3675b" name="Changes" comment="added conditions for cancelling, confirming and completing reservations">
+    <list default="true" id="5ee7e85f-402c-4284-99a9-20d687d3675b" name="Changes" comment="added conditions for confirm, cancel and complete reservation">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/GuestandRoomSystem/Bill.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/GuestandRoomSystem/Bill.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/GuestandRoomSystem/Guest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/GuestandRoomSystem/Guest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/GuestandRoomSystem/Reservation.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/GuestandRoomSystem/Reservation.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/exceptions/InvalidPaymentException.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/exceptions/InvalidPaymentException.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -27,12 +28,12 @@
     &quot;assignee&quot;: &quot;Sara-abdelsamie&quot;
   }
 }</component>
-  <component name="GithubPullRequestsUISettings">{
-  &quot;selectedUrlAndAccountId&quot;: {
-    &quot;url&quot;: &quot;https://github.com/salmaa-tamer/Hotel_oop.git&quot;,
-    &quot;accountId&quot;: &quot;c551b227-fb56-42b0-b532-91b712eae42f&quot;
+  <component name="GithubPullRequestsUISettings"><![CDATA[{
+  "selectedUrlAndAccountId": {
+    "url": "https://github.com/salmaa-tamer/Hotel_oop.git",
+    "accountId": "5d3af835-9467-479f-9b32-2ffafad84ed8"
   }
-}</component>
+}]]></component>
   <component name="ProjectColorInfo">{
   &quot;customColor&quot;: &quot;&quot;,
   &quot;associatedIndex&quot;: 5
@@ -49,6 +50,7 @@
   "keyToString": {
     "ModuleVcsDetector.initialDetectionPerformed": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
+    "RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager.252": "true",
     "RunOnceActivity.git.unshallow": "true",
     "SHARE_PROJECT_CONFIGURATION_FILES": "true",
     "git-widget-placeholder": "Salma__Reservation",
@@ -58,7 +60,7 @@
   <component name="SharedIndexes">
     <attachedChunks>
       <set>
-        <option value="bundled-jdk-30f59d01ecdd-2fc7cc6b9a17-intellij.indexing.shared.core-IU-253.30387.90" />
+        <option value="bundled-jdk-30f59d01ecdd-2fc7cc6b9a17-intellij.indexing.shared.core-IU-253.31033.145" />
       </set>
     </attachedChunks>
   </component>
@@ -86,12 +88,31 @@
       <option name="project" value="LOCAL" />
       <updated>1776199998600</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="added conditions for confirm, cancel and complete reservation">
+      <option name="closed" value="true" />
+      <created>1776200776405</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1776200776405</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="added reservation status exception" />
     <MESSAGE value="added conditions for cancelling, confirming and completing reservations" />
-    <option name="LAST_COMMIT_MESSAGE" value="added conditions for cancelling, confirming and completing reservations" />
+    <MESSAGE value="added conditions for confirm, cancel and complete reservation" />
+    <option name="LAST_COMMIT_MESSAGE" value="added conditions for confirm, cancel and complete reservation" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <breakpoint enabled="true" type="java-exception">
+          <properties class="java.lang.Exception" package="java.lang" />
+          <option name="timeStamp" value="1" />
+        </breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
 </project>

@@ -11,12 +11,15 @@ public Reservation(Guest guest,Room room,LocalDate checkInDate,LocalDate checkOu
 setGuest (guest);
 setRoom (room);
 setCheckInDate(checkInDate);
-setCheckOutDate(checkOutDate);}
+setCheckOutDate(checkOutDate);
+status=ReservationStatus.PENDING;
+}
 
     private void setCheckInDate(LocalDate checkInDate) {
         if (checkInDate==null){
             throw new InvalidReservationException("Check in date can't be empty");
         }
+        this.checkInDate = checkInDate;
     }
 
 
@@ -27,7 +30,7 @@ setCheckOutDate(checkOutDate);}
         this.guest = guest;}
 
     public void setRoom(Room room) {
-        if (guest==null){
+        if (room==null){
             throw new InvalidReservationException("invalid room");
         }
         this.room = room;}
@@ -78,13 +81,13 @@ setCheckOutDate(checkOutDate);}
             throw new InvalidReservationException("Cannot complete a reservation that is non confirmed");
         }
             this.status= ReservationStatus.COMPLETED ; }
-    public void calculateTotalPrice(){
-
-
-    }
-
-    public double CalculateTotalPrice() {
-    }
+  public Bill generateBill (PaymentMethod paymentMethod){
+      if (status==ReservationStatus.CANCELLED || status==ReservationStatus.PENDING) {
+          throw new InvalidReservationException("cannot generate a bill for a not confirmed reservation");
+      }
+      Bill NewBill= new Bill (this,paymentMethod);
+      return new  Bill (this,paymentMethod) ;
+  }
 }
 
 
