@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="5ee7e85f-402c-4284-99a9-20d687d3675b" name="Changes" comment="added reservation status exception">
+    <list default="true" id="5ee7e85f-402c-4284-99a9-20d687d3675b" name="Changes" comment="added conditions for cancelling, confirming and completing reservations">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/GuestandRoomSystem/Guest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/GuestandRoomSystem/Guest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/GuestandRoomSystem/Reservation.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/GuestandRoomSystem/Reservation.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/exceptions/InvalidPaymentException.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/exceptions/InvalidPaymentException.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -78,11 +78,20 @@
       <option name="project" value="LOCAL" />
       <updated>1776199381201</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="added conditions for cancelling, confirming and completing reservations">
+      <option name="closed" value="true" />
+      <created>1776199998600</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1776199998600</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="added reservation status exception" />
-    <option name="LAST_COMMIT_MESSAGE" value="added reservation status exception" />
+    <MESSAGE value="added conditions for cancelling, confirming and completing reservations" />
+    <option name="LAST_COMMIT_MESSAGE" value="added conditions for cancelling, confirming and completing reservations" />
   </component>
 </project>

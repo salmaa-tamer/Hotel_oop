@@ -83,6 +83,8 @@ setCheckOutDate(checkOutDate);}
 
     }
 
+    public double CalculateTotalPrice() {
+    }
 }
 
 
