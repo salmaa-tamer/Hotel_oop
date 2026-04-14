@@ -28,8 +28,18 @@ public class Admin extends Staff{
             }
            HotelDatabase.rooms.add(newRoom);
         }
+        public void readRoom(Room room){
+            for(Room r : HotelDatabase.rooms){
+                if(r.getRoomid()==room.getRoomid()){
+                    System.out.println(r);
+                    return;
+                }
+            }
+            throw new IllegalArgumentException("Room Not Found");
+        }
 
-        public void deleteRoom(Room roomToDelete){
+
+    public void deleteRoom(Room roomToDelete){
             for(int i =0 ; i<HotelDatabase.rooms.size(); i++){
                 if(HotelDatabase.rooms.get(i).getRoomid() == roomToDelete.getRoomid()){
                     HotelDatabase.rooms.remove(i);
@@ -69,10 +79,20 @@ public class Admin extends Staff{
             HotelDatabase.amenities.add(newAmenity);
         }
 
-        public void readAmenities(){
+        public void readAllAmenities(){
             for (Amenity amenity: HotelDatabase.amenities){
                 System.out.println(amenity);
             }
+        }
+
+        public void readAmenity(Amenity amenity){
+            for(Amenity a : HotelDatabase.amenities){
+                if(amenity.getAmenityid()==a.getAmenityid()){
+                    System.out.println(a);
+                    return;
+                }
+            }
+            throw new IllegalArgumentException("Amenity Not Found");
         }
 
         public void updateAmenityName(Amenity amenity, String newName){
@@ -96,8 +116,6 @@ public class Admin extends Staff{
             throw new IllegalArgumentException("Amenity Not Found");
         }
 
-
-
         public void deleteAmenity(Amenity amenityToDelete){
             for(int i=0 ; i<HotelDatabase.amenities.size(); i++){
                 if (HotelDatabase.amenities.get(i).getAmenityid()==amenityToDelete.getAmenityid()){
@@ -117,10 +135,20 @@ public class Admin extends Staff{
             HotelDatabase.roomTypes.add(roomType);
         }
 
-        public void readRoomType(){
+        public void readAllRoomTypes(){
             for (RoomType rt : HotelDatabase.roomTypes){
                 System.out.println(rt);
             }
+        }
+
+        public void readRoomType(RoomType roomType){
+            for(RoomType rt : HotelDatabase.roomTypes){
+                if(rt.getRoomtypeid()==roomType.getRoomtypeid()){
+                    System.out.println(rt);
+                    return;
+                }
+            }
+            throw new IllegalArgumentException("There is no such room type");
         }
 
         public void updateRoomTypeName(RoomType roomType, String newName){
