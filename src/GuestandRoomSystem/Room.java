@@ -90,7 +90,7 @@ public class Room {
             throw new IllegalArgumentException("Nights must be at least 1");
         }
         double additionalprice=0;
-        for(int i=0; i<=amenities.size();i++){
+        for(int i=0; i < amenities.size(); i++){
             additionalprice = additionalprice +amenities.get(i).getAdditionalcost();
         }
         double Total= (roomtype.getBaseprice()+additionalprice)*nights;

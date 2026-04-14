@@ -1,7 +1,4 @@
 package GuestandRoomSystem;
 
 public enum PaymentMethod {
-CASH ,
-CREDIT_CARD ,
-    ONLINE
-}
+CASH ,Credit_Card , ONLINE  }

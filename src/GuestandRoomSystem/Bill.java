@@ -27,6 +27,7 @@ public Bill (Reservation MYreservation,PaymentMethod MYpaymentMethod){
 
     public void setFinalAmount() {
         double money = Room.CalculateTotalPrice();
+        double money = reservation.CalculateTotalPrice();
     if (money<=0){
         throw new IllegalArgumentException("Invalid Amount");
     }

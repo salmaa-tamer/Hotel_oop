@@ -1,6 +1,6 @@
 package exceptions;
 
-public class RoomNotAvailableException extends Exception {
+public class RoomNotAvailableException extends RuntimeException {
     public RoomNotAvailableException(String message) {
         super(message);
     }
