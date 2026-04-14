@@ -53,15 +53,30 @@ setCheckOutDate(checkOutDate);}
          return checkOutDate; }
 
     public void cancel(){
+    if (status==ReservationStatus.COMPLETED){
+        throw new InvalidReservationException("Cannot cancel a completed reservation");
+    }
             this.status= ReservationStatus.CANCELLED ; }
 
     public void confirm(){
+        if (status==ReservationStatus.COMPLETED){
+            throw new InvalidReservationException("Cannot confirm a completed reservation");
+        }
+        if (status==ReservationStatus.CANCELLED){
+            throw new InvalidReservationException("Cannot confirm a cancelled reservation");
+        }
             this.status= ReservationStatus.CONFIRMED ; }
 
     public void pending(){
             this.status= ReservationStatus.PENDING ;}
 
     public void complete(){
+        if (status==ReservationStatus.CANCELLED){
+            throw new InvalidReservationException("Cannot complete a cancelled reservation");
+        }
+        if (status==ReservationStatus.PENDING){
+            throw new InvalidReservationException("Cannot complete a reservation that is non confirmed");
+        }
             this.status= ReservationStatus.COMPLETED ; }
     public void calculateTotalPrice(){
 
