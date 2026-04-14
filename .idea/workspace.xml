@@ -4,6 +4,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
+    <list default="true" id="5ee7e85f-402c-4284-99a9-20d687d3675b" name="Changes" comment="added conditions for confirm, cancel and complete reservation">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/GuestandRoomSystem/Bill.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/GuestandRoomSystem/Bill.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/GuestandRoomSystem/Guest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/GuestandRoomSystem/Guest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/GuestandRoomSystem/Reservation.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/GuestandRoomSystem/Reservation.java" afterDir="false" />
     <list default="true" id="5ee7e85f-402c-4284-99a9-20d687d3675b" name="Changes" comment="Finished admin CRUD&#10;operations&#10; Added Receptionist class&#10; Added all required methods">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/StaffSystem/Admin.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/StaffSystem/Admin.java" afterDir="false" />
@@ -17,6 +22,10 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
+        <option value="Exception" />
+      </list>
+    </option>
+  </component>
         <option value="Enum" />
         <option value="Exception" />
         <option value="Class" />
@@ -43,6 +52,9 @@
   <component name="GithubPullRequestsUISettings"><![CDATA[{
   "selectedUrlAndAccountId": {
     "url": "https://github.com/salmaa-tamer/Hotel_oop.git",
+    "accountId": "5d3af835-9467-479f-9b32-2ffafad84ed8"
+  }
+}]]></component>
     "accountId": "2d6fde7a-37bd-4816-85af-598a0de0d1ed"
   }
 }]]></component>
@@ -65,6 +77,15 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "ModuleVcsDetector.initialDetectionPerformed": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager.252": "true",
+    "RunOnceActivity.git.unshallow": "true",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "git-widget-placeholder": "Salma__Reservation",
+    "kotlin-language-version-configured": "true"
   <component name="PropertiesComponent">{
   &quot;keyToString&quot;: {
     &quot;ModuleVcsDetector.initialDetectionPerformed&quot;: &quot;true&quot;,
@@ -91,7 +112,7 @@
   <component name="SharedIndexes">
     <attachedChunks>
       <set>
-        <option value="bundled-jdk-30f59d01ecdd-2fc7cc6b9a17-intellij.indexing.shared.core-IU-253.30387.90" />
+        <option value="bundled-jdk-30f59d01ecdd-2fc7cc6b9a17-intellij.indexing.shared.core-IU-253.31033.145" />
       </set>
     </attachedChunks>
   </component>
@@ -128,6 +149,48 @@
       <option name="project" value="LOCAL" />
       <updated>1776007940177</updated>
     </task>
+    <task id="LOCAL-00001" summary="added reservation status exception">
+      <option name="closed" value="true" />
+      <created>1776199381201</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1776199381201</updated>
+    </task>
+    <task id="LOCAL-00002" summary="added conditions for cancelling, confirming and completing reservations">
+      <option name="closed" value="true" />
+      <created>1776199998600</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1776199998600</updated>
+    </task>
+    <task id="LOCAL-00003" summary="added conditions for confirm, cancel and complete reservation">
+      <option name="closed" value="true" />
+      <created>1776200776405</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1776200776405</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
+    <servers />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="added reservation status exception" />
+    <MESSAGE value="added conditions for cancelling, confirming and completing reservations" />
+    <MESSAGE value="added conditions for confirm, cancel and complete reservation" />
+    <option name="LAST_COMMIT_MESSAGE" value="added conditions for confirm, cancel and complete reservation" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <breakpoint enabled="true" type="java-exception">
+          <properties class="java.lang.Exception" package="java.lang" />
+          <option name="timeStamp" value="1" />
+        </breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
     <task id="LOCAL-00004" summary="fixed off-by-one error">
       <option name="closed" value="true" />
       <created>1776008714610</created>

@@ -12,12 +12,15 @@ setGuest (guest);
 setRoom (room);
 setCheckInDate(checkInDate);
 setCheckOutDate(checkOutDate);
+status=ReservationStatus.PENDING;
+}
 this.status=ReservationStatus.PENDING;}
 
     private void setCheckInDate(LocalDate checkInDate) {
         if (checkInDate==null){
             throw new InvalidReservationException("Check in date can't be empty");
         }
+        this.checkInDate = checkInDate;
         this.checkInDate=checkInDate;
     }
 
@@ -29,6 +32,7 @@ this.status=ReservationStatus.PENDING;}
         this.guest = guest;}
 
     public void setRoom(Room room) {
+        if (room==null){
         if (room ==null){
             throw new InvalidReservationException("invalid room");
         }
@@ -55,16 +59,38 @@ this.status=ReservationStatus.PENDING;}
          return checkOutDate; }
 
     public void cancel(){
+    if (status==ReservationStatus.COMPLETED){
+        throw new InvalidReservationException("Cannot cancel a completed reservation");
+    }
             this.status= ReservationStatus.CANCELLED ; }
 
     public void confirm(){
+        if (status==ReservationStatus.COMPLETED){
+            throw new InvalidReservationException("Cannot confirm a completed reservation");
+        }
+        if (status==ReservationStatus.CANCELLED){
+            throw new InvalidReservationException("Cannot confirm a cancelled reservation");
+        }
             this.status= ReservationStatus.CONFIRMED ; }
 
     public void pending(){
             this.status= ReservationStatus.PENDING ;}
 
     public void complete(){
+        if (status==ReservationStatus.CANCELLED){
+            throw new InvalidReservationException("Cannot complete a cancelled reservation");
+        }
+        if (status==ReservationStatus.PENDING){
+            throw new InvalidReservationException("Cannot complete a reservation that is non confirmed");
+        }
             this.status= ReservationStatus.COMPLETED ; }
+  public Bill generateBill (PaymentMethod paymentMethod){
+      if (status==ReservationStatus.CANCELLED || status==ReservationStatus.PENDING) {
+          throw new InvalidReservationException("cannot generate a bill for a not confirmed reservation");
+      }
+      Bill NewBill= new Bill (this,paymentMethod);
+      return new  Bill (this,paymentMethod) ;
+  }
 
     public ReservationStatus getStatus() {
         return status;
