@@ -15,7 +15,7 @@ public class Admin extends Staff{
             this.role=Role.ADMIN;
         }
 
-        Admin(String username, String password, LocalDate dateOfBirth, int workingHours){
+        public Admin(String username, String password, LocalDate dateOfBirth, int workingHours){
             super(username,password,dateOfBirth,workingHours);
             this.role=Role.ADMIN;
         }
