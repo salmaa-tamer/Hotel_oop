@@ -100,9 +100,14 @@ public class Guest {
             }
         }
     }
-    public void setDateOfBirth(LocalDate dateOfBirth){
-        if (dateOfBirth.isAfter(LocalDate.now())){
-            throw new IllegalArgumentException("Invalid date of birth");
+    public void onlineCheckout(Reservation reservation,PaymentMethod paymentMethod){
+        if (reservation==null) {
+            System.out.println("No reservation.");
+            return;
+        }
+        if (paymentMethod==PaymentMethod.Credit_Card || paymentMethod==PaymentMethod.CASH){
+            System.out.println("Payment type is not available.");
+            return;
         }
   this.dateOfBirth=dateOfBirth;
     }
