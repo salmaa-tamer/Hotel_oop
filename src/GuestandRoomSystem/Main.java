@@ -1,6 +1,10 @@
 package GuestandRoomSystem;
 
+import StaffSystem.Admin;
+import StaffSystem.Receptionist;
+
 import java.time.LocalDate;
+import java.util.List;
 import java.util.Scanner;
 public class Main {
     static Scanner scanner = new Scanner(System.in);
@@ -24,6 +28,10 @@ public class Main {
         LocalDate checkoutDate = LocalDate.parse(checkoutDateInput);
         guest.makeReservation(room.getroomid,checkinDate,checkoutDate);
 
+        for (Bill b : HotelDatabase.bills) {
+            b.PrintBill();
+            System.out.println();
+        }
 
     }
 }
