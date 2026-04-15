@@ -15,7 +15,7 @@ public class Receptionist extends Staff{
         this.role=Role.RECEPTIONIST;
     }
 
-    Receptionist(String username, String password, LocalDate dateOfBirth, int workingHours){
+    public Receptionist(String username, String password, LocalDate dateOfBirth, int workingHours){
         super(username, password, dateOfBirth, workingHours);
         this.role=Role.RECEPTIONIST;
     }
