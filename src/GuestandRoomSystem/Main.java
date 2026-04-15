@@ -1,6 +1,10 @@
 package GuestandRoomSystem;
 
+import StaffSystem.Admin;
+import StaffSystem.Receptionist;
+
 import java.time.LocalDate;
+import java.util.List;
 import java.util.Scanner;
 public class Main {
     static Scanner scanner = new Scanner(System.in);
@@ -11,6 +15,45 @@ public class Main {
         System.out.println("Enter Password");
         String password = scanner.nextLine();
         System.out.println("Enter Date of Birth");
+        Receptionist receptionist = (Receptionist)HotelDatabase.staff.get(0);
+
+        String receptionistUsername = scanner.nextLine();
+        String receptionistPassword = scanner.nextLine();
+        receptionist.setUsername(receptionistUsername);
+        receptionist.setPassword(receptionistPassword);
+        receptionist.login(receptionistUsername,receptionistPassword);
+
+        Reservation reservation= HotelDatabase.reservations.get(0);
+        receptionist.manageCheckIn(reservation);
+
+        Admin admin = (Admin) HotelDatabase.staff.get(0);
+        Room room= HotelDatabase.rooms.get(0);
+
+        System.out.println("Enter the name of the room you would like to add: ");
+        String roomName = scanner.nextLine();
+        System.out.println("Enter the Room Id");
+        int roomId=scanner.nextInt();
+        System.out.println("Room Availability (true,flase)");
+        boolean availability = scanner.nextBoolean();
+        System.out.println("Room Floor: ");
+        int floor = scanner.nextInt();
+        System.out.println("Price per night: ");
+        double pricePerNight=scanner.nextDouble();
+
+        RoomType roomType=HotelDatabase.roomTypes.get(0);
+        List<Amenity> amenities=HotelDatabase.amenities;
+
+
+        Room newRoom=new Room(roomId,availability,floor,roomType,amenities,pricePerNight);
+        admin.createRoom(newRoom);
+        admin.readRoom(room);
+        admin.readAllRooms();
+
+        System.out.println("Enter the new price of the room: ");
+        double newPrice= scanner.nextDouble();
+        admin.updateRoomPrice(room,newPrice);
+
+        admin.deleteRoom(room);
 
 
         //Mohamed
