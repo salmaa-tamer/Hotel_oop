@@ -1,4 +1,6 @@
 package GuestandRoomSystem;
+import exceptions.RoomNotAvailableException;
+
 import java.time.LocalDate;
 public class Guest {
     final String username;
@@ -11,26 +13,27 @@ public class Guest {
 
 
     public Guest(String username, String password, LocalDate dateOfBirth, double balance
-               , String address, Gender gender, String roomPreference) {
-     this.username=username;
-     this.password=password;
-     this.dateOfBirth=dateOfBirth;
-     this.balance=balance;
-     this.address =address;
-     this.gender=gender;
-     this.roomPreference=roomPreference;
- }
- public void register(){
+            , String address, Gender gender, String roomPreference) {
+        this.username=username;
+        setPassword(password);
+        this.dateOfBirth=dateOfBirth;
+        this.balance=balance;
+        this.address =address;
+        this.gender=gender;
+        this.roomPreference=roomPreference;
+    }
+    public void register(){
         HotelDatabase.guests.add(this);                 //person 5
         System.out.println("Guest registered successfully.");
- }
- public static Guest login(String username,String password){
+    }
+    public static Guest login(String username,String password){
         if (username==null  ||  password==null){
             System.out.println("Invalid input.");
+            return null;
         }
 
         for(Guest g :HotelDatabase.guests){
-            if (username.equals(g.getUsername()) && password.equals(g.getPassword())){
+            if (username.equals(g.username) && password.equals(g.password)){
                 System.out.println("Login successful.");
                 return g;
             }
@@ -50,18 +53,17 @@ public class Guest {
             System.out.println("No rooms available.");
         }
     }
-    public void makeReservation(Room room){
+    public void makeReservation(Room room,LocalDate checkIn, LocalDate checkOut) throws RoomNotAvailableException {
 
         if (room==null){
             System.out.print("Invalid room.");
             return;
         }
         if (!room.Isavailable()){
-            System.out.println("Room is not available.");
-            return;
+            throw new exceptions.RoomNotAvailableException("Room is not available for booking.");
         }
-        Reservation reservation =new Reservation(this,room);         //person 4
-        HotelDatabase.reservation.add(reservation);
+        Reservation reservation =new Reservation(this,room,checkIn,checkOut);         //person 4
+        HotelDatabase.reservations.add(reservation);
         System.out.println("Reservation created.");
     }
     public void cancelReservation(Reservation reservation){
@@ -85,7 +87,7 @@ public class Guest {
             System.out.println("Payment successful.");
         }
         else {
-            System.out.println("Balance is not enough.");
+            throw new exceptions.InvalidPaymentException("Guest balance is not enough to cover the bill.");
         }
     }
 
@@ -93,12 +95,33 @@ public class Guest {
     public String getUsername(){
         return username;
     }
-    public String getPassword(){
-        return password;
+    public void setPassword(String password){
+        this.password=password;
+    }
+    public LocalDate getDateOfBirth(){
+        return dateOfBirth;
     }
     public double getBalance(){
         return balance;
     }
+    public String getAddress(){
+        return address;
+    }
+    public Gender getGender() {
+        return gender;
+    }
+    public String getRoomPreference(){
+        return roomPreference;
+    }
 
-
+    public String toString(){
+        return "Guest{" +
+                "username= '" +username+'\'' +
+                ", dateOfBirth=" + dateOfBirth +
+                ", balance=" + balance +
+                ", address='" + address + '\'' +
+                ", gender=" + gender +
+                ", roomPreference='" + roomPreference + '\'' +
+                '}';
+    }
 }
