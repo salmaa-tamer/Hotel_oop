@@ -1,0 +1,92 @@
+Index: .idea/workspace.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+><?xml version=\"1.0\" encoding=\"UTF-8\"?>\r\n<project version=\"4\">\r\n  <component name=\"ChangeListManager\">\r\n    <list default=\"true\" id=\"5ee7e85f-402c-4284-99a9-20d687d3675b\" name=\"Changes\" comment=\"\">\r\n      <change afterPath=\"$PROJECT_DIR$/src/Hotel reservation system.iml\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/.idea/.gitignore\" beforeDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/.idea/modules.xml\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/.idea/modules.xml\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/src/Guestsystem/Gender.java\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/src/GuestandRoomSystem/Gender.java\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/src/Guestsystem/Guest.java\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/src/GuestandRoomSystem/Guest.java\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/src/RoomSystem/Amenity.java\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/src/GuestandRoomSystem/Amenity.java\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/src/RoomSystem/Hotel reservation system.iml\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/Hotel reservation system.iml\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/src/RoomSystem/Room.java\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/src/GuestandRoomSystem/Room.java\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/src/RoomSystem/RoomType.java\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/src/GuestandRoomSystem/RoomType.java\" afterDir=\"false\" />\r\n    </list>\r\n    <option name=\"SHOW_DIALOG\" value=\"false\" />\r\n    <option name=\"HIGHLIGHT_CONFLICTS\" value=\"true\" />\r\n    <option name=\"HIGHLIGHT_NON_ACTIVE_CHANGELIST\" value=\"false\" />\r\n    <option name=\"LAST_RESOLUTION\" value=\"IGNORE\" />\r\n  </component>\r\n  <component name=\"Git.Settings\">\r\n    <option name=\"RECENT_GIT_ROOT_PATH\" value=\"$PROJECT_DIR$\" />\r\n  </component>\r\n  <component name=\"GitHubPullRequestSearchHistory\"><![CDATA[{\r\n  \"lastFilter\": {\r\n    \"state\": \"OPEN\",\r\n    \"assignee\": \"Sara-abdelsamie\"\r\n  }\r\n}]]></component>\r\n  <component name=\"GithubPullRequestsUISettings\"><![CDATA[{\r\n  \"selectedUrlAndAccountId\": {\r\n    \"url\": \"https://github.com/salmaa-tamer/Hotel_oop.git\",\r\n    \"accountId\": \"c551b227-fb56-42b0-b532-91b712eae42f\"\r\n  }\r\n}]]></component>\r\n  <component name=\"ProjectColorInfo\"><![CDATA[{\r\n  \"customColor\": \"\",\r\n  \"associatedIndex\": 5\r\n}]]></component>\r\n  <component name=\"ProjectId\" id=\"3CD5fLwU9HF87S96YuNhNQYxLCT\" />\r\n  <component name=\"ProjectViewState\">\r\n    <option name=\"hideEmptyMiddlePackages\" value=\"true\" />\r\n    <option name=\"showLibraryContents\" value=\"true\" />\r\n  </component>\r\n  <component name=\"PropertiesComponent\"><![CDATA[{\r\n  \"keyToString\": {\r\n    \"ModuleVcsDetector.initialDetectionPerformed\": \"true\",\r\n    \"RunOnceActivity.ShowReadmeOnStart\": \"true\",\r\n    \"RunOnceActivity.git.unshallow\": \"true\",\r\n    \"SHARE_PROJECT_CONFIGURATION_FILES\": \"true\",\r\n    \"git-widget-placeholder\": \"Sara__Roomsystem\",\r\n    \"kotlin-language-version-configured\": \"true\"\r\n  }\r\n}]]></component>\r\n  <component name=\"SharedIndexes\">\r\n    <attachedChunks>\r\n      <set>\r\n        <option value=\"bundled-jdk-30f59d01ecdd-2fc7cc6b9a17-intellij.indexing.shared.core-IU-253.30387.90\" />\r\n      </set>\r\n    </attachedChunks>\r\n  </component>\r\n  <component name=\"TaskManager\">\r\n    <task active=\"true\" id=\"Default\" summary=\"Default task\">\r\n      <changelist id=\"5ee7e85f-402c-4284-99a9-20d687d3675b\" name=\"Changes\" comment=\"\" />\r\n      <created>1775907403289</created>\r\n      <option name=\"number\" value=\"Default\" />\r\n      <option name=\"presentableId\" value=\"Default\" />\r\n      <updated>1775907403289</updated>\r\n    </task>\r\n    <servers />\r\n  </component>\r\n</project>
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/.idea/workspace.xml b/.idea/workspace.xml
+--- a/.idea/workspace.xml	(revision fcf5429ca44be90e14e99cc1fbab211c58d9d1dd)
++++ b/.idea/workspace.xml	(date 1776199175156)
+@@ -1,16 +1,8 @@
+ <?xml version="1.0" encoding="UTF-8"?>
+ <project version="4">
+   <component name="ChangeListManager">
+-    <list default="true" id="5ee7e85f-402c-4284-99a9-20d687d3675b" name="Changes" comment="">
+-      <change afterPath="$PROJECT_DIR$/src/Hotel reservation system.iml" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/.idea/.gitignore" beforeDir="false" />
+-      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/src/Guestsystem/Gender.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/GuestandRoomSystem/Gender.java" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/src/Guestsystem/Guest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/GuestandRoomSystem/Guest.java" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/src/RoomSystem/Amenity.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/GuestandRoomSystem/Amenity.java" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/src/RoomSystem/Hotel reservation system.iml" beforeDir="false" afterPath="$PROJECT_DIR$/Hotel reservation system.iml" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/src/RoomSystem/Room.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/GuestandRoomSystem/Room.java" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/src/RoomSystem/RoomType.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/GuestandRoomSystem/RoomType.java" afterDir="false" />
++    <list default="true" id="5ee7e85f-402c-4284-99a9-20d687d3675b" name="Changes" comment="Added Reservation class&#10;added Bill class&#10;updated Guest.checkout() and makeReservation() parameters to match Reservation and Bill constructors">
++      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+     </list>
+     <option name="SHOW_DIALOG" value="false" />
+     <option name="HIGHLIGHT_CONFLICTS" value="true" />
+@@ -20,23 +12,26 @@
+   <component name="Git.Settings">
+     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+   </component>
+-  <component name="GitHubPullRequestSearchHistory"><![CDATA[{
+-  "lastFilter": {
+-    "state": "OPEN",
+-    "assignee": "Sara-abdelsamie"
++  <component name="GitHubPullRequestSearchHistory">{
++  &quot;lastFilter&quot;: {
++    &quot;state&quot;: &quot;OPEN&quot;,
++    &quot;assignee&quot;: &quot;Sara-abdelsamie&quot;
+   }
+-}]]></component>
+-  <component name="GithubPullRequestsUISettings"><![CDATA[{
+-  "selectedUrlAndAccountId": {
+-    "url": "https://github.com/salmaa-tamer/Hotel_oop.git",
+-    "accountId": "c551b227-fb56-42b0-b532-91b712eae42f"
++}</component>
++  <component name="GithubPullRequestsUISettings">{
++  &quot;selectedUrlAndAccountId&quot;: {
++    &quot;url&quot;: &quot;https://github.com/salmaa-tamer/Hotel_oop.git&quot;,
++    &quot;accountId&quot;: &quot;5d3af835-9467-479f-9b32-2ffafad84ed8&quot;
+   }
+-}]]></component>
+-  <component name="ProjectColorInfo"><![CDATA[{
+-  "customColor": "",
+-  "associatedIndex": 5
+-}]]></component>
++}</component>
++  <component name="ProjectColorInfo">{
++  &quot;customColor&quot;: &quot;&quot;,
++  &quot;associatedIndex&quot;: 5
++}</component>
+   <component name="ProjectId" id="3CD5fLwU9HF87S96YuNhNQYxLCT" />
++  <component name="ProjectLevelVcsManager">
++    <ConfirmationsSetting value="2" id="Add" />
++  </component>
+   <component name="ProjectViewState">
+     <option name="hideEmptyMiddlePackages" value="true" />
+     <option name="showLibraryContents" value="true" />
+@@ -45,16 +40,18 @@
+   "keyToString": {
+     "ModuleVcsDetector.initialDetectionPerformed": "true",
+     "RunOnceActivity.ShowReadmeOnStart": "true",
++    "RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager.252": "true",
+     "RunOnceActivity.git.unshallow": "true",
+     "SHARE_PROJECT_CONFIGURATION_FILES": "true",
+-    "git-widget-placeholder": "Sara__Roomsystem",
+-    "kotlin-language-version-configured": "true"
++    "git-widget-placeholder": "Salma__Reservation",
++    "kotlin-language-version-configured": "true",
++    "last_opened_file_path": "C:/Users/Engta/IdeaProjects/Hotel_oop"
+   }
+ }]]></component>
+   <component name="SharedIndexes">
+     <attachedChunks>
+       <set>
+-        <option value="bundled-jdk-30f59d01ecdd-2fc7cc6b9a17-intellij.indexing.shared.core-IU-253.30387.90" />
++        <option value="bundled-jdk-30f59d01ecdd-2fc7cc6b9a17-intellij.indexing.shared.core-IU-253.31033.145" />
+       </set>
+     </attachedChunks>
+   </component>

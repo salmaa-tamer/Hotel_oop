@@ -1,11 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="5ee7e85f-402c-4284-99a9-20d687d3675b" name="Changes" comment="added conditions for confirm, cancel and complete reservation">
+    <list default="true" id="5ee7e85f-402c-4284-99a9-20d687d3675b" name="Changes" comment="added conditions for confirm, cancel and complete reservation&#10;added conditions for generating bill&#10;handled null dates in calculate price &#10;fixed constructor parameters&#10;fixed guest username access in reservation toString&#10;intialized reservation status to pending">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/GuestandRoomSystem/Bill.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/GuestandRoomSystem/Bill.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/GuestandRoomSystem/Guest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/GuestandRoomSystem/Guest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/GuestandRoomSystem/Reservation.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/GuestandRoomSystem/Reservation.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -28,12 +25,12 @@
     &quot;assignee&quot;: &quot;Sara-abdelsamie&quot;
   }
 }</component>
-  <component name="GithubPullRequestsUISettings"><![CDATA[{
-  "selectedUrlAndAccountId": {
-    "url": "https://github.com/salmaa-tamer/Hotel_oop.git",
-    "accountId": "5d3af835-9467-479f-9b32-2ffafad84ed8"
+  <component name="GithubPullRequestsUISettings">{
+  &quot;selectedUrlAndAccountId&quot;: {
+    &quot;url&quot;: &quot;https://github.com/salmaa-tamer/Hotel_oop.git&quot;,
+    &quot;accountId&quot;: &quot;5d3af835-9467-479f-9b32-2ffafad84ed8&quot;
   }
-}]]></component>
+}</component>
   <component name="ProjectColorInfo">{
   &quot;customColor&quot;: &quot;&quot;,
   &quot;associatedIndex&quot;: 5
@@ -46,17 +43,17 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "ModuleVcsDetector.initialDetectionPerformed": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager.252": "true",
-    "RunOnceActivity.git.unshallow": "true",
-    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "git-widget-placeholder": "Salma__Reservation",
-    "kotlin-language-version-configured": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;ModuleVcsDetector.initialDetectionPerformed&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager.252&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
+    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;Salma__Reservation&quot;,
+    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
   <component name="SharedIndexes">
     <attachedChunks>
       <set>
@@ -96,14 +93,23 @@
       <option name="project" value="LOCAL" />
       <updated>1776200776405</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="added conditions for confirm, cancel and complete reservation&#10;added conditions for generating bill&#10;handled null dates in calculate price &#10;fixed constructor parameters&#10;fixed guest username access in reservation toString&#10;intialized reservation status to pending">
+      <option name="closed" value="true" />
+      <created>1776211271702</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1776211271702</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="added reservation status exception" />
     <MESSAGE value="added conditions for cancelling, confirming and completing reservations" />
     <MESSAGE value="added conditions for confirm, cancel and complete reservation" />
-    <option name="LAST_COMMIT_MESSAGE" value="added conditions for confirm, cancel and complete reservation" />
+    <MESSAGE value="added conditions for confirm, cancel and complete reservation&#10;added conditions for generating bill&#10;handled null dates in calculate price &#10;fixed constructor parameters&#10;fixed guest username access in reservation toString&#10;intialized reservation status to pending" />
+    <option name="LAST_COMMIT_MESSAGE" value="added conditions for confirm, cancel and complete reservation&#10;added conditions for generating bill&#10;handled null dates in calculate price &#10;fixed constructor parameters&#10;fixed guest username access in reservation toString&#10;intialized reservation status to pending" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
