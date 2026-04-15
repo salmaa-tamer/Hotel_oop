@@ -1,0 +1,18 @@
+Index: src/exceptions/InvalidPaymentException.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>package exceptions;\r\n\r\npublic class InvalidPaymentException extends Exception {\r\n    public InvalidPaymentException(String message) {\r\n        super(message);\r\n    }\r\n}
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/src/exceptions/InvalidPaymentException.java b/src/exceptions/InvalidPaymentException.java
+--- a/src/exceptions/InvalidPaymentException.java	(revision df7e0066e619efb8fe644184e43ebf4acec1cca8)
++++ b/src/exceptions/InvalidPaymentException.java	(date 1776102153602)
+@@ -1,6 +1,6 @@
+ package exceptions;
+ 
+-public class InvalidPaymentException extends Exception {
++public class InvalidPaymentException extends RuntimeException {
+     public InvalidPaymentException(String message) {
+         super(message);
+     }
