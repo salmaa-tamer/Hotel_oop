@@ -1,0 +1,20 @@
+[33m92c9c87[m[33m ([m[1;36mHEAD[m[33m -> [m[1;32mmain[m[33m, [m[1;31morigin/main[m[33m, [m[1;31morigin/HEAD[m[33m)[m Added Reservation class added Bill class updated Guest.checkout() and makeReservation() parameters to match Reservation and Bill constructors
+[33m7e41696[m updated Reservation
+[33m5572e2f[m Merge pull request #4 from salmaa-tamer/Sara_Roomsystem
+[33m9924a4a[m[33m ([m[1;31morigin/Sara_Roomsystem[m[33m)[m Validation added
+[33m8a5d0d8[m Merge pull request #3 from salmaa-tamer/Hana_guestSystem
+[33m7becc06[m[33m ([m[1;31morigin/Hana_guestSystem[m[33m)[m "add guest class implementation."
+[33m4aaedbc[m "add guest class implementation."
+[33m071543c[m "add guest class implementation."
+[33m4eabbc3[m add guest class implementation.
+[33m706a0d9[m add guest class implementation.
+[33m2f95171[m add guest class implementation.
+[33m613e7c4[m add guest class implementation.
+[33ma15053f[m add guest class implementation.
+[33m4b7ec7b[m Add guest class with login, reservation, room browsing,reservation, payment logic with validation and database integration.
+[33m61af747[m Merge pull request #2 from salmaa-tamer/Sara_Roomsystem
+[33md1f4ce3[m add gitignore
+[33m0938487[m Merge pull request #1 from salmaa-tamer/Sara_Roomsystem
+[33mab8b5c8[m add RoomType class with attributes and methods
+[33mdf7e006[m[33m ([m[1;31morigin/Mohamed_Database[m[33m)[m created the src with multiple packages
+[33m82b63b1[m Created the README file
