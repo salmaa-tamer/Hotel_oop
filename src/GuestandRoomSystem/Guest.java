@@ -65,6 +65,8 @@ public class Guest {
         Reservation reservation =new Reservation(this,room,checkIn,checkOut);
         HotelDatabase.reservations.add(reservation);
         System.out.println("Reservation created.");
+        room. setAvailablity(false);
+
     }
     public void cancelReservation(Reservation reservation){
         if (reservation == null){

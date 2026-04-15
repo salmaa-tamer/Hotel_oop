@@ -4,7 +4,6 @@ import java.util.List;
 
 public class Room {
     private int roomid;
-    private int roomnumber;
     private boolean isavailable;
     private int floor;
     private RoomType roomtype;
@@ -38,9 +37,6 @@ public class Room {
         return roomtype;
     }
 
-    public int getRoomnumber() {
-        return roomnumber;
-    }
 
     public boolean Isavailable() {
         return isavailable;
@@ -99,7 +95,7 @@ public class Room {
     }
 
     public String toString(){
-     return "Room Number :"+roomnumber+",Availablity :"+(isavailable?"YES":"NO")+",Floor :"+floor+",PricePernight :"+
+     return "Room Number :"+roomid+",Availablity :"+(isavailable?"YES":"NO")+",Floor :"+floor+",PricePernight :"+
              pricepernight +roomtype.toString();
     }
 
