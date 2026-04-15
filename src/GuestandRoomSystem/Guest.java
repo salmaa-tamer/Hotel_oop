@@ -105,7 +105,7 @@ public class Guest {
             System.out.println("No reservation.");
             return;
         }
-        if (paymentMethod==PaymentMethod.Credit_Card && paymentMethod==PaymentMethod.CASH){
+        if (paymentMethod==PaymentMethod.Credit_Card || paymentMethod==PaymentMethod.CASH){
             System.out.println("Payment type is not available.");
             return;
         }
