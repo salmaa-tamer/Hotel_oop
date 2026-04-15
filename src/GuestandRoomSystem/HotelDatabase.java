@@ -49,8 +49,8 @@ public class HotelDatabase {
         guests.add(guest2);
 
         // Staff
-        Staff receptionist1 = new Receptionist("rec_sara", "welcome123", LocalDate.of(1998, 5, 20), 8);
-        Staff admin1 = new Admin("admin_boss", "supersecret", LocalDate.of(1985, 11, 2), 8);
+        Staff receptionist1 = new Receptionist("rec_adam", "receptionist", LocalDate.of(1998, 5, 20), 8);
+        Staff admin1 = new Admin("admin", "adminpassword", LocalDate.of(1985, 11, 2), 8);
 
         staff.add(receptionist1);
         staff.add(admin1);

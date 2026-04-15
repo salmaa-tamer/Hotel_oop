@@ -23,7 +23,7 @@ public class Guest {
     this.gender =gender;
  }
  public void register(){
-        HotelDatabase.guests.add(this);                 //person 5
+        HotelDatabase.guests.add(this);
         System.out.println("Guest registered successfully.");
  }
  public static Guest login(String username,String password){
@@ -41,10 +41,10 @@ public class Guest {
         System.out.println("Login failed.");
         return null;
     }
-    public void viewAvailableRooms(){                         //person 3
+    public void viewAvailableRooms(){
         boolean found = false;
         for (Room r : HotelDatabase.rooms){
-            if(r.Isavailable()){                                    //person 3
+            if(r.Isavailable()){
                 System.out.println(r);
                 found=true;
             }
@@ -62,31 +62,37 @@ public class Guest {
         if (!room.Isavailable()){
             throw new exceptions.RoomNotAvailableException("Room is not available for booking.");
         }
-        Reservation reservation =new Reservation(this,room,checkIn,checkOut);         //person 4
+        Reservation reservation =new Reservation(this,room,checkIn,checkOut);
         HotelDatabase.reservations.add(reservation);
         System.out.println("Reservation created.");
+        room. setAvailablity(false);
+
     }
     public void cancelReservation(Reservation reservation){
         if (reservation == null){
             System.out.println("No reservation to cancel.");
             return;
         }
-        reservation.cancel();                                        //person 4
+        reservation.cancel();
         System.out.println("Reservation cancelled.");
     }
-    public void checkout(Reservation reservation,PaymentMethod paymentMethod){
+    public void inPersonCheckout(Reservation reservation,PaymentMethod paymentMethod){
 
         if (reservation==null){
             System.out.println("No reservation.");
             return;
         }
+        if (paymentMethod==PaymentMethod.ONLINE){
+            System.out.println("Online payment is not available.");
+            return;
+        }
         if (reservation.getStatus()==ReservationStatus.CONFIRMED) {
-            Bill bill = reservation.generateBill(paymentMethod);                            //person 4
+            Bill bill = reservation.generateBill(paymentMethod);
             //person 4
-            double total = bill.getTotalAmount();                              //person 4
+            double total = bill.getTotalAmount();
             if (balance >= total) {
                 balance -= total;
-                reservation.complete();                                        //person 4
+                reservation.complete();
                 System.out.println("Payment successful.");
             }
             else {
