@@ -104,7 +104,10 @@ throw new IllegalArgumentException("Invalid username or password.");
         if (paymentMethod==PaymentMethod.Credit_Card || paymentMethod==PaymentMethod.CASH){
 throw new IllegalArgumentException("Payment type is not available.");
         }
-            if (reservation.getStatus()==ReservationStatus.CONFIRMED) {
+        if (reservation.getStatus()!=ReservationStatus.CONFIRMED) {
+            throw new IllegalArgumentException("Reservation is not confirmed.");
+        }
+
                 Bill bill = reservation.generateBill(paymentMethod);
                 double total = bill.getTotalAmount();
                 if (balance < total) {
@@ -114,7 +117,7 @@ throw new IllegalArgumentException("Payment type is not available.");
                     reservation.complete();
                     System.out.println("Payment successful.");
                     return;
-    }}
+    }
 
 public void setUsername(String username){
         if ( username==null  || username.length() <= 4)
