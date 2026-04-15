@@ -13,5 +13,33 @@ public class Main {
         System.out.println("Enter Date of Birth");
 
 
+        //Mohamed
+        //Check out
+        System.out.println("Receptionist managing check-out");
+        receptionist.manageCheckOut(reservation, PaymentMethod.Credit_Card);
+        System.out.println("Checkout complete. Bill generated.");
+
+        //online checkout
+        System.out.println("Guest attempting online check-out");
+        System.out.println("Guest attempting to pay via ONLINE payment...");
+        guest.onlineCheckout(reservation, PaymentMethod.ONLINE);
+        System.out.println("Guest's Balance After: $" + guest.getBalance());
+
+        //In-person checkout
+        System.out.println("Guest in reception");
+        System.out.println("Guest's current balance : $" + guest.getBalance());
+        System.out.println("Guest paying in CASH...");
+        guest.inPersonCheckout(reservation, PaymentMethod.CASH);
+        System.out.println("Guest's current balance: $" + guest.getBalance());
+
+        //admin checking bills
+        System.out.println("admin checking invoices");
+        System.out.println("Printing all system invoices...");
+
+        for (Bill b : HotelDatabase.bills) {
+            b.PrintBill();
+            System.out.println();
+        }
+
     }
 }
