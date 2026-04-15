@@ -13,20 +13,20 @@ public class Guest {
 
 
     public Guest(String username, String password, LocalDate dateOfBirth, double balance
-            , String address, Gender gender, String roomPreference) {
-        this.username=username;
-        setPassword(password);
-        this.dateOfBirth=dateOfBirth;
-        this.balance=balance;
-        this.address =address;
-        this.gender=gender;
-        this.roomPreference=roomPreference;
-    }
-    public void register(){
+               , String address, Gender gender, String roomPreference) {
+     this.username=username;
+     setPassword(password);
+     this.dateOfBirth=dateOfBirth;
+     this.balance=balance;
+     this.address =address;
+     this.gender=gender;
+     this.roomPreference=roomPreference;
+ }
+ public void register(){
         HotelDatabase.guests.add(this);                 //person 5
         System.out.println("Guest registered successfully.");
-    }
-    public static Guest login(String username,String password){
+ }
+ public static Guest login(String username,String password){
         if (username==null  ||  password==null){
             System.out.println("Invalid input.");
             return null;
@@ -75,11 +75,13 @@ public class Guest {
         System.out.println("Reservation cancelled.");
     }
     public void checkout(Reservation reservation,PaymentMethod paymentMethod){
+    public void checkout(Reservation reservation, PaymentMethod paymentMethod){
         if (reservation==null){
             System.out.println("No reservation.");
             return;
         }
         Bill bill =reservation.generateBill(paymentMethod);                            //person 4
+        Bill bill =reservation.generateBill( paymentMethod);                            //person 4
         double total =bill.getTotalAmount();                              //person 4
         if (balance>=total){
             balance -= total;
