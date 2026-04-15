@@ -58,7 +58,7 @@ throw new IllegalArgumentException("Invalid username or password.");
             throw new IllegalArgumentException("Invalid room");
         }
         if (!room.Isavailable()){
-            throw new exceptions.RoomNotAvailableException("Room is not available for booking.");
+            throw new RoomNotAvailableException("Room is not available for booking.");
         }
         Reservation reservation =new Reservation(this,room,checkIn,checkOut);
         HotelDatabase.reservations.add(reservation);
@@ -79,8 +79,7 @@ throw new IllegalArgumentException("Invalid username or password.");
             throw new IllegalArgumentException("No reservation.");
         }
         if (paymentMethod==PaymentMethod.ONLINE){
-            System.out.println("Online payment is not available.");
-            return;
+           throw new InvalidPaymentException("Online payment is not allowed for in-person checkout.");
         }
         if (reservation.getStatus()!=ReservationStatus.CONFIRMED) {
             throw new IllegalStateException("Reservation is not confirmed");
@@ -95,7 +94,7 @@ throw new IllegalArgumentException("Invalid username or password.");
                 System.out.println("Payment successful.");
             }
             else {
-                throw new exceptions.InvalidPaymentException("Guest balance is not enough to cover the bill.");
+                throw new InvalidPaymentException("Guest balance is not enough to cover the bill.");
         }
     }
     public void onlineCheckout(Reservation reservation,PaymentMethod paymentMethod){
@@ -105,19 +104,21 @@ throw new IllegalArgumentException("Invalid username or password.");
         if (paymentMethod==PaymentMethod.Credit_Card || paymentMethod==PaymentMethod.CASH){
 throw new IllegalArgumentException("Payment type is not available.");
         }
-            if (reservation.getStatus()==ReservationStatus.CONFIRMED) {
+        if (reservation.getStatus()!=ReservationStatus.CONFIRMED) {
+            throw new IllegalArgumentException("Reservation is not confirmed.");
+        }
+
                 Bill bill = reservation.generateBill(paymentMethod);
                 double total = bill.getTotalAmount();
                 if (balance < total) {
                     throw new InvalidPaymentException("Insufficient balance.");}
                 //person 4
-                if (balance >= total) {
                     balance -= total;
                     reservation.complete();
                     HotelDatabase.bills.add(bill);
                     System.out.println("Payment successful.");
                     return;
-    }}}
+    }
 
 public void setUsername(String username){
         if ( username==null  || username.length() <= 4)
@@ -132,7 +133,7 @@ public void setUsername(String username){
         this.balance = balance;
     }
     public void setDateOfBirth(LocalDate dateOfBirth) {
-        if ( dateOfBirth.isAfter(LocalDate.now())){
+        if ( dateOfBirth==null|| dateOfBirth.isAfter(LocalDate.now()) ){
             throw new IllegalArgumentException("Invalid date of birth");
         }
         this.dateOfBirth = dateOfBirth;
@@ -146,7 +147,7 @@ public void setUsername(String username){
 
     public void setRoomPreference(String roomPreference) {
         if (roomPreference==null || roomPreference.length() <= 4 )
-        {throw new IllegalArgumentException("Room pereference must be at least 4 characters"); }
+        {throw new IllegalArgumentException("Room preference must be at least 4 characters"); }
         this.roomPreference=roomPreference;
 
     }
@@ -175,7 +176,7 @@ public void setUsername(String username){
     public String getRoomPreference(){
         return roomPreference;
     }
-
+@Override
     public String toString(){
         return "Guest{" +
                 "username= '" +username+'\'' +

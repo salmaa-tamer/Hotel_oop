@@ -1,0 +1,93 @@
+Index: src/StaffSystem/Receptionist.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>package StaffSystem;\r\n\r\nimport java.time.LocalDate;\r\nimport GuestandRoomSystem.Reservation;\r\nimport GuestandRoomSystem.ReservationStatus;\r\nimport GuestandRoomSystem.PaymentMethod;\r\nimport GuestandRoomSystem.HotelDatabase;\r\nimport GuestandRoomSystem.Bill;\r\n\r\n\r\npublic class Receptionist extends Staff{\r\n\r\n    Receptionist(){\r\n        super();\r\n        this.role=Role.RECEPTIONIST;\r\n    }\r\n\r\n    public Receptionist(String username, String password, LocalDate dateOfBirth, int workingHours){\r\n        super(username, password, dateOfBirth, workingHours);\r\n        this.role=Role.RECEPTIONIST;\r\n    }\r\n\r\n    public void manageCheckIn(Reservation reservation){\r\n        if (reservation.getStatus()==ReservationStatus.PENDING){\r\n            reservation.confirm();\r\n            reservation.getRoom().setAvailablity(false);\r\n            return;\r\n        }\r\n        throw new IllegalArgumentException(\"Reservation not pending\");\r\n    }\r\n\r\n    public void manageCheckOut(Reservation reservation, PaymentMethod paymentMethod){\r\n        if (reservation.getStatus()==ReservationStatus.CONFIRMED){\r\n            reservation.complete();\r\n            reservation.getRoom().setAvailablity(true);\r\n            Bill bill=reservation.generateBill(paymentMethod);\r\n            HotelDatabase.bills.add(bill);\r\n            return;\r\n        }\r\n        throw new IllegalArgumentException(\"Reservation not confirmed\");\r\n    }\r\n\r\n\r\n}
+===================================================================
+diff --git a/src/StaffSystem/Receptionist.java b/src/StaffSystem/Receptionist.java
+--- a/src/StaffSystem/Receptionist.java	(revision 6badafb1c513744f753f741abd74363eb8695586)
++++ b/src/StaffSystem/Receptionist.java	(date 1776253748599)
+@@ -10,7 +10,7 @@
+ 
+ public class Receptionist extends Staff{
+ 
+-    Receptionist(){
++    public Receptionist(){
+         super();
+         this.role=Role.RECEPTIONIST;
+     }
+Index: src/GuestandRoomSystem/Main.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>package GuestandRoomSystem;\r\n\r\nimport java.time.LocalDate;\r\nimport java.util.Scanner;\r\npublic class Main {\r\n    static Scanner scanner = new Scanner(System.in);\r\n    public  static void main(String []args){\r\n        HotelDatabase.loadDummyData();\r\n        System.out.println(\"Enter Username : \");\r\n        String name = scanner.nextLine();\r\n        System.out.println(\"Enter Password\");\r\n        String password = scanner.nextLine();\r\n        System.out.println(\"Enter Date of Birth\");\r\n\r\n\r\n    }\r\n}\r\n
+===================================================================
+diff --git a/src/GuestandRoomSystem/Main.java b/src/GuestandRoomSystem/Main.java
+--- a/src/GuestandRoomSystem/Main.java	(revision 6badafb1c513744f753f741abd74363eb8695586)
++++ b/src/GuestandRoomSystem/Main.java	(date 1776256635004)
+@@ -1,7 +1,12 @@
+ package GuestandRoomSystem;
+ 
+ import java.time.LocalDate;
++import java.util.List;
+ import java.util.Scanner;
++import StaffSystem.Staff;
++import StaffSystem.Receptionist;
++import StaffSystem.Admin;
++
+ public class Main {
+     static Scanner scanner = new Scanner(System.in);
+     public  static void main(String []args){
+@@ -12,6 +17,54 @@
+         String password = scanner.nextLine();
+         System.out.println("Enter Date of Birth");
+ 
++        Receptionist receptionist = (Receptionist)HotelDatabase.staff.get(0);
++
++        String receptionistUsername = scanner.nextLine();
++        String receptionistPassword = scanner.nextLine();
++        receptionist.setUsername(receptionistUsername);
++        receptionist.setPassword(receptionistPassword);
++        receptionist.login(receptionistUsername,receptionistPassword);
+ 
++        Reservation reservation= HotelDatabase.reservations.get(0);
++        receptionist.manageCheckIn(reservation);
++
++        Admin admin = (Admin) HotelDatabase.staff.get(0);
++        Room room= HotelDatabase.rooms.get(0);
++
++        System.out.println("Enter the name of the room you would like to add: ");
++        String roomName = scanner.nextLine();
++        System.out.println("Enter the Room Id");
++        int roomId=scanner.nextInt();
++        System.out.println("Room Availability (true,flase)");
++        boolean availability = scanner.nextBoolean();
++        System.out.println("Room Floor: ");
++        int floor = scanner.nextInt();
++        System.out.println("Price per night: ");
++        double pricePerNight=scanner.nextDouble();
++
++        RoomType roomType=HotelDatabase.roomTypes.get(0);
++        List<Amenity> amenities=HotelDatabase.amenities;
++
++
++        Room newRoom=new Room(roomId,availability,floor,roomType,amenities,pricePerNight);
++        admin.createRoom(newRoom);
++        admin.readRoom(room);
++        admin.readAllRooms();
++
++        System.out.println("Enter the new price of the room: ");
++        double newPrice= scanner.nextDouble();
++        admin.updateRoomPrice(room,newPrice);
++
++        admin.deleteRoom(room);
++
++
++
++
++
++
++
++
++
++        scanner.close();
+     }
+ }
