@@ -1,5 +1,8 @@
 package GuestandRoomSystem;
 
+import StaffSystem.Admin;
+import StaffSystem.Receptionist;
+import StaffSystem.Role;
 import StaffSystem.Staff;
 
 import java.time.LocalDate;
@@ -43,6 +46,13 @@ public class HotelDatabase {
         Guest guest2 = new Guest("Fady", "24601", LocalDate.of(1999, 8, 15), 500.0, "EL Sheikh Zayed Cairo , Egypt", Gender.MALE, "Suite");
         guests.add(guest1);
         guests.add(guest2);
+
+        // Staff
+        Staff receptionist1 = new Receptionist("rec_sara", "welcome123", LocalDate.of(1998, 5, 20), 8);
+        Staff admin1 = new Admin("admin_boss", "supersecret", LocalDate.of(1985, 11, 2), 8);
+
+        staff.add(receptionist1);
+        staff.add(admin1);
 
         // Reservations
         Reservation res1 = new Reservation(guest1, room1, LocalDate.now().plusDays(1), LocalDate.now().plusDays(5));
