@@ -57,6 +57,8 @@ public class HotelDatabase {
 
         // Reservations
         Reservation res1 = new Reservation(guest1, room1, LocalDate.now().plusDays(1), LocalDate.now().plusDays(5));
+        res1.confirm();
+
         reservations.add(res1);
 
         // Bills
