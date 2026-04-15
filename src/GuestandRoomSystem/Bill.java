@@ -6,31 +6,31 @@ import exceptions.InvalidReservationException;
 import java.time.LocalDate;
 
 public class Bill {
-private Reservation reservation;
-private double FinalAmount;
-private PaymentMethod paymentMethod;
-private LocalDate  paymentDate;
+    private Reservation reservation;
+    private double FinalAmount;
+    private PaymentMethod paymentMethod;
+    private LocalDate  paymentDate;
 
-public Bill (Reservation MYreservation,PaymentMethod MYpaymentMethod){
-    setReservation(MYreservation);
-    setFinalAmount();
-    setPaymentMethod(MYpaymentMethod);
-    setPaymentDate();
-}
+    public Bill (Reservation MYreservation,PaymentMethod MYpaymentMethod){
+        setReservation(MYreservation);
+        setFinalAmount();
+        setPaymentMethod(MYpaymentMethod);
+        setPaymentDate();
+    }
 
     public void setReservation(Reservation reservation) {
-    if (reservation==null){
-        throw new InvalidReservationException("Reservation not found");
-    }
+        if (reservation==null){
+            throw new InvalidReservationException("Reservation not found");
+        }
         this.reservation = reservation;
     }
 
     public void setFinalAmount() {
         double money = reservation.CalculateTotalPrice();
-    if (money<=0){
-        throw new IllegalArgumentException("Invalid Amount");
-    }
-      FinalAmount=money;
+        if (money<=0){
+            throw new IllegalArgumentException("Invalid Amount");
+        }
+        this.FinalAmount=money;
     }
 
     public void setPaymentMethod(PaymentMethod paymentMethod) {
@@ -69,4 +69,3 @@ public Bill (Reservation MYreservation,PaymentMethod MYpaymentMethod){
         System.out.println("---Thanks for choosing us, we hope to see you soon:)---");
     }
 }
-

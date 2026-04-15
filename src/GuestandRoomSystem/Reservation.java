@@ -7,25 +7,23 @@ public class Reservation {
     private LocalDate checkInDate;
     private LocalDate checkOutDate;
     private ReservationStatus status ;
-public Reservation(Guest guest,Room room,LocalDate checkInDate,LocalDate checkOutDate){
-setGuest (guest);
-setRoom (room);
-setCheckInDate(checkInDate);
-setCheckOutDate(checkOutDate);
-this.status=ReservationStatus.PENDING;}
-
+    public Reservation(Guest guest,Room room,LocalDate checkInDate,LocalDate checkOutDate){
+        setGuest (guest);
+        setRoom (room);
+        setCheckInDate(checkInDate);
+        setCheckOutDate(checkOutDate);
+        status = ReservationStatus.PENDING;
+    }
     private void setCheckInDate(LocalDate checkInDate) {
         if (checkInDate==null){
             throw new InvalidReservationException("Check in date can't be empty");
         }
-        this.checkInDate=checkInDate;
+        this.checkInDate = checkInDate;
     }
-
-
     public void setGuest(Guest guest) {
-    if (guest==null){
-        throw new InvalidReservationException("invalid guest");
-    }
+        if (guest==null){
+            throw new InvalidReservationException("invalid guest");
+        }
         this.guest = guest;}
 
     public void setRoom(Room room) {
@@ -52,39 +50,59 @@ this.status=ReservationStatus.PENDING;}
         return guest; }
 
     public LocalDate getCheckOutDate() {
-         return checkOutDate; }
+        return checkOutDate; }
 
     public void cancel(){
-            this.status= ReservationStatus.CANCELLED ; }
+        if (status==ReservationStatus.COMPLETED){
+            throw new InvalidReservationException("Cannot cancel a completed reservation");
+        }
+        this.status= ReservationStatus.CANCELLED ; }
 
     public void confirm(){
-            this.status= ReservationStatus.CONFIRMED ; }
-
-    public void pending(){
-            this.status= ReservationStatus.PENDING ;}
+        if (status==ReservationStatus.COMPLETED){
+            throw new InvalidReservationException("Cannot confirm a completed reservation");
+        }
+        if (status==ReservationStatus.CANCELLED){
+            throw new InvalidReservationException("Cannot confirm a cancelled reservation");
+        }
+        this.status= ReservationStatus.CONFIRMED ; }
 
     public void complete(){
-            this.status= ReservationStatus.COMPLETED ; }
+        if (status==ReservationStatus.CANCELLED){
+            throw new InvalidReservationException("Cannot complete a cancelled reservation");
+        }
+        if (status==ReservationStatus.PENDING){
+            throw new InvalidReservationException("Cannot complete a reservation that is non confirmed");
+        }
+        this.status= ReservationStatus.COMPLETED ; }
 
+
+    public Bill generateBill (PaymentMethod paymentMethod){
+        if (status==ReservationStatus.PENDING ||status==ReservationStatus.CANCELLED) {
+            throw new InvalidReservationException("cannot generate a bill for a not confirmed reservation");}
+        Bill NewBill= new Bill (this,paymentMethod);
+        return NewBill;
+    }
     public ReservationStatus getStatus() {
         return status;
     }
 
     public double CalculateTotalPrice(){
-    long nights=checkOutDate.toEpochDay()-checkInDate.toEpochDay();
-   double TotalPrice= room.CalculateTotalPrice((int)nights);
-   return TotalPrice ;
-    }
-    public Bill generateBill(PaymentMethod paymentMethod){
-    Bill MyBill=new Bill(this,paymentMethod);
-    return MyBill;
+        if (checkInDate==null || checkOutDate==null){
+            throw new IllegalStateException("Dates are not set") ;
+
+        }
+        long nights=checkOutDate.toEpochDay()-checkInDate.toEpochDay();
+        if (nights<=0) {
+            throw new IllegalArgumentException("Invalid number of nights");
+        }
+        double TotalPrice= room.CalculateTotalPrice((int)nights);
+        return TotalPrice ;
     }
     @Override
-public String toString(){
-    return "Guest:"+guest.username +
-    "\nRoom:"+ room.getRoomnumber()+
-    "\nStatus:"+getStatus();
+    public String toString(){
+        return "Guest:"+ guest.getUsername()+
+                "\nRoom:"+ room.getRoomnumber()+
+                "\nStatus:"+getStatus();
+    }
 }
-}
-
-
