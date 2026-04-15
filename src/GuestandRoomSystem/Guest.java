@@ -28,10 +28,7 @@ public class Guest {
  }
  public static Guest login(String username,String password){
         if (username==null  ||  password==null){
-            System.out.println("Invalid input.");
-            return null;
-        }
-
+            throw new IllegalArgumentException("Invalid input.");}
         for(Guest g :HotelDatabase.guests){
             if (username.equals(g.username) && password.equals(g.password)){
                 System.out.println("Login successful.");
@@ -50,6 +47,7 @@ public class Guest {
             }
         }
         if(!found){
+
             System.out.println("No rooms available.");
         }
     }
@@ -102,15 +100,21 @@ public class Guest {
     }
     public void onlineCheckout(Reservation reservation,PaymentMethod paymentMethod){
         if (reservation==null) {
-            System.out.println("No reservation.");
-            return;
+            throw new IllegalArgumentException("No reservation found.");
         }
         if (paymentMethod==PaymentMethod.Credit_Card || paymentMethod==PaymentMethod.CASH){
-            System.out.println("Payment type is not available.");
-            return;
+throw new IllegalArgumentException("Payment type is not available.");
         }
-  this.dateOfBirth=dateOfBirth;
-    }
+            if (reservation.getStatus()==ReservationStatus.CONFIRMED) {
+                Bill bill = reservation.generateBill(paymentMethod);
+                //person 4
+                double total = bill.getTotalAmount();
+                if (balance >= total) {
+                    balance -= total;
+                    reservation.complete();
+                    System.out.println("Payment successful.");
+                    return;
+    }}}
 
 public void setUsername(String username){
         if (username.length() <= 4|| username==null )
@@ -123,6 +127,12 @@ public void setUsername(String username){
             throw new IllegalArgumentException("Invalid balance");
         }
         this.balance = balance;
+    }
+    public void setDateOfBirth(LocalDate dateOfBirth) {
+        if ( dateOfBirth.isAfter(LocalDate.now())){
+            throw new IllegalArgumentException("Invalid date of birth");
+        }
+        this.dateOfBirth = dateOfBirth;
     }
 
     public void setAddress(String address) {
