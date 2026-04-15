@@ -9,12 +9,30 @@ import java.util.Scanner;
 public class Main {
     static Scanner scanner = new Scanner(System.in);
     public  static void main(String []args){
+
         HotelDatabase.loadDummyData();
         System.out.println("Enter Username : ");
-        String name = scanner.nextLine();
+        String username = scanner.nextLine();
         System.out.println("Enter Password");
         String password = scanner.nextLine();
-        System.out.println("Enter Date of Birth");
+        Guest guest = Guest.login(username ,password);
+        guest = HotelDatabase.guests.get(0);
+        guest.register();
+        guest.viewAvailableRooms();
+        System.out.println("Guest makes reservation test");
+        System.out.println("Enter check in date");
+        String checkinDateInput = scanner.nextLine();
+        LocalDate checkinDate = LocalDate.parse(checkinDateInput);
+        System.out.println("Enter check out date");
+        String checkoutDateInput = scanner.nextLine();
+        LocalDate checkoutDate = LocalDate.parse(checkoutDateInput);
+        Room room= HotelDatabase.rooms.get(0);
+        guest.makeReservation(room,checkinDate,checkoutDate);
+
+        for (Bill b : HotelDatabase.bills) {
+            b.PrintBill();
+            System.out.println();
+        }
         Receptionist receptionist = (Receptionist)HotelDatabase.staff.get(0);
 
         String receptionistUsername = scanner.nextLine();
@@ -27,7 +45,7 @@ public class Main {
         receptionist.manageCheckIn(reservation);
 
         Admin admin = (Admin) HotelDatabase.staff.get(0);
-        Room room= HotelDatabase.rooms.get(0);
+
 
         System.out.println("Enter the name of the room you would like to add: ");
         String roomName = scanner.nextLine();
@@ -54,9 +72,7 @@ public class Main {
         admin.updateRoomPrice(room,newPrice);
 
         admin.deleteRoom(room);
-
-
-        //Mohamed
+//Mohamed
         //Check out
         System.out.println("Receptionist managing check-out");
         receptionist.manageCheckOut(reservation, PaymentMethod.Credit_Card);
@@ -83,6 +99,5 @@ public class Main {
             b.PrintBill();
             System.out.println();
         }
-
     }
 }
