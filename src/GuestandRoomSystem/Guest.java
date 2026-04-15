@@ -74,26 +74,30 @@ public class Guest {
         reservation.cancel();                                        //person 4
         System.out.println("Reservation cancelled.");
     }
-    public void checkout(Reservation reservation, PaymentMethod paymentMethod){
+    public void checkout(Reservation reservation,PaymentMethod paymentMethod){
+
         if (reservation==null){
             System.out.println("No reservation.");
             return;
         }
-        Bill bill =reservation.generateBill( paymentMethod);                            //person 4
-        double total =bill.getTotalAmount();                              //person 4
-        if (balance>=total){
-            balance -= total;
-            reservation.complete();                                        //person 4
-            System.out.println("Payment successful.");
-        }
-        else {
-            throw new exceptions.InvalidPaymentException("Guest balance is not enough to cover the bill.");
+        if (reservation.getStatus()==ReservationStatus.CONFIRMED) {
+            Bill bill = reservation.generateBill(paymentMethod);                            //person 4
+            //person 4
+            double total = bill.getTotalAmount();                              //person 4
+            if (balance >= total) {
+                balance -= total;
+                reservation.complete();                                        //person 4
+                System.out.println("Payment successful.");
+            }
+            else {
+                throw new exceptions.InvalidPaymentException("Guest balance is not enough to cover the bill.");
+            }
         }
     }
 
 
     public String getUsername(){
-        return username;
+           return username;
     }
     public void setPassword(String password){
         this.password=password;

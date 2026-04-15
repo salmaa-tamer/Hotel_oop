@@ -5,7 +5,7 @@ import exceptions.InvalidReservationException;
 
 import java.time.LocalDate;
 
-public class Bill {
+public class Bill implements Payable{
     private Reservation reservation;
     private double FinalAmount;
     private PaymentMethod paymentMethod;
@@ -67,5 +67,10 @@ public class Bill {
         System.out.println("Payment Method:"+paymentMethod);
         System.out.println("Payment Date:"+paymentDate);
         System.out.println("---Thanks for choosing us, we hope to see you soon:)---");
+    }
+
+    @Override
+    public void pay(double amount, PaymentMethod method) {
+        System.out.println("Paid $" + amount + " using " + method);
     }
 }
