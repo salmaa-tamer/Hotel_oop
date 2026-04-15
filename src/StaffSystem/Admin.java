@@ -8,7 +8,7 @@ import GuestandRoomSystem.Room;
 import GuestandRoomSystem.RoomType;
 
 
-public class Admin extends Staff{
+public class Admin extends Staff implements Manageable {
 
         Admin(){
             super();
@@ -179,6 +179,22 @@ public class Admin extends Staff{
             }
         }
         throw new IllegalArgumentException("There is no such room type");
+    }
+
+    //interface
+    @Override
+    public void add(Object item) {
+        System.out.println(item.toString() + " added.");
+    }
+
+    @Override
+    public void remove(Object item) {
+        System.out.println(item.toString() + " removed.");
+    }
+
+    @Override
+    public void update(Object item) {
+        System.out.println(item.toString() + " updated.");
     }
 
 }
