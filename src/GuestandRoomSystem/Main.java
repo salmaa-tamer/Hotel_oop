@@ -12,6 +12,7 @@ public class Main {
         String password = scanner.nextLine();
         System.out.println("Enter Date of Birth");
 
+
         //Mohamed
         //Check out
         System.out.println("Receptionist managing check-out");
@@ -39,7 +40,6 @@ public class Main {
             b.PrintBill();
             System.out.println();
         }
-
 
     }
 }
