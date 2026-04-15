@@ -114,6 +114,7 @@ throw new IllegalArgumentException("Payment type is not available.");
                 if (balance >= total) {
                     balance -= total;
                     reservation.complete();
+                    HotelDatabase.bills.add(bill);
                     System.out.println("Payment successful.");
                     return;
     }}}
