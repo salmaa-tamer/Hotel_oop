@@ -74,10 +74,14 @@ public class Guest {
         reservation.cancel();                                        //person 4
         System.out.println("Reservation cancelled.");
     }
-    public void checkout(Reservation reservation,PaymentMethod paymentMethod){
+    public void inPersonCheckout(Reservation reservation,PaymentMethod paymentMethod){
 
         if (reservation==null){
             System.out.println("No reservation.");
+            return;
+        }
+        if (paymentMethod==PaymentMethod.ONLINE){
+            System.out.println("Online payment is not available.");
             return;
         }
         if (reservation.getStatus()==ReservationStatus.CONFIRMED) {
@@ -93,6 +97,30 @@ public class Guest {
                 throw new exceptions.InvalidPaymentException("Guest balance is not enough to cover the bill.");
             }
         }
+    }
+    public void onlineCheckout(Reservation reservation,PaymentMethod paymentMethod){
+        if (reservation==null) {
+            System.out.println("No reservation.");
+            return;
+        }
+        if (paymentMethod==PaymentMethod.Credit_Card && paymentMethod==PaymentMethod.CASH){
+            System.out.println("Payment type is not available.");
+            return;
+        }
+        reservation.confirm();
+        Bill bill = reservation.generateBill(paymentMethod);                            //person 4
+        //person 4
+        double total = bill.getTotalAmount();                              //person 4
+        if (balance >= total) {
+            balance -= total;
+            reservation.complete();                                        //person 4
+            System.out.println("Payment successful.");
+            HotelDatabase.bills.add(bill);
+        }
+        else {
+            throw new exceptions.InvalidPaymentException("Guest balance is not enough to cover the bill.");
+        }
+
     }
 
 
