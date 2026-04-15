@@ -74,13 +74,14 @@ public class Guest {
         reservation.cancel();                                        //person 4
         System.out.println("Reservation cancelled.");
     }
-    public void checkout(Reservation reservation, PaymentMethod paymentMethod){
+    public void checkout(Reservation reservation,PaymentMethod paymentMethod){
+
         if (reservation==null){
             System.out.println("No reservation.");
             return;
         }
-
-        Bill bill =reservation.generateBill( paymentMethod);                            //person 4
+        Bill bill =reservation.generateBill(paymentMethod);                            //person 4
+                                  //person 4
         double total =bill.getTotalAmount();                              //person 4
         if (balance>=total){
             balance -= total;
@@ -94,7 +95,7 @@ public class Guest {
 
 
     public String getUsername(){
-        return username;
+           return username;
     }
     public void setPassword(String password){
         this.password=password;
