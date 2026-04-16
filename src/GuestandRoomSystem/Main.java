@@ -17,10 +17,10 @@ public class Main {
         String password = scanner.nextLine();
         Guest guest = Guest.login(username ,password);
         guest = HotelDatabase.guests.get(0);
-        guest.register();
+        System.out.println("View Available Rooms");
         guest.viewAvailableRooms();
         System.out.println("Guest makes reservation test");
-        System.out.println("Enter check in date");
+        System.out.println("Enter check in date (YYYY-MM-DD)");
         String checkinDateInput = scanner.nextLine();
         LocalDate checkinDate = LocalDate.parse(checkinDateInput);
         System.out.println("Enter check out date");
