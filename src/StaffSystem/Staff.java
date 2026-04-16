@@ -18,10 +18,10 @@ public abstract class Staff{
     Staff(){}
 
     Staff(String username, String password, LocalDate dateOfBirth, int workingHours){
-        this.username = username;
-        this.password = password;
-        this. dateOfBirth = dateOfBirth;
-        this.workingHours =workingHours;
+        setUsername(username);
+        setPassword(password);
+        setDateOfBirth(dateOfBirth);
+        setWorkingHours(workingHours);
     }
 
 

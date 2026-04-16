@@ -121,7 +121,7 @@ throw new IllegalArgumentException("Payment type is not available.");
     }
 
 public void setUsername(String username){
-        if ( username==null  || username.length() <= 4)
+        if ( username==null  || username.length() < 4)
         {throw new IllegalArgumentException("username must be at least 4 characters"); }
         this.username=username;
 }
