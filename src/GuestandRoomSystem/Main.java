@@ -6,98 +6,122 @@ import StaffSystem.Receptionist;
 import java.time.LocalDate;
 import java.util.List;
 import java.util.Scanner;
+
 public class Main {
     static Scanner scanner = new Scanner(System.in);
-    public  static void main(String []args){
+
+    public static void main(String []args){
 
         HotelDatabase.loadDummyData();
-        System.out.println("Enter Username : ");
-        String username = scanner.nextLine();
-        System.out.println("Enter Password");
-        String password = scanner.nextLine();
-        Guest guest = Guest.login(username ,password);
-        guest = HotelDatabase.guests.get(0);
-        System.out.println("View Available Rooms");
-        guest.viewAvailableRooms();
-        System.out.println("Guest makes reservation test");
-        System.out.println("Enter check in date (YYYY-MM-DD)");
-        String checkinDateInput = scanner.nextLine();
-        LocalDate checkinDate = LocalDate.parse(checkinDateInput);
-        System.out.println("Enter check out date");
-        String checkoutDateInput = scanner.nextLine();
-        LocalDate checkoutDate = LocalDate.parse(checkoutDateInput);
-        Room room= HotelDatabase.rooms.get(0);
-        guest.makeReservation(room,checkinDate,checkoutDate);
-
-        for (Bill b : HotelDatabase.bills) {
-            b.PrintBill();
-            System.out.println();
-        }
         Receptionist receptionist = (Receptionist)HotelDatabase.staff.get(0);
+        Reservation reservation = HotelDatabase.reservations.get(0);
+        Room room = HotelDatabase.rooms.get(0);
 
-        String receptionistUsername = scanner.nextLine();
-        String receptionistPassword = scanner.nextLine();
-        receptionist.setUsername(receptionistUsername);
-        receptionist.setPassword(receptionistPassword);
-        receptionist.login(receptionistUsername,receptionistPassword);
+        System.out.println("Are you a staff member or a guest?");
+        System.out.println("1. Guest \n2. Staff");
+        int choice = scanner.nextInt();
+        scanner.nextLine();
 
-        Reservation reservation= HotelDatabase.reservations.get(0);
-        receptionist.manageCheckIn(reservation);
+        if (choice == 1) {
+            System.out.println("Enter Username : ");
+            String username = scanner.nextLine();
+            System.out.println("Enter Password : ");
+            String password = scanner.nextLine();
 
-        Admin admin = (Admin) HotelDatabase.staff.get(0);
+            Guest guest = Guest.login(username, password);
 
+            if (guest != null) {
+                System.out.println("View Available Rooms");
+                guest.viewAvailableRooms();
 
-        System.out.println("Enter the name of the room you would like to add: ");
-        String roomName = scanner.nextLine();
-        System.out.println("Enter the Room Id");
-        int roomId=scanner.nextInt();
-        System.out.println("Room Availability (true,flase)");
-        boolean availability = scanner.nextBoolean();
-        System.out.println("Room Floor: ");
-        int floor = scanner.nextInt();
-        System.out.println("Price per night: ");
-        double pricePerNight=scanner.nextDouble();
+                System.out.println("Guest makes reservation test");
+                System.out.println("Enter check in date (YYYY-MM-DD): ");
+                String checkinDateInput = scanner.nextLine();
+                LocalDate checkinDate = LocalDate.parse(checkinDateInput);
 
-        RoomType roomType=HotelDatabase.roomTypes.get(0);
-        List<Amenity> amenities=HotelDatabase.amenities;
+                System.out.println("Enter check out date (YYYY-MM-DD): ");
+                String checkoutDateInput = scanner.nextLine();
+                LocalDate checkoutDate = LocalDate.parse(checkoutDateInput);
 
+                guest.makeReservation(room, checkinDate, checkoutDate);
 
-        Room newRoom=new Room(roomId,availability,floor,roomType,amenities,pricePerNight);
-        admin.createRoom(newRoom);
-        admin.readRoom(room);
-        admin.readAllRooms();
+                Reservation newRes = HotelDatabase.reservations.get(HotelDatabase.reservations.size() - 1);
 
-        System.out.println("Enter the new price of the room: ");
-        double newPrice= scanner.nextDouble();
-        admin.updateRoomPrice(room,newPrice);
+                System.out.println("Guest in reception");
+                System.out.println("Guest's current balance : $" + guest.getBalance());
+                System.out.println("Guest paying in CASH...");
 
-        admin.deleteRoom(room);
-//Mohamed
-        //Check out
-        System.out.println("Receptionist managing check-out");
-        receptionist.manageCheckOut(reservation, PaymentMethod.Credit_Card);
-        System.out.println("Checkout complete. Bill generated.");
+                receptionist.manageCheckIn(newRes);
+                guest.inPersonCheckout(newRes, PaymentMethod.CASH);
 
-        //online checkout
-        System.out.println("Guest attempting online check-out");
-        System.out.println("Guest attempting to pay via ONLINE payment...");
-        guest.onlineCheckout(reservation, PaymentMethod.ONLINE);
-        System.out.println("Guest's Balance After: $" + guest.getBalance());
+                System.out.println("Guest's current balance: $" + guest.getBalance());
 
-        //In-person checkout
-        System.out.println("Guest in reception");
-        System.out.println("Guest's current balance : $" + guest.getBalance());
-        System.out.println("Guest paying in CASH...");
-        guest.inPersonCheckout(reservation, PaymentMethod.CASH);
-        System.out.println("Guest's current balance: $" + guest.getBalance());
+                System.out.println("\nPrinting all system invoices:");
+                for (Bill b : HotelDatabase.bills) {
+                    b.PrintBill();
+                    System.out.println();
+                }
+            }
 
-        //admin checking bills
-        System.out.println("admin checking invoices");
-        System.out.println("Printing all system invoices...");
+        }
+        else if (choice == 2) {
+            System.out.println("Are you a receptionist or an admin?");
+            System.out.println("1. Receptionist \n2. Admin");
+            int choice2 = scanner.nextInt();
+            scanner.nextLine();
 
-        for (Bill b : HotelDatabase.bills) {
-            b.PrintBill();
-            System.out.println();
+            if (choice2 == 1) {
+                System.out.println("Receptionist managing system");
+                System.out.println("Enter username: ");
+                String receptionistUsername = scanner.nextLine();
+                System.out.println("Enter password: ");
+                String receptionistPassword = scanner.nextLine();
+
+                receptionist.login(receptionistUsername, receptionistPassword);
+
+                System.out.println("Guest checking in or checking out?");
+                System.out.println("1. Checking in\n2. Checking out");
+                int choice3 = scanner.nextInt();
+                scanner.nextLine();
+
+                if (choice3 == 1) {
+                    receptionist.manageCheckIn(reservation);
+                    System.out.println("Welcome.");
+                }
+                else if (choice3 == 2) {
+                    System.out.println("Receptionist managing check-out...");
+                    receptionist.manageCheckOut(reservation, PaymentMethod.Credit_Card);
+                    System.out.println("Checkout complete. Bill generated.");
+                }
+            }
+            else if (choice2 == 2) {
+                System.out.println("Admin checking system");
+                Admin admin = (Admin) HotelDatabase.staff.get(1);
+
+                System.out.println("Enter the Room Id: ");
+                int roomId = scanner.nextInt();
+                System.out.println("Room Availability (true/false): ");
+                boolean availability = scanner.nextBoolean();
+                System.out.println("Room Floor: ");
+                int floor = scanner.nextInt();
+                System.out.println("Price per night: ");
+                double pricePerNight = scanner.nextDouble();
+
+                RoomType roomType = HotelDatabase.roomTypes.get(0);
+                List<Amenity> amenities = HotelDatabase.amenities;
+
+                Room newRoom = new Room(roomId, availability, floor, roomType, amenities, pricePerNight);
+                admin.createRoom(newRoom);
+                admin.readAllRooms();
+
+                System.out.println("Enter the new price of the room: ");
+                double newPrice = scanner.nextDouble();
+                admin.updateRoomPrice(room, newPrice);
+
+                System.out.println("Deleting room to test functionality...");
+                admin.deleteRoom(room);
+                admin.readAllRooms();
+            }
         }
     }
 }

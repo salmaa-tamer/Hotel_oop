@@ -19,11 +19,11 @@ public class HotelDatabase {
     public static ArrayList<RoomType> roomTypes = new ArrayList<>();
     public static ArrayList<Amenity> amenities = new ArrayList<>();
 
-    // 3. The Dummy Data
+    // 2. The Dummy Data
     public static void loadDummyData() {
         // Room Types
-        RoomType single = new RoomType("Single", 1, 100.0, 1);
-        RoomType suite = new RoomType("Suite", 4, 350.0, 2);
+        RoomType single = new RoomType("Single", 1, 120.0, 1);
+        RoomType suite = new RoomType("Suite", 4, 400.0, 2);
 
         roomTypes.add(single);
         roomTypes.add(suite);
@@ -56,8 +56,8 @@ public class HotelDatabase {
         staff.add(admin1);
 
         // Reservations
-        Reservation res1 = new Reservation(guest1, room1, LocalDate.now().plusDays(1), LocalDate.now().plusDays(5));
-        res1.confirm();
+        Reservation res1 = new Reservation(guest1, room1, LocalDate.now().plusDays(1), LocalDate.now().plusDays(1));
+        //res1.confirm();
 
         reservations.add(res1);
 

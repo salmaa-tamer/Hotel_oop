@@ -90,6 +90,7 @@ throw new IllegalArgumentException("Invalid username or password.");
             double total = bill.getTotalAmount();
             if (balance >= total) {
                 balance -= total;
+                HotelDatabase.bills.add(bill);
                 reservation.complete();
                 System.out.println("Payment successful.");
             }
