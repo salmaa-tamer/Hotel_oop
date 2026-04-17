@@ -56,7 +56,7 @@ public class HotelDatabase {
         staff.add(admin1);
 
         // Reservations
-        Reservation res1 = new Reservation(guest1, room1, LocalDate.now().plusDays(1), LocalDate.now().plusDays(1));
+        Reservation res1 = new Reservation(guest1, room1, LocalDate.now().plusDays(1), LocalDate.now().plusDays(3));
         //res1.confirm();
 
         reservations.add(res1);

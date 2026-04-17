@@ -36,7 +36,7 @@ public class Reservation {
         if (checkOutDate==null){
             throw new InvalidReservationException("Check out date can't be empty");
         }
-        if (checkOutDate.isBefore(this.checkInDate)){
+        if (checkOutDate.isBefore(this.checkInDate) || checkOutDate.isEqual(this.checkInDate)){
             throw new InvalidReservationException("Check out date can't be before check in date");}
         this.checkOutDate = checkOutDate; }
 
@@ -93,7 +93,7 @@ public class Reservation {
 
         }
         long nights=checkOutDate.toEpochDay()-checkInDate.toEpochDay();
-        if (nights<=0) {
+        if (nights<0) {
             throw new IllegalArgumentException("Invalid number of nights");
         }
         double TotalPrice= room.CalculateTotalPrice((int)nights);
