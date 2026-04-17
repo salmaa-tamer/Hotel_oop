@@ -63,6 +63,7 @@ public class Main {
                         for (Bill b : HotelDatabase.bills) {
                             b.PrintBill();
                             System.out.println();
+                            break;
                         }
                     }
 
