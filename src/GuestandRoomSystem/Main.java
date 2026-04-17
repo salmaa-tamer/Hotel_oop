@@ -14,55 +14,64 @@ public class Main {
 
         HotelDatabase.loadDummyData();
         Receptionist receptionist = (Receptionist)HotelDatabase.staff.get(0);
-        Reservation reservation = HotelDatabase.reservations.get(0);
         Room room = HotelDatabase.rooms.get(0);
-
+        Reservation reservation1 =HotelDatabase.reservations.get(0);
         System.out.println("Are you a staff member or a guest?");
         System.out.println("1. Guest \n2. Staff");
         int choice = scanner.nextInt();
         scanner.nextLine();
 
         if (choice == 1) {
-            System.out.println("Enter Username : ");
-            String username = scanner.nextLine();
-            System.out.println("Enter Password : ");
-            String password = scanner.nextLine();
+            boolean run = true;
+            do {
+                try {
+                    System.out.println("Enter Username : ");
+                    String username = scanner.nextLine();
+                    System.out.println("Enter Password : ");
+                    String password = scanner.nextLine();
 
-            Guest guest = Guest.login(username, password);
+                    Guest guest = Guest.login(username, password);
 
-            if (guest != null) {
-                System.out.println("View Available Rooms");
-                guest.viewAvailableRooms();
 
-                System.out.println("Guest makes reservation test");
-                System.out.println("Enter check in date (YYYY-MM-DD): ");
-                String checkinDateInput = scanner.nextLine();
-                LocalDate checkinDate = LocalDate.parse(checkinDateInput);
+                    if (guest != null) {
+                        System.out.println("View Available Rooms");
+                        guest.viewAvailableRooms();
 
-                System.out.println("Enter check out date (YYYY-MM-DD): ");
-                String checkoutDateInput = scanner.nextLine();
-                LocalDate checkoutDate = LocalDate.parse(checkoutDateInput);
+                        System.out.println("Guest makes reservation test");
+                        System.out.println("Enter check in date (YYYY-MM-DD): ");
+                        String checkinDateInput = scanner.nextLine();
+                        LocalDate checkinDate = LocalDate.parse(checkinDateInput);
 
-                guest.makeReservation(room, checkinDate, checkoutDate);
+                        System.out.println("Enter check out date (YYYY-MM-DD): ");
+                        String checkoutDateInput = scanner.nextLine();
+                        LocalDate checkoutDate = LocalDate.parse(checkoutDateInput);
 
-                Reservation newRes = HotelDatabase.reservations.get(HotelDatabase.reservations.size() - 1);
+                        guest.makeReservation(room, checkinDate, checkoutDate);
 
-                System.out.println("Guest in reception");
-                System.out.println("Guest's current balance : $" + guest.getBalance());
-                System.out.println("Guest paying in CASH...");
+                        Reservation reservation = new Reservation(guest, room, checkinDate, checkoutDate);
 
-                receptionist.manageCheckIn(newRes);
-                guest.inPersonCheckout(newRes, PaymentMethod.CASH);
+                        System.out.println("Guest in reception");
+                        System.out.println("Guest's current balance : $" + guest.getBalance());
+                        System.out.println("Guest paying in CASH...");
 
-                System.out.println("Guest's current balance: $" + guest.getBalance());
+                        receptionist.manageCheckIn(reservation);
+                        guest.inPersonCheckout(reservation, PaymentMethod.CASH);
 
-                System.out.println("\nPrinting all system invoices:");
-                for (Bill b : HotelDatabase.bills) {
-                    b.PrintBill();
-                    System.out.println();
+                        System.out.println("Guest's current balance: $" + guest.getBalance());
+
+                        System.out.println("\nPrinting all system invoices:");
+                        for (Bill b : HotelDatabase.bills) {
+                            b.PrintBill();
+                            System.out.println();
+                        }
+                    }
+
                 }
-            }
-
+                catch (IllegalArgumentException e) {
+                    System.out.println("Invalid username or password\n");
+                    run=false;
+                }
+            }while (run==false);
         }
         else if (choice == 2) {
             System.out.println("Are you a receptionist or an admin?");
@@ -85,12 +94,12 @@ public class Main {
                 scanner.nextLine();
 
                 if (choice3 == 1) {
-                    receptionist.manageCheckIn(reservation);
+                    receptionist.manageCheckIn(reservation1);
                     System.out.println("Welcome.");
                 }
                 else if (choice3 == 2) {
                     System.out.println("Receptionist managing check-out...");
-                    receptionist.manageCheckOut(reservation, PaymentMethod.Credit_Card);
+                    receptionist.manageCheckOut(reservation1, PaymentMethod.Credit_Card);
                     System.out.println("Checkout complete. Bill generated.");
                 }
             }
