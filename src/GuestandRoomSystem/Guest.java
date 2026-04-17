@@ -29,7 +29,8 @@ public class Guest {
  }
  public static Guest login(String username,String password){
         if (username==null  ||  password==null){
-            throw new IllegalArgumentException("Invalid input.");}
+            throw new IllegalArgumentException("Invalid input.");
+        }
         for(Guest g :HotelDatabase.guests){
             if (username.equals(g.username) && password.equals(g.password)){
                 System.out.println("Login successful.");
