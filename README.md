@@ -1,13 +1,16 @@
 
 1.INTRODUCTION
-This project focuses on building a Hotel Reservation System using Java, with an emphasis on applying Object-Oriented Programming (OOP) concepts. The goal is to design a system that manages hotel operations such as guest registration, room booking, and payment handling in a structured and organized way.
+
+  This project focuses on building a Hotel Reservation System using Java, with an emphasis on applying Object-Oriented Programming (OOP) concepts. The goal is to design a system that manages hotel operations such as guest registration, room booking, and payment handling in a structured and organized way.
 In this milestone, the main focus is on developing the backend logic only, without a graphical user interface. The system is built using well-designed classes that represent real-world entities like guests, rooms, reservations, and staff members.
 
 2.PROBLEM DESCRIPTION
-Managing hotel reservations manually or with unstructured systems can lead to issues such as booking conflicts and difficulty tracking guests and rooms. This system was designed to organize data efficiently and allow both guests and staff to perform their tasks easily and correctly.
+
+  Managing hotel reservations manually or with unstructured systems can lead to issues such as booking conflicts and difficulty tracking guests and rooms. This system was designed to organize data efficiently and allow both guests and staff to perform their tasks easily and correctly.
 
 3.SYSTEM & DESIGN IMPLEMENTATION
-The system is built using multiple classes representing key entities. The Guest class allows users to register, log in, view available rooms, and manage their reservations (create, cancel, and checkout).
+
+  The system is built using multiple classes representing key entities. The Guest class allows users to register, log in, view available rooms, and manage their reservations (create, cancel, and checkout).
 A base Staff class is used, with Admin and Receptionist inheriting from it. The Admin handles managing rooms, room types, and amenities (CRUD operations), while the Receptionist is responsible for reservation-related tasks such as check-in and check-out.
 Rooms are represented by a Room class, which is associated with a RoomType and a list of Amenity objects. The Reservation class stores booking details including guest, room, dates, and status. The Invoice class handles payment information during checkout.
 All data is stored using an in-memory database implemented with ArrayLists for guests, rooms, reservations, and invoices.
