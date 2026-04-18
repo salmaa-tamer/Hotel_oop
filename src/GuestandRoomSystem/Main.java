@@ -193,15 +193,31 @@ public class Main {
 
                 guest.makeReservation(room, checkinDate, checkoutDate);
                 Reservation reservation = new Reservation(guest, room, checkinDate, checkoutDate);
+                System.out.println("How would you like to check out?");
+                System.out.println("1.In the Reception\n2.Online");
+                int checkoutChoice= scanner.nextInt();
+                scanner.nextLine();
+                if(checkoutChoice==1) {
 
-                System.out.println("Guest in reception");
-                System.out.println("Guest's current balance : $" + guest.getBalance());
-                System.out.println("Guest paying in CASH...");
+                    System.out.println("Guest in reception");
+                    System.out.println("Guest's initial balance : $" + guest.getBalance());
+                    System.out.println("Guest paying in CASH...");
 
-                receptionist.manageCheckIn(reservation);
-                guest.inPersonCheckout(reservation, PaymentMethod.CASH);
+                    receptionist.manageCheckIn(reservation);
+                    guest.inPersonCheckout(reservation, PaymentMethod.CASH);
+                }
+                else if (checkoutChoice==2){
+                    System.out.println("Guest checking out online");
+                    System.out.println("Guest's initial balance : $" + guest.getBalance());
+                    System.out.println("Guest paying ONLINE...");
+
+                    receptionist.manageCheckIn(reservation);
+                    guest.onlineCheckout(reservation, PaymentMethod.ONLINE);
+
+                }
 
                 System.out.println("Guest's current balance: $" + guest.getBalance());
+
 
                 System.out.println("\nPrinting your invoices:");
                 for (Bill b : HotelDatabase.bills) {
@@ -241,6 +257,7 @@ public class Main {
                 }
                 else if (choice3 == 2) {
                     System.out.println("Receptionist managing check-out...");
+                    reservation1.confirm();
                     receptionist.manageCheckOut(reservation1, PaymentMethod.Credit_Card);
                     System.out.println("Checkout complete. Bill generated.");
                 }
@@ -248,17 +265,18 @@ public class Main {
             else if (choice2 == 2) {
                 System.out.println("Admin checking system");
                 Admin admin = (Admin) HotelDatabase.staff.get(1);
-                System.out.println("Enter the Room Id: ");
+                System.out.println("Admin Adding a New Room");
+                System.out.println("Enter The Id of The New Room: ");
                 int roomId = scanner.nextInt();
                 System.out.println("Room Availability (true/false): ");
                 boolean availability = scanner.nextBoolean();
                 System.out.println("Room Floor: ");
                 int floor = scanner.nextInt();
-                System.out.println("Price per night: ");
+                System.out.println("Price Per Night: ");
                 double pricePerNight = scanner.nextDouble();
                 scanner.nextLine();
                 // admin sets new room type
-                System.out.println("Select Room Type:");
+                System.out.println("Select Room Type: ");
                 for (int i = 0; i < HotelDatabase.roomTypes.size(); i++) {
                     System.out.println((i + 1) + ". " + HotelDatabase.roomTypes.get(i));
                 }
@@ -295,7 +313,7 @@ public class Main {
                 } else {
                     System.out.println("Could not find a room with that ID");
                 }
-                // delete roomm
+                // delete room
                 System.out.println("\nEnter the Room ID you want to delete: ");
                 int idToDelete = scanner.nextInt();
                 Room roomToDelete = null;
