@@ -15,34 +15,49 @@ A base Staff class is used, with Admin and Receptionist inheriting from it. The 
 Rooms are represented by a Room class, which is associated with a RoomType and a list of Amenity objects. The Reservation class stores booking details including guest, room, dates, and status. The Invoice class handles payment information during checkout.
 All data is stored using an in-memory database implemented with ArrayLists for guests, rooms, reservations, and invoices.
 
-4.OOP CONCEPTS 
+4.OOP CONCEPTS
+
 Encapsulation: Attributes are private and accessed through getters and setters.
 Inheritance: Admin and Receptionist extend the Staff class 
 Enums: Used for gender, roles, reservation status, and payment methods.
 Validation & Exceptions: Ensures correct input and handles errors like unavailable rooms. 
 
 5.DESIGN DECISIONS
+
 Several design decisions were made to keep the system organized, clear, and easy to extend.
 5.1Separation of responsibilities
 Each class was designed to represent a single real-world entity (Guest, Room, Reservation, etc.), and each class handles its own logic. This makes the system easier to understand, test, and modify without affecting other parts. 
 
+
 5.2 Use of inheritance for staff roles
+
 A base Staff class was created to store common attributes such as username and password, while Admin and Receptionist extend it. This avoids code duplication and allows shared behavior to be reused while still supporting role-specific functionality. 
 
+
 5.3 Use of enums instead of strings
+
 Enums were used for values like gender, roles, reservation status, and payment methods. This prevents invalid inputs and makes the code more readable and safer compared to using plain strings. 
 
+
 5.4 In-memory database for simplicity
+
 Instead of connecting to an external database, ArrayLists were used to store system data. This simplifies development and allows easy testing of functionality without dealing with database setup. 
 
+
 5.5 Encapsulation and data protection:
+
 All attributes are private and accessed through getters and setters. This ensures that data is not modified directly and allows validation to be applied when values are updated. 
 
+
 5.6 Clear relationships between classes:
+
 Objects are connected logically (e.g., a Reservation links a Guest and a Room). This reflects real-world relationships and makes the system more intuitive. 
 
+
 5.7 Basic validation and exception handling:
+
 Input validation and custom exceptions were added to handle cases like invalid data or unavailable rooms. This improves system reliability and prevents unexpected behavior.
 
 6.CONCLUSION
+
 This milestone resulted in a well-structured backend system that simulates hotel operations effectively. It provides a strong foundation for adding a graphical interface and more advanced features in the next stage
