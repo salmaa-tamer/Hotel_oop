@@ -47,7 +47,7 @@ public abstract class Staff{
     }
 
     public void setDateOfBirth(LocalDate dateOfBirth) {
-        if(dateOfBirth.isAfter(LocalDate.now())){
+        if(dateOfBirth.isAfter(LocalDate.now()) || dateOfBirth==null){
             throw new IllegalArgumentException("Date Invalid");
         }
         this.dateOfBirth = dateOfBirth;
@@ -58,10 +58,10 @@ public abstract class Staff{
     }
 
     public void setWorkingHours(int workingHours){
-        if(workingHours<0){
+        if(workingHours<0 ){
             throw new IllegalArgumentException("Working hours must be greater than zero");
         }
-        this.workingHours = workingHours;
+      this.workingHours = workingHours;
     }
 
     public int getWorkingHours() {

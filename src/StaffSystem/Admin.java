@@ -2,10 +2,7 @@ package StaffSystem;
 
 import java.time.LocalDate;
 import java.util.ArrayList;
-import GuestandRoomSystem.HotelDatabase;
-import GuestandRoomSystem.Amenity;
-import GuestandRoomSystem.Room;
-import GuestandRoomSystem.RoomType;
+import GuestandRoomSystem.*;
 
 
 public class Admin extends Staff {
