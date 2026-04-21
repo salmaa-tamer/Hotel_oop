@@ -98,4 +98,12 @@ public abstract class Staff{
            System.out.println(reservation);
        }
     }
+
+    @Override
+    public String toString() {
+        return "Username: " + username +
+                "Role: " + role +
+                "Working Hours: " + workingHours +
+                "Date of Birth" + dateOfBirth;
+    }
 }
