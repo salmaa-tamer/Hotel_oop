@@ -180,4 +180,27 @@ public class Admin extends Staff {
         }
         throw new IllegalArgumentException("There is no such room type");
     }
+
+    public void staffRegistration(Staff newStaff){
+        for(Staff s : HotelDatabase.staff){
+            if(newStaff==s || newStaff==null){
+                throw new IllegalArgumentException("Staff member already exists or null");
+            }
+            return;
+        }
+        HotelDatabase.staff.add(newStaff);
+    }
+
+    public void readStaff(){
+            for(Staff s : HotelDatabase.staff){
+                System.out.println(s);
+            }
+    }
+
+    public void readAllBills(){
+            for(Bill b : HotelDatabase.bills){
+                System.out.println(b);
+            }
+    }
+
 }
