@@ -10,6 +10,7 @@
             <padding>
                 <Insets top="15" right="25" bottom="15" left="25"/>
             </padding>
+            <Label fx:id="nameLabel" style="-fx-font-weight: bold; -fx-text-fill: #2c3e50; -fx-font-size: 14px;" />
             <Label fx:id="roleLabel" style="-fx-font-weight: bold; -fx-text-fill: #2c3e50; -fx-font-size: 14px;" />
             <Label fx:id="hoursLabel" style="-fx-font-weight: bold; -fx-text-fill: #2c3e50; -fx-font-size: 14px;" />
         </HBox>
@@ -41,7 +42,7 @@
     <center>
         <VBox alignment="CENTER" spacing="20" style="-fx-background-color: #ffffff;">
             <Label text="System Dashboard" style="-fx-font-size: 28px; -fx-font-weight: bold; -fx-text-fill: #2c3e50;" />
-            <Label text="Select an action from the sidebar to begin." style="-fx-font-size: 16px; -fx-text-fill: #7f8c8d;" />
+            <Label text="Welcome back! Select an action from the sidebar." style="-fx-font-size: 16px; -fx-text-fill: #7f8c8d;" />
         </VBox>
     </center>
 
