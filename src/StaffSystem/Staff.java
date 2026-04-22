@@ -47,7 +47,7 @@ public abstract class Staff{
     }
 
     public void setDateOfBirth(LocalDate dateOfBirth) {
-        if(dateOfBirth.isAfter(LocalDate.now())){
+        if(dateOfBirth.isAfter(LocalDate.now()) || dateOfBirth==null){
             throw new IllegalArgumentException("Date Invalid");
         }
         this.dateOfBirth = dateOfBirth;
@@ -58,10 +58,10 @@ public abstract class Staff{
     }
 
     public void setWorkingHours(int workingHours){
-        if(workingHours<0){
+        if(workingHours<0 ){
             throw new IllegalArgumentException("Working hours must be greater than zero");
         }
-        this.workingHours = workingHours;
+      this.workingHours = workingHours;
     }
 
     public int getWorkingHours() {
@@ -97,5 +97,13 @@ public abstract class Staff{
        for (Reservation reservation : HotelDatabase.reservations){
            System.out.println(reservation);
        }
+    }
+
+    @Override
+    public String toString() {
+        return "Username: " + username +
+                "Role: " + role +
+                "Working Hours: " + workingHours +
+                "Date of Birth" + dateOfBirth;
     }
 }
