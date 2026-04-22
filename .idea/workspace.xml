@@ -5,18 +5,25 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="6ef86da0-53f2-4d5d-942d-a70b235a7772" name="Changes" comment="updated staff registration">
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_4_15_2026_1_52_AM_[Changes]/shelved.patch" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_4_15_2026_1_52_AM__Changes_.xml" beforeDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/GUI/MainFX.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/GUI/SceneManager.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/GUI/CODE/MainFX.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/GUI/CODE/MainFX.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Hotel reservation system.iml" beforeDir="false" afterPath="$PROJECT_DIR$/Hotel reservation system.iml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Class" />
+      </list>
+    </option>
+  </component>
   <component name="Git.Merge.Settings">
-    <option name="BRANCH" value="main" />
+    <option name="BRANCH" value="origin/main" />
   </component>
   <component name="Git.Settings">
     <option name="RECENT_BRANCH_BY_REPOSITORY">
@@ -32,12 +39,12 @@
     &quot;assignee&quot;: &quot;Sara-abdelsamie&quot;
   }
 }</component>
-  <component name="GithubPullRequestsUISettings"><![CDATA[{
-  "selectedUrlAndAccountId": {
-    "url": "https://github.com/salmaa-tamer/Hotel_oop.git",
-    "accountId": "2d6fde7a-37bd-4816-85af-598a0de0d1ed"
+  <component name="GithubPullRequestsUISettings">{
+  &quot;selectedUrlAndAccountId&quot;: {
+    &quot;url&quot;: &quot;https://github.com/salmaa-tamer/Hotel_oop.git&quot;,
+    &quot;accountId&quot;: &quot;2d6fde7a-37bd-4816-85af-598a0de0d1ed&quot;
   }
-}]]></component>
+}</component>
   <component name="McpProjectServerCommands">
     <commands />
     <urls />
@@ -57,22 +64,23 @@
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
     "Application.Main.executor": "Run",
+    "Application.MainFX.executor": "Run",
     "Application.Unnamed.executor": "Run",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager.252": "true",
     "RunOnceActivity.git.unshallow": "true",
-    "git-widget-placeholder": "Reem__Staff",
+    "git-widget-placeholder": "Sara__Roomsystem",
     "kotlin-language-version-configured": "true",
     "project.structure.last.edited": "Libraries",
-    "project.structure.proportion": "0.0",
-    "project.structure.side.proportion": "0.0"
+    "project.structure.proportion": "0.15",
+    "project.structure.side.proportion": "0.2"
   }
 }]]></component>
   <component name="RunManager">
-    <configuration name="Unnamed" type="Application" factoryName="Application" nameIsGenerated="true">
+    <configuration name="MainFX" type="Application" factoryName="Application" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="MainFX" />
       <module name="Hotel reservation system" />
-      <option name="VM_PARAMETERS" value="--module-path &quot;C:\Users\Reem Hetta\Downloads\javafx-sdk-26\lib&quot; --add-modules javafx.controls,javafx.fxml" />
+      <option name="VM_PARAMETERS" value="--module-path &quot;C:\Users\Reem Hetta\Downloads\javafx-sdk-26\lib&quot; --add-modules javafx.controls,javafx.fxml --module-path &quot;C:\Users\Dell\Desktop\javafx-sdk-26.0.1\lib&quot; --add-modules javafx.controls,javafx.fxml" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
