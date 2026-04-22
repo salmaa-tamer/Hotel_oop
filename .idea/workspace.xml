@@ -4,8 +4,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="6ef86da0-53f2-4d5d-942d-a70b235a7772" name="Changes" comment="added read bills method&#10;added read staff method&#10;added staff registration method">
-      <change beforePath="$PROJECT_DIR$/src/GUI/Controllers/ReceptionistDashboardController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/GUI/Controllers/ReceptionistDashboardController.java" afterDir="false" />
+    <list default="true" id="6ef86da0-53f2-4d5d-942d-a70b235a7772" name="Changes" comment="updated staff registration">
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_4_15_2026_1_52_AM_[Changes]/shelved.patch" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_4_15_2026_1_52_AM__Changes_.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/GUI/CODE/MainFX.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/GUI/CODE/MainFX.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -18,7 +21,7 @@
   <component name="Git.Settings">
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
-        <entry key="$PROJECT_DIR$" value="Milestone2" />
+        <entry key="$PROJECT_DIR$" value="Milestone1" />
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -32,12 +35,15 @@
   <component name="GithubPullRequestsUISettings"><![CDATA[{
   "selectedUrlAndAccountId": {
     "url": "https://github.com/salmaa-tamer/Hotel_oop.git",
-    "accountId": "01954553-8266-4029-91c2-c7f2542ddf91"
+    "accountId": "2d6fde7a-37bd-4816-85af-598a0de0d1ed"
   }
 }]]></component>
   <component name="McpProjectServerCommands">
     <commands />
     <urls />
+  </component>
+  <component name="ProblemsViewState">
+    <option name="selectedTabId" value="CurrentFile" />
   </component>
   <component name="ProjectColorInfo">{
   &quot;customColor&quot;: &quot;&quot;,
@@ -51,12 +57,27 @@
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
     "Application.Main.executor": "Run",
+    "Application.Unnamed.executor": "Run",
     "RunOnceActivity.ShowReadmeOnStart": "true",
+    "RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager.252": "true",
     "RunOnceActivity.git.unshallow": "true",
-    "git-widget-placeholder": "Mohamed__Database",
-    "kotlin-language-version-configured": "true"
+    "git-widget-placeholder": "Reem__Staff",
+    "kotlin-language-version-configured": "true",
+    "project.structure.last.edited": "Libraries",
+    "project.structure.proportion": "0.0",
+    "project.structure.side.proportion": "0.0"
   }
 }]]></component>
+  <component name="RunManager">
+    <configuration name="Unnamed" type="Application" factoryName="Application" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="MainFX" />
+      <module name="Hotel reservation system" />
+      <option name="VM_PARAMETERS" value="--module-path &quot;C:\Users\Reem Hetta\Downloads\javafx-sdk-26\lib&quot; --add-modules javafx.controls,javafx.fxml" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+  </component>
   <component name="SharedIndexes">
     <attachedChunks>
       <set>
@@ -104,7 +125,39 @@
       <option name="project" value="LOCAL" />
       <updated>1776813996540</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="added toString method to Staff Class">
+      <option name="closed" value="true" />
+      <created>1776814385695</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1776814385695</updated>
+    </task>
+    <task id="LOCAL-00006" summary="updated staff registration">
+      <option name="closed" value="true" />
+      <created>1776816884853</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1776816884853</updated>
+    </task>
+    <task id="LOCAL-00007" summary="tested staff registration">
+      <option name="closed" value="true" />
+      <created>1776816913228</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1776816913228</updated>
+    </task>
+    <task id="LOCAL-00008" summary="updated staff registration">
+      <option name="closed" value="true" />
+      <created>1776818737757</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1776818737757</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
@@ -113,6 +166,23 @@
     <MESSAGE value="UML Diagram uploaded" />
     <MESSAGE value="added read bills method" />
     <MESSAGE value="added read bills method&#10;added read staff method&#10;added staff registration method" />
-    <option name="LAST_COMMIT_MESSAGE" value="added read bills method&#10;added read staff method&#10;added staff registration method" />
+    <MESSAGE value="added toString method to Staff Class" />
+    <MESSAGE value="tested staff registration" />
+    <MESSAGE value="updated staff registration" />
+    <option name="LAST_COMMIT_MESSAGE" value="updated staff registration" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <breakpoint enabled="true" type="java-exception">
+          <properties class="java.lang.IllegalArgumentException" package="java.lang" />
+          <option name="timeStamp" value="1" />
+        </breakpoint>
+        <breakpoint enabled="true" type="java-exception">
+          <properties class="java.util.InputMismatchException" package="java.util" />
+          <option name="timeStamp" value="3" />
+        </breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
 </project>

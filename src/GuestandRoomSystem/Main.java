@@ -1,6 +1,7 @@
 package GuestandRoomSystem;
 import StaffSystem.Admin;
 import StaffSystem.Receptionist;
+
 import java.time.LocalDate;
 import java.util.List;
 import java.util.Scanner;
@@ -221,4 +222,3 @@ public class Main {
             }
         }
     }
-}
