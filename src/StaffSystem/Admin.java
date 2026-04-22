@@ -183,8 +183,12 @@ public class Admin extends Staff {
             if(newStaff==s || newStaff==null){
                 throw new IllegalArgumentException("Staff member already exists or null");
             }
-            return;
-        }
+            for(Staff s :HotelDatabase.staff){
+                if (s.getUsername().equals(newStaff.getUsername())){
+                    throw new IllegalArgumentException("Staff member already exists");
+                }
+            }
+
         HotelDatabase.staff.add(newStaff);
     }
 
