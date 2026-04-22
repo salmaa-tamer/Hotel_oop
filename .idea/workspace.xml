@@ -5,8 +5,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="6ef86da0-53f2-4d5d-942d-a70b235a7772" name="Changes" comment="added read bills method&#10;added read staff method&#10;added staff registration method">
-      <change beforePath="$PROJECT_DIR$/src/StaffSystem/Admin.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/StaffSystem/Admin.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/StaffSystem/Staff.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/StaffSystem/Staff.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/GUI/Controllers/ReceptionistDashboardController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/GUI/Controllers/ReceptionistDashboardController.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -19,7 +18,7 @@
   <component name="Git.Settings">
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
-        <entry key="$PROJECT_DIR$" value="main" />
+        <entry key="$PROJECT_DIR$" value="Milestone2" />
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -30,12 +29,12 @@
     &quot;assignee&quot;: &quot;Sara-abdelsamie&quot;
   }
 }</component>
-  <component name="GithubPullRequestsUISettings">{
-  &quot;selectedUrlAndAccountId&quot;: {
-    &quot;url&quot;: &quot;https://github.com/salmaa-tamer/Hotel_oop.git&quot;,
-    &quot;accountId&quot;: &quot;c551b227-fb56-42b0-b532-91b712eae42f&quot;
+  <component name="GithubPullRequestsUISettings"><![CDATA[{
+  "selectedUrlAndAccountId": {
+    "url": "https://github.com/salmaa-tamer/Hotel_oop.git",
+    "accountId": "01954553-8266-4029-91c2-c7f2542ddf91"
   }
-}</component>
+}]]></component>
   <component name="McpProjectServerCommands">
     <commands />
     <urls />
@@ -54,7 +53,7 @@
     "Application.Main.executor": "Run",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "RunOnceActivity.git.unshallow": "true",
-    "git-widget-placeholder": "Reem__Staff",
+    "git-widget-placeholder": "Mohamed__Database",
     "kotlin-language-version-configured": "true"
   }
 }]]></component>
@@ -115,19 +114,5 @@
     <MESSAGE value="added read bills method" />
     <MESSAGE value="added read bills method&#10;added read staff method&#10;added staff registration method" />
     <option name="LAST_COMMIT_MESSAGE" value="added read bills method&#10;added read staff method&#10;added staff registration method" />
-  </component>
-  <component name="XDebuggerManager">
-    <breakpoint-manager>
-      <breakpoints>
-        <breakpoint enabled="true" type="java-exception">
-          <properties class="java.lang.IllegalArgumentException" package="java.lang" />
-          <option name="timeStamp" value="1" />
-        </breakpoint>
-        <breakpoint enabled="true" type="java-exception">
-          <properties class="java.util.InputMismatchException" package="java.util" />
-          <option name="timeStamp" value="3" />
-        </breakpoint>
-      </breakpoints>
-    </breakpoint-manager>
   </component>
 </project>
