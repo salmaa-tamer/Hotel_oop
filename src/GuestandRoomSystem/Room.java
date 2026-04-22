@@ -93,10 +93,21 @@ public class Room {
         return Total;
 
     }
+@Override
+//    public String toString(){
+//     return "Room Number :"+roomid+",Availablity :"+(isavailable?"YES":"NO")+",Floor :"+floor+",PricePernight :"+
+//             pricepernight +roomtype.toString();
+//    }
 
-    public String toString(){
-     return "Room Number :"+roomid+",Availablity :"+(isavailable?"YES":"NO")+",Floor :"+floor+",PricePernight :"+
-             pricepernight +roomtype.toString();
-    }
+    // toString gdida shaklaha a7la fel gui
+
+        public String toString() {
+            return "Room " + roomid +
+                    "   |   Type: " + roomtype.getName() +
+                    "   |   Floor: " + floor +
+                    "   |   Capacity: " + roomtype.getCapacity() + " person(s)" +
+                    "   |   Price: $" + pricepernight + " / night" +
+                    "   |   Availability: " + (isavailable?"Available":"Unavailable");
+        }
 
 }
