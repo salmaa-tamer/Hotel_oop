@@ -102,8 +102,8 @@ public abstract class Staff{
     @Override
     public String toString() {
         return "Username: " + username +
-                "Role: " + role +
-                "Working Hours: " + workingHours +
-                "Date of Birth" + dateOfBirth;
+                "   Role: " + role +
+                "   Working Hours: " + workingHours +
+                "   Date of Birth: " + dateOfBirth;
     }
 }
