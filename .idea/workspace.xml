@@ -4,11 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="6ef86da0-53f2-4d5d-942d-a70b235a7772" name="Changes" comment="updated staff registration">
-      <change afterPath="$PROJECT_DIR$/src/GUI/MainFX.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/GUI/SceneManager.java" afterDir="false" />
+    <list default="true" id="6ef86da0-53f2-4d5d-942d-a70b235a7772" name="Changes" comment="Adding the MainFX">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Hotel reservation system.iml" beforeDir="false" afterPath="$PROJECT_DIR$/Hotel reservation system.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/GUI/MainFX.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/GUI/MainFX.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -63,6 +61,7 @@
   </component>
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
+    "Application.GUI.MainFX.executor": "Run",
     "Application.Main.executor": "Run",
     "Application.MainFX.executor": "Run",
     "Application.Unnamed.executor": "Run",
@@ -76,7 +75,21 @@
     "project.structure.side.proportion": "0.2"
   }
 }]]></component>
-  <component name="RunManager">
+  <component name="RunManager" selected="Application.GUI.MainFX">
+    <configuration name="GUI.MainFX" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="GUI.MainFX" />
+      <module name="Hotel reservation system" />
+      <option name="VM_PARAMETERS" value="--module-path &quot;C:\Users\Dell\Desktop\javafx-sdk-26.0.1\lib&quot; --add-modules javafx.controls,javafx.fxml" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="GUI.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="MainFX" type="Application" factoryName="Application" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="MainFX" />
       <module name="Hotel reservation system" />
@@ -85,6 +98,15 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <list>
+      <item itemvalue="Application.MainFX" />
+      <item itemvalue="Application.GUI.MainFX" />
+    </list>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Application.GUI.MainFX" />
+      </list>
+    </recent_temporary>
   </component>
   <component name="SharedIndexes">
     <attachedChunks>
@@ -165,7 +187,15 @@
       <option name="project" value="LOCAL" />
       <updated>1776818737757</updated>
     </task>
-    <option name="localTasksCounter" value="9" />
+    <task id="LOCAL-00009" summary="Adding the MainFX">
+      <option name="closed" value="true" />
+      <created>1776889437778</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1776889437778</updated>
+    </task>
+    <option name="localTasksCounter" value="10" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
@@ -177,7 +207,8 @@
     <MESSAGE value="added toString method to Staff Class" />
     <MESSAGE value="tested staff registration" />
     <MESSAGE value="updated staff registration" />
-    <option name="LAST_COMMIT_MESSAGE" value="updated staff registration" />
+    <MESSAGE value="Adding the MainFX" />
+    <option name="LAST_COMMIT_MESSAGE" value="Adding the MainFX" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
