@@ -4,9 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="6ef86da0-53f2-4d5d-942d-a70b235a7772" name="Changes" comment="added toString method to Staff Class">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/GuestandRoomSystem/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/GuestandRoomSystem/Main.java" afterDir="false" />
+    <list default="true" id="6ef86da0-53f2-4d5d-942d-a70b235a7772" name="Changes" comment="added read bills method&#10;added read staff method&#10;added staff registration method">
       <change beforePath="$PROJECT_DIR$/src/StaffSystem/Admin.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/StaffSystem/Admin.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/StaffSystem/Staff.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/StaffSystem/Staff.java" afterDir="false" />
     </list>
@@ -41,9 +39,6 @@
   <component name="McpProjectServerCommands">
     <commands />
     <urls />
-  </component>
-  <component name="ProblemsViewState">
-    <option name="selectedTabId" value="CurrentFile" />
   </component>
   <component name="ProjectColorInfo">{
   &quot;customColor&quot;: &quot;&quot;,
@@ -110,31 +105,7 @@
       <option name="project" value="LOCAL" />
       <updated>1776813996540</updated>
     </task>
-    <task id="LOCAL-00005" summary="added toString method to Staff Class">
-      <option name="closed" value="true" />
-      <created>1776814385695</created>
-      <option name="number" value="00005" />
-      <option name="presentableId" value="LOCAL-00005" />
-      <option name="project" value="LOCAL" />
-      <updated>1776814385695</updated>
-    </task>
-    <task id="LOCAL-00006" summary="updated staff registration">
-      <option name="closed" value="true" />
-      <created>1776816884853</created>
-      <option name="number" value="00006" />
-      <option name="presentableId" value="LOCAL-00006" />
-      <option name="project" value="LOCAL" />
-      <updated>1776816884853</updated>
-    </task>
-    <task id="LOCAL-00007" summary="tested staff registration">
-      <option name="closed" value="true" />
-      <created>1776816913228</created>
-      <option name="number" value="00007" />
-      <option name="presentableId" value="LOCAL-00007" />
-      <option name="project" value="LOCAL" />
-      <updated>1776816913228</updated>
-    </task>
-    <option name="localTasksCounter" value="8" />
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
@@ -143,10 +114,7 @@
     <MESSAGE value="UML Diagram uploaded" />
     <MESSAGE value="added read bills method" />
     <MESSAGE value="added read bills method&#10;added read staff method&#10;added staff registration method" />
-    <MESSAGE value="added toString method to Staff Class" />
-    <MESSAGE value="updated staff registration" />
-    <MESSAGE value="tested staff registration" />
-    <option name="LAST_COMMIT_MESSAGE" value="tested staff registration" />
+    <option name="LAST_COMMIT_MESSAGE" value="added read bills method&#10;added read staff method&#10;added staff registration method" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

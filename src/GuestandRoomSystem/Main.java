@@ -192,6 +192,32 @@ public class Main {
                 }
                 admin.readAllRooms();
 
+                // add new staff memberRee
+                System.out.println("Adding a New Staff Member");
+                System.out.println("Enter Role: ");
+                System.out.println("1.Admin\n2.Receptionist");
+                int choice4 = scanner.nextInt();
+                scanner.nextLine();
+                System.out.println("Enter Username : ");
+                String username = scanner.nextLine();
+                System.out.println("Enter Password : ");
+                String password = scanner.nextLine();
+                System.out.println("Enter Date of Birth (YYYY-MM-DD): ");
+                String dateOfBirthInput = scanner.nextLine();
+                LocalDate dateOfBirth = LocalDate.parse(dateOfBirthInput);
+                System.out.println("Enter Working Hours: ");
+                int workingHours = scanner.nextInt();
+                scanner.nextLine();
+
+                if (choice4==1){
+                    admin.staffRegistration( new Admin (username,password,dateOfBirth,workingHours));
+                } else if (choice4==2) {
+                    admin.staffRegistration( new Receptionist (username,password,dateOfBirth,workingHours));
+                }
+
+                System.out.println("Viewing All Staff Members");
+                admin.readStaff();
+            }
             }
         }
     }

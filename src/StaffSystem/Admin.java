@@ -2,10 +2,7 @@ package StaffSystem;
 
 import java.time.LocalDate;
 import java.util.ArrayList;
-import GuestandRoomSystem.HotelDatabase;
-import GuestandRoomSystem.Amenity;
-import GuestandRoomSystem.Room;
-import GuestandRoomSystem.RoomType;
+import GuestandRoomSystem.*;
 
 
 public class Admin extends Staff {
@@ -179,5 +176,31 @@ public class Admin extends Staff {
             }
         }
         throw new IllegalArgumentException("There is no such room type");
+    }
+
+    public void staffRegistration(Staff newStaff){
+        for(Staff s : HotelDatabase.staff){
+            if(newStaff==s || newStaff==null){
+                throw new IllegalArgumentException("Staff member already exists or null");
+            }
+            for(Staff s :HotelDatabase.staff){
+                if (s.getUsername().equals(newStaff.getUsername())){
+                    throw new IllegalArgumentException("Staff member already exists");
+                }
+            }
+
+        HotelDatabase.staff.add(newStaff);
+    }
+
+    public void readStaff(){
+            for(Staff s : HotelDatabase.staff){
+                System.out.println(s);
+            }
+    }
+
+    public void readAllBills(){
+            for(Bill b : HotelDatabase.bills){
+                System.out.println(b);
+            }
     }
 }
