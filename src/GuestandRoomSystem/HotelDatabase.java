@@ -49,20 +49,25 @@ public class HotelDatabase {
         guests.add(guest2);
 
         // Staff
-        Staff receptionist1 = new Receptionist("rec_adam123", "receptionist", LocalDate.of(1998, 5, 20), 8);
-        Staff admin1 = new Admin("admin1234", "adminpassword", LocalDate.of(1985, 11, 2), 8);
-
+        Staff receptionist1 = new Receptionist("rec_adam123", "receptionist1", LocalDate.of(1998, 5, 20), 8);
+        Staff receptionist2 = new Receptionist("rec_ali123", "receptionist2", LocalDate.of(2000, 1, 1), 8);
+        Staff receptionist3 = new Receptionist("rec_doaa123", "receptionist3", LocalDate.of(1982, 8, 15), 8);
+        Staff admin1 = new Admin("admin1234", "adminpassword", LocalDate.of(1985, 11, 2), 12);
         staff.add(receptionist1);
+        staff.add(receptionist2);
+        staff.add(receptionist3);
         staff.add(admin1);
 
         // Reservations
         Reservation res1 = new Reservation(guest1, room1, LocalDate.now().plusDays(1), LocalDate.now().plusDays(3));
-        //res1.confirm();
-
+        Reservation res2 = new Reservation(guest2, room2, LocalDate.now().plusDays(1), LocalDate.now().plusDays(2));
         reservations.add(res1);
+        reservations.add(res2);
 
         // Bills
         Bill bill1 = new Bill(res1, PaymentMethod.Credit_Card);
+        Bill bill2 = new Bill(res2, PaymentMethod.CASH);
         bills.add(bill1);
+        bills.add(bill2);
     }
 }

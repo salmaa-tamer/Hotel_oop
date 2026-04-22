@@ -100,9 +100,19 @@ public class Reservation {
         return TotalPrice ;
     }
     @Override
-    public String toString(){
-        return "Guest:"+ guest.getUsername()+
-                "\nRoom:"+ room.getRoomid()+
-                "\nStatus:"+getStatus();
+//
+//    public String toString(){
+//        return "Guest:"+ guest.getUsername()+
+//                "\nRoom:"+ room.getRoomid()+
+//                "\nStatus:"+getStatus();
+//    }
+
+    // toString gdida shaklaha a7la fel gui
+    public String toString() {
+        return "Guest: " + guest.getUsername() +
+                "   |   Room: " + room.getRoomid() +
+                "   |   Check-In: " + checkInDate +
+                "   |   Check-Out: " + checkOutDate +
+                "   |   Status: " + status;
     }
 }
