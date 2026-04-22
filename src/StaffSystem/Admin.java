@@ -179,9 +179,8 @@ public class Admin extends Staff {
     }
 
     public void staffRegistration(Staff newStaff){
-        for(Staff s : HotelDatabase.staff){
-            if(newStaff==s || newStaff==null){
-                throw new IllegalArgumentException("Staff member already exists or null");
+            if(newStaff==null){
+                throw new IllegalArgumentException("Staff can't be null");
             }
             for(Staff s :HotelDatabase.staff){
                 if (s.getUsername().equals(newStaff.getUsername())){
