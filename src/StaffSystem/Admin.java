@@ -2,13 +2,10 @@ package StaffSystem;
 
 import java.time.LocalDate;
 import java.util.ArrayList;
-import GuestandRoomSystem.HotelDatabase;
-import GuestandRoomSystem.Amenity;
-import GuestandRoomSystem.Room;
-import GuestandRoomSystem.RoomType;
+import GuestandRoomSystem.*;
 
 
-public class Admin extends Staff implements Manageable {
+public class Admin extends Staff {
 
         Admin(){
             super();
@@ -181,20 +178,28 @@ public class Admin extends Staff implements Manageable {
         throw new IllegalArgumentException("There is no such room type");
     }
 
-    //interface
-    @Override
-    public void add(Object item) {
-        System.out.println(item.toString() + " added.");
+    public void staffRegistration(Staff newStaff){
+            if(newStaff==null){
+                throw new IllegalArgumentException("Staff can't be null");
+            }
+            for(Staff s :HotelDatabase.staff){
+                if (s.getUsername().equals(newStaff.getUsername())){
+                    throw new IllegalArgumentException("Staff member already exists");
+                }
+            }
+
+        HotelDatabase.staff.add(newStaff);
     }
 
-    @Override
-    public void remove(Object item) {
-        System.out.println(item.toString() + " removed.");
+    public void readStaff(){
+            for(Staff s : HotelDatabase.staff){
+                System.out.println(s);
+            }
     }
 
-    @Override
-    public void update(Object item) {
-        System.out.println(item.toString() + " updated.");
+    public void readAllBills(){
+            for(Bill b : HotelDatabase.bills){
+                System.out.println(b);
+            }
     }
-
 }

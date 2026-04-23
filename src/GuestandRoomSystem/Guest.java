@@ -179,16 +179,27 @@ public void setUsername(String username){
         return roomPreference;
     }
 @Override
-    public String toString(){
-        return "Guest{" +
-                "username= '" +username+'\'' +
-                ", dateOfBirth=" + dateOfBirth +
-                ", balance=" + balance +
-                ", address='" + address + '\'' +
-                ", gender=" + gender +
-                ", roomPreference='" + roomPreference + '\'' +
-                '}';
-    }
+//    public String toString(){
+//        return "Guest{" +
+//                "username= '" +username+'\'' +
+//                ", dateOfBirth=" + dateOfBirth +
+//                ", balance=" + balance +
+//                ", address='" + address + '\'' +
+//                ", gender=" + gender +
+//                ", roomPreference='" + roomPreference + '\'' +
+//                '}';
+//    }
+
+    // toString gdida shaklaha a7la fel gui
+        public String toString() {
+
+            return "Guest: " + username +
+                    "   |   Date of birth: " + dateOfBirth +
+                    "   |   Gender: " + gender +
+                    "   |   Preference: " + roomPreference +
+                    "   |   Balance: $" + balance +
+                    "   |   Adress: " + address;
+        }
 
 
 }
