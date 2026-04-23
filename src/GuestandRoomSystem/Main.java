@@ -129,7 +129,7 @@ public class Main {
             else if (choice2 == 2) {
 
                 System.out.println("Admin checking system");
-                Admin admin = (Admin) HotelDatabase.staff.get(1);
+                Admin admin = (Admin) HotelDatabase.staff.get(3);
                 System.out.println("Admin Adding a New Room");
                 System.out.println("Enter The Id of The New Room: ");
                 int roomId = scanner.nextInt();
