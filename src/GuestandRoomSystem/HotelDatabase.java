@@ -29,11 +29,18 @@ public class HotelDatabase {
         roomTypes.add(suite);
 
         // Amenities
-        Amenity wifi = new Amenity(1, "WiFi", 10.0);
+        Amenity wifi = new Amenity(1, "WiFi", 0);
         Amenity pool = new Amenity(2, "Pool Access", 25.0);
-
+        Amenity breakfast = new Amenity(3, "Buffet Breakfast", 10.0);
+        Amenity Balcony = new Amenity(4, "Private Balcony", 50.0);
+        Amenity OceanView = new Amenity(5, "OceanView", 60.0);
+        Amenity Gym = new Amenity(6,"Gym and fitness center", 75);
         amenities.add(wifi);
         amenities.add(pool);
+        amenities.add(breakfast);
+        amenities.add(Balcony);
+        amenities.add(OceanView);
+        amenities.add(Gym);
 
         // Rooms
         Room room1 = new Room(101, true, 1, single, new ArrayList<>(Arrays.asList(wifi)), 120.0);
