@@ -131,6 +131,17 @@
             unaddedRoomTypes.add(unaddedRoomType3);
             unaddedRoomTypes.add(unaddedRoomType4);
 
+            // Unadded Amenities
+            Amenity unaddedAmenity1 = new Amenity("Spa Access",7);
+            Amenity unaddedAmenity2 = new Amenity("Luxury Yacht Dinner", 8);
+            Amenity unaddedAmenity3 = new Amenity("Around The Clock Room Service",9);
+            Amenity unaddedAmenity4 = new Amenity("Private Parking",10);
+            Amenity unaddedAmenity5 = new Amenity("All Inclusive Dining",10);
+            unaddedAmenities.add(unaddedAmenity1);
+            unaddedAmenities.add(unaddedAmenity2);
+            unaddedAmenities.add(unaddedAmenity3);
+            unaddedAmenities.add(unaddedAmenity4);
+            unaddedAmenities.add(unaddedAmenity5);
 
         }
 
