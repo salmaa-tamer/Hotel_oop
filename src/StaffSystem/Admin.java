@@ -23,8 +23,11 @@ public class Admin extends Staff {
                     throw new IllegalArgumentException("Room Already Exists");
                 }
             }
-           HotelDatabase.rooms.add(newRoom);
+            HotelDatabase.rooms.add(newRoom);
+            HotelDatabase.unaddedRooms.removeIf(r->r.getRoomid()==newRoom.getRoomid());
+
         }
+
         public void readRoom(Room room){
             for(Room r : HotelDatabase.rooms){
                 if(r.getRoomid()==room.getRoomid()){
@@ -38,8 +41,9 @@ public class Admin extends Staff {
 
     public void deleteRoom(Room roomToDelete){
             for(int i =0 ; i<HotelDatabase.rooms.size(); i++){
-                if(HotelDatabase.rooms.get(i).getRoomid() == roomToDelete.getRoomid()){
+                if(HotelDatabase.rooms.get(i).getRoomid() == roomToDelete.getRoomid()) {
                     HotelDatabase.rooms.remove(i);
+                    HotelDatabase.unaddedRooms.add(roomToDelete);
                     return;
                 }
             }
@@ -74,6 +78,7 @@ public class Admin extends Staff {
                 }
             }
             HotelDatabase.amenities.add(newAmenity);
+            HotelDatabase.unaddedAmenities.removeIf(a->a.getAmenityid()==newAmenity.getAmenityid());
         }
 
         public void readAllAmenities(){
@@ -117,6 +122,7 @@ public class Admin extends Staff {
             for(int i=0 ; i<HotelDatabase.amenities.size(); i++){
                 if (HotelDatabase.amenities.get(i).getAmenityid()==amenityToDelete.getAmenityid()){
                     HotelDatabase.amenities.remove(i);
+                    HotelDatabase.unaddedAmenities.add(amenityToDelete);
                     return;
                 }
             }
@@ -130,6 +136,7 @@ public class Admin extends Staff {
                 }
             }
             HotelDatabase.roomTypes.add(roomType);
+            HotelDatabase.unaddedRoomTypes.removeIf(r->r.getRoomtypeid()==roomType.getRoomtypeid());
         }
 
         public void readAllRoomTypes(){
@@ -172,6 +179,7 @@ public class Admin extends Staff {
         for (int i = 0; i < HotelDatabase.roomTypes.size(); i++) {
             if (HotelDatabase.roomTypes.get(i).getRoomtypeid() == roomType.getRoomtypeid()) {
                 HotelDatabase.roomTypes.remove(i);
+                HotelDatabase.unaddedRoomTypes.add(roomType);
                 return;
             }
         }

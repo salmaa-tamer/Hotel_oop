@@ -33,10 +33,11 @@ public class AdminDashboardController {
         workingHoursLabel.setText(("Working Hours:" + admin.getWorkingHours()));
         workingHoursLabel.setStyle("-fx-font-size: 18px; -fx-text-fill: #2c3e50; -fx-font-weight: bold;");
     }
+//-----------------------------------------------------------------------------------------------------------------------------------------------------------------
+// ----------------------------------------------------------------------------------------------------------------------------------------------------------------
+// MANAGE ROOMS
 
-
-    @FXML
-    private Button manageRoomsButton;
+    @FXML private Button manageRoomsButton;
     @FXML
     public void handleManageRooms() {
         titleLabel.setText("Manage Rooms");
@@ -68,7 +69,10 @@ public class AdminDashboardController {
             Label roomIdLabel = new Label("Room ID:");
             roomIdLabel.setStyle("-fx-font-size: 18px; -fx-text-fill: #2c3e50; -fx-font-weight: bold;");
             ComboBox<Integer> roomIdComboBox= new ComboBox<>();
-            roomIdComboBox.getItems().addAll(104,105,204,205,304,305,401,402,403,404,405,501,502,503,504,505);
+            //roomIdComboBox.getItems().addAll(104,105,204,205,304,305,401,402,403,404,405,501,502,503,504,505);
+            for(Room r: HotelDatabase.unaddedRooms){
+                roomIdComboBox.getItems().add(r.getRoomid());
+            }
             roomIdComboBox.setPromptText("Select a Room ID");
             roomIdComboBox.setStyle("-fx-font-size: 16px; -fx-background-color: #ecf0f1;");
             roomIdComboBox.setPrefWidth(300);
@@ -110,7 +114,7 @@ public class AdminDashboardController {
             Label roomFloorLabel = new Label("Room Floor:");
             roomFloorLabel.setStyle("-fx-font-size: 18px; -fx-text-fill: #2c3e50; -fx-font-weight: bold;");
             ComboBox<Integer> floorComboBox = new ComboBox<>();
-            floorComboBox.getItems().addAll(1, 2, 3, 4, 5);
+            floorComboBox.getItems().addAll(1, 2, 3, 4);
             floorComboBox.setPromptText("Select The Room Floor");
             floorComboBox.setStyle("-fx-font-size: 16px; -fx-background-color: #ecf0f1;");
             floorComboBox.setPrefWidth(300);
@@ -297,6 +301,8 @@ public class AdminDashboardController {
              for (Room r : HotelDatabase.rooms){
                  roomToUpdatePComboBox.getItems().add(r);
              }
+             roomToUpdatePComboBox.setPromptText("Select a Room to Update");
+             roomToUpdatePComboBox.setStyle("-fx-font-size: 16px; -fx-background-color: #ecf0f1;");
              roomToUpdatePComboBox.setPrefWidth(450);
 
              Separator s2 = new Separator();
@@ -366,6 +372,8 @@ public class AdminDashboardController {
                  roomToUpdateAComboBox.getItems().add(r);
              }
             roomToUpdateAComboBox.setPrefWidth(450);
+             roomToUpdateAComboBox.setPromptText("Select a Room to Update");
+             roomToUpdateAComboBox.setStyle("-fx-font-size: 16px; -fx-background-color: #ecf0f1;");
 
              Separator s6 = new Separator();
 
@@ -390,6 +398,9 @@ public class AdminDashboardController {
                      }
                      ArrayList<Amenity> amenities = new ArrayList<>(amenityListView.getSelectionModel().getSelectedItems());
                      admin.updateRoomAmenities(roomToUpdateAComboBox.getValue(),amenities);
+                     Label amenitiesUpdated = new Label("        Amenities Updated Successfully!");
+                    amenitiesUpdated.setStyle("-fx-font-size: 12px; -fx-text-fill: green; -fx-font-weight: bold;");
+                     centralBox.getChildren().add(amenitiesUpdated);
                  } catch (IllegalArgumentException ex) {
                      if (roomToUpdateAComboBox.getValue()==null) {
                      Label error = new Label("        ERROR: No Room Selected!");
@@ -426,62 +437,649 @@ public class AdminDashboardController {
         Separator separator6 = new Separator();
         Separator separator7=new Separator();
 
-
-
-
-
         sideBar.getChildren().addAll(adminLabel, separator0,separator1,controlsLabel,separator2,separator3, addRoomButton,viewRoomsBtn,deleteRoomBtn,updateRoomBtn,separator4,separator5,backBtn,separator6,separator7);
     }
 
-    @FXML
-    private Button manageRoomTypesButton;
-    @FXML
-    private Button manageAmenitiesButton;
+// -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+//--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+    //MANAGE ROOM TYPES
 
+    @FXML private Button manageRoomTypesButton;
     @FXML
-    private Button registerStaffButton;
+    public void handleManageRoomTypes(){
+        titleLabel.setText("Manage Room Types");
+        sideBar.getChildren().clear();
+        Label adminLabel = new Label("ADMIN");
+        adminLabel.setStyle("-fx-font-size: 25px; -fx-text-fill: #ffffff; -fx-font-weight: bold;");
+        Separator separator0 = new Separator();
+        Separator separator1 =new Separator();
+        Label controlsLabel=new Label("Controls");
+        controlsLabel.setStyle("-fx-font-size: 25px; -fx-text-fill: #ffffff; -fx-font-weight: bold;");
+        Separator separator2 = new Separator();
+        Separator separator3= new Separator();
+
+        //ADD ROOM TYPE OPERATION
+
+        Button addRoomTypeBtn = new Button("Add Room Type");
+        addRoomTypeBtn.setStyle("-fx-background-color: #7d97b1; -fx-text-fill: white; -fx-font-size: 14px; -fx-font-weight: bold; -fx-padding: 8px ;");
+        addRoomTypeBtn.setPrefWidth(450);
+        addRoomTypeBtn.setOnAction(e->{
+            centralBox.getChildren().clear();
+            centralBox.setAlignment(javafx.geometry.Pos.TOP_LEFT);
+            centralBox.setPadding(new javafx.geometry.Insets(20));
+
+            //ROOM TYPE NAME
+            Label addRoomTypeLabel = new Label("Adding a New Room Type");
+            addRoomTypeLabel.setStyle("-fx-font-size: 28px; -fx-text-fill: #2c3e50; -fx-font-weight: bold;");
+            Separator s1 = new Separator();
+            Label rtLabel= new Label("Room Type:");
+            rtLabel.setStyle("-fx-font-size: 18px; -fx-text-fill: #2c3e50; -fx-font-weight: bold;");
+            ComboBox<String> roomTypeName = new ComboBox<>();
+            for(RoomType rt : HotelDatabase.unaddedRoomTypes){
+                roomTypeName.getItems().add(rt.getName());
+            }
+            roomTypeName.setPromptText("Select a Room Type");
+            roomTypeName.setStyle("-fx-font-size: 16px; -fx-background-color: #ecf0f1;");
+            roomTypeName.setPrefWidth(450);
+
+            Separator s2 = new Separator();
+
+            //ROOM TYPE CAPACITY
+            Label capacityLabel = new Label("Capacity:");
+            capacityLabel.setStyle("-fx-font-size: 18px; -fx-text-fill: #2c3e50; -fx-font-weight: bold;");
+            Slider capacitySlider= new Slider();
+            capacitySlider.setMin(1);
+            capacitySlider.setMax(7);
+            capacitySlider.setMajorTickUnit(1);
+            capacitySlider.setMinorTickCount(0);
+            capacitySlider.setSnapToTicks(true);
+            capacitySlider.setBlockIncrement(0);
+            Label capacityVal=new Label();
+            capacitySlider.valueProperty().addListener(new ChangeListener<Number>() {
+                @Override
+                public void changed(ObservableValue<? extends Number> observableValue, Number number, Number t1) {
+                    int price= (int)capacitySlider.getValue();
+                    capacityVal.setText(Integer.toString(price) + " Individual(s)");
+                }
+            });
+            capacitySlider.setStyle("-fx-font-size: 16px; -fx-background-color: #ecf0f1;");
+
+            Separator s3 = new Separator();
+
+            //BASE PRICE
+            Label basePriceLabel = new Label("Base Price: ");
+            basePriceLabel.setStyle("-fx-font-size: 18px; -fx-text-fill: #2c3e50; -fx-font-weight: bold;");
+            Slider priceSlider= new Slider();
+            priceSlider.setMin(100.0);
+            priceSlider.setMax(2500.0);
+            priceSlider.setMajorTickUnit(5);
+            priceSlider.setMinorTickCount(0);
+            priceSlider.setSnapToTicks(true);
+            priceSlider.setBlockIncrement(100);
+            Label priceValue=new Label();
+            priceSlider.valueProperty().addListener(new ChangeListener<Number>() {
+                @Override
+                public void changed(ObservableValue<? extends Number> observableValue, Number number, Number t1) {
+                    int price= (int)priceSlider.getValue();
+                    priceValue.setText(Integer.toString(price) + "$");
+                }
+            });
+            priceSlider.setStyle("-fx-font-size: 16px; -fx-background-color: #ecf0f1;");
+
+            Separator s4 = new Separator();
+
+            Button addBtn = new Button("ADD");
+            addBtn.setStyle("-fx-background-color: #7d97b1; -fx-text-fill: white; -fx-font-size: 14px; -fx-font-weight: bold; -fx-padding: 8px 84px;");
+            addBtn.setPrefWidth(450);
+            addBtn.setOnAction(addEvent->{
+                try {
+                    String name = roomTypeName.getValue();
+                    if (name == null) {
+                        throw new IllegalArgumentException("No Room Selected");
+                    }
+                    int capacity = (int) capacitySlider.getValue();
+                    double price = priceSlider.getValue();
+                    for(RoomType rt : HotelDatabase.unaddedRoomTypes){
+                        int id;
+                        if(name.equals(rt.getName())){
+                            id=rt.getRoomtypeid();
+                            RoomType newRoomType= new RoomType(name,capacity,price,id);
+                            admin.createRoomType(newRoomType);
+                            Label rtAddedLabel = new Label("Room Type Added Successfully!");
+                            rtAddedLabel.setStyle("-fx-font-size: 16px; -fx-text-fill: green; -fx-font-weight: bold;");
+                            Label idLabel= new Label("Room Type Id : "+ id);
+                            idLabel.setStyle("-fx-font-size: 16px; -fx-text-fill: #7d97b1; -fx-font-weight: bold;");
+                            centralBox.getChildren().add(rtAddedLabel);
+                            centralBox.getChildren().add(idLabel);
+                        }
+                    }
+
+                }catch(IllegalArgumentException ex){
+                            Label error = new Label("ERROR: No Room Type Selected!");
+                            error.setStyle("-fx-font-size: 16px; -fx-text-fill: red; -fx-font-weight: bold;");
+                            centralBox.getChildren().add(error);
+                }
+
+            });
+            ScrollPane scrollPane = new ScrollPane();
+            VBox formContent= new VBox(10);
+            formContent.getChildren().addAll(addRoomTypeLabel, s1, rtLabel, roomTypeName, s2, capacityLabel, capacitySlider, capacityVal, s3, basePriceLabel, priceSlider, priceValue, s4, addBtn);
+            scrollPane.setContent(formContent);
+            centralBox.getChildren().add(scrollPane);
+            scrollPane.setFitToWidth(true);
+            formContent.setPadding(new javafx.geometry.Insets(30));
+            formContent.setSpacing(15);
+            scrollPane.setStyle("-fx-background: white; -fx-background-color: white; -fx-border-color: transparent; -fx-focus-color: transparent;");
+            scrollPane.setFitToWidth(true);
+            formContent.setStyle("-fx-background-color: transparent;");
+
+        });
+
+        // VIEW ROOM TYPES
+
+        Button viewRoomTypesBtn = new Button("View Room Types");
+        viewRoomTypesBtn.setStyle("-fx-background-color: #7d97b1; -fx-text-fill: white; -fx-font-size: 14px; -fx-font-weight: bold; -fx-padding: 8px ;");
+        viewRoomTypesBtn.setPrefWidth(450);
+        viewRoomTypesBtn.setOnAction(viewEvent->{switchToDatabaseView(viewEvent, " Viewing All Room Types ", HotelDatabase.roomTypes);});
+
+        //DELETE ROOM TYPES
+        Button deleteRoomTypeBtn = new Button("Delete Room Type");
+        deleteRoomTypeBtn.setStyle("-fx-background-color: #7d97b1; -fx-text-fill: white; -fx-font-size: 14px; -fx-font-weight: bold; -fx-padding: 8px ;");
+        deleteRoomTypeBtn.setPrefWidth(450);
+        deleteRoomTypeBtn.setOnAction(e->{
+
+            centralBox.getChildren().clear();
+            centralBox.setAlignment(javafx.geometry.Pos.TOP_LEFT);
+            centralBox.setPadding(new javafx.geometry.Insets(20));
+            Label deleteRoomLabel = new Label("Deleting an Existing Room Type");
+            deleteRoomLabel.setStyle("-fx-font-size: 28px; -fx-text-fill: #2c3e50; -fx-font-weight: bold;");
+
+            Separator s1=new Separator();
+
+            Label roomTypeToDelete = new Label("Room Type To Be Deleted:");
+            roomTypeToDelete.setStyle("-fx-font-size: 18px; -fx-text-fill: #2c3e50; -fx-font-weight: bold;");
+            ComboBox <RoomType> roomTypeComboBox  = new ComboBox<>();
+            roomTypeComboBox.setPromptText("Select the room type you would like to delete");
+            for (RoomType rt : HotelDatabase.roomTypes){
+                roomTypeComboBox.getItems().add(rt);
+            }
+            roomTypeComboBox.setStyle("-fx-font-size: 16px; -fx-background-color: #ecf0f1;");
+            roomTypeComboBox.setPrefWidth(450);
+
+            Separator s2=new Separator();
+
+            Button deleteBtn = new Button("DELETE");
+            deleteBtn.setStyle("-fx-background-color: #7d97b1; -fx-text-fill: white; -fx-font-size: 14px; -fx-font-weight: bold; -fx-padding: 8px ;");
+            deleteBtn.setPrefWidth(300);
+            deleteBtn.setOnAction(deleteEvent->{
+                try {
+                    if (roomTypeComboBox.getValue()==null){
+                        throw new IllegalArgumentException("No Room Type Selected.");
+                    }
+
+
+                    admin.deleteRoomTypes(roomTypeComboBox.getValue());
+                    Label deleted = new Label("Room Type Deleted Successfully!");
+                    deleted.setStyle("-fx-font-size: 16px; -fx-text-fill: green; -fx-font-weight: bold;");
+                    centralBox.getChildren().add(deleted);
+                    roomTypeComboBox.getItems().remove(roomTypeComboBox.getValue());
+
+                }catch (IllegalArgumentException ex1){
+                    if (roomTypeComboBox.getValue()==null){
+                        Label error = new Label("ERROR: No Room Type Selected!");
+                        error.setStyle("-fx-font-size: 16px; -fx-text-fill: red; -fx-font-weight: bold;");
+                        centralBox.getChildren().add(error);
+                    }
+                }
+                roomTypeComboBox.setValue(null);
+            });
+
+
+            ScrollPane scrollPane = new ScrollPane();
+            VBox formContent= new VBox(10);
+            formContent.getChildren().addAll(deleteRoomLabel,s1,roomTypeToDelete,roomTypeComboBox,s2,deleteBtn);
+            scrollPane.setContent(formContent);
+            centralBox.getChildren().add(scrollPane);
+            scrollPane.setFitToWidth(true);
+            formContent.setPadding(new javafx.geometry.Insets(30));
+            formContent.setSpacing(15);
+            scrollPane.setStyle("-fx-background: white; -fx-background-color: white; -fx-border-color: transparent; -fx-focus-color: transparent;");
+            scrollPane.setFitToWidth(true);
+            formContent.setStyle("-fx-background-color: transparent;");
+
+        });
+
+
+        //UPDATE ROOM TYPES
+        Button updateRoomTypeBtn = new Button("Update Room Type");
+        updateRoomTypeBtn.setStyle("-fx-background-color: #7d97b1; -fx-text-fill: white; -fx-font-size: 14px; -fx-font-weight: bold; -fx-padding: 8px ;");
+       updateRoomTypeBtn.setPrefWidth(450);
+        updateRoomTypeBtn.setOnAction(e-> {
+                    //UPDATE PRICE
+                     centralBox.getChildren().clear();
+                     centralBox.setAlignment(javafx.geometry.Pos.TOP_LEFT);
+                     centralBox.setPadding(new javafx.geometry.Insets(20));
+                    Label updateRoomPriceLabel = new Label("Updating a Room Types's Price");
+                    updateRoomPriceLabel.setStyle("-fx-font-size: 25px; -fx-text-fill: #2c3e50; -fx-font-weight: bold;");
+                    Separator s1= new Separator();
+                    Label roomTypeToUpdateP = new Label("Room Type Whose Price Will be Updated");
+                    roomTypeToUpdateP.setStyle("-fx-font-size: 18px; -fx-text-fill: #2c3e50; -fx-font-weight: bold;");
+                    ComboBox<RoomType> rtToUpdatePComboBox = new ComboBox<>();
+                    for (RoomType rt : HotelDatabase.roomTypes) {
+                        rtToUpdatePComboBox.getItems().add(rt);
+                    }
+                    rtToUpdatePComboBox.setPromptText("Select a Room Type to Update");
+                    rtToUpdatePComboBox.setStyle("-fx-font-size: 16px; -fx-background-color: #ecf0f1;");
+                    rtToUpdatePComboBox.setPrefWidth(450);
+
+                    Separator s2 = new Separator();
+
+                    Label newPriceLabel = new Label("New Price");
+                    newPriceLabel.setStyle("-fx-font-size: 18px; -fx-text-fill: #2c3e50; -fx-font-weight: bold;");
+                    Slider priceSlider = new Slider();
+                    priceSlider.setMin(100.0);
+                    priceSlider.setMax(2500.0);
+                    priceSlider.setMajorTickUnit(5);
+                    priceSlider.setMinorTickCount(0);
+                    priceSlider.setSnapToTicks(true);
+                    priceSlider.setBlockIncrement(100);
+                    Label priceValue = new Label();
+                    priceSlider.valueProperty().addListener(new ChangeListener<Number>() {
+                        @Override
+                        public void changed(ObservableValue<? extends Number> observableValue, Number number, Number t1) {
+                            int price = (int) priceSlider.getValue();
+                            priceValue.setText(Integer.toString(price) + "$");
+                        }
+                    });
+                    priceSlider.setStyle("-fx-font-size: 16px; -fx-background-color: #ecf0f1;");
+
+                    Separator s3 = new Separator();
+
+                    Button updatePriceBtn = new Button("UPDATE PRICE");
+                    updatePriceBtn.setStyle("-fx-background-color: #7d97b1; -fx-text-fill: white; -fx-font-size: 14px; -fx-font-weight: bold; -fx-padding: 8px ;");
+                    updatePriceBtn.setPrefWidth(450);
+                    updatePriceBtn.setOnAction(updatePriceEvent -> {
+                        try {
+                            if (rtToUpdatePComboBox.getValue() == null) {
+                                throw new IllegalArgumentException("No Room Selected");
+                            } else if (rtToUpdatePComboBox.getValue().getBaseprice() == priceSlider.getValue()) {
+                                throw new IllegalArgumentException("Price Not Updated");
+                            }
+
+                            admin.updateRoomTypePrice(rtToUpdatePComboBox.getValue(), priceSlider.getValue());
+                            Label priceUpdated = new Label("        Room Price Updated Successfully!");
+                            priceUpdated.setStyle("-fx-font-size: 12px; -fx-text-fill: green; -fx-font-weight: bold;");
+                            centralBox.getChildren().add(priceUpdated);
+
+                        } catch (IllegalArgumentException ex) {
+                            if (rtToUpdatePComboBox.getValue() == null) {
+                                Label error = new Label("        ERROR: No Room Selected!");
+                                error.setStyle("-fx-font-size: 12px; -fx-text-fill: red; -fx-font-weight: bold;");
+                                centralBox.getChildren().add(error);
+                            } else if (rtToUpdatePComboBox.getValue().getBaseprice() == priceSlider.getValue()) {
+                                Label error = new Label("        ERROR: Price Must Be Updated!");
+                                error.setStyle("-fx-font-size: 12px; -fx-text-fill: red; -fx-font-weight: bold;");
+                                centralBox.getChildren().add(error);
+                            }
+                        }
+
+                        rtToUpdatePComboBox.setValue(null);
+                    });
+            ScrollPane scrollPane = new ScrollPane();
+            VBox formContent= new VBox(10);
+            formContent.getChildren().addAll(updateRoomPriceLabel,s1, roomTypeToUpdateP, rtToUpdatePComboBox, s2, newPriceLabel, priceSlider, priceValue,
+                    s3, updatePriceBtn);
+            scrollPane.setContent(formContent);
+            centralBox.getChildren().add(scrollPane);
+            scrollPane.setFitToWidth(true);
+            formContent.setPadding(new javafx.geometry.Insets(30));
+            formContent.setSpacing(15);
+            scrollPane.setStyle("-fx-background: white; -fx-background-color: white; -fx-border-color: transparent; -fx-focus-color: transparent;");
+            scrollPane.setFitToWidth(true);
+            formContent.setStyle("-fx-background-color: transparent;");
+
+
+        });
+
+        Separator separator4 = new Separator();
+        Separator separator5=new Separator();
+
+        Button backBtn = new Button("BACK");
+        backBtn.setStyle("-fx-background-color: white; -fx-text-fill: #7d97b1; -fx-font-size: 14px; -fx-font-weight: bold; -fx-padding: 8px ;");
+        backBtn.setPrefWidth(450);
+        backBtn.setOnAction(e->goBackToDashboard(e));
+
+        Separator separator6 = new Separator();
+        Separator separator7=new Separator();
+
+        sideBar.getChildren().addAll(adminLabel, separator0,separator1,controlsLabel,separator2,separator3,addRoomTypeBtn,viewRoomTypesBtn,deleteRoomTypeBtn,updateRoomTypeBtn, separator4, separator5,backBtn,separator6,separator7);
+    }
+
+    //---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+    //---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+    // MANAGE AMENITIES
+    @FXML private Button manageAmenitiesButton;
+    @FXML public void handleManageAmenities(){
+        titleLabel.setText("Manage Amenities");
+        sideBar.getChildren().clear();
+        Label adminLabel = new Label("ADMIN");
+        adminLabel.setStyle("-fx-font-size: 25px; -fx-text-fill: #ffffff; -fx-font-weight: bold;");
+        Separator separator0 = new Separator();
+        Separator separator1 =new Separator();
+        Label controlsLabel=new Label("Controls");
+        controlsLabel.setStyle("-fx-font-size: 25px; -fx-text-fill: #ffffff; -fx-font-weight: bold;");
+        Separator separator2 = new Separator();
+        Separator separator3= new Separator();
+
+        // ADD AMENITY
+        Button addAmenityBtn=new Button("Add Amenity");
+        addAmenityBtn.setStyle("-fx-background-color:#7d97b1; -fx-text-fill: white; -fx-font-size: 14px; -fx-font-weight: bold; -fx-padding: 8px ;");
+        addAmenityBtn.setPrefWidth(450);
+        addAmenityBtn.setOnAction(e->{
+            centralBox.getChildren().clear();
+            Label addAmenityLabel = new Label("Adding a New Amenity");
+            addAmenityLabel.setStyle("-fx-font-size: 28px; -fx-text-fill: #2c3e50; -fx-font-weight: bold;");
+            Separator s1 = new Separator();
+            centralBox.setAlignment(javafx.geometry.Pos.TOP_LEFT);
+            centralBox.setPadding(new javafx.geometry.Insets(20));
+
+           //Amenity Name
+            Label amenityNameLabel= new Label("Amenity Name: ");
+            amenityNameLabel.setStyle("-fx-font-size: 18px; -fx-text-fill: #2c3e50; -fx-font-weight: bold;");
+            ComboBox<String> amenityNameComboBox= new ComboBox<>();
+            for( Amenity a : HotelDatabase.unaddedAmenities){
+                amenityNameComboBox.getItems().add(a.getName());
+            }
+           amenityNameComboBox.setStyle("-fx-font-size: 16px; -fx-background-color: #ecf0f1;");
+           amenityNameComboBox.setPromptText("Select an Amenity");
+            amenityNameComboBox.setPrefWidth(450);
+
+            //Amenity Price
+            Separator s2 = new Separator();
+            Label priceLabel = new Label("Amenity Price:");
+            priceLabel.setStyle("-fx-font-size: 18px; -fx-text-fill: #2c3e50; -fx-font-weight: bold;");
+            Slider priceSlider= new Slider();
+            priceSlider.setMin(0.0);
+            priceSlider.setMax(500.0);
+            priceSlider.setMajorTickUnit(5);
+            priceSlider.setMinorTickCount(0);
+            priceSlider.setSnapToTicks(true);
+            priceSlider.setBlockIncrement(5);
+            Label priceValue=new Label();
+            priceSlider.valueProperty().addListener(new ChangeListener<Number>() {
+                @Override
+                public void changed(ObservableValue<? extends Number> observableValue, Number number, Number t1) {
+                    int price= (int)priceSlider.getValue();
+                    priceValue.setText(Integer.toString(price) + "$");
+                }
+            });
+            priceSlider.setStyle("-fx-font-size: 16px; -fx-background-color: #ecf0f1;");
+
+            Separator s3= new Separator();
+
+            Button addBtn = new Button("ADD");
+            addBtn.setStyle("-fx-background-color: #7d97b1; -fx-text-fill: white; -fx-font-size: 14px; -fx-font-weight: bold; -fx-padding: 8px 84px;");
+            addBtn.setPrefWidth(450);
+            addBtn.setOnAction(addEvent->{
+                try {
+                    String name = amenityNameComboBox.getValue();
+                    if (name == null) {
+                        throw new IllegalArgumentException("No Amenity Selected");
+                    }
+                    double price = priceSlider.getValue();
+                    for(Amenity a : HotelDatabase.unaddedAmenities){
+                        int id;
+                        if(name.equals(a.getName())){
+                            id=a.getAmenityid();
+                            Amenity newAmenity = new Amenity(id,name,price);
+                            admin.createAmenity(newAmenity);
+                            Label amenityAddedLabel = new Label("Amenity Added Successfully!");
+                            amenityAddedLabel.setStyle("-fx-font-size: 16px; -fx-text-fill: green; -fx-font-weight: bold;");
+                            Label idLabel= new Label("Amenity Id : "+ id);
+                            idLabel.setStyle("-fx-font-size: 16px; -fx-text-fill: #7d97b1; -fx-font-weight: bold;");
+                            centralBox.getChildren().add(amenityAddedLabel);
+                            centralBox.getChildren().add(idLabel);
+                        }
+                    }
+
+                }catch(IllegalArgumentException ex){
+                    Label error = new Label("ERROR: No Amenity Selected!");
+                    error.setStyle("-fx-font-size: 16px; -fx-text-fill: red; -fx-font-weight: bold;");
+                    centralBox.getChildren().add(error);
+                }
+
+            });
+            ScrollPane scrollPane = new ScrollPane();
+            VBox formContent= new VBox(10);
+            formContent.getChildren().addAll(addAmenityLabel, s1, amenityNameLabel, amenityNameComboBox, s2,priceLabel, priceSlider, priceValue, s3, addBtn);
+            scrollPane.setContent(formContent);
+            centralBox.getChildren().add(scrollPane);
+            scrollPane.setFitToWidth(true);
+            formContent.setPadding(new javafx.geometry.Insets(30));
+            formContent.setSpacing(15);
+            scrollPane.setStyle("-fx-background: white; -fx-background-color: white; -fx-border-color: transparent; -fx-focus-color: transparent;");
+            scrollPane.setFitToWidth(true);
+            formContent.setStyle("-fx-background-color: transparent;");
+
+        });
+
+        // VIEW AMENITIES
+        Button viewAmenitiesBtn = new Button("View Amenities");
+        viewAmenitiesBtn.setStyle("-fx-background-color: #7d97b1; -fx-text-fill: white; -fx-font-size: 14px; -fx-font-weight: bold; -fx-padding: 8px ;");
+        viewAmenitiesBtn.setPrefWidth(450);
+        viewAmenitiesBtn.setOnAction(viewEvent->{switchToDatabaseView(viewEvent, " Viewing All Amenities ", HotelDatabase.amenities);});
+
+        // DELETE AMENITIES
+        Button deleteAmenityBtn = new Button("Delete Amenity");
+        deleteAmenityBtn.setStyle("-fx-background-color: #7d97b1; -fx-text-fill: white; -fx-font-size: 14px; -fx-font-weight: bold; -fx-padding: 8px ;");
+        deleteAmenityBtn.setPrefWidth(450);
+       deleteAmenityBtn.setOnAction(e->{
+
+            centralBox.getChildren().clear();
+            centralBox.setAlignment(javafx.geometry.Pos.TOP_LEFT);
+            centralBox.setPadding(new javafx.geometry.Insets(20));
+            Label deleteAmenityLabel = new Label("Deleting an Existing Amenity");
+            deleteAmenityLabel.setStyle("-fx-font-size: 28px; -fx-text-fill: #2c3e50; -fx-font-weight: bold;");
+
+            Separator s1=new Separator();
+
+            Label roomTypeToDelete = new Label("Amenity To Be Deleted:");
+            roomTypeToDelete.setStyle("-fx-font-size: 18px; -fx-text-fill: #2c3e50; -fx-font-weight: bold;");
+            ComboBox <Amenity> amenityComboBox  = new ComboBox<>();
+            amenityComboBox.setPromptText("Select the amenity you would like to delete");
+            for (Amenity a : HotelDatabase.amenities){
+                amenityComboBox.getItems().add(a);
+            }
+           amenityComboBox.setStyle("-fx-font-size: 16px; -fx-background-color: #ecf0f1;");
+            amenityComboBox.setPrefWidth(450);
+
+            Separator s2=new Separator();
+
+            Button deleteBtn = new Button("DELETE");
+            deleteBtn.setStyle("-fx-background-color: #7d97b1; -fx-text-fill: white; -fx-font-size: 14px; -fx-font-weight: bold; -fx-padding: 8px ;");
+            deleteBtn.setPrefWidth(300);
+            deleteBtn.setOnAction(deleteEvent->{
+                try {
+                    if (amenityComboBox.getValue()==null){
+                        throw new IllegalArgumentException("No Amenity Selected.");
+                    }
+
+
+                    admin.deleteAmenity(amenityComboBox.getValue());
+                    Label deleted = new Label("Amenity Deleted Successfully!");
+                    deleted.setStyle("-fx-font-size: 16px; -fx-text-fill: green; -fx-font-weight: bold;");
+                    centralBox.getChildren().add(deleted);
+                    amenityComboBox.getItems().remove(amenityComboBox.getValue());
+
+                }catch (IllegalArgumentException ex1){
+                    if (amenityComboBox.getValue()==null){
+                        Label error = new Label("ERROR: No Amenity Selected!");
+                        error.setStyle("-fx-font-size: 16px; -fx-text-fill: red; -fx-font-weight: bold;");
+                        centralBox.getChildren().add(error);
+                    }
+                }
+                amenityComboBox.setValue(null);
+            });
+
+
+            ScrollPane scrollPane = new ScrollPane();
+            VBox formContent= new VBox(10);
+            formContent.getChildren().addAll(deleteAmenityLabel,s1,roomTypeToDelete,amenityComboBox,s2,deleteBtn);
+            scrollPane.setContent(formContent);
+            centralBox.getChildren().add(scrollPane);
+            scrollPane.setFitToWidth(true);
+            formContent.setPadding(new javafx.geometry.Insets(30));
+            formContent.setSpacing(15);
+            scrollPane.setStyle("-fx-background: white; -fx-background-color: white; -fx-border-color: transparent; -fx-focus-color: transparent;");
+            scrollPane.setFitToWidth(true);
+            formContent.setStyle("-fx-background-color: transparent;");
+
+        });
+
+       //UPDATE AMENITY
+
+        Button updateAmenityBtn = new Button("Update Amenity");
+        updateAmenityBtn.setStyle("-fx-background-color: #7d97b1; -fx-text-fill: white; -fx-font-size: 14px; -fx-font-weight: bold; -fx-padding: 8px ;");
+        updateAmenityBtn.setPrefWidth(450);
+        updateAmenityBtn.setOnAction(e-> {
+            //UPDATE PRICE
+            centralBox.getChildren().clear();
+            centralBox.setAlignment(javafx.geometry.Pos.TOP_LEFT);
+            centralBox.setPadding(new javafx.geometry.Insets(20));
+            Label updateAmenityPriceLabel = new Label("Updating an Amenity's Price");
+            updateAmenityPriceLabel.setStyle("-fx-font-size: 25px; -fx-text-fill: #2c3e50; -fx-font-weight: bold;");
+            Separator s1= new Separator();
+            Label amenityToUpdate= new Label("Amenity Whose Price Will be Updated");
+            amenityToUpdate.setStyle("-fx-font-size: 18px; -fx-text-fill: #2c3e50; -fx-font-weight: bold;");
+            ComboBox<Amenity> amenityToUpdateComboBox = new ComboBox<>();
+            for  ( Amenity a : HotelDatabase.amenities) {
+                amenityToUpdateComboBox.getItems().add(a);
+            }
+           amenityToUpdateComboBox.setPromptText("Select a Room Type to Update");
+           amenityToUpdateComboBox.setStyle("-fx-font-size: 16px; -fx-background-color: #ecf0f1;");
+            amenityToUpdateComboBox.setPrefWidth(450);
+
+            Separator s2 = new Separator();
+
+            Label newPriceLabel = new Label("New Price");
+            newPriceLabel.setStyle("-fx-font-size: 18px; -fx-text-fill: #2c3e50; -fx-font-weight: bold;");
+            Slider priceSlider = new Slider();
+            priceSlider.setMin(0.0);
+            priceSlider.setMax(500.0);
+            priceSlider.setMajorTickUnit(5);
+            priceSlider.setMinorTickCount(0);
+            priceSlider.setSnapToTicks(true);
+            priceSlider.setBlockIncrement(5);
+            Label priceValue = new Label();
+            priceSlider.valueProperty().addListener(new ChangeListener<Number>() {
+                @Override
+                public void changed(ObservableValue<? extends Number> observableValue, Number number, Number t1) {
+                    int price = (int) priceSlider.getValue();
+                    priceValue.setText(Integer.toString(price) + "$");
+                }
+            });
+            priceSlider.setStyle("-fx-font-size: 16px; -fx-background-color: #ecf0f1;");
+
+            Separator s3 = new Separator();
+
+            Button updatePriceBtn = new Button("UPDATE PRICE");
+            updatePriceBtn.setStyle("-fx-background-color: #7d97b1; -fx-text-fill: white; -fx-font-size: 14px; -fx-font-weight: bold; -fx-padding: 8px ;");
+            updatePriceBtn.setPrefWidth(450);
+            updatePriceBtn.setOnAction(updatePriceEvent -> {
+                try {
+                    if (amenityToUpdateComboBox.getValue() == null) {
+                        throw new IllegalArgumentException("No Room Selected");
+                    } else if (amenityToUpdateComboBox.getValue().getAdditionalcost() == priceSlider.getValue()) {
+                        throw new IllegalArgumentException("Price Not Updated");
+                    }
+
+                    admin.updateAmenityCost(amenityToUpdateComboBox.getValue(), priceSlider.getValue());
+                        Label priceUpdated = new Label("        Amenity Price Updated Successfully!");
+                    priceUpdated.setStyle("-fx-font-size: 12px; -fx-text-fill: green; -fx-font-weight: bold;");
+                    centralBox.getChildren().add(priceUpdated);
+
+                } catch (IllegalArgumentException ex) {
+                    if (amenityToUpdateComboBox.getValue() == null) {
+                        Label error = new Label("        ERROR: No Amenity Selected!");
+                        error.setStyle("-fx-font-size: 12px; -fx-text-fill: red; -fx-font-weight: bold;");
+                        centralBox.getChildren().add(error);
+                    } else if (amenityToUpdateComboBox.getValue().getAdditionalcost() == priceSlider.getValue()) {
+                        Label error = new Label("        ERROR: Price Must Be Updated!");
+                        error.setStyle("-fx-font-size: 12px; -fx-text-fill: red; -fx-font-weight: bold;");
+                        centralBox.getChildren().add(error);
+                    }
+                }
+
+               amenityToUpdateComboBox.setValue(null);
+            });
+            ScrollPane scrollPane = new ScrollPane();
+            VBox formContent= new VBox(10);
+                formContent.getChildren().addAll(updateAmenityPriceLabel,s1, amenityToUpdate, amenityToUpdateComboBox, s2, newPriceLabel, priceSlider, priceValue, s3, updatePriceBtn);
+            scrollPane.setContent(formContent);
+            centralBox.getChildren().add(scrollPane);
+            scrollPane.setFitToWidth(true);
+            formContent.setPadding(new javafx.geometry.Insets(30));
+            formContent.setSpacing(15);
+            scrollPane.setStyle("-fx-background: white; -fx-background-color: white; -fx-border-color: transparent; -fx-focus-color: transparent;");
+            scrollPane.setFitToWidth(true);
+            formContent.setStyle("-fx-background-color: transparent;");
+
+
+        });
+
+        Separator separator4 = new Separator();
+        Separator separator5=new Separator();
+
+        Button backBtn = new Button("BACK");
+        backBtn.setStyle("-fx-background-color: white; -fx-text-fill: #7d97b1; -fx-font-size: 14px; -fx-font-weight: bold; -fx-padding: 8px ;");
+        backBtn.setPrefWidth(450);
+        backBtn.setOnAction(e->goBackToDashboard(e));
+
+        Separator separator6 = new Separator();
+        Separator separator7=new Separator();
+
+        sideBar.getChildren().addAll(adminLabel, separator0,separator1,controlsLabel,separator2,separator3,addAmenityBtn,viewAmenitiesBtn,deleteAmenityBtn,updateAmenityBtn, separator4, separator5,backBtn,separator6,separator7);
+    }
+
+
+
+
+
+
+    @FXML private Button registerStaffButton;
+    @FXML public void handleRegisterStaff(){}
+
 
 
     //VIEW GUESTS
     //Mohamed
     @FXML private Button viewGuestsButton;
 
-    @FXML
-    public void handleViewGuests(javafx.event.ActionEvent event) {
+    @FXML public void handleViewGuests(javafx.event.ActionEvent event) {
             switchToDatabaseView(event, "Guest Database", HotelDatabase.guests);
     }
 
     //VIEW RESERVATIONS
     //Mohamed
     @FXML private Button viewReservationsButton;
-    @FXML
-    public void handleViewReservations(javafx.event.ActionEvent event) {
+    @FXML public void handleViewReservations(javafx.event.ActionEvent event) {
         switchToDatabaseView(event, "Reservation Database", HotelDatabase.reservations);
     }
 
     // VIEW STAFF
     //Mohamed
     @FXML private Button viewStaffButton;
-    @FXML
-    public void handleViewStaff(javafx.event.ActionEvent event){
+    @FXML public void handleViewStaff(javafx.event.ActionEvent event){
         switchToDatabaseView(event, "Staff Database", HotelDatabase.staff);
     }
 
     // VIEW INVOICES
     //Mohamed
     @FXML private Button viewInvoicesButton;
-    @FXML
-    public void handleViewInvoices(javafx.event.ActionEvent event)
+    @FXML public void handleViewInvoices(javafx.event.ActionEvent event)
     {switchToDatabaseView(event, "Bill Database", HotelDatabase.bills);}
 
-    @FXML
-    public void handleManageRoomTypes(){}
-
-    @FXML
-    public void handleManageAmenities(){}
-
-    @FXML
-    public void handleRegisterStaff(){}
 
     //Mohamed
     private void switchToDatabaseView(javafx.event.ActionEvent event, String title, java.util.List<?> databaseList) {
