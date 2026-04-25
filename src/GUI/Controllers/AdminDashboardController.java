@@ -437,9 +437,306 @@ public class AdminDashboardController {
     }
 
     @FXML
-    private Button manageRoomTypesButton;
-    @FXML
-    private Button manageAmenitiesButton;
+    public void handleManageRoomTypes(){
+        titleLabel.setText("Manage Room Types");
+        sideBar.getChildren().clear();
+        Label adminLabel = new Label("ADMIN");
+        adminLabel.setStyle("-fx-font-size: 25px; -fx-text-fill: #ffffff; -fx-font-weight: bold;");
+        Separator separator0 = new Separator();
+        Separator separator1 =new Separator();
+        Label controlsLabel=new Label("Controls");
+        controlsLabel.setStyle("-fx-font-size: 25px; -fx-text-fill: #ffffff; -fx-font-weight: bold;");
+        Separator separator2 = new Separator();
+        Separator separator3= new Separator();
+
+        //ADD ROOM TYPE OPERATION
+
+        Button addRoomTypeBtn = new Button("Add Room Type");
+        addRoomTypeBtn.setStyle("-fx-background-color: #7d97b1; -fx-text-fill: white; -fx-font-size: 14px; -fx-font-weight: bold; -fx-padding: 8px ;");
+        addRoomTypeBtn.setPrefWidth(450);
+        addRoomTypeBtn.setOnAction(e->{
+            centralBox.getChildren().clear();
+            centralBox.setAlignment(javafx.geometry.Pos.TOP_LEFT);
+            centralBox.setPadding(new javafx.geometry.Insets(20));
+
+            //ROOM TYPE NAME
+            Label addRoomTypeLabel = new Label("Adding a New Room Type");
+            addRoomTypeLabel.setStyle("-fx-font-size: 28px; -fx-text-fill: #2c3e50; -fx-font-weight: bold;");
+            Separator s1 = new Separator();
+            Label rtLabel= new Label("Room Type:");
+            rtLabel.setStyle("-fx-font-size: 18px; -fx-text-fill: #2c3e50; -fx-font-weight: bold;");
+            ComboBox<String> roomTypeName = new ComboBox<>();
+            for(RoomType rt : HotelDatabase.unaddedRoomTypes){
+                roomTypeName.getItems().add(rt.getName());
+            }
+            roomTypeName.setPromptText("Select a Room ID");
+            roomTypeName.setStyle("-fx-font-size: 16px; -fx-background-color: #ecf0f1;");
+            roomTypeName.setPrefWidth(450);
+
+            Separator s2 = new Separator();
+
+            //ROOM TYPE CAPACITY
+            Label capacityLabel = new Label("Capacity:");
+            capacityLabel.setStyle("-fx-font-size: 18px; -fx-text-fill: #2c3e50; -fx-font-weight: bold;");
+            Slider capacitySlider= new Slider();
+            capacitySlider.setMin(1);
+            capacitySlider.setMax(7);
+            capacitySlider.setMajorTickUnit(1);
+            capacitySlider.setMinorTickCount(0);
+            capacitySlider.setSnapToTicks(true);
+            capacitySlider.setBlockIncrement(0);
+            Label capacityVal=new Label();
+            capacitySlider.valueProperty().addListener(new ChangeListener<Number>() {
+                @Override
+                public void changed(ObservableValue<? extends Number> observableValue, Number number, Number t1) {
+                    int price= (int)capacitySlider.getValue();
+                    capacityVal.setText(Integer.toString(price) + " Individual(s)");
+                }
+            });
+            capacitySlider.setStyle("-fx-font-size: 16px; -fx-background-color: #ecf0f1;");
+
+            Separator s3 = new Separator();
+
+            //BASE PRICE
+            Label basePriceLabel = new Label("Base Price: ");
+            basePriceLabel.setStyle("-fx-font-size: 18px; -fx-text-fill: #2c3e50; -fx-font-weight: bold;");
+            Slider priceSlider= new Slider();
+            priceSlider.setMin(100.0);
+            priceSlider.setMax(2500.0);
+            priceSlider.setMajorTickUnit(5);
+            priceSlider.setMinorTickCount(0);
+            priceSlider.setSnapToTicks(true);
+            priceSlider.setBlockIncrement(100);
+            Label priceValue=new Label();
+            priceSlider.valueProperty().addListener(new ChangeListener<Number>() {
+                @Override
+                public void changed(ObservableValue<? extends Number> observableValue, Number number, Number t1) {
+                    int price= (int)priceSlider.getValue();
+                    priceValue.setText(Integer.toString(price) + "$");
+                }
+            });
+            priceSlider.setStyle("-fx-font-size: 16px; -fx-background-color: #ecf0f1;");
+
+            Separator s4 = new Separator();
+
+            Button addBtn = new Button("ADD");
+            addBtn.setStyle("-fx-background-color: #7d97b1; -fx-text-fill: white; -fx-font-size: 14px; -fx-font-weight: bold; -fx-padding: 8px 84px;");
+            addBtn.setPrefWidth(450);
+            addBtn.setOnAction(addEvent->{
+                try {
+                    String name = roomTypeName.getValue();
+                    if (name == null) {
+                        throw new IllegalArgumentException("No Room Selected");
+                    }
+                    int capacity = (int) capacitySlider.getValue();
+                    double price = priceSlider.getValue();
+                    for(RoomType rt : HotelDatabase.unaddedRoomTypes){
+                        int id;
+                        if(name.equals(rt.getName())){
+                            id=rt.getRoomtypeid();
+                            RoomType newRoomType= new RoomType(name,capacity,price,id);
+                            admin.createRoomType(newRoomType);
+                            Label rtAddedLabel = new Label("Room Type Added Successfully!");
+                            rtAddedLabel.setStyle("-fx-font-size: 16px; -fx-text-fill: green; -fx-font-weight: bold;");
+                            Label idLabel= new Label("Room Type Id : "+ id);
+                            idLabel.setStyle("-fx-font-size: 16px; -fx-text-fill: #7d97b1; -fx-font-weight: bold;");
+                            centralBox.getChildren().add(rtAddedLabel);
+                            centralBox.getChildren().add(idLabel);
+                        }
+                    }
+
+                }catch(IllegalArgumentException ex){
+                            Label error = new Label("ERROR: No Room Type Selected!");
+                            error.setStyle("-fx-font-size: 16px; -fx-text-fill: red; -fx-font-weight: bold;");
+                            centralBox.getChildren().add(error);
+                }
+
+            });
+            ScrollPane scrollPane = new ScrollPane();
+            VBox formContent= new VBox(10);
+            formContent.getChildren().addAll(addRoomTypeLabel, s1, rtLabel, roomTypeName, s2, capacityLabel, capacitySlider, capacityVal, s3, basePriceLabel, priceSlider, priceValue, s4, addBtn);
+            scrollPane.setContent(formContent);
+            centralBox.getChildren().add(scrollPane);
+            scrollPane.setFitToWidth(true);
+            formContent.setPadding(new javafx.geometry.Insets(30));
+            formContent.setSpacing(15);
+            scrollPane.setStyle("-fx-background: white; -fx-background-color: white; -fx-border-color: transparent; -fx-focus-color: transparent;");
+            scrollPane.setFitToWidth(true);
+            formContent.setStyle("-fx-background-color: transparent;");
+
+        });
+
+        // VIEW ROOM TYPES
+
+        Button viewRoomTypesBtn = new Button("View Room Types");
+        viewRoomTypesBtn.setStyle("-fx-background-color: #7d97b1; -fx-text-fill: white; -fx-font-size: 14px; -fx-font-weight: bold; -fx-padding: 8px ;");
+        viewRoomTypesBtn.setPrefWidth(450);
+        viewRoomTypesBtn.setOnAction(viewEvent->{switchToDatabaseView(viewEvent, " Viewing All Room Types ", HotelDatabase.roomTypes);});
+
+        //DELETE ROOM TYPES
+        Button deleteRoomTypeBtn = new Button("Delete Room Type");
+        deleteRoomTypeBtn.setStyle("-fx-background-color: #7d97b1; -fx-text-fill: white; -fx-font-size: 14px; -fx-font-weight: bold; -fx-padding: 8px ;");
+        deleteRoomTypeBtn.setPrefWidth(450);
+        deleteRoomTypeBtn.setOnAction(e->{
+
+            centralBox.getChildren().clear();
+            centralBox.setAlignment(javafx.geometry.Pos.TOP_LEFT);
+            centralBox.setPadding(new javafx.geometry.Insets(20));
+            Label deleteRoomLabel = new Label("Deleting an Existing Room Type");
+            deleteRoomLabel.setStyle("-fx-font-size: 28px; -fx-text-fill: #2c3e50; -fx-font-weight: bold;");
+
+            Separator s1=new Separator();
+
+            Label roomTypeToDelete = new Label("Room Type To Be Deleted:");
+            roomTypeToDelete.setStyle("-fx-font-size: 18px; -fx-text-fill: #2c3e50; -fx-font-weight: bold;");
+            ComboBox <RoomType> roomTypeComboBox  = new ComboBox<>();
+            roomTypeComboBox.setPromptText("Select the room type you would like to delete");
+            for (RoomType rt : HotelDatabase.roomTypes){
+                roomTypeComboBox.getItems().add(rt);
+            }
+            roomTypeComboBox.setStyle("-fx-font-size: 16px; -fx-background-color: #ecf0f1;");
+            roomTypeComboBox.setPrefWidth(450);
+
+            Separator s2=new Separator();
+
+            Button deleteBtn = new Button("DELETE");
+            deleteBtn.setStyle("-fx-background-color: #7d97b1; -fx-text-fill: white; -fx-font-size: 14px; -fx-font-weight: bold; -fx-padding: 8px ;");
+            deleteBtn.setPrefWidth(300);
+            deleteBtn.setOnAction(deleteEvent->{
+                try {
+                    if (roomTypeComboBox.getValue()==null){
+                        throw new IllegalArgumentException("No Room Type Selected.");
+                    }
+
+
+                    admin.deleteRoomTypes(roomTypeComboBox.getValue());
+                    Label deleted = new Label("Room Type Deleted Successfully!");
+                    deleted.setStyle("-fx-font-size: 16px; -fx-text-fill: green; -fx-font-weight: bold;");
+                    centralBox.getChildren().add(deleted);
+                    roomTypeComboBox.getItems().remove(roomTypeComboBox.getValue());
+
+                }catch (IllegalArgumentException ex1){
+                    if (roomTypeComboBox.getValue()==null){
+                        Label error = new Label("ERROR: No Room Type Selected!");
+                        error.setStyle("-fx-font-size: 16px; -fx-text-fill: red; -fx-font-weight: bold;");
+                        centralBox.getChildren().add(error);
+                    }
+                }
+                roomTypeComboBox.setValue(null);
+            });
+
+
+            ScrollPane scrollPane = new ScrollPane();
+            VBox formContent= new VBox(10);
+            formContent.getChildren().addAll(deleteRoomLabel,s1,roomTypeToDelete,roomTypeComboBox,s2,deleteBtn);
+            scrollPane.setContent(formContent);
+            centralBox.getChildren().add(scrollPane);
+            scrollPane.setFitToWidth(true);
+            formContent.setPadding(new javafx.geometry.Insets(30));
+            formContent.setSpacing(15);
+            scrollPane.setStyle("-fx-background: white; -fx-background-color: white; -fx-border-color: transparent; -fx-focus-color: transparent;");
+            scrollPane.setFitToWidth(true);
+            formContent.setStyle("-fx-background-color: transparent;");
+
+        });
+
+
+        //UPDATE ROOM TYPES
+        Button updateRoomTypeBtn = new Button("Update Room Type");
+        updateRoomTypeBtn.setStyle("-fx-background-color: #7d97b1; -fx-text-fill: white; -fx-font-size: 14px; -fx-font-weight: bold; -fx-padding: 8px ;");
+       updateRoomTypeBtn.setPrefWidth(450);
+        updateRoomTypeBtn.setOnAction(e-> {
+                    //UPDATE PRICE
+                     centralBox.getChildren().clear();
+                     centralBox.setAlignment(javafx.geometry.Pos.TOP_LEFT);
+                     centralBox.setPadding(new javafx.geometry.Insets(20));
+                    Label updateRoomPriceLabel = new Label("Updating a Room Types's Price");
+                    updateRoomPriceLabel.setStyle("-fx-font-size: 25px; -fx-text-fill: #2c3e50; -fx-font-weight: bold;");
+                    Separator s1= new Separator();
+                    Label roomTypeToUpdateP = new Label("Room Type Whose Price Will be Updated");
+                    roomTypeToUpdateP.setStyle("-fx-font-size: 18px; -fx-text-fill: #2c3e50; -fx-font-weight: bold;");
+                    ComboBox<RoomType> rtToUpdatePComboBox = new ComboBox<>();
+                    for (RoomType rt : HotelDatabase.roomTypes) {
+                        rtToUpdatePComboBox.getItems().add(rt);
+                    }
+                    rtToUpdatePComboBox.setPromptText("Select a Room Type to Update");
+                    rtToUpdatePComboBox.setStyle("-fx-font-size: 16px; -fx-background-color: #ecf0f1;");
+                    rtToUpdatePComboBox.setPrefWidth(450);
+
+                    Separator s2 = new Separator();
+
+                    Label newPriceLabel = new Label("New Price");
+                    newPriceLabel.setStyle("-fx-font-size: 18px; -fx-text-fill: #2c3e50; -fx-font-weight: bold;");
+                    Slider priceSlider = new Slider();
+                    priceSlider.setMin(100.0);
+                    priceSlider.setMax(2500.0);
+                    priceSlider.setMajorTickUnit(5);
+                    priceSlider.setMinorTickCount(0);
+                    priceSlider.setSnapToTicks(true);
+                    priceSlider.setBlockIncrement(100);
+                    Label priceValue = new Label();
+                    priceSlider.valueProperty().addListener(new ChangeListener<Number>() {
+                        @Override
+                        public void changed(ObservableValue<? extends Number> observableValue, Number number, Number t1) {
+                            int price = (int) priceSlider.getValue();
+                            priceValue.setText(Integer.toString(price) + "$");
+                        }
+                    });
+                    priceSlider.setStyle("-fx-font-size: 16px; -fx-background-color: #ecf0f1;");
+
+                    Separator s3 = new Separator();
+
+                    Button updatePriceBtn = new Button("UPDATE PRICE");
+                    updatePriceBtn.setStyle("-fx-background-color: #7d97b1; -fx-text-fill: white; -fx-font-size: 14px; -fx-font-weight: bold; -fx-padding: 8px ;");
+                    updatePriceBtn.setPrefWidth(450);
+                    updatePriceBtn.setOnAction(updatePriceEvent -> {
+                        try {
+                            if (rtToUpdatePComboBox.getValue() == null) {
+                                throw new IllegalArgumentException("No Room Selected");
+                            } else if (rtToUpdatePComboBox.getValue().getBaseprice() == priceSlider.getValue()) {
+                                throw new IllegalArgumentException("Price Not Updated");
+                            }
+
+                            admin.updateRoomTypePrice(rtToUpdatePComboBox.getValue(), priceSlider.getValue());
+                            Label priceUpdated = new Label("        Room Price Updated Successfully!");
+                            priceUpdated.setStyle("-fx-font-size: 12px; -fx-text-fill: green; -fx-font-weight: bold;");
+                            centralBox.getChildren().add(priceUpdated);
+
+                        } catch (IllegalArgumentException ex) {
+                            if (rtToUpdatePComboBox.getValue() == null) {
+                                Label error = new Label("        ERROR: No Room Selected!");
+                                error.setStyle("-fx-font-size: 12px; -fx-text-fill: red; -fx-font-weight: bold;");
+                                centralBox.getChildren().add(error);
+                            } else if (rtToUpdatePComboBox.getValue().getBaseprice() == priceSlider.getValue()) {
+                                Label error = new Label("        ERROR: Price Must Be Updated!");
+                                error.setStyle("-fx-font-size: 12px; -fx-text-fill: red; -fx-font-weight: bold;");
+                                centralBox.getChildren().add(error);
+                            }
+                        }
+
+                        rtToUpdatePComboBox.setValue(null);
+                    });
+            ScrollPane scrollPane = new ScrollPane();
+            VBox formContent= new VBox(10);
+            formContent.getChildren().addAll(updateRoomPriceLabel,s1, roomTypeToUpdateP, rtToUpdatePComboBox, s2, newPriceLabel, priceSlider, priceValue,
+                    s3, updatePriceBtn);
+            scrollPane.setContent(formContent);
+            centralBox.getChildren().add(scrollPane);
+            scrollPane.setFitToWidth(true);
+            formContent.setPadding(new javafx.geometry.Insets(30));
+            formContent.setSpacing(15);
+            scrollPane.setStyle("-fx-background: white; -fx-background-color: white; -fx-border-color: transparent; -fx-focus-color: transparent;");
+            scrollPane.setFitToWidth(true);
+            formContent.setStyle("-fx-background-color: transparent;");
+
+
+        });
+
+        sideBar.getChildren().addAll(adminLabel, separator0,separator1,controlsLabel,separator2,separator3,addRoomTypeBtn,viewRoomTypesBtn,deleteRoomTypeBtn,updateRoomTypeBtn);
+    }
+
+
+    @FXML private Button manageAmenitiesButton;
 
     @FXML
     private Button registerStaffButton;
