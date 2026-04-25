@@ -11,16 +11,17 @@ public class MainFX extends Application {
     @Override
     public void start(Stage stage) throws Exception {
 
-        HotelDatabase.loadDummyData();
-        Parent root = FXMLLoader.load(
-                getClass().getResource("/GUI/FXML/ReceptionistDashboard.fxml")
-        );
-        Scene scene=new Scene(root);
+        Parent root = FXMLLoader.load(getClass().getResource("/GUI/FXML/GuestDashboard.fxml"));
+        stage.setTitle("The Nile Atelier-Guest");
+       Scene scene= new Scene(root, 1024, 576);
+        String css = getClass().getResource("/GUI/CSS/styles.css").toExternalForm();
+        scene.getStylesheets().add(css);
         stage.setScene(scene);
+        stage.setResizable(false);
         stage.show();
-
     }
     public static void main(String[] args) {
+        HotelDatabase.loadDummyData();
         launch(args);
     }
 }

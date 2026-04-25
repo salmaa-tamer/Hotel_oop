@@ -1,0 +1,135 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.control.Slider?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.geometry.Insets?>
+<?import java.net.URL?>
+<?import javafx.scene.control.ScrollPane?>
+
+<BorderPane prefHeight="576.0" prefWidth="1024.0"
+            xmlns="http://javafx.com/javafx/17"
+            xmlns:fx="http://javafx.com/fxml/1"
+            fx:controller="GUI.Controllers.GuestDashboardController">
+
+    <stylesheets>
+        <URL value="@../CSS/styles.css"/>
+    </stylesheets>
+
+    <!-- TOP BAR -->
+    <top>
+        <HBox styleClass="top-bar" spacing="20" alignment="CENTER_LEFT">
+            <Label fx:id="welcomelabel" styleClass="welcome-label" text="Welcome"/>
+            <Label fx:id="balancelabel" styleClass="balance-label" text="Balance: $0"/>
+        </HBox>
+    </top>
+
+    <!-- SIDEBAR -->
+    <left>
+        <VBox styleClass="sidebar" prefWidth="220" spacing="8">
+            <Label text="Guest"            styleClass="sidebar-title"/>
+            <Label text="The Nile Atelier" styleClass="sidebar-subtitle"/>
+            <Label text="Guest Portal"     styleClass="sidebar-subtitle"/>
+            <Separator/>
+            <Label text="NAVIGATION" styleClass="sidebar-section-label"/>
+            <Button text="📋  Dashboard"        styleClass="sidebar-button-main"    onAction="#showDashboardPanel"/>
+            <Button text="👤  My Profile"        styleClass="sidebar-button-outline" onAction="#showProfilePanel"/>
+            <Button text="🛏  Browse Rooms"      styleClass="sidebar-button-outline" onAction="#showRoomsPanel"/>
+            <Separator/>
+            <Label text="ACTIONS" styleClass="sidebar-section-label"/>
+            <Button text="📄  My Reservations"   styleClass="sidebar-button-outline" onAction="#goToReservations"/>
+            <Button text="💳  Checkout"           styleClass="sidebar-button-danger"  onAction="#goToCheckout"/>
+        </VBox>
+    </left>
+
+    <!-- CENTER -->
+    <center>
+        <StackPane styleClass="center-panel">
+
+            <!-- Dashboard Panel -->
+            <VBox fx:id="dashboardpanel" visible="true" spacing="12" alignment="TOP_LEFT">
+                <Label text="Active Reservations"                    styleClass="panel-title"/>
+                <Label text="Your current and upcoming reservations" styleClass="panel-subtitle"/>
+                <Separator/>
+                <TableView fx:id="reservationtable" prefHeight="420" maxWidth="Infinity" styleClass="table-view">
+                    <VBox.margin><Insets top="5"/></VBox.margin>
+                    <columns>
+                        <TableColumn fx:id="roomcol"         text="Room"      prefWidth="140"/>
+                        <TableColumn fx:id="statuscol"       text="Status"    prefWidth="160"/>
+                        <TableColumn fx:id="checkindatecol"  text="Check-in"  prefWidth="180"/>
+                        <TableColumn fx:id="checkoutdatecol" text="Check-out" prefWidth="180"/>
+                    </columns>
+                </TableView>
+            </VBox>
+
+            <!-- Profile Panel -->
+           <ScrollPane fitToWidth="true"
+                        prefHeight="400"
+                        style="-fx-background-color: transparent;
+                   -fx-background: transparent;
+                   -fx-border-color: transparent;">
+            <VBox fx:id="Guestprofilepanel" visible="false" spacing="8" alignment="TOP_LEFT" maxWidth="580">
+                <Label text="My Profile"           styleClass="panel-title"/>
+                <Label text="Your account details" styleClass="panel-subtitle"/>
+                <Separator/>
+                <Label text="USERNAME"               styleClass="profile-field-label"/>
+                <Label fx:id="usernamelabel"         styleClass="profile-field-value" text="—"/>
+                <Label text="DATE OF BIRTH"          styleClass="profile-field-label"/>
+                <Label fx:id="doblabel"              styleClass="profile-field-value" text="—"/>
+                <Label text="BALANCE"                styleClass="profile-field-label"/>
+                <Label fx:id="balanceprofilelabel"   styleClass="profile-field-value" text="—"/>
+                <Label text="ADDRESS"                styleClass="profile-field-label"/>
+                <Label fx:id="addresslabel"          styleClass="profile-field-value" text="—"/>
+                <Label text="GENDER"                 styleClass="profile-field-label"/>
+                <Label fx:id="genderlabel"           styleClass="profile-field-value" text="—"/>
+                <Label text="ROOM PREFERENCE"        styleClass="profile-field-label"/>
+                <Label fx:id="roompreflabel"         styleClass="profile-field-value" text="—"/>
+             </VBox>
+           </ScrollPane>
+
+            <!-- Browse Rooms Panel -->
+            <VBox fx:id="AvailableRoomspanel" visible="false" spacing="12" alignment="TOP_LEFT">
+                <Label text="Available Rooms"               styleClass="panel-title"/>
+                <Label text="Filter and book a room for your stay" styleClass="panel-subtitle"/>
+                <Separator/>
+
+                <HBox spacing="20" alignment="CENTER_LEFT">
+                    <VBox.margin><Insets top="4"/></VBox.margin>
+                    <ComboBox fx:id="roomtypefilter" styleClass="combo-box" promptText="Room Type" prefWidth="190"/>
+                    <ComboBox fx:id="Amenityfilter"  styleClass="combo-box" promptText="Amenity"   prefWidth="190"/>
+                    <VBox spacing="6" alignment="CENTER_LEFT">
+                        <Label fx:id="pricelabel" styleClass="price-label" text="Max Price: $5000"/>
+                        <Slider fx:id="priceslider" min="0" max="5000" value="5000"
+                                styleClass="slider" prefWidth="210"/>
+                    </VBox>
+                </HBox>
+
+                <TableView fx:id="roomtable" prefHeight="300" maxWidth="Infinity" styleClass="table-view">
+                    <columns>
+                        <TableColumn fx:id="roomidcol"       text="Room ID"     prefWidth="100"/>
+                        <TableColumn fx:id="availabilitycol" text="Available"   prefWidth="100"/>
+                        <TableColumn fx:id="floorcol"        text="Floor"       prefWidth="90"/>
+                        <TableColumn fx:id="amenitiescol"    text="Amenities"   prefWidth="220"/>
+                        <TableColumn fx:id="pricecol"        text="Price/Night" prefWidth="120"/>
+                    </columns>
+                </TableView>
+
+                <!-- Book Now — centered via HBox wrapper -->
+                <HBox alignment="CENTER" style="-fx-padding: 20px;">
+                    <Button text="Book Now" styleClass="book-button" onAction="#onBookNowClicked" />
+                </HBox>
+
+            </VBox>
+
+        </StackPane>
+    </center>
+
+</BorderPane>
