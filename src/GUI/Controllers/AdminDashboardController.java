@@ -33,10 +33,11 @@ public class AdminDashboardController {
         workingHoursLabel.setText(("Working Hours:" + admin.getWorkingHours()));
         workingHoursLabel.setStyle("-fx-font-size: 18px; -fx-text-fill: #2c3e50; -fx-font-weight: bold;");
     }
+//-----------------------------------------------------------------------------------------------------------------------------------------------------------------
+// ----------------------------------------------------------------------------------------------------------------------------------------------------------------
+// MANAGE ROOMS
 
-
-    @FXML
-    private Button manageRoomsButton;
+    @FXML private Button manageRoomsButton;
     @FXML
     public void handleManageRooms() {
         titleLabel.setText("Manage Rooms");
@@ -113,7 +114,7 @@ public class AdminDashboardController {
             Label roomFloorLabel = new Label("Room Floor:");
             roomFloorLabel.setStyle("-fx-font-size: 18px; -fx-text-fill: #2c3e50; -fx-font-weight: bold;");
             ComboBox<Integer> floorComboBox = new ComboBox<>();
-            floorComboBox.getItems().addAll(1, 2, 3, 4, 5);
+            floorComboBox.getItems().addAll(1, 2, 3, 4);
             floorComboBox.setPromptText("Select The Room Floor");
             floorComboBox.setStyle("-fx-font-size: 16px; -fx-background-color: #ecf0f1;");
             floorComboBox.setPrefWidth(300);
@@ -300,6 +301,8 @@ public class AdminDashboardController {
              for (Room r : HotelDatabase.rooms){
                  roomToUpdatePComboBox.getItems().add(r);
              }
+             roomToUpdatePComboBox.setPromptText("Select a Room to Update");
+             roomToUpdatePComboBox.setStyle("-fx-font-size: 16px; -fx-background-color: #ecf0f1;");
              roomToUpdatePComboBox.setPrefWidth(450);
 
              Separator s2 = new Separator();
@@ -369,6 +372,8 @@ public class AdminDashboardController {
                  roomToUpdateAComboBox.getItems().add(r);
              }
             roomToUpdateAComboBox.setPrefWidth(450);
+             roomToUpdateAComboBox.setPromptText("Select a Room to Update");
+             roomToUpdateAComboBox.setStyle("-fx-font-size: 16px; -fx-background-color: #ecf0f1;");
 
              Separator s6 = new Separator();
 
@@ -393,6 +398,9 @@ public class AdminDashboardController {
                      }
                      ArrayList<Amenity> amenities = new ArrayList<>(amenityListView.getSelectionModel().getSelectedItems());
                      admin.updateRoomAmenities(roomToUpdateAComboBox.getValue(),amenities);
+                     Label amenitiesUpdated = new Label("        Amenities Updated Successfully!");
+                    amenitiesUpdated.setStyle("-fx-font-size: 12px; -fx-text-fill: green; -fx-font-weight: bold;");
+                     centralBox.getChildren().add(amenitiesUpdated);
                  } catch (IllegalArgumentException ex) {
                      if (roomToUpdateAComboBox.getValue()==null) {
                      Label error = new Label("        ERROR: No Room Selected!");
@@ -429,13 +437,14 @@ public class AdminDashboardController {
         Separator separator6 = new Separator();
         Separator separator7=new Separator();
 
-
-
-
-
         sideBar.getChildren().addAll(adminLabel, separator0,separator1,controlsLabel,separator2,separator3, addRoomButton,viewRoomsBtn,deleteRoomBtn,updateRoomBtn,separator4,separator5,backBtn,separator6,separator7);
     }
 
+// -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+//--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+    //MANAGE ROOM TYPES
+
+    @FXML private Button manageRoomTypesButton;
     @FXML
     public void handleManageRoomTypes(){
         titleLabel.setText("Manage Room Types");
@@ -773,9 +782,6 @@ public class AdminDashboardController {
     @FXML
     public void handleViewInvoices(javafx.event.ActionEvent event)
     {switchToDatabaseView(event, "Bill Database", HotelDatabase.bills);}
-
-    @FXML
-    public void handleManageRoomTypes(){}
 
     @FXML
     public void handleManageAmenities(){}
