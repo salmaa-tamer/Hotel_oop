@@ -758,8 +758,75 @@ public class AdminDashboardController {
 
     @FXML private Button manageAmenitiesButton;
 
-    @FXML
-    private Button registerStaffButton;
+            Separator s3 = new Separator();
+
+            Button updatePriceBtn = new Button("UPDATE PRICE");
+            updatePriceBtn.setStyle("-fx-background-color: #7d97b1; -fx-text-fill: white; -fx-font-size: 14px; -fx-font-weight: bold; -fx-padding: 8px ;");
+            updatePriceBtn.setPrefWidth(450);
+            updatePriceBtn.setOnAction(updatePriceEvent -> {
+                try {
+                    if (amenityToUpdateComboBox.getValue() == null) {
+                        throw new IllegalArgumentException("No Room Selected");
+                    } else if (amenityToUpdateComboBox.getValue().getAdditionalcost() == priceSlider.getValue()) {
+                        throw new IllegalArgumentException("Price Not Updated");
+                    }
+
+                    admin.updateAmenityCost(amenityToUpdateComboBox.getValue(), priceSlider.getValue());
+                        Label priceUpdated = new Label("        Amenity Price Updated Successfully!");
+                    priceUpdated.setStyle("-fx-font-size: 12px; -fx-text-fill: green; -fx-font-weight: bold;");
+                    centralBox.getChildren().add(priceUpdated);
+
+                } catch (IllegalArgumentException ex) {
+                    if (amenityToUpdateComboBox.getValue() == null) {
+                        Label error = new Label("        ERROR: No Amenity Selected!");
+                        error.setStyle("-fx-font-size: 12px; -fx-text-fill: red; -fx-font-weight: bold;");
+                        centralBox.getChildren().add(error);
+                    } else if (amenityToUpdateComboBox.getValue().getAdditionalcost() == priceSlider.getValue()) {
+                        Label error = new Label("        ERROR: Price Must Be Updated!");
+                        error.setStyle("-fx-font-size: 12px; -fx-text-fill: red; -fx-font-weight: bold;");
+                        centralBox.getChildren().add(error);
+                    }
+                }
+
+               amenityToUpdateComboBox.setValue(null);
+            });
+            ScrollPane scrollPane = new ScrollPane();
+            VBox formContent= new VBox(10);
+                formContent.getChildren().addAll(updateAmenityPriceLabel,s1, amenityToUpdate, amenityToUpdateComboBox, s2, newPriceLabel, priceSlider, priceValue, s3, updatePriceBtn);
+            scrollPane.setContent(formContent);
+            centralBox.getChildren().add(scrollPane);
+            scrollPane.setFitToWidth(true);
+            formContent.setPadding(new javafx.geometry.Insets(30));
+            formContent.setSpacing(15);
+            scrollPane.setStyle("-fx-background: white; -fx-background-color: white; -fx-border-color: transparent; -fx-focus-color: transparent;");
+            scrollPane.setFitToWidth(true);
+            formContent.setStyle("-fx-background-color: transparent;");
+
+
+        });
+
+        Separator separator4 = new Separator();
+        Separator separator5=new Separator();
+
+        Button backBtn = new Button("BACK");
+        backBtn.setStyle("-fx-background-color: white; -fx-text-fill: #7d97b1; -fx-font-size: 14px; -fx-font-weight: bold; -fx-padding: 8px ;");
+        backBtn.setPrefWidth(450);
+        backBtn.setOnAction(e->goBackToDashboard(e));
+
+        Separator separator6 = new Separator();
+        Separator separator7=new Separator();
+
+        sideBar.getChildren().addAll(adminLabel, separator0,separator1,controlsLabel,separator2,separator3,addAmenityBtn,viewAmenitiesBtn,deleteAmenityBtn,updateAmenityBtn, separator4, separator5,backBtn,separator6,separator7);
+    }
+
+
+  
+
+
+
+    @FXML private Button registerStaffButton;
+    @FXML public void handleRegisterStaff(){}
+
 
 
     //VIEW GUESTS
