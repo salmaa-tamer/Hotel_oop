@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<BorderPane xmlns="http://javafx.com/javafx/26" xmlns:fx="http://javafx.com/fxml/1" fx:controller="GUI.Controllers.AdminDashboardController">
+
+    <top>
+        <HBox alignment="CENTER_RIGHT" prefHeight="21.0" prefWidth="1253.0" spacing="20" style="-fx-background-color: #ecf0f1; -fx-border-color: #bdc3c7; -fx-border-width: 0 0 1 0;">
+            <padding>
+                <Insets bottom="15" left="25" right="25" top="15" />
+            </padding>
+            <Label fx:id="titleLabel" prefHeight="40.0" prefWidth="1250.0" style="-fx-font-size: 28px; -fx-font-weight: bold; -fx-text-fill: #2c3e50;" text="System Dashboard" />
+         <Label fx:id="nameLabel" prefHeight="40.0" prefWidth="150.0" style="-fx-font-size: 14px; -fx-font-weight: bold; -fx-text-fill: #2c3e50;" />
+         <Label fx:id="workingHoursLabel" prefHeight="40.0" prefWidth="196.0" style="-fx-font-size: 14px; -fx-font-weight: bold; -fx-text-fill: #2c3e50;" />
+        </HBox>
+    </top>
+
+    <left>
+        <VBox fx:id="sideBar" prefWidth="288.0" spacing="15.0" style="-fx-background-color: #2c3e50;">
+            <padding>
+                <Insets bottom="30" left="20" right="20" top="30" />
+            </padding>
+
+            <Label prefHeight="68.0" prefWidth="254.0" style="-fx-font-size: 28; -fx-font-weight: bold; -fx-text-fill: white;" text="ADMIN">
+            <font>
+               <Font size="24.0" />
+            </font></Label>
+         <Separator style="-fx-background-color: #34495e;" />
+            <Label style="-fx-text-fill: #95a5a6; -fx-font-size: 16px;" text="Menu" />
+
+            <Separator style="-fx-background-color: #34495e;" />
+         <Button id="blueButtonStyle" fx:id="manageRoomsButton" mnemonicParsing="false" onAction="#handleManageRooms" prefHeight="25.0" prefWidth="245.0" style="-fx-background-color: #7d97b1; -fx-font-weight: Bold;" text="Manage Rooms" textAlignment="CENTER" textFill="WHITE" wrapText="true">
+            <font>
+               <Font size="14.0" />
+            </font>
+         </Button>
+         <Button fx:id="manageRoomTypesButton" mnemonicParsing="false" onAction="#handleManageRoomTypes" prefHeight="25.0" prefWidth="245.0" style="-fx-background-color: #7d97b1; -fx-font-weight: Bold;" text="Manage Room Types" textAlignment="CENTER" textFill="WHITE">
+            <font>
+               <Font size="14.0" />
+            </font>
+         </Button>
+         <Button fx:id="manageAmenitiesButton" mnemonicParsing="false" onAction="#handleManageAmenities" prefHeight="25.0" prefWidth="245.0" style="-fx-background-color: #7d97b1; -fx-font-weight: Bold;" text="Manage Amenities" textAlignment="CENTER" textFill="WHITE">
+            <font>
+               <Font size="14.0" />
+            </font>
+         </Button>
+         <Button fx:id="registerStaffButton" mnemonicParsing="false" onAction="#handleRegisterStaff" prefHeight="25.0" prefWidth="245.0" style="-fx-background-color: #7d97b1; -fx-font-weight: Bold;" text="Register Staff" textAlignment="CENTER" textFill="WHITE">
+            <font>
+               <Font size="14.0" />
+            </font>
+         </Button>
+
+            <Separator style="-fx-background-color: #34495e;" />
+
+            <Label style="-fx-text-fill: #95a5a6; -fx-font-size: 16px;" text="Databases" />
+         <Separator style="-fx-background-color: #34495e;" />
+         <Button fx:id="viewGuestsButton" mnemonicParsing="false" onAction="#handleViewGuests" prefHeight="25.0" prefWidth="245.0" style="-fx-background-color: #ffffff; -fx-font-weight: Bold;" text="View Guests" textAlignment="CENTER" textFill="#7d97b1">
+            <font>
+               <Font size="14.0" />
+            </font>
+         </Button>
+         <Button fx:id="viewReservationsButton" mnemonicParsing="false" onAction="#handleViewReservations" prefHeight="25.0" prefWidth="245.0" style="-fx-background-color: #ffffff; -fx-font-weight: Bold;" text="View Reservation" textAlignment="CENTER" textFill="#7d97b1">
+            <font>
+               <Font size="14.0" />
+            </font>
+         </Button>
+         <Button fx:id="viewStaffButton" mnemonicParsing="false" onAction="#handleViewStaff" prefHeight="25.0" prefWidth="245.0" style="-fx-background-color: #ffffff; -fx-font-weight: Bold;" text="View Staff Members" textAlignment="CENTER" textFill="#7d97b1">
+            <font>
+               <Font size="14.0" />
+            </font>
+         </Button>
+         <Button fx:id="viewInvoicesButton" mnemonicParsing="false" onAction="#handleViewInvoices" prefHeight="25.0" prefWidth="245.0" style="-fx-background-color: #ffffff; -fx-font-weight: Bold;" text="View Invoices" textAlignment="CENTER" textFill="#7d97b1">
+            <font>
+               <Font size="14.0" />
+            </font>
+         </Button>
+         <Separator style="-fx-background-color: #34495e;" />
+        </VBox>
+    </left>
+
+    <center>
+        <VBox fx:id="centralBox" alignment="CENTER" prefWidth="936.0" spacing="20" style="-fx-background-color: #ffffff;">
+         <children>
+            <ImageView fitHeight="836.0" fitWidth="965.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@/GUI/NileAtelier.png" />
+               </image>
+            </ImageView>
+         </children>
+        </VBox>
+    </center>
+
+</BorderPane>
