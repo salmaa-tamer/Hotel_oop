@@ -24,7 +24,11 @@ public class Admin extends Staff {
                 }
             }
            HotelDatabase.rooms.add(newRoom);
+
+            HotelDatabase.unaddedRooms.removeIf(r->r.getRoomid()==newRoom.getRoomid());
+
         }
+
         public void readRoom(Room room){
             for(Room r : HotelDatabase.rooms){
                 if(r.getRoomid()==room.getRoomid()){
@@ -38,8 +42,9 @@ public class Admin extends Staff {
 
     public void deleteRoom(Room roomToDelete){
             for(int i =0 ; i<HotelDatabase.rooms.size(); i++){
-                if(HotelDatabase.rooms.get(i).getRoomid() == roomToDelete.getRoomid()){
+                if(HotelDatabase.rooms.get(i).getRoomid() == roomToDelete.getRoomid()) {
                     HotelDatabase.rooms.remove(i);
+                    HotelDatabase.unaddedRooms.add(roomToDelete);
                     return;
                 }
             }
