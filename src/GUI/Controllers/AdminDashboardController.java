@@ -68,7 +68,10 @@ public class AdminDashboardController {
             Label roomIdLabel = new Label("Room ID:");
             roomIdLabel.setStyle("-fx-font-size: 18px; -fx-text-fill: #2c3e50; -fx-font-weight: bold;");
             ComboBox<Integer> roomIdComboBox= new ComboBox<>();
-            roomIdComboBox.getItems().addAll(104,105,204,205,304,305,401,402,403,404,405,501,502,503,504,505);
+            //roomIdComboBox.getItems().addAll(104,105,204,205,304,305,401,402,403,404,405,501,502,503,504,505);
+            for(Room r: HotelDatabase.unaddedRooms){
+                roomIdComboBox.getItems().add(r.getRoomid());
+            }
             roomIdComboBox.setPromptText("Select a Room ID");
             roomIdComboBox.setStyle("-fx-font-size: 16px; -fx-background-color: #ecf0f1;");
             roomIdComboBox.setPrefWidth(300);
