@@ -42,7 +42,7 @@ public class Amenity {
 
     @Override
     public String toString() {
-        return "Name:"+name + ",Additionalcost :"+ additionalcost;
+        return "Name: "+name + "   |   Additional Cost: "+ additionalcost;
     }
 
 }

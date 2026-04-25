@@ -99,11 +99,12 @@ public abstract class Staff{
        }
     }
 
+
     @Override
     public String toString() {
         return "Username: " + username +
-                "   Role: " + role +
+                "   Date of Birth: " + dateOfBirth +
                 "   Working Hours: " + workingHours +
-                "   Date of Birth: " + dateOfBirth;
+                "   Role: " + role ;
     }
 }

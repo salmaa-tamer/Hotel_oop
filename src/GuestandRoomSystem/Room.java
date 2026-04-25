@@ -18,6 +18,11 @@ public class Room {
         this.amenities = amenities;
        setPricepernight(pricepernight);
     }
+
+    public Room( int roomid ){
+        this.roomid=roomid;
+    }
+
     public double getPricepernight() {
         return pricepernight;
     }

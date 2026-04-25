@@ -18,6 +18,7 @@
         public static ArrayList<Staff> staff = new ArrayList<>();
         public static ArrayList<RoomType> roomTypes = new ArrayList<>();
         public static ArrayList<Amenity> amenities = new ArrayList<>();
+        public static ArrayList<Room>unaddedRooms=new ArrayList<>();
 
         // 2. The Dummy Data
         public static void loadDummyData() {
@@ -98,5 +99,19 @@
             Bill bill2 = new Bill(res2, PaymentMethod.CASH);
             bills.add(bill1);
             bills.add(bill2);
+
+            // Unadded Rooms
+            Room unaddedRoom1=new Room(104);
+            Room unaddedRoom2=new Room(105);
+            Room unaddedRoom3=new Room(204);
+            Room unaddedRoom4=new Room(205);
+            Room unaddedRoom5=new Room(304);
+            Room unaddedRoom6=new Room(305);
+            unaddedRooms.add(unaddedRoom1);
+            unaddedRooms.add(unaddedRoom2);
+            unaddedRooms.add(unaddedRoom3);
+            unaddedRooms.add(unaddedRoom4);
+            unaddedRooms.add(unaddedRoom5);
+            unaddedRooms.add(unaddedRoom6);
         }
     }

@@ -68,4 +68,11 @@ public class Bill{
         System.out.println("Payment Date:"+paymentDate);
         System.out.println("---Thanks for choosing us, we hope to see you soon:)---");
     }
+    @Override
+    public String toString(){
+        return "Reservation details: "+reservation+
+                " Total Amount: "+FinalAmount+
+                " Payment Method: "+paymentMethod+
+                " Payment Date: "+paymentDate;
+    }
 }
