@@ -18,8 +18,10 @@
         public static ArrayList<Staff> staff = new ArrayList<>();
         public static ArrayList<RoomType> roomTypes = new ArrayList<>();
         public static ArrayList<Amenity> amenities = new ArrayList<>();
-        public static ArrayList<Room>unaddedRooms=new ArrayList<>();
-        public static ArrayList<RoomType>unaddedRoomTypes=new ArrayList<>();
+        public static ArrayList<Room> unaddedRooms = new ArrayList<>();
+        public static ArrayList<RoomType> unaddedRoomTypes = new ArrayList<>();
+        public static ArrayList<Amenity>unaddedAmenities = new ArrayList<>();
+
 
         // 2. The Dummy Data
         public static void loadDummyData() {
@@ -121,7 +123,6 @@
             unaddedRooms.add(unaddedRoom6);
 
             //Unadded Room Types
-
             RoomType unaddedRoomType1 = new RoomType("Family",5);
             RoomType unaddedRoomType2 = new RoomType("Premium Suite",6);
             RoomType unaddedRoomType3 = new RoomType("Penthouse",7);

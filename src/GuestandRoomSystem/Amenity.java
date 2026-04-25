@@ -11,6 +11,12 @@ public class Amenity {
        setAdditionalcost(additionalcost);
     }
 
+    public Amenity(String name, int amenityid){
+        this.amenityid = amenityid;
+        setName(name);
+    }
+
+
     public void setAdditionalcost(double additionalcost) {
         if(additionalcost<0){
             throw new IllegalArgumentException("Invalid Additionalcost");

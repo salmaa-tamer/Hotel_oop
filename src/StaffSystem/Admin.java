@@ -23,8 +23,7 @@ public class Admin extends Staff {
                     throw new IllegalArgumentException("Room Already Exists");
                 }
             }
-           HotelDatabase.rooms.add(newRoom);
-
+            HotelDatabase.rooms.add(newRoom);
             HotelDatabase.unaddedRooms.removeIf(r->r.getRoomid()==newRoom.getRoomid());
 
         }
@@ -79,6 +78,7 @@ public class Admin extends Staff {
                 }
             }
             HotelDatabase.amenities.add(newAmenity);
+            HotelDatabase.unaddedAmenities.removeIf(a->a.getAmenityid()==newAmenity.getAmenityid());
         }
 
         public void readAllAmenities(){
@@ -149,7 +149,6 @@ public class Admin extends Staff {
             for(RoomType rt : HotelDatabase.roomTypes){
                 if(rt.getRoomtypeid()==roomType.getRoomtypeid()){
                     System.out.println(rt);
-                    HotelDatabase.unaddedRoomTypes.add(roomType);
                     return;
                 }
             }
@@ -180,6 +179,7 @@ public class Admin extends Staff {
         for (int i = 0; i < HotelDatabase.roomTypes.size(); i++) {
             if (HotelDatabase.roomTypes.get(i).getRoomtypeid() == roomType.getRoomtypeid()) {
                 HotelDatabase.roomTypes.remove(i);
+                HotelDatabase.unaddedRoomTypes.add(roomType);
                 return;
             }
         }
