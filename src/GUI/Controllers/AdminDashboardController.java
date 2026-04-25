@@ -741,7 +741,18 @@ public class AdminDashboardController {
 
         });
 
-        sideBar.getChildren().addAll(adminLabel, separator0,separator1,controlsLabel,separator2,separator3,addRoomTypeBtn,viewRoomTypesBtn,deleteRoomTypeBtn,updateRoomTypeBtn);
+        Separator separator4 = new Separator();
+        Separator separator5=new Separator();
+
+        Button backBtn = new Button("BACK");
+        backBtn.setStyle("-fx-background-color: white; -fx-text-fill: #7d97b1; -fx-font-size: 14px; -fx-font-weight: bold; -fx-padding: 8px ;");
+        backBtn.setPrefWidth(450);
+        backBtn.setOnAction(e->goBackToDashboard(e));
+
+        Separator separator6 = new Separator();
+        Separator separator7=new Separator();
+
+        sideBar.getChildren().addAll(adminLabel, separator0,separator1,controlsLabel,separator2,separator3,addRoomTypeBtn,viewRoomTypesBtn,deleteRoomTypeBtn,updateRoomTypeBtn, separator4, separator5,backBtn,separator6,separator7);
     }
 
 
