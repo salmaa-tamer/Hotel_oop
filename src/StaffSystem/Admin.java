@@ -122,6 +122,7 @@ public class Admin extends Staff {
             for(int i=0 ; i<HotelDatabase.amenities.size(); i++){
                 if (HotelDatabase.amenities.get(i).getAmenityid()==amenityToDelete.getAmenityid()){
                     HotelDatabase.amenities.remove(i);
+                    HotelDatabase.unaddedAmenities.add(amenityToDelete);
                     return;
                 }
             }
