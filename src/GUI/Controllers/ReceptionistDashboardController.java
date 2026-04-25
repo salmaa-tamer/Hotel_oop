@@ -25,7 +25,7 @@ public class ReceptionistDashboardController {
 
         currentReceptionist = (Receptionist) HotelDatabase.staff.get(0);
         nameLabel.setText("Name: " + currentReceptionist.getUsername());
-        roleLabel.setText("Role: " + currentReceptionist.getRole());
+       // roleLabel.setText("Role: " + currentReceptionist.getRole());
         hoursLabel.setText("working Hours: " + currentReceptionist.getWorkingHours());
     }
 
