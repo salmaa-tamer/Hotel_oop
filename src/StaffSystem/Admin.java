@@ -135,6 +135,7 @@ public class Admin extends Staff {
                 }
             }
             HotelDatabase.roomTypes.add(roomType);
+            HotelDatabase.unaddedRoomTypes.removeIf(r->r.getRoomtypeid()==roomType.getRoomtypeid());
         }
 
         public void readAllRoomTypes(){
@@ -147,6 +148,7 @@ public class Admin extends Staff {
             for(RoomType rt : HotelDatabase.roomTypes){
                 if(rt.getRoomtypeid()==roomType.getRoomtypeid()){
                     System.out.println(rt);
+                    HotelDatabase.unaddedRoomTypes.add(roomType);
                     return;
                 }
             }

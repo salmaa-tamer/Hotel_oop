@@ -13,6 +13,13 @@ private int roomtypeid;
         this.roomtypeid = roomtypeid;
     }
 
+
+    public RoomType(String name,int roomtypeid){
+        setName(name);
+        this.roomtypeid=roomtypeid;
+    }
+
+
     public void setBaseprice(double baseprice) {
 
         if(baseprice<=0){

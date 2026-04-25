@@ -19,6 +19,7 @@
         public static ArrayList<RoomType> roomTypes = new ArrayList<>();
         public static ArrayList<Amenity> amenities = new ArrayList<>();
         public static ArrayList<Room>unaddedRooms=new ArrayList<>();
+        public static ArrayList<RoomType>unaddedRoomTypes=new ArrayList<>();
 
         // 2. The Dummy Data
         public static void loadDummyData() {
@@ -107,11 +108,30 @@
             Room unaddedRoom4=new Room(205);
             Room unaddedRoom5=new Room(304);
             Room unaddedRoom6=new Room(305);
+            Room unaddedRoom7=new Room(401);
+            Room unaddedRoom8=new Room(402);
+            Room unaddedRoom9 = new Room(403);
+            Room unaddedRoom10= new Room(404);
+            Room unaddedRoom11 = new Room(405);
             unaddedRooms.add(unaddedRoom1);
             unaddedRooms.add(unaddedRoom2);
             unaddedRooms.add(unaddedRoom3);
             unaddedRooms.add(unaddedRoom4);
             unaddedRooms.add(unaddedRoom5);
             unaddedRooms.add(unaddedRoom6);
+
+            //Unadded Room Types
+
+            RoomType unaddedRoomType1 = new RoomType("Family",5);
+            RoomType unaddedRoomType2 = new RoomType("Premium Suite",6);
+            RoomType unaddedRoomType3 = new RoomType("Penthouse",7);
+            RoomType unaddedRoomType4 = new RoomType("Deluxe",8);
+            unaddedRoomTypes.add(unaddedRoomType1);
+            unaddedRoomTypes.add(unaddedRoomType2);
+            unaddedRoomTypes.add(unaddedRoomType3);
+            unaddedRoomTypes.add(unaddedRoomType4);
+
+
         }
+
     }
