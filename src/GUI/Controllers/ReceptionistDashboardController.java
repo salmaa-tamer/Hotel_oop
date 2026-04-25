@@ -31,7 +31,7 @@ public class ReceptionistDashboardController {
 
     @FXML
     public void openCheckInScreen(javafx.event.ActionEvent event) {
-        //labels w buttons main dasboard
+        //labels w buttons main dashboard
         Label lblTitle = new Label("Process Guest Check-In");
         lblTitle.setStyle("-fx-font-size: 24px; -fx-font-weight: bold; -fx-text-fill: white;");
         Button btnBack = new Button("Back to Dashboard");
