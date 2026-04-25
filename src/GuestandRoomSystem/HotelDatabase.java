@@ -18,8 +18,10 @@
         public static ArrayList<Staff> staff = new ArrayList<>();
         public static ArrayList<RoomType> roomTypes = new ArrayList<>();
         public static ArrayList<Amenity> amenities = new ArrayList<>();
-        public static ArrayList<Room>unaddedRooms=new ArrayList<>();
-        public static ArrayList<RoomType>unaddedRoomTypes=new ArrayList<>();
+        public static ArrayList<Room> unaddedRooms = new ArrayList<>();
+        public static ArrayList<RoomType> unaddedRoomTypes = new ArrayList<>();
+        public static ArrayList<Amenity>unaddedAmenities = new ArrayList<>();
+
 
         // 2. The Dummy Data
         public static void loadDummyData() {
@@ -121,7 +123,6 @@
             unaddedRooms.add(unaddedRoom6);
 
             //Unadded Room Types
-
             RoomType unaddedRoomType1 = new RoomType("Family",5);
             RoomType unaddedRoomType2 = new RoomType("Premium Suite",6);
             RoomType unaddedRoomType3 = new RoomType("Penthouse",7);
@@ -131,6 +132,17 @@
             unaddedRoomTypes.add(unaddedRoomType3);
             unaddedRoomTypes.add(unaddedRoomType4);
 
+            // Unadded Amenities
+            Amenity unaddedAmenity1 = new Amenity("Spa Access",7);
+            Amenity unaddedAmenity2 = new Amenity("Luxury Yacht Dinner", 8);
+            Amenity unaddedAmenity3 = new Amenity("Around The Clock Room Service",9);
+            Amenity unaddedAmenity4 = new Amenity("Private Parking",10);
+            Amenity unaddedAmenity5 = new Amenity("All Inclusive Dining",10);
+            unaddedAmenities.add(unaddedAmenity1);
+            unaddedAmenities.add(unaddedAmenity2);
+            unaddedAmenities.add(unaddedAmenity3);
+            unaddedAmenities.add(unaddedAmenity4);
+            unaddedAmenities.add(unaddedAmenity5);
 
         }
 
