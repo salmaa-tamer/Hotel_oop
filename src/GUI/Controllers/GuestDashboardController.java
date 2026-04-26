@@ -8,6 +8,10 @@ import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
 import javafx.scene.control.*;
 import javafx.scene.layout.VBox;
+import javafx.fxml.FXMLLoader;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
+import javafx.stage.Stage;
 
 import java.util.stream.Collectors;
 
@@ -255,8 +259,15 @@ public class GuestDashboardController {
 
     @FXML
     public void goToReservations() {
+        try{
+        HotelDatabase.currentGuest = currentguest;
+        Parent root = FXMLLoader.load(getClass().getResource("/GUI/FXML/MyReservations.fxml"));
+        Stage stage = (Stage) welcomelabel.getScene().getWindow();
+        stage.setScene(new Scene(root, 1024, 576));} catch (Exception e) {
+            e.printStackTrace();
+        }
         // go to salma's My Reservations screen
-        System.out.println("Going to reservations...");
+        //System.out.println("Going to reservations...");
        /* MyReservationsController controller =
                 SceneManager.navigateToWithController("MyReservations.fxml");
         controller.setGuest(currentguest);*/
@@ -264,8 +275,15 @@ public class GuestDashboardController {
 
     @FXML
     public void goToCheckout() {
+        try{
+        HotelDatabase.currentGuest = currentguest;
+        Parent root = FXMLLoader.load(getClass().getResource("/GUI/FXML/CheckoutPayment.fxml"));
+        Stage stage = (Stage) welcomelabel.getScene().getWindow();
+        stage.setScene(new Scene(root, 1024, 576));} catch (Exception e) {
+            e.printStackTrace();
+        }
         // go to salma's Checkout screen
-        System.out.println("Going to checkout...");
+        //System.out.println("Going to checkout...");
        /* CheckoutController controller =
                 SceneManager.navigateToWithController("Checkout.fxml");
         controller.setGuest(currentguest);*/
@@ -274,16 +292,22 @@ public class GuestDashboardController {
     // go to salma's Make Reservation screen
     @FXML
     public void onBookNowClicked() {
+
         try {
             Room selectedRoom = roomtable.getSelectionModel().getSelectedItem();
-
+            HotelDatabase.selectedRoom=selectedRoom;
             if (selectedRoom == null) {
                 throw new Exception("Please select a room first!");
             }
+            HotelDatabase.currentGuest = currentguest;  // ← add this
+            Parent root = FXMLLoader.load(getClass().getResource("/GUI/FXML/MakeReservation.fxml"));  // ← add this
+            Stage stage = (Stage) roomtable.getScene().getWindow();  // ← add this
+            stage.setScene(new Scene(root, 1024, 576));
 
-            System.out.println("Room selected: " + selectedRoom.getRoomid());
+            //System.out.println("Room selected: " + selectedRoom.getRoomid());
 
         } catch (Exception e) {
+            if (messagelabel!=null){
             messagelabel.setText(e.getMessage());
         }
     }
@@ -291,6 +315,6 @@ public class GuestDashboardController {
                     SceneManager.navigateToWithController("MakeReservation.fxml");
             controller.setGuest(currentguest);
             controller.setRoom(selectedRoom);*/
-}
+}}
 
 
