@@ -21,7 +21,7 @@
         public static ArrayList<Room> unaddedRooms = new ArrayList<>();
         public static ArrayList<RoomType> unaddedRoomTypes = new ArrayList<>();
         public static ArrayList<Amenity>unaddedAmenities = new ArrayList<>();
-
+        public static Guest currentGuest = null;
 
         // 2. The Dummy Data
         public static void loadDummyData() {
