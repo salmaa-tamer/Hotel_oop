@@ -81,7 +81,7 @@ HotelDatabase.currentGuest.makeReservation(selectedRoom,checkin,checkout);
         }
     }
 @FXML
-public void GoBack(javafx.event.ActionEvent event){
+public void GoBackToDashboard(javafx.event.ActionEvent event){
         try {
             Parent root= FXMLLoader.load(getClass().getResource("/GUI/FXML/GuestDashboard.fxml"));
             Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
