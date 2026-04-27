@@ -125,5 +125,4 @@ public class RegisterController {
         lblMessage.setStyle(success? "-fx-text-fill: #27ae60; -fx-font-weight: bold;"
                 : "-fx-text-fill: #e74c3c; -fx-font-weight: bold;" );
     }
-
 }
