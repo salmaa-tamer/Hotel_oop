@@ -13,7 +13,10 @@ import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
+import javafx.scene.layout.HBox;
+import javafx.scene.layout.VBox;
 import javafx.stage.Stage;
+import javafx.scene.control.Separator;
 
 public class LoginController {
   @FXML  private TextField txtUsername;
@@ -22,7 +25,11 @@ public class LoginController {
    @FXML private Button btnToggleGuest;
   @FXML  private Button btnToggleStaff;
   @FXML  private Button btnToggleRegister;
-   @FXML private Button btnGoRegister;
+  // @FXML private Button btnGoRegister;
+  // @FXML private HBox registerBox;
+   //@FXML private Separator registerSeparator;
+   @FXML
+   private VBox registerBox;
 
     private boolean isGuestMode =true;
 
@@ -30,14 +37,25 @@ public class LoginController {
     public void initialize(){
         setActiveStyle(btnToggleGuest);
         setInactiveStyle(btnToggleStaff);
-         btnGoRegister.setVisible(true);
+        // btnGoRegister.setVisible(true);
+        // btnGoRegister.setManaged(true);
+       // registerSeparator.setVisible(true);
+       // registerSeparator.setManaged(true);
+        registerBox.setVisible(true);
+        registerBox.setManaged(true);
+
     }
     @FXML
     public void switchToGuest(ActionEvent e){
         isGuestMode=true;
         setActiveStyle(btnToggleGuest);
         setInactiveStyle(btnToggleStaff);
-        btnGoRegister.setVisible(true);
+       // btnGoRegister.setVisible(true);
+       // btnGoRegister.setManaged(true);
+        registerBox.setVisible(true);
+        registerBox.setManaged(true);
+       // registerSeparator.setVisible(true);
+       // registerSeparator.setManaged(true);
         lblError.setText("");
     }
     @FXML
@@ -45,7 +63,12 @@ public class LoginController {
         isGuestMode=false;
         setActiveStyle(btnToggleStaff);
         setInactiveStyle(btnToggleGuest);
-        btnGoRegister.setVisible(false);
+       // btnGoRegister.setVisible(false);
+       // btnGoRegister.setManaged(false);
+        registerBox.setVisible(false);
+        registerBox.setManaged(false);
+       // registerSeparator.setVisible(false);
+       // registerSeparator.setManaged(false);
         lblError.setText("");
     }
     // MAIN LOGIN HANDLER

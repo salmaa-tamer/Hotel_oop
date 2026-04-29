@@ -55,13 +55,17 @@
             </VBox>
             <Label fx:id="lblError" style="-fx-text-fill: #e74c3c; -fx-font-size: 13px; -fx-font-weight: bold;" />
             <Button fx:id="btnLogin" mnemonicParsing="false" onAction="#handleLogin" prefWidth="350.0" styleClass="confirm-button" text="Sign In" />
-            <Separator prefWidth="350.0" />
-            <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" spacing="8.0">
+            <VBox fx:id="registerBox" prefHeight="200.0" prefWidth="100.0">
                <children>
-                  <Label style="-fx-font-size: 13px; -fx-text-fill: #7f8c8d;;" text="Don't have an account?" />
-                  <Button fx:id="btnGoRegister" mnemonicParsing="false" onAction="#goToRegister" style="-fx-background-color: transparent; -fx-text-fill: #2980b9; -fx-font-size: 13px; -fx-font-weight: bold; -fx-cursor: hand;" text="Register here" />
+                  <Separator prefWidth="350.0" />
+                  <HBox alignment="CENTER" prefHeight="41.0" prefWidth="434.0">
+                     <children>
+                        <Label style="-fx-font-size: 13px; -fx-text-fill: #7f8c8d;;" text="Don't have an account?" />
+                        <Button mnemonicParsing="false" onAction="#goToRegister" style="-fx-background-color: transparent; -fx-text-fill: #2980b9; -fx-font-size: 13px; -fx-font-weight: bold; -fx-cursor: hand;" text="Register here" />
+                     </children>
+                  </HBox>
                </children>
-            </HBox>
+            </VBox>
          </children>
       </VBox>
    </center>

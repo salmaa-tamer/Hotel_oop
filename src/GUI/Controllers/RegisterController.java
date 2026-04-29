@@ -64,6 +64,13 @@ public class RegisterController {
             showMessage("Date must be YYYY-MM-DD format.",false);
             return;
         }
+        LocalDate today = LocalDate.now();
+        int age = java.time.Period.between(dob, today).getYears();
+
+        if (age < 18) {
+            showMessage("You must be at least 18 years old to register.", false);
+            return;
+        }
 
         //parse balance
         double balance;
