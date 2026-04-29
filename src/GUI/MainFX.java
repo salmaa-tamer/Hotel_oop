@@ -11,9 +11,9 @@ public class MainFX extends Application {
     @Override
     public void start(Stage stage) throws Exception {
 
-        Parent root = FXMLLoader.load(getClass().getResource("/GUI/FXML/GuestDashboard.fxml"));
+        Parent root = FXMLLoader.load(getClass().getResource("/GUI/FXML/LoginScreen.fxml"));
         stage.setTitle("The Nile Atelier-Guest");
-       Scene scene= new Scene(root, 1280, 720);
+       Scene scene= new Scene(root, 1366, 768);
         String css = getClass().getResource("/GUI/CSS/styles.css").toExternalForm();
         scene.getStylesheets().add(css);
         stage.setScene(scene);

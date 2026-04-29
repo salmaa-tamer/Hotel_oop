@@ -114,6 +114,8 @@ public class RegisterController {
             );
             stage.setScene(scene);
             stage.setTitle(title);
+            stage.setWidth(1366);
+            stage.setHeight(768);
             stage.setResizable(false);
         }
         catch(Exception ex){
