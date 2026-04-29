@@ -15,7 +15,7 @@
 <?import java.net.URL?>
 <?import javafx.scene.control.ScrollPane?>
 
-<BorderPane prefHeight="576.0" prefWidth="1024.0"
+<BorderPane prefHeight="768" prefWidth="1366"
             xmlns="http://javafx.com/javafx/17"
             xmlns:fx="http://javafx.com/fxml/1"
             fx:controller="GUI.Controllers.GuestDashboardController">
@@ -34,7 +34,7 @@
 
     <!-- SIDEBAR -->
     <left>
-        <VBox styleClass="sidebar" prefWidth="220" spacing="8">
+        <VBox styleClass="sidebar" prefWidth="260" spacing="8">
             <Label text="Guest"            styleClass="sidebar-title"/>
             <Label text="The Nile Atelier" styleClass="sidebar-subtitle"/>
             <Label text="Guest Portal"     styleClass="sidebar-subtitle"/>
@@ -46,13 +46,16 @@
             <Separator/>
             <Label text="ACTIONS" styleClass="sidebar-section-label"/>
             <Button text="📄  My Reservations"   styleClass="sidebar-button-outline" onAction="#goToReservations"/>
-            <Button text="💳  Checkout"           styleClass="sidebar-button-danger"  onAction="#goToCheckout"/>
+            <Button text="Make Reservation "    styleClass="sidebar-button-outline" onAction="#goToMakeReservation"/>
+            <Button text="❌  Cancel Reservation" styleClass="sidebar-button-outline" onAction="#goToReservations"/>
+            <Button text="💳  Checkout"           styleClass="sidebar-button-outline"  onAction="#goToCheckout"/>
+            <Button text="Logout"           styleClass="sidebar-button-danger"  onAction="#HandleLogout"/>
         </VBox>
     </left>
 
     <!-- CENTER -->
     <center>
-        <StackPane styleClass="center-panel">
+        <StackPane styleClass="center-panel" style="-fx-padding: 20px;">
 
             <!-- Dashboard Panel -->
             <VBox fx:id="dashboardpanel" visible="true" spacing="12" alignment="TOP_LEFT">
@@ -72,7 +75,7 @@
 
             <!-- Profile Panel -->
            <ScrollPane fitToWidth="true"
-                        prefHeight="400"
+                        prefHeight="620"
                         style="-fx-background-color: transparent;
                    -fx-background: transparent;
                    -fx-border-color: transparent;">
@@ -112,7 +115,7 @@
                     </VBox>
                 </HBox>
 
-                <TableView fx:id="roomtable" prefHeight="300" maxWidth="Infinity" styleClass="table-view">
+                <TableView fx:id="roomtable" prefHeight="220" maxWidth="Infinity" styleClass="table-view">
                     <columns>
                         <TableColumn fx:id="roomidcol"       text="Room ID"     prefWidth="100"/>
                         <TableColumn fx:id="availabilitycol" text="Available"   prefWidth="100"/>
@@ -123,7 +126,7 @@
                 </TableView>
 
                 <!-- Book Now — centered via HBox wrapper -->
-                <HBox alignment="CENTER" style="-fx-padding: 20px;">
+                <HBox alignment="CENTER" style="-fx-padding: 40px 20px 20px 20px;">
                     <Button text="Book Now" styleClass="book-button" onAction="#onBookNowClicked" />
                 </HBox>
 

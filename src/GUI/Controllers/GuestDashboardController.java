@@ -1,6 +1,6 @@
 package GUI.Controllers;
 
-import GUI.SceneManager;
+import GUI.Controllers.SessionManager;
 import GuestandRoomSystem.*;
 import javafx.beans.property.SimpleStringProperty;
 import javafx.collections.FXCollections;
@@ -75,8 +75,11 @@ public class GuestDashboardController {
 
     @FXML
     public void initialize() {
-        currentguest = HotelDatabase.guests.get(0);
-
+        currentguest = SessionManager.getCurrentGuest();
+        if (currentguest == null) {
+            System.out.println("ERROR: No current guest ");
+            return;
+        }
         setupTopBar();
         setupDashboardTable();
         setupRoomsPanel();
@@ -89,6 +92,7 @@ public class GuestDashboardController {
     private Guest currentguest;
 
     public void setguest(Guest guest) {
+       SessionManager.setCurrentGuest(guest);
         this.currentguest = guest;
         setupTopBar();
         loadprofile();
@@ -231,8 +235,6 @@ public class GuestDashboardController {
 
         applyfilters(); // load rooms initially
 
-        //Button bookbutton =new Button("Book Now");
-
     }
 
     @FXML
@@ -261,35 +263,54 @@ public class GuestDashboardController {
     public void goToReservations() {
         try{
         HotelDatabase.currentGuest = currentguest;
+        SessionManager.setCurrentGuest(currentguest);
         Parent root = FXMLLoader.load(getClass().getResource("/GUI/FXML/MyReservations.fxml"));
         Stage stage = (Stage) welcomelabel.getScene().getWindow();
-        stage.setScene(new Scene(root, 1024, 576));} catch (Exception e) {
+        stage.setScene(new Scene(root, 1366, 768));} catch (Exception e) {
             e.printStackTrace();
         }
         // go to salma's My Reservations screen
-        //System.out.println("Going to reservations...");
-       /* MyReservationsController controller =
-                SceneManager.navigateToWithController("MyReservations.fxml");
-        controller.setGuest(currentguest);*/
+
     }
 
     @FXML
     public void goToCheckout() {
         try{
         HotelDatabase.currentGuest = currentguest;
+        SessionManager.setCurrentGuest(currentguest);
         Parent root = FXMLLoader.load(getClass().getResource("/GUI/FXML/CheckoutPayment.fxml"));
         Stage stage = (Stage) welcomelabel.getScene().getWindow();
-        stage.setScene(new Scene(root, 1024, 576));} catch (Exception e) {
+        stage.setScene(new Scene(root, 1366, 768));} catch (Exception e) {
             e.printStackTrace();
         }
-        // go to salma's Checkout screen
-        //System.out.println("Going to checkout...");
-       /* CheckoutController controller =
-                SceneManager.navigateToWithController("Checkout.fxml");
-        controller.setGuest(currentguest);*/
+
+    }
+    @FXML
+    public void goToMakeReservation() {
+        try {
+            HotelDatabase.currentGuest = currentguest;
+            SessionManager.setCurrentGuest(currentguest);
+            HotelDatabase.selectedRoom = null; // no pre-selected room
+            Parent root = FXMLLoader.load(getClass().getResource("/GUI/FXML/MakeReservation.fxml"));
+            Stage stage = (Stage) welcomelabel.getScene().getWindow();
+            stage.setScene(new Scene(root, 1366, 768));
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
+    @FXML
+    public void HandleLogout() {
+        try {
+            SessionManager.setCurrentGuest(null);
+            HotelDatabase.currentGuest = null;
+            Parent root = FXMLLoader.load(getClass().getResource("/GUI/FXML/Login.fxml"));
+            Stage stage = (Stage) welcomelabel.getScene().getWindow();
+            stage.setScene(new Scene(root, 1366, 768));
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
     }
 
-    // go to salma's Make Reservation screen
     @FXML
     public void onBookNowClicked() {
 
@@ -299,22 +320,19 @@ public class GuestDashboardController {
             if (selectedRoom == null) {
                 throw new Exception("Please select a room first!");
             }
-            HotelDatabase.currentGuest = currentguest;  // ← add this
-            Parent root = FXMLLoader.load(getClass().getResource("/GUI/FXML/MakeReservation.fxml"));  // ← add this
-            Stage stage = (Stage) roomtable.getScene().getWindow();  // ← add this
-            stage.setScene(new Scene(root, 1024, 576));
-
-            //System.out.println("Room selected: " + selectedRoom.getRoomid());
+            HotelDatabase.currentGuest = currentguest;
+            Parent root = FXMLLoader.load(getClass().getResource("/GUI/FXML/MakeReservation.fxml"));
+            Stage stage = (Stage) roomtable.getScene().getWindow();
+            stage.setScene(new Scene(root, 1366, 768));
 
         } catch (Exception e) {
             if (messagelabel!=null){
             messagelabel.setText(e.getMessage());
         }
     }
-    /*  MakeReservationController controller =
-                    SceneManager.navigateToWithController("MakeReservation.fxml");
-            controller.setGuest(currentguest);
-            controller.setRoom(selectedRoom);*/
-}}
+
+
+
+}   }
 
 
