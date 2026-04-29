@@ -266,7 +266,7 @@ public class GuestDashboardController {
         SessionManager.setCurrentGuest(currentguest);
         Parent root = FXMLLoader.load(getClass().getResource("/GUI/FXML/MyReservations.fxml"));
         Stage stage = (Stage) welcomelabel.getScene().getWindow();
-        stage.setScene(new Scene(root, 1280, 720));} catch (Exception e) {
+        stage.setScene(new Scene(root, 1366, 768));} catch (Exception e) {
             e.printStackTrace();
         }
         // go to salma's My Reservations screen
@@ -280,7 +280,7 @@ public class GuestDashboardController {
         SessionManager.setCurrentGuest(currentguest);
         Parent root = FXMLLoader.load(getClass().getResource("/GUI/FXML/CheckoutPayment.fxml"));
         Stage stage = (Stage) welcomelabel.getScene().getWindow();
-        stage.setScene(new Scene(root, 1280, 720));} catch (Exception e) {
+        stage.setScene(new Scene(root, 1366, 768));} catch (Exception e) {
             e.printStackTrace();
         }
 
@@ -293,7 +293,7 @@ public class GuestDashboardController {
             HotelDatabase.selectedRoom = null; // no pre-selected room
             Parent root = FXMLLoader.load(getClass().getResource("/GUI/FXML/MakeReservation.fxml"));
             Stage stage = (Stage) welcomelabel.getScene().getWindow();
-            stage.setScene(new Scene(root, 1280, 720));
+            stage.setScene(new Scene(root, 1366, 768));
         } catch (Exception e) {
             e.printStackTrace();
         }
@@ -305,7 +305,7 @@ public class GuestDashboardController {
             HotelDatabase.currentGuest = null;
             Parent root = FXMLLoader.load(getClass().getResource("/GUI/FXML/Login.fxml"));
             Stage stage = (Stage) welcomelabel.getScene().getWindow();
-            stage.setScene(new Scene(root, 1280, 720));
+            stage.setScene(new Scene(root, 1366, 768));
         } catch (Exception e) {
             e.printStackTrace();
         }
@@ -323,7 +323,7 @@ public class GuestDashboardController {
             HotelDatabase.currentGuest = currentguest;
             Parent root = FXMLLoader.load(getClass().getResource("/GUI/FXML/MakeReservation.fxml"));
             Stage stage = (Stage) roomtable.getScene().getWindow();
-            stage.setScene(new Scene(root, 1280, 720));
+            stage.setScene(new Scene(root, 1366, 768));
 
         } catch (Exception e) {
             if (messagelabel!=null){
