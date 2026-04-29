@@ -15,7 +15,7 @@
 <?import java.net.URL?>
 <?import javafx.scene.control.ScrollPane?>
 
-<BorderPane prefHeight="576.0" prefWidth="1024.0"
+<BorderPane prefHeight="720.0" prefWidth="1280.0"
             xmlns="http://javafx.com/javafx/17"
             xmlns:fx="http://javafx.com/fxml/1"
             fx:controller="GUI.Controllers.GuestDashboardController">
@@ -46,7 +46,10 @@
             <Separator/>
             <Label text="ACTIONS" styleClass="sidebar-section-label"/>
             <Button text="📄  My Reservations"   styleClass="sidebar-button-outline" onAction="#goToReservations"/>
-            <Button text="💳  Checkout"           styleClass="sidebar-button-danger"  onAction="#goToCheckout"/>
+            <Button text="Make Reservation "    styleClass="sidebar-button-outline" onAction="#goToMakeReservation"/>
+            <Button text="❌  Cancel Reservation" styleClass="sidebar-button-outline" onAction="#goToReservations"/>
+            <Button text="💳  Checkout"           styleClass="sidebar-button-outline"  onAction="#goToCheckout"/>
+            <Button text="Logout"           styleClass="sidebar-button-danger"  onAction="#HandleLogout"/>
         </VBox>
     </left>
 

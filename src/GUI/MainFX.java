@@ -13,7 +13,7 @@ public class MainFX extends Application {
 
         Parent root = FXMLLoader.load(getClass().getResource("/GUI/FXML/GuestDashboard.fxml"));
         stage.setTitle("The Nile Atelier-Guest");
-       Scene scene= new Scene(root, 1024, 576);
+       Scene scene= new Scene(root, 1280, 720);
         String css = getClass().getResource("/GUI/CSS/styles.css").toExternalForm();
         scene.getStylesheets().add(css);
         stage.setScene(scene);
