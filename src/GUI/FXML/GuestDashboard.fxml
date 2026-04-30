@@ -47,7 +47,7 @@
             <Label text="ACTIONS" styleClass="sidebar-section-label"/>
             <Button text="📄  My Reservations"   styleClass="sidebar-button-outline" onAction="#goToReservations"/>
             <Button text="Make Reservation "    styleClass="sidebar-button-outline" onAction="#goToMakeReservation"/>
-            <Button text="❌  Cancel Reservation" styleClass="sidebar-button-outline" onAction="#goToReservations"/>
+            <Button text="❌  Cancel Reservation" styleClass="sidebar-button-outline" onAction="#goToCancelReservation"/>
             <Button text="💳  Checkout"           styleClass="sidebar-button-outline"  onAction="#goToCheckout"/>
             <Button text="Logout"           styleClass="sidebar-button-danger"  onAction="#HandleLogout"/>
         </VBox>

@@ -1,5 +1,5 @@
 
-/*package GUI;
+package GUI;
 
 import GuestandRoomSystem.HotelDatabase;
 import javafx.application.Application;
@@ -29,4 +29,4 @@ import javafx.stage.Stage;
         }
     }
 
-*/
+

@@ -303,7 +303,7 @@ public class GuestDashboardController {
         try {
             SessionManager.setCurrentGuest(null);
             HotelDatabase.currentGuest = null;
-            Parent root = FXMLLoader.load(getClass().getResource("/GUI/FXML/Login.fxml"));
+            Parent root = FXMLLoader.load(getClass().getResource("/GUI/FXML/LoginScreen.fxml"));
             Stage stage = (Stage) welcomelabel.getScene().getWindow();
             stage.setScene(new Scene(root, 1366, 768));
         } catch (Exception e) {
@@ -333,6 +333,21 @@ public class GuestDashboardController {
 
 
 
-}   }
+
+}
+    @FXML
+    public void goToCancelReservation() {
+        try {
+            HotelDatabase.currentGuest = currentguest;
+            SessionManager.setCurrentGuest(currentguest); // ← ADD THIS LINE
+            Parent root = FXMLLoader.load(getClass().getResource("/GUI/FXML/CancelReservation.fxml"));
+            Stage stage = (Stage) welcomelabel.getScene().getWindow();
+            stage.setScene(new Scene(root, 1024, 576));
+            stage.setMaximized(true);
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
+}
 
 

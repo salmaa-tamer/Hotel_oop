@@ -114,6 +114,7 @@ public void GoBackToDashboard(javafx.event.ActionEvent event){
             Parent root= FXMLLoader.load(getClass().getResource("/GUI/FXML/GuestDashboard.fxml"));
             Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
             stage.setScene(new Scene(root, 1024, 576));
+            stage.setMaximized(true);
         } catch (Exception e) {
             e.printStackTrace();
         }
@@ -126,7 +127,7 @@ public void GoBackToDashboard(javafx.event.ActionEvent event){
             if (checkoutdate.isAfter(checkindate)){
                 long nights = checkoutdate.toEpochDay()- checkindate.toEpochDay();
                 double Total= selectedRoom.CalculateTotalPrice((int)nights);
-                totalAmountLabel.setText("Total price: "+ Total +" LE for "+ nights + " night(s)" );
+                totalAmountLabel.setText("Total price: "+ Total +" $ for "+ nights + " night(s)" );
                 totalAmountLabel.setStyle("-fx-font-size: 18px; -fx-font-weight: bold; -fx-text-fill: #3498db;");
             }
             else {
