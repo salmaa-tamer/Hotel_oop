@@ -122,6 +122,8 @@ public class LoginController {
             scene.getStylesheets().add(getClass().getResource("/GUI/CSS/styles.css").toExternalForm());
             stage.setScene(scene);
             stage.setTitle(title);
+            stage.setWidth(1366);
+            stage.setHeight(768);
             stage.setResizable(false);
         }
         catch(Exception ex){
