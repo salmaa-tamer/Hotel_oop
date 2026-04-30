@@ -127,7 +127,7 @@ public void GoBackToDashboard(javafx.event.ActionEvent event){
             if (checkoutdate.isAfter(checkindate)){
                 long nights = checkoutdate.toEpochDay()- checkindate.toEpochDay();
                 double Total= selectedRoom.CalculateTotalPrice((int)nights);
-                totalAmountLabel.setText("Total price: "+ Total +" LE for "+ nights + " night(s)" );
+                totalAmountLabel.setText("Total price: "+ Total +" $ for "+ nights + " night(s)" );
                 totalAmountLabel.setStyle("-fx-font-size: 18px; -fx-font-weight: bold; -fx-text-fill: #3498db;");
             }
             else {
