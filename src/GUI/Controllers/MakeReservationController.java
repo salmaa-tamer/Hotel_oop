@@ -114,6 +114,7 @@ public void GoBackToDashboard(javafx.event.ActionEvent event){
             Parent root= FXMLLoader.load(getClass().getResource("/GUI/FXML/GuestDashboard.fxml"));
             Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
             stage.setScene(new Scene(root, 1024, 576));
+            stage.setMaximized(true);
         } catch (Exception e) {
             e.printStackTrace();
         }
