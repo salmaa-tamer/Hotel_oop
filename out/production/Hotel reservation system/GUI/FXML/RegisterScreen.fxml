@@ -18,7 +18,7 @@
     <stylesheets>
         <URL value="@../CSS/styles.css" />
     </stylesheets>
-   
+
     <left>
         <VBox alignment="CENTER" prefWidth="370.0" spacing="8" style="-fx-background-color: #1a252f; -fx-padding: 60px 40px;">
          <Label prefHeight="48.0" prefWidth="56.0" style="-fx-font-size: 56px;" text="🏨" />
