@@ -91,6 +91,23 @@ public class ReceptionistDashboardController {
         switchScene(event, layout);
     }
 
+
+    @FXML
+    public void HandleLogout(javafx.event.ActionEvent event) {
+        try {
+            javafx.scene.Parent root = javafx.fxml.FXMLLoader.load(
+                    getClass().getResource("/GUI/FXML/LoginScreen.fxml")
+            );
+
+            Stage stage = (Stage) ((javafx.scene.Node) event.getSource()).getScene().getWindow();
+            stage.setScene(new Scene(root, 1024, 576));
+            stage.show();
+
+        } catch (Exception ex) {
+            ex.printStackTrace();
+        }
+    }
+
     @FXML
     public void openCheckOutScreen(javafx.event.ActionEvent event) {
         Label lblTitle = new Label("Process Check-Out & Payment");

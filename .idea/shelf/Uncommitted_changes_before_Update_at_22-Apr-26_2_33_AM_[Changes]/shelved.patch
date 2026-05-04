@@ -1,0 +1,201 @@
+Index: .idea/workspace.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+><?xml version=\"1.0\" encoding=\"UTF-8\"?>\r\n<project version=\"4\">\r\n  <component name=\"AutoImportSettings\">\r\n    <option name=\"autoReloadType\" value=\"SELECTIVE\" />\r\n  </component>\r\n  <component name=\"ChangeListManager\">\r\n    <list default=\"true\" id=\"6ef86da0-53f2-4d5d-942d-a70b235a7772\" name=\"Changes\" comment=\"UML Diagram uploaded\">\r\n      <change beforePath=\"$PROJECT_DIR$/ervation 5572e2f\" beforeDir=\"false\" />\r\n    </list>\r\n    <option name=\"SHOW_DIALOG\" value=\"false\" />\r\n    <option name=\"HIGHLIGHT_CONFLICTS\" value=\"true\" />\r\n    <option name=\"HIGHLIGHT_NON_ACTIVE_CHANGELIST\" value=\"false\" />\r\n    <option name=\"LAST_RESOLUTION\" value=\"IGNORE\" />\r\n  </component>\r\n  <component name=\"Git.Merge.Settings\">\r\n    <option name=\"BRANCH\" value=\"main\" />\r\n  </component>\r\n  <component name=\"Git.Settings\">\r\n    <option name=\"RECENT_BRANCH_BY_REPOSITORY\">\r\n      <map>\r\n        <entry key=\"$PROJECT_DIR$\" value=\"main\" />\r\n      </map>\r\n    </option>\r\n    <option name=\"RECENT_GIT_ROOT_PATH\" value=\"$PROJECT_DIR$\" />\r\n  </component>\r\n  <component name=\"GitHubPullRequestSearchHistory\">{\r\n  &quot;lastFilter&quot;: {\r\n    &quot;state&quot;: &quot;OPEN&quot;,\r\n    &quot;assignee&quot;: &quot;Sara-abdelsamie&quot;\r\n  }\r\n}</component>\r\n  <component name=\"GithubPullRequestsUISettings\">{\r\n  &quot;selectedUrlAndAccountId&quot;: {\r\n    &quot;url&quot;: &quot;https://github.com/salmaa-tamer/Hotel_oop.git&quot;,\r\n    &quot;accountId&quot;: &quot;c551b227-fb56-42b0-b532-91b712eae42f&quot;\r\n  }\r\n}</component>\r\n  <component name=\"McpProjectServerCommands\">\r\n    <commands />\r\n    <urls />\r\n  </component>\r\n  <component name=\"ProjectColorInfo\">{\r\n  &quot;customColor&quot;: &quot;&quot;,\r\n  &quot;associatedIndex&quot;: 5\r\n}</component>\r\n  <component name=\"ProjectId\" id=\"3CQux4zR44ByCVqi9P770S5VBix\" />\r\n  <component name=\"ProjectViewState\">\r\n    <option name=\"hideEmptyMiddlePackages\" value=\"true\" />\r\n    <option name=\"showLibraryContents\" value=\"true\" />\r\n  </component>\r\n  <component name=\"PropertiesComponent\"><![CDATA[{\r\n  \"keyToString\": {\r\n    \"Application.Main.executor\": \"Run\",\r\n    \"RunOnceActivity.ShowReadmeOnStart\": \"true\",\r\n    \"RunOnceActivity.git.unshallow\": \"true\",\r\n    \"git-widget-placeholder\": \"main\",\r\n    \"kotlin-language-version-configured\": \"true\"\r\n  }\r\n}]]></component>\r\n  <component name=\"SharedIndexes\">\r\n    <attachedChunks>\r\n      <set>\r\n        <option value=\"bundled-jdk-30f59d01ecdd-2fc7cc6b9a17-intellij.indexing.shared.core-IU-253.30387.90\" />\r\n      </set>\r\n    </attachedChunks>\r\n  </component>\r\n  <component name=\"TaskManager\">\r\n    <task active=\"true\" id=\"Default\" summary=\"Default task\">\r\n      <changelist id=\"6ef86da0-53f2-4d5d-942d-a70b235a7772\" name=\"Changes\" comment=\"\" />\r\n      <created>1776330373589</created>\r\n      <option name=\"number\" value=\"Default\" />\r\n      <option name=\"presentableId\" value=\"Default\" />\r\n      <updated>1776330373589</updated>\r\n    </task>\r\n    <task id=\"LOCAL-00001\" summary=\"final main\">\r\n      <option name=\"closed\" value=\"true\" />\r\n      <created>1776549456812</created>\r\n      <option name=\"number\" value=\"00001\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00001\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1776549456812</updated>\r\n    </task>\r\n    <task id=\"LOCAL-00002\" summary=\"UML Diagram uploaded\">\r\n      <option name=\"closed\" value=\"true\" />\r\n      <created>1776549871869</created>\r\n      <option name=\"number\" value=\"00002\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00002\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1776549871869</updated>\r\n    </task>\r\n    <option name=\"localTasksCounter\" value=\"3\" />\r\n    <servers />\r\n  </component>\r\n  <component name=\"VcsManagerConfiguration\">\r\n    <MESSAGE value=\"removed unused interfaces\" />\r\n    <MESSAGE value=\"final main\" />\r\n    <MESSAGE value=\"UML Diagram uploaded\" />\r\n    <option name=\"LAST_COMMIT_MESSAGE\" value=\"UML Diagram uploaded\" />\r\n  </component>\r\n  <component name=\"XDebuggerManager\">\r\n    <breakpoint-manager>\r\n      <breakpoints>\r\n        <breakpoint enabled=\"true\" type=\"java-exception\">\r\n          <properties class=\"java.lang.IllegalArgumentException\" package=\"java.lang\" />\r\n          <option name=\"timeStamp\" value=\"1\" />\r\n        </breakpoint>\r\n        <breakpoint enabled=\"true\" type=\"java-exception\">\r\n          <properties class=\"java.util.InputMismatchException\" package=\"java.util\" />\r\n          <option name=\"timeStamp\" value=\"3\" />\r\n        </breakpoint>\r\n      </breakpoints>\r\n    </breakpoint-manager>\r\n  </component>\r\n</project>
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/.idea/workspace.xml b/.idea/workspace.xml
+--- a/.idea/workspace.xml	(revision 0b1d4739fe411e8c84c16329b7dfcc85b5a92271)
++++ b/.idea/workspace.xml	(date 1776817985153)
+@@ -4,98 +4,134 @@
+     <option name="autoReloadType" value="SELECTIVE" />
+   </component>
+   <component name="ChangeListManager">
+-    <list default="true" id="6ef86da0-53f2-4d5d-942d-a70b235a7772" name="Changes" comment="UML Diagram uploaded">
+-      <change beforePath="$PROJECT_DIR$/ervation 5572e2f" beforeDir="false" />
++    <list default="true" id="2ffde30f-a92a-45b5-9580-3aa542c9a88d" name="Changes" comment="dashboard testing main method">
++      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/src/GUI/CODE/MainFX.java" beforeDir="false" />
++      <change beforePath="$PROJECT_DIR$/src/GUI/Controllers/ReceptionistDashboardController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/GUI/Controllers/ReceptionistDashboardController.java" afterDir="false" />
+     </list>
+     <option name="SHOW_DIALOG" value="false" />
+     <option name="HIGHLIGHT_CONFLICTS" value="true" />
+     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+     <option name="LAST_RESOLUTION" value="IGNORE" />
+-  </component>
+-  <component name="Git.Merge.Settings">
+-    <option name="BRANCH" value="main" />
+   </component>
+   <component name="Git.Settings">
+     <option name="RECENT_BRANCH_BY_REPOSITORY">
+       <map>
+-        <entry key="$PROJECT_DIR$" value="main" />
++        <entry key="$PROJECT_DIR$" value="Mohamed_Database" />
+       </map>
+     </option>
+     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+   </component>
+-  <component name="GitHubPullRequestSearchHistory">{
+-  &quot;lastFilter&quot;: {
+-    &quot;state&quot;: &quot;OPEN&quot;,
+-    &quot;assignee&quot;: &quot;Sara-abdelsamie&quot;
+-  }
+-}</component>
+-  <component name="GithubPullRequestsUISettings">{
+-  &quot;selectedUrlAndAccountId&quot;: {
+-    &quot;url&quot;: &quot;https://github.com/salmaa-tamer/Hotel_oop.git&quot;,
+-    &quot;accountId&quot;: &quot;c551b227-fb56-42b0-b532-91b712eae42f&quot;
+-  }
+-}</component>
+   <component name="McpProjectServerCommands">
+     <commands />
+     <urls />
+   </component>
+-  <component name="ProjectColorInfo">{
+-  &quot;customColor&quot;: &quot;&quot;,
+-  &quot;associatedIndex&quot;: 5
+-}</component>
+-  <component name="ProjectId" id="3CQux4zR44ByCVqi9P770S5VBix" />
+-  <component name="ProjectViewState">
+-    <option name="hideEmptyMiddlePackages" value="true" />
+-    <option name="showLibraryContents" value="true" />
+-  </component>
+   <component name="PropertiesComponent"><![CDATA[{
+   "keyToString": {
+-    "Application.Main.executor": "Run",
+-    "RunOnceActivity.ShowReadmeOnStart": "true",
+-    "RunOnceActivity.git.unshallow": "true",
+-    "git-widget-placeholder": "main",
+-    "kotlin-language-version-configured": "true"
++    "Application.M.executor": "Run",
++    "git-widget-placeholder": "main"
+   }
+ }]]></component>
+-  <component name="SharedIndexes">
+-    <attachedChunks>
+-      <set>
+-        <option value="bundled-jdk-30f59d01ecdd-2fc7cc6b9a17-intellij.indexing.shared.core-IU-253.30387.90" />
+-      </set>
+-    </attachedChunks>
++  <component name="RunManager">
++    <configuration name="M" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
++      <option name="MAIN_CLASS_NAME" value="GUI.CODE.M" />
++      <module name="Hotel reservation system" />
++      <option name="VM_PARAMETERS" value="--module-path &quot;C:\Users\Mohamed\Downloads\javafx-sdk-26\lib&quot; --add-modules javafx.controls,javafx.fxml" />
++      <extension name="coverage">
++        <pattern>
++          <option name="PATTERN" value="GUI.CODE.*" />
++          <option name="ENABLED" value="true" />
++        </pattern>
++      </extension>
++      <method v="2">
++        <option name="Make" enabled="true" />
++      </method>
++    </configuration>
++    <recent_temporary>
++      <list>
++        <item itemvalue="Application.M" />
++        <item itemvalue="Application.M" />
++        <item itemvalue="Application.M" />
++      </list>
++    </recent_temporary>
+   </component>
+   <component name="TaskManager">
+-    <task active="true" id="Default" summary="Default task">
+-      <changelist id="6ef86da0-53f2-4d5d-942d-a70b235a7772" name="Changes" comment="" />
+-      <created>1776330373589</created>
+-      <option name="number" value="Default" />
+-      <option name="presentableId" value="Default" />
+-      <updated>1776330373589</updated>
+-    </task>
+-    <task id="LOCAL-00001" summary="final main">
++    <task id="LOCAL-00001" summary="changed toStrings ( better aesthetics)">
+       <option name="closed" value="true" />
+-      <created>1776549456812</created>
++      <created>1776816280860</created>
+       <option name="number" value="00001" />
+       <option name="presentableId" value="LOCAL-00001" />
+       <option name="project" value="LOCAL" />
+-      <updated>1776549456812</updated>
++      <updated>1776816280860</updated>
+     </task>
+-    <task id="LOCAL-00002" summary="UML Diagram uploaded">
++    <task id="LOCAL-00002" summary="added more dummy data">
+       <option name="closed" value="true" />
+-      <created>1776549871869</created>
++      <created>1776817340731</created>
+       <option name="number" value="00002" />
+       <option name="presentableId" value="LOCAL-00002" />
+       <option name="project" value="LOCAL" />
+-      <updated>1776549871869</updated>
++      <updated>1776817340731</updated>
++    </task>
++    <task id="LOCAL-00003" summary="CSS styling">
++      <option name="closed" value="true" />
++      <created>1776817371215</created>
++      <option name="number" value="00003" />
++      <option name="presentableId" value="LOCAL-00003" />
++      <option name="project" value="LOCAL" />
++      <updated>1776817371215</updated>
++    </task>
++    <task id="LOCAL-00004" summary="CSS styling">
++      <option name="closed" value="true" />
++      <created>1776817384380</created>
++      <option name="number" value="00004" />
++      <option name="presentableId" value="LOCAL-00004" />
++      <option name="project" value="LOCAL" />
++      <updated>1776817384380</updated>
++    </task>
++    <task id="LOCAL-00005" summary="Dashboard fxml (made in scene builder)">
++      <option name="closed" value="true" />
++      <created>1776817441551</created>
++      <option name="number" value="00005" />
++      <option name="presentableId" value="LOCAL-00005" />
++      <option name="project" value="LOCAL" />
++      <updated>1776817441551</updated>
++    </task>
++    <task id="LOCAL-00006" summary=".">
++      <option name="closed" value="true" />
++      <created>1776817457603</created>
++      <option name="number" value="00006" />
++      <option name="presentableId" value="LOCAL-00006" />
++      <option name="project" value="LOCAL" />
++      <updated>1776817457603</updated>
+     </task>
+-    <option name="localTasksCounter" value="3" />
++    <task id="LOCAL-00007" summary="dashboard controller class">
++      <option name="closed" value="true" />
++      <created>1776817512342</created>
++      <option name="number" value="00007" />
++      <option name="presentableId" value="LOCAL-00007" />
++      <option name="project" value="LOCAL" />
++      <updated>1776817512342</updated>
++    </task>
++    <task id="LOCAL-00008" summary="dashboard testing main method">
++      <option name="closed" value="true" />
++      <created>1776817669548</created>
++      <option name="number" value="00008" />
++      <option name="presentableId" value="LOCAL-00008" />
++      <option name="project" value="LOCAL" />
++      <updated>1776817669548</updated>
++    </task>
++    <option name="localTasksCounter" value="9" />
+     <servers />
+   </component>
+   <component name="VcsManagerConfiguration">
+-    <MESSAGE value="removed unused interfaces" />
+-    <MESSAGE value="final main" />
+-    <MESSAGE value="UML Diagram uploaded" />
+-    <option name="LAST_COMMIT_MESSAGE" value="UML Diagram uploaded" />
++    <MESSAGE value="changed toStrings ( better aesthetics)" />
++    <MESSAGE value="added more dummy data" />
++    <MESSAGE value="CSS styling" />
++    <MESSAGE value="Dashboard fxml (made in scene builder)" />
++    <MESSAGE value="." />
++    <MESSAGE value="dashboard controller class" />
++    <MESSAGE value="dashboard testing main method" />
++    <option name="LAST_COMMIT_MESSAGE" value="dashboard testing main method" />
+   </component>
+   <component name="XDebuggerManager">
+     <breakpoint-manager>
