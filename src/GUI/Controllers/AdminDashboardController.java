@@ -1051,6 +1051,23 @@ public class AdminDashboardController {
     @FXML public void handleRegisterStaff(){}
 
 
+    //LOG OUT
+    //Mohamed
+    @FXML private Button logoutButton;
+    @FXML public void handleLogout(javafx.event.ActionEvent event){
+        try {
+            javafx.scene.Parent root = javafx.fxml.FXMLLoader.load(
+                    getClass().getResource("/GUI/FXML/LoginScreen.fxml")
+            );
+
+            Stage stage = (Stage) ((javafx.scene.Node) event.getSource()).getScene().getWindow();
+            stage.setScene(new Scene(root));
+            stage.show();
+
+        } catch (Exception ex) {
+            ex.printStackTrace();
+        }
+    }
 
     //VIEW GUESTS
     //Mohamed
