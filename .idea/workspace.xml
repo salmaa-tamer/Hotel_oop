@@ -1,21 +1,175 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="7be8cab9-f74f-490d-990f-789db5d721bf" name="Changes" comment="" />
+    <list default="true" id="239bfdab-dd2f-4159-95eb-3ea4b7b5a9f2" name="Changes" comment="resizing">
+      <change afterPath="$PROJECT_DIR$/.ai/mcp/mcp.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/lib.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_12-Apr-26_6_48_PM_[Changes]/shelved.patch" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_12-Apr-26_6_48_PM_[Changes]1/shelved.patch" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_12-Apr-26_6_48_PM__Changes_.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_22-Apr-26_2_34_AM_[Changes]/shelved.patch" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_22-Apr-26_2_34_AM__Changes_.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_23-Apr-26_2_40_PM_[Changes]/shelved.patch" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_23-Apr-26_2_40_PM_[Changes]1/shelved.patch" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_23-Apr-26_2_40_PM__Changes_.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_16-Apr-26_5_05_PM_[Changes]/shelved.patch" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_16-Apr-26_5_05_PM__Changes_.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_22-Apr-26_2_33_AM_[Changes]/shelved.patch" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_22-Apr-26_2_33_AM__Changes_.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/production/Hotel reservation system/GUI/SceneManager.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/GUI/Controllers/CheckoutPaymentController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/GUI/FXML/CheckoutPayment.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Hotel reservation system/GUI/Controllers/MyReservationsController.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Hotel reservation system/GUI/Controllers/MyReservationsController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Hotel reservation system/GUI/FXML/LoginScreen.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Hotel reservation system/GUI/FXML/LoginScreen.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Hotel reservation system/GUI/FXML/RegisterScreen.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Hotel reservation system/GUI/FXML/RegisterScreen.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Hotel reservation system/GUI/MainFX.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Hotel reservation system/GUI/MainFX.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/GUI/Controllers/LoginController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/GUI/Controllers/LoginController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/GUI/Controllers/ReceptionistDashboardController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/GUI/Controllers/ReceptionistDashboardController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/GUI/Controllers/RegisterController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/GUI/Controllers/RegisterController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/GUI/FXML/LoginScreen.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/GUI/FXML/LoginScreen.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/GUI/FXML/ReceptionistDashboard.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/GUI/FXML/ReceptionistDashboard.fxml" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
+  <component name="Git.Merge.Settings">
+    <option name="BRANCH" value="origin/main" />
+  </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
+  <component name="GitHubPullRequestSearchHistory">{
+  &quot;lastFilter&quot;: {
+    &quot;state&quot;: &quot;OPEN&quot;,
+    &quot;assignee&quot;: &quot;Sara-abdelsamie&quot;
+  }
+}</component>
+  <component name="GithubPullRequestsUISettings">{
+  &quot;selectedUrlAndAccountId&quot;: {
+    &quot;url&quot;: &quot;https://github.com/salmaa-tamer/Hotel_oop.git&quot;,
+    &quot;accountId&quot;: &quot;c551b227-fb56-42b0-b532-91b712eae42f&quot;
+  }
+}</component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 0
+}</component>
+  <component name="ProjectId" id="3CtBmqpgFyvNdJMy2glpxYHQiUA" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
-    "git-widget-placeholder": "main"
+    "Application.AdminMain.executor": "Run",
+    "Application.LoginMain.executor": "Run",
+    "Application.M.executor": "Run",
+    "Application.MainFX.executor": "Run",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager.252": "true",
+    "RunOnceActivity.git.unshallow": "true",
+    "git-widget-placeholder": "Merging Sara__Roomsystem",
+    "kotlin-language-version-configured": "true"
   }
 }]]></component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\Dell\IdeaProjects\Hotel reservation system\src\GUI\FXML" />
+    </key>
+  </component>
+  <component name="RunManager" selected="Application.LoginMain">
+    <configuration name="AdminMain" type="Application" factoryName="Application">
+      <option name="MAIN_CLASS_NAME" value="GUI.CODE.AdminTestMain" />
+      <module name="Hotel reservation system" />
+      <option name="VM_PARAMETERS" value="--module-path &quot;C:\Users\Dell\Desktop\javafx-sdk-26.0.1\lib&quot; --add-modules javafx.controls,javafx.fxml" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="LoginMain" type="Application" factoryName="Application">
+      <option name="MAIN_CLASS_NAME" value="GUI.CODE.LoginMain" />
+      <module name="Hotel reservation system" />
+      <option name="VM_PARAMETERS" value="--module-path &quot;C:\Users\Dell\Desktop\javafx-sdk-26.0.1\lib&quot; --add-modules javafx.controls,javafx.fxml" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="M" type="Application" factoryName="Application">
+      <option name="MAIN_CLASS_NAME" value="GUI.CODE.M" />
+      <module name="Hotel reservation system" />
+      <option name="VM_PARAMETERS" value="--module-path &quot;C:\Users\Dell\Desktop\javafx-sdk-26.0.1\lib&quot; --add-modules javafx.controls,javafx.fxml" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="MainFX" type="Application" factoryName="Application">
+      <option name="MAIN_CLASS_NAME" value="GUI.MainFX" />
+      <module name="Hotel reservation system" />
+      <option name="VM_PARAMETERS" value="--module-path &quot;C:\Users\Dell\Desktop\javafx-sdk-26.0.1\lib&quot; --add-modules javafx.controls,javafx.fxml" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <list>
+      <item itemvalue="Application.MainFX" />
+      <item itemvalue="Application.AdminMain" />
+      <item itemvalue="Application.M" />
+      <item itemvalue="Application.LoginMain" />
+    </list>
+  </component>
+  <component name="SharedIndexes">
+    <attachedChunks>
+      <set>
+        <option value="bundled-jdk-30f59d01ecdd-2fc7cc6b9a17-intellij.indexing.shared.core-IU-253.30387.90" />
+      </set>
+    </attachedChunks>
+  </component>
   <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="239bfdab-dd2f-4159-95eb-3ea4b7b5a9f2" name="Changes" comment="" />
+      <created>1777195163897</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1777195163897</updated>
+    </task>
+    <task id="LOCAL-00001" summary="Adding Logout Button and other Buttons">
+      <option name="closed" value="true" />
+      <created>1777489402133</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1777489402133</updated>
+    </task>
+    <task id="LOCAL-00002" summary="resizing">
+      <option name="closed" value="true" />
+      <created>1777492845794</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1777492845794</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="Adding Logout Button and other Buttons" />
+    <MESSAGE value="resizing" />
+    <option name="LAST_COMMIT_MESSAGE" value="resizing" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <breakpoint enabled="true" type="java-exception">
+          <properties class="java.lang.reflect.InvocationTargetException" package="java.lang.reflect" />
+          <option name="timeStamp" value="1" />
+        </breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
+  </component>
+  <component name="XSLT-Support.FileAssociations.UIState">
+    <expand />
+    <select />
   </component>
 </project>
