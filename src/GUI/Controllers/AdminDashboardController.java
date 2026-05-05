@@ -1046,6 +1046,17 @@ public class AdminDashboardController {
 
 
 
+        // REGISTER BUTTON
+        Button registerBtn = new Button("REGISTER");
+        registerBtn.setStyle("-fx-background-color: #7d97b1; -fx-text-fill: white; -fx-font-size: 14px; -fx-font-weight: bold; -fx-padding: 8px 84px;");
+        registerBtn.setPrefWidth(600);
+        registerBtn.setOnAction(registerEvent -> {
+            try {
+                String username = usernameField.getText();
+                String password = passwordField.getText();
+                LocalDate dob = datePicker.getValue();
+                int workingHours = (int) workingHoursSlider.getValue();
+                Role role = roleComboBox.getValue();
 
     @FXML private Button registerStaffButton;
     @FXML public void handleRegisterStaff(){}
