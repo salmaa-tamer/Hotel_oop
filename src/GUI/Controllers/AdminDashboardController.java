@@ -1,11 +1,12 @@
 package GUI.Controllers;
 import GuestandRoomSystem.*;
 import StaffSystem.Admin;
-import javafx.beans.Observable;
+import StaffSystem.Receptionist;
+import StaffSystem.Role;
 import javafx.beans.value.ChangeListener;
 import javafx.beans.value.ObservableValue;
-import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
+import javafx.geometry.Pos;
 import javafx.scene.Scene;
 import javafx.scene.control.*;
 import javafx.scene.layout.BorderPane;
@@ -13,7 +14,7 @@ import javafx.scene.layout.HBox;
 import javafx.scene.layout.VBox;
 import javafx.stage.Stage;
 
-import java.text.NumberFormat;
+import java.time.LocalDate;
 import java.util.ArrayList;
 
 public class AdminDashboardController {
@@ -27,7 +28,7 @@ public class AdminDashboardController {
 
     @FXML
     public void initialize(){
-        admin= (Admin) HotelDatabase.staff.get(3);    //replace after staff login is complete
+        admin= (Admin) SessionManager.getCurrentStaff();
         nameLabel.setText("Name: "+ admin.getUsername());
         nameLabel.setStyle("-fx-font-size: 18px; -fx-text-fill: #2c3e50; -fx-font-weight: bold;");
         workingHoursLabel.setText(("Working Hours:" + admin.getWorkingHours()));
@@ -1239,13 +1240,48 @@ public class AdminDashboardController {
         registerBtn.setOnAction(registerEvent -> {
             try {
                 String username = usernameField.getText();
-                String password = passwordField.getText();
+                String autoPassword = username + "_" + datePicker.getValue().getYear();
                 LocalDate dob = datePicker.getValue();
                 int workingHours = (int) workingHoursSlider.getValue();
                 Role role = roleComboBox.getValue();
 
-    @FXML private Button registerStaffButton;
-    @FXML public void handleRegisterStaff(){}
+                if(username.isEmpty()  || dob == null || role == null){
+                    throw new IllegalArgumentException("All fields must be filled!");
+                }
+
+                if(role == Role.ADMIN){
+                    Admin newAdmin = new Admin(username, autoPassword, dob, workingHours);
+                    admin.staffRegistration(newAdmin);
+                } else {
+                    Receptionist newReceptionist = new Receptionist(username, autoPassword, dob, workingHours);
+                    admin.staffRegistration(newReceptionist);
+                }
+
+                statusLabel.setText("Staff Member Registered Successfully!\n"+ "Their Temporary Password is: " + autoPassword);
+                statusLabel.setStyle("-fx-text-fill: green; -fx-font-size: 14px; -fx-font-weight: bold;");
+
+                usernameField.clear();
+                //passwordField.clear();
+                datePicker.setValue(null);
+                roleComboBox.setValue(null);
+
+            } catch(IllegalArgumentException ex){
+                statusLabel.setText("ERROR: " + ex.getMessage());
+                statusLabel.setStyle("-fx-text-fill: red; -fx-font-size: 14px; -fx-font-weight: bold;");
+            }
+        });
+
+        ScrollPane scrollPane = new ScrollPane();
+        VBox formContent = new VBox(10);
+        formContent.getChildren().addAll(titleLbl, s1, usernameLabel, usernameField, s3, dobLabel, datePicker, s4, workingHoursLabel, workingHoursSlider, hoursValue, s5, roleLabel, roleComboBox, s6, registerBtn, statusLabel);
+        scrollPane.setContent(formContent);
+        centralBox.getChildren().add(scrollPane);
+        scrollPane.setFitToWidth(true);
+        formContent.setPadding(new javafx.geometry.Insets(30));
+        formContent.setSpacing(15);
+        scrollPane.setStyle("-fx-background: white; -fx-background-color: white; -fx-border-color: transparent; -fx-focus-color: transparent;");
+        formContent.setStyle("-fx-background-color: transparent;");
+    }
 
 
     //LOG OUT
