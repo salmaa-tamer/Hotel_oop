@@ -1127,6 +1127,110 @@ public class AdminDashboardController {
                     throw new IllegalArgumentException("Password must be at least 8 characters!");
                 }
 
+                admin.setPassword(newPass);
+                statusLabel.setText("Password changed successfully!");
+                statusLabel.setStyle("-fx-text-fill: green; -fx-font-size: 14px; -fx-font-weight: bold;");
+                currentPassField.clear();
+                newPassField.clear();
+                confirmPassField.clear();
+
+            } catch(IllegalArgumentException ex){
+                statusLabel.setText("ERROR: " + ex.getMessage());
+                statusLabel.setStyle("-fx-text-fill: red; -fx-font-size: 14px; -fx-font-weight: bold;");
+            }
+        });
+
+        ScrollPane scrollPane = new ScrollPane();
+        VBox formContent = new VBox(15);
+        formContent.getChildren().addAll(titleLbl, s1, usernameLbl, roleLbl, hoursLbl, dobLbl, s2, changePasswordLbl, s3, currentPassLbl, currentPassField, newPassLbl, newPassField, confirmPassLbl, confirmPassField, changePassBtn, statusLabel);
+        scrollPane.setContent(formContent);
+        centralBox.getChildren().add(scrollPane);
+        scrollPane.setFitToWidth(true);
+        formContent.setPadding(new javafx.geometry.Insets(30));
+        formContent.setSpacing(15);
+        scrollPane.setStyle("-fx-background: white; -fx-background-color: white; -fx-border-color: transparent; -fx-focus-color: transparent;");
+        formContent.setStyle("-fx-background-color: transparent;");
+    }
+
+
+
+    @FXML
+    public void handleRegisterStaff(){
+        titleLabel.setText("Register Staff");
+        sideBar.getChildren().clear();
+        Label adminLabel = new Label("ADMIN");
+        adminLabel.setStyle("-fx-font-size: 25px; -fx-text-fill: #ffffff; -fx-font-weight: bold;");
+        Separator separator = new Separator();
+        Button backBtn = new Button("Back to Dashboard");
+        backBtn.setStyle("-fx-background-color: #7d97b1; -fx-text-fill: white; -fx-font-size: 14px; -fx-font-weight: bold; -fx-padding: 8px;");
+        backBtn.setPrefWidth(450);
+        backBtn.setOnAction(e->goBackToDashboard(e));
+        sideBar.getChildren().addAll(adminLabel, separator, backBtn);
+
+        centralBox.getChildren().clear();
+        centralBox.setAlignment(javafx.geometry.Pos.TOP_LEFT);
+        centralBox.setPadding(new javafx.geometry.Insets(20));
+
+        Label titleLbl = new Label("Register New Staff Member");
+        titleLbl.setStyle("-fx-font-size: 28px; -fx-text-fill: #2c3e50; -fx-font-weight: bold;");
+        Separator s1 = new Separator();
+
+        // USERNAME
+        Label usernameLabel = new Label("Username:");
+        usernameLabel.setStyle("-fx-font-size: 18px; -fx-text-fill: #2c3e50; -fx-font-weight: bold;");
+        TextField usernameField = new TextField();
+        usernameField.setPromptText("Enter username...");
+        usernameField.setStyle("-fx-font-size: 16px; -fx-background-color: #ecf0f1;");
+        usernameField.setPrefWidth(450);
+
+//        // PASSWORD
+//        Separator s2 = new Separator();
+//        Label passwordLabel = new Label("Password:");
+//        passwordLabel.setStyle("-fx-font-size: 18px; -fx-text-fill: #2c3e50; -fx-font-weight: bold;");
+//        PasswordField passwordField = new PasswordField();
+//        passwordField.setPromptText("Enter password...");
+//        passwordField.setStyle("-fx-font-size: 16px; -fx-background-color: #ecf0f1;");
+//        passwordField.setPrefWidth(450);
+
+        // DATE OF BIRTH
+        Separator s3 = new Separator();
+        Label dobLabel = new Label("Date of Birth:");
+        dobLabel.setStyle("-fx-font-size: 18px; -fx-text-fill: #2c3e50; -fx-font-weight: bold;");
+        DatePicker datePicker = new DatePicker();
+        datePicker.setPromptText("Select date of birth");
+        datePicker.setStyle("-fx-font-size: 16px; -fx-background-color: #ecf0f1;");
+        datePicker.setPrefWidth(450);
+
+        // WORKING HOURS
+        Separator s4 = new Separator();
+        Label workingHoursLabel = new Label("Working Hours Per Day:");
+        workingHoursLabel.setStyle("-fx-font-size: 18px; -fx-text-fill: #2c3e50; -fx-font-weight: bold;");
+        Slider workingHoursSlider = new Slider();
+        workingHoursSlider.setMin(1);
+        workingHoursSlider.setMax(12);
+        workingHoursSlider.setMajorTickUnit(1);
+        workingHoursSlider.setMinorTickCount(0);
+        workingHoursSlider.setSnapToTicks(true);
+        Label hoursValue = new Label();
+        workingHoursSlider.valueProperty().addListener((obs, oldVal, newVal) -> {
+            hoursValue.setText((int)workingHoursSlider.getValue() + " hours");
+        });
+        workingHoursSlider.setStyle("-fx-font-size: 16px; -fx-background-color: #ecf0f1;");
+
+        // ROLE
+        Separator s5 = new Separator();
+        Label roleLabel = new Label("Role:");
+        roleLabel.setStyle("-fx-font-size: 18px; -fx-text-fill: #2c3e50; -fx-font-weight: bold;");
+        ComboBox<Role> roleComboBox = new ComboBox<>();
+        roleComboBox.getItems().addAll(Role.ADMIN, Role.RECEPTIONIST);
+        roleComboBox.setPromptText("Select Role");
+        roleComboBox.setPrefWidth(450);
+        roleComboBox.setStyle("-fx-font-size: 16px; -fx-background-color: #ecf0f1;");
+
+        // STATUS LABEL
+        Separator s6 = new Separator();
+        Label statusLabel = new Label();
+        statusLabel.setStyle("-fx-font-size: 14px; -fx-font-weight: bold;");
 
         // REGISTER BUTTON
         Button registerBtn = new Button("REGISTER");
