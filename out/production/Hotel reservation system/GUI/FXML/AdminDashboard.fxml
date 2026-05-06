@@ -35,6 +35,12 @@
                <Font size="24.0" />
             </font></Label>
          <Separator style="-fx-background-color: #34495e;" />
+         <Button id="blueButtonStyle" fx:id="viewProfileButton" mnemonicParsing="false" onAction="#handleViewProfile" prefHeight="25.0" prefWidth="245.0" style="-fx-background-color: #2c3e50; -fx-alignment: left;" text="View Profile" textFill="WHITE">
+            <font>
+               <Font size="14.0" />
+            </font>
+         </Button>
+         <Separator style="-fx-background-color: #34495e;" />
             <Label style="-fx-text-fill: #95a5a6; -fx-font-size: 16px;" text="Menu" />
 
             <Separator style="-fx-background-color: #34495e;" />
@@ -79,6 +85,12 @@
             </font>
          </Button>
          <Button fx:id="viewInvoicesButton" mnemonicParsing="false" onAction="#handleViewInvoices" prefHeight="25.0" prefWidth="245.0" style="-fx-background-color: #ffffff; -fx-font-weight: Bold;" text="View Invoices" textAlignment="CENTER" textFill="#7d97b1">
+            <font>
+               <Font size="14.0" />
+            </font>
+         </Button>
+         <Separator style="-fx-background-color: #34495e;" />
+         <Button id="blueButtonStyle" fx:id="logoutButton" mnemonicParsing="false" onAction="#handleLogout" prefHeight="25.0" prefWidth="245.0" style="-fx-background-color: #2c3e50; -fx-alignment: left;" text="Logout" textFill="WHITE">
             <font>
                <Font size="14.0" />
             </font>

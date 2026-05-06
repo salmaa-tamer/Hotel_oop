@@ -1,0 +1,365 @@
+Index: src/GuestandRoomSystem/Main.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>package GuestandRoomSystem;\r\n\r\nimport StaffSystem.Admin;\r\nimport StaffSystem.Receptionist;\r\n\r\nimport java.time.LocalDate;\r\nimport java.util.List;\r\nimport java.util.Scanner;\r\n\r\npublic class Main {\r\n    static Scanner scanner = new Scanner(System.in);\r\n\r\n    public static void main(String []args){\r\n\r\n        HotelDatabase.loadDummyData();\r\n        Receptionist receptionist = (Receptionist)HotelDatabase.staff.get(0);\r\n        Room room = HotelDatabase.rooms.get(0);\r\n        Reservation reservation1 =HotelDatabase.reservations.get(0);\r\n        System.out.println(\"Are you a staff member or a guest?\");\r\n        System.out.println(\"1. Guest \\n2. Staff\");\r\n        int choice = scanner.nextInt();\r\n        scanner.nextLine();\r\n\r\n        if (choice == 1) {\r\n            boolean run = true;\r\n            do {\r\n                try {\r\n                    System.out.println(\"Enter Username : \");\r\n                    String username = scanner.nextLine();\r\n                    System.out.println(\"Enter Password : \");\r\n                    String password = scanner.nextLine();\r\n\r\n                    Guest guest = Guest.login(username, password);\r\n\r\n\r\n                    if (guest != null) {\r\n                        System.out.println(\"View Available Rooms\");\r\n                        guest.viewAvailableRooms();\r\n\r\n                        System.out.println(\"Guest makes reservation test\");\r\n                        System.out.println(\"Enter check in date (YYYY-MM-DD): \");\r\n                        String checkinDateInput = scanner.nextLine();\r\n                        LocalDate checkinDate = LocalDate.parse(checkinDateInput);\r\n\r\n                        System.out.println(\"Enter check out date (YYYY-MM-DD): \");\r\n                        String checkoutDateInput = scanner.nextLine();\r\n                        LocalDate checkoutDate = LocalDate.parse(checkoutDateInput);\r\n\r\n                        guest.makeReservation(room, checkinDate, checkoutDate);\r\n\r\n                        Reservation reservation = new Reservation(guest, room, checkinDate, checkoutDate);\r\n\r\n                        System.out.println(\"Guest in reception\");\r\n                        System.out.println(\"Guest's current balance : $\" + guest.getBalance());\r\n                        System.out.println(\"Guest paying in CASH...\");\r\n\r\n                        receptionist.manageCheckIn(reservation);\r\n                        guest.inPersonCheckout(reservation, PaymentMethod.CASH);\r\n\r\n                        System.out.println(\"Guest's current balance: $\" + guest.getBalance());\r\n\r\n                        System.out.println(\"\\nPrinting all system invoices:\");\r\n                        for (Bill b : HotelDatabase.bills) {\r\n                            b.PrintBill();\r\n                            System.out.println();\r\n                            break;\r\n                        }\r\n                    }\r\n\r\n                }\r\n                catch (IllegalArgumentException e) {\r\n                    System.out.println(\"Invalid username or password\\n\");\r\n                    run=false;\r\n                }\r\n            }while (run==false);\r\n        }\r\n        else if (choice == 2) {\r\n            System.out.println(\"Are you a receptionist or an admin?\");\r\n            System.out.println(\"1. Receptionist \\n2. Admin\");\r\n            int choice2 = scanner.nextInt();\r\n            scanner.nextLine();\r\n\r\n            if (choice2 == 1) {\r\n                System.out.println(\"Receptionist managing system\");\r\n                System.out.println(\"Enter username: \");\r\n                String receptionistUsername = scanner.nextLine();\r\n                System.out.println(\"Enter password: \");\r\n                String receptionistPassword = scanner.nextLine();\r\n\r\n                receptionist.login(receptionistUsername, receptionistPassword);\r\n\r\n                System.out.println(\"Guest checking in or checking out?\");\r\n                System.out.println(\"1. Checking in\\n2. Checking out\");\r\n                int choice3 = scanner.nextInt();\r\n                scanner.nextLine();\r\n\r\n                if (choice3 == 1) {\r\n                    receptionist.manageCheckIn(reservation1);\r\n                    System.out.println(\"Welcome.\");\r\n                }\r\n                else if (choice3 == 2) {\r\n                    System.out.println(\"Receptionist managing check-out...\");\r\n                    receptionist.manageCheckOut(reservation1, PaymentMethod.Credit_Card);\r\n                    System.out.println(\"Checkout complete. Bill generated.\");\r\n                }\r\n            }\r\n            else if (choice2 == 2) {\r\n                System.out.println(\"Admin checking system\");\r\n                Admin admin = (Admin) HotelDatabase.staff.get(1);\r\n\r\n                System.out.println(\"Enter the Room Id: \");\r\n                int roomId = scanner.nextInt();\r\n                System.out.println(\"Room Availability (true/false): \");\r\n                boolean availability = scanner.nextBoolean();\r\n                System.out.println(\"Room Floor: \");\r\n                int floor = scanner.nextInt();\r\n                System.out.println(\"Price per night: \");\r\n                double pricePerNight = scanner.nextDouble();\r\n\r\n                RoomType roomType = HotelDatabase.roomTypes.get(0);\r\n                List<Amenity> amenities = HotelDatabase.amenities;\r\n\r\n                Room newRoom = new Room(roomId, availability, floor, roomType, amenities, pricePerNight);\r\n                admin.createRoom(newRoom);\r\n                admin.readAllRooms();\r\n\r\n                System.out.println(\"Enter the new price of the room: \");\r\n                double newPrice = scanner.nextDouble();\r\n                admin.updateRoomPrice(room, newPrice);\r\n\r\n                System.out.println(\"Deleting room to test functionality...\");\r\n                admin.deleteRoom(room);\r\n                admin.readAllRooms();\r\n            }\r\n        }\r\n    }\r\n}\r\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/src/GuestandRoomSystem/Main.java b/src/GuestandRoomSystem/Main.java
+--- a/src/GuestandRoomSystem/Main.java	(revision f030cea1748db55e336cffdef6dcbc4f4c9aecb5)
++++ b/src/GuestandRoomSystem/Main.java	(date 1776470377128)
+@@ -1,28 +1,168 @@
++
++// ########### OLD MAIN E7TYATI ###########
++
++//package GuestandRoomSystem;
++//import StaffSystem.Admin;
++//import StaffSystem.Receptionist;
++//
++//import java.time.LocalDate;
++//import java.util.List;
++//import java.util.Scanner;
++//
++//public class Main {
++//    static Scanner scanner = new Scanner(System.in);
++//
++//    public static void main(String []args){
++//
++//        HotelDatabase.loadDummyData();
++//        Receptionist receptionist = (Receptionist)HotelDatabase.staff.get(0);
++//        Room room = HotelDatabase.rooms.get(0);
++//        Reservation reservation1 =HotelDatabase.reservations.get(0);
++//        System.out.println("Are you a staff member or a guest?");
++//        System.out.println("1. Guest \n2. Staff");
++//        int choice = scanner.nextInt();
++//        scanner.nextLine();
++//
++//        if (choice == 1) {
++//            boolean run = true;
++//            do {
++//                try {
++//                    System.out.println("Enter Username : ");
++//                    String username = scanner.nextLine();
++//                    System.out.println("Enter Password : ");
++//                    String password = scanner.nextLine();
++//
++//                    Guest guest = Guest.login(username, password);
++//
++//
++//                    if (guest != null) {
++//                        System.out.println("View Available Rooms");
++//                        guest.viewAvailableRooms();
++//
++//                        System.out.println("Guest makes reservation test");
++//                        System.out.println("Enter check in date (YYYY-MM-DD): ");
++//                        String checkinDateInput = scanner.nextLine();
++//                        LocalDate checkinDate = LocalDate.parse(checkinDateInput);
++//
++//                        System.out.println("Enter check out date (YYYY-MM-DD): ");
++//                        String checkoutDateInput = scanner.nextLine();
++//                        LocalDate checkoutDate = LocalDate.parse(checkoutDateInput);
++//
++//                        guest.makeReservation(room, checkinDate, checkoutDate);
++//
++//                        Reservation reservation = new Reservation(guest, room, checkinDate, checkoutDate);
++//
++//                        System.out.println("Guest in reception");
++//                        System.out.println("Guest's current balance : $" + guest.getBalance());
++//                        System.out.println("Guest paying in CASH...");
++//
++//                        receptionist.manageCheckIn(reservation);
++//                        guest.inPersonCheckout(reservation, PaymentMethod.CASH);
++//
++//                        System.out.println("Guest's current balance: $" + guest.getBalance());
++//
++//                        System.out.println("\nPrinting all system invoices:");
++//                        for (Bill b : HotelDatabase.bills) {
++//                            b.PrintBill();
++//                            System.out.println();
++//                            break;
++//                        }
++//                    }
++//
++//                }
++//                catch (IllegalArgumentException e) {
++//                    System.out.println("Invalid username or password\n");
++//                    run=false;
++//                }
++//            }while (run==false);
++//        }
++//        else if (choice == 2) {
++//            System.out.println("Are you a receptionist or an admin?");
++//            System.out.println("1. Receptionist \n2. Admin");
++//            int choice2 = scanner.nextInt();
++//            scanner.nextLine();
++//
++//            if (choice2 == 1) {
++//                System.out.println("Receptionist managing system");
++//                System.out.println("Enter username: ");
++//                String receptionistUsername = scanner.nextLine();
++//                System.out.println("Enter password: ");
++//                String receptionistPassword = scanner.nextLine();
++//
++//                receptionist.login(receptionistUsername, receptionistPassword);
++//
++//                System.out.println("Guest checking in or checking out?");
++//                System.out.println("1. Checking in\n2. Checking out");
++//                int choice3 = scanner.nextInt();
++//                scanner.nextLine();
++//
++//                if (choice3 == 1) {
++//                    receptionist.manageCheckIn(reservation1);
++//                    System.out.println("Welcome.");
++//                }
++//                else if (choice3 == 2) {
++//                    System.out.println("Receptionist managing check-out...");
++//                    receptionist.manageCheckOut(reservation1, PaymentMethod.Credit_Card);
++//                    System.out.println("Checkout complete. Bill generated.");
++//                }
++//            }
++//            else if (choice2 == 2) {
++//                System.out.println("Admin checking system");
++//                Admin admin = (Admin) HotelDatabase.staff.get(1);
++//
++//                System.out.println("Enter the Room Id: ");
++//                int roomId = scanner.nextInt();
++//                System.out.println("Room Availability (true/false): ");
++//                boolean availability = scanner.nextBoolean();
++//                System.out.println("Room Floor: ");
++//                int floor = scanner.nextInt();
++//                System.out.println("Price per night: ");
++//                double pricePerNight = scanner.nextDouble();
++//
++//                RoomType roomType = HotelDatabase.roomTypes.get(0);
++//                List<Amenity> amenities = HotelDatabase.amenities;
++//
++//                Room newRoom = new Room(roomId, availability, floor, roomType, amenities, pricePerNight);
++//                admin.createRoom(newRoom);
++//                admin.readAllRooms();
++//
++//                System.out.println("Enter the new price of the room: ");
++//                double newPrice = scanner.nextDouble();
++//                admin.updateRoomPrice(room, newPrice);
++//
++//                System.out.println("Deleting room to test functionality...");
++//                admin.deleteRoom(room);
++//                admin.readAllRooms();
++//            }
++//        }
++//    }
++//}
++
+ package GuestandRoomSystem;
+-
+ import StaffSystem.Admin;
+ import StaffSystem.Receptionist;
+-
+ import java.time.LocalDate;
+ import java.util.List;
+ import java.util.Scanner;
+ 
+ public class Main {
+     static Scanner scanner = new Scanner(System.in);
+-
+     public static void main(String []args){
+ 
+         HotelDatabase.loadDummyData();
+         Receptionist receptionist = (Receptionist)HotelDatabase.staff.get(0);
+         Room room = HotelDatabase.rooms.get(0);
+-        Reservation reservation1 =HotelDatabase.reservations.get(0);
++        Reservation reservation1 = HotelDatabase.reservations.get(0);
++
+         System.out.println("Are you a staff member or a guest?");
+         System.out.println("1. Guest \n2. Staff");
+         int choice = scanner.nextInt();
+         scanner.nextLine();
+ 
+         if (choice == 1) {
+-            boolean run = true;
++            boolean loginSuccess = false; // tbda2 false w b3den n3mlha true 3shan n-avoid el infinite loop
++            Guest guest = null; //
++
+             do {
+                 try {
+                     System.out.println("Enter Username : ");
+@@ -30,49 +170,63 @@
+                     System.out.println("Enter Password : ");
+                     String password = scanner.nextLine();
+ 
+-                    Guest guest = Guest.login(username, password);
+-
++                    guest = Guest.login(username, password); //law di confirmed + guest not null anymore
++                    loginSuccess = true; //el line da hyshta8al
++                }
++                catch (IllegalArgumentException e) {
++                    System.out.println("Invalid username or password\n");
++                }
++            } while (!loginSuccess);
+ 
+-                    if (guest != null) {
+-                        System.out.println("View Available Rooms");
+-                        guest.viewAvailableRooms();
++            if (guest != null) {
++                System.out.println("View Available Rooms");
++                guest.viewAvailableRooms();
+ 
+-                        System.out.println("Guest makes reservation test");
+-                        System.out.println("Enter check in date (YYYY-MM-DD): ");
+-                        String checkinDateInput = scanner.nextLine();
+-                        LocalDate checkinDate = LocalDate.parse(checkinDateInput);
++                System.out.println("Guest makes reservation test");
++                System.out.println("Enter check in date (YYYY-MM-DD): ");
++                String checkinDateInput = scanner.nextLine();
++                LocalDate checkinDate = LocalDate.parse(checkinDateInput);
+ 
+-                        System.out.println("Enter check out date (YYYY-MM-DD): ");
+-                        String checkoutDateInput = scanner.nextLine();
+-                        LocalDate checkoutDate = LocalDate.parse(checkoutDateInput);
++                System.out.println("Enter check out date (YYYY-MM-DD): ");
++                String checkoutDateInput = scanner.nextLine();
++                LocalDate checkoutDate = LocalDate.parse(checkoutDateInput);
+ 
+-                        guest.makeReservation(room, checkinDate, checkoutDate);
+-
+-                        Reservation reservation = new Reservation(guest, room, checkinDate, checkoutDate);
++                guest.makeReservation(room, checkinDate, checkoutDate);
++                Reservation reservation = new Reservation(guest, room, checkinDate, checkoutDate);
+ 
+-                        System.out.println("Guest in reception");
+-                        System.out.println("Guest's current balance : $" + guest.getBalance());
+-                        System.out.println("Guest paying in CASH...");
++                System.out.println("Would you like to check out in the reception or online?");
++                System.out.println("1.Reception \n2. Online");
++                int checkoutChoice=scanner.nextInt();
++                if (checkoutChoice==1) {
++                    System.out.println("Guest in reception");
++                    System.out.println("Guest's current balance : $" + guest.getBalance());
++                    System.out.println("Guest paying in CASH...");
+ 
+-                        receptionist.manageCheckIn(reservation);
+-                        guest.inPersonCheckout(reservation, PaymentMethod.CASH);
++                    receptionist.manageCheckIn(reservation);
++                    guest.inPersonCheckout(reservation, PaymentMethod.CASH);
++                    receptionist.manageCheckOut(reservation, PaymentMethod.CASH);
++                }
++                else if(checkoutChoice==2){
++                    System.out.println("Guest is Checking out Online");
++                    System.out.println("Guest's initial balance : $" + guest.getBalance());
++                    receptionist.manageCheckIn(reservation);
++                    guest.onlineCheckout(reservation, PaymentMethod.ONLINE);
++
++                }
+ 
+-                        System.out.println("Guest's current balance: $" + guest.getBalance());
++                System.out.println("Guest's current balance: $" + guest.getBalance());
+ 
+-                        System.out.println("\nPrinting all system invoices:");
+-                        for (Bill b : HotelDatabase.bills) {
+-                            b.PrintBill();
+-                            System.out.println();
+-                            break;
+-                        }
++                System.out.println("\nPrinting your invoices:");
++                for (Bill b : HotelDatabase.bills) {
++                    // y3ml print lel bill bta3t el guest eli logged in bs msh kol el invoices + lazm tkoon completed
++                    if (b.getReservation().getGuest().getUsername().equals(guest.getUsername()) &&
++                            b.getReservation().getStatus() == ReservationStatus.COMPLETED) {
++                        b.PrintBill();
++                        System.out.println();
+                     }
+-
+                 }
+-                catch (IllegalArgumentException e) {
+-                    System.out.println("Invalid username or password\n");
+-                    run=false;
+-                }
+-            }while (run==false);
++            }
++
+         }
+         else if (choice == 2) {
+             System.out.println("Are you a receptionist or an admin?");
+@@ -107,7 +261,6 @@
+             else if (choice2 == 2) {
+                 System.out.println("Admin checking system");
+                 Admin admin = (Admin) HotelDatabase.staff.get(1);
+-
+                 System.out.println("Enter the Room Id: ");
+                 int roomId = scanner.nextInt();
+                 System.out.println("Room Availability (true/false): ");
+@@ -116,21 +269,66 @@
+                 int floor = scanner.nextInt();
+                 System.out.println("Price per night: ");
+                 double pricePerNight = scanner.nextDouble();
+-
+-                RoomType roomType = HotelDatabase.roomTypes.get(0);
++                scanner.nextLine();
++                // admin sets new room type
++                System.out.println("Select Room Type:");
++                for (int i = 0; i < HotelDatabase.roomTypes.size(); i++) {
++                    System.out.println((i + 1) + ". " + HotelDatabase.roomTypes.get(i));
++                }
++                int typeChoice = scanner.nextInt();
++                scanner.nextLine();
++                RoomType roomType = HotelDatabase.roomTypes.get(typeChoice - 1);
++                //RoomType roomType = HotelDatabase.roomTypes.get(0);
+                 List<Amenity> amenities = HotelDatabase.amenities;
+-
+                 Room newRoom = new Room(roomId, availability, floor, roomType, amenities, pricePerNight);
+                 admin.createRoom(newRoom);
+                 admin.readAllRooms();
+ 
+-                System.out.println("Enter the new price of the room: ");
+-                double newPrice = scanner.nextDouble();
+-                admin.updateRoomPrice(room, newPrice);
+-
+-                System.out.println("Deleting room to test functionality...");
+-                admin.deleteRoom(room);
++//               System.out.println("Enter the new price of the room: ");
++//               double newPrice = scanner.nextDouble();
++//               admin.updateRoomPrice(room, newPrice);
++//               admin.readAllRooms();
++
++                // update room
++                System.out.println("\nEnter the Room ID you want to update: ");
++                int idToUpdate = scanner.nextInt();
++                Room roomToUpdate = null;
++                for (Room r : HotelDatabase.rooms) {
++                    if (r.getRoomid() == idToUpdate) {
++                        roomToUpdate = r;
++                        break;
++                    }
++                }
++                if (roomToUpdate != null) {
++                    System.out.println("Enter the new price for Room ");
++                    double newPrice = scanner.nextDouble();
++                    admin.updateRoomPrice(roomToUpdate, newPrice);
++                    System.out.println("Price updated");
++                    admin.readAllRooms();
++                } else {
++                    System.out.println("Could not find a room with that ID");
++                }
++                // delete roomm
++                System.out.println("\nEnter the Room ID you want to delete: ");
++                int idToDelete = scanner.nextInt();
++                Room roomToDelete = null;
++                for (Room r : HotelDatabase.rooms) {
++                    if (r.getRoomid() == idToDelete) {
++                        roomToDelete = r;
++                        break;
++                    }
++                }
++                if (roomToDelete != null) {
++                    System.out.println("Deleting room ");
++                    admin.deleteRoom(roomToDelete);
++                } else {
++                    System.out.println("Could not find room");
++                }
+                 admin.readAllRooms();
++
++//                System.out.println("Deleting room to test functionality...");
++//                admin.deleteRoom(room);
++//                admin.readAllRooms();
+             }
+         }
+     }

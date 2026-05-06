@@ -35,14 +35,14 @@ public class LoginController {
 
     @FXML
     public void initialize(){
-        setActiveStyle(btnToggleGuest);
-        setInactiveStyle(btnToggleStaff);
-        // btnGoRegister.setVisible(true);
-        // btnGoRegister.setManaged(true);
-       // registerSeparator.setVisible(true);
-       // registerSeparator.setManaged(true);
-        registerBox.setVisible(true);
-        registerBox.setManaged(true);
+//        setActiveStyle(btnToggleGuest);
+//        setInactiveStyle(btnToggleStaff);
+//        btnGoRegister.setVisible(true);
+//        // btnGoRegister.setManaged(true);
+//       // registerSeparator.setVisible(true);
+//       // registerSeparator.setManaged(true);
+//        registerBox.setVisible(true);
+//        registerBox.setManaged(true);
 
     }
     @FXML

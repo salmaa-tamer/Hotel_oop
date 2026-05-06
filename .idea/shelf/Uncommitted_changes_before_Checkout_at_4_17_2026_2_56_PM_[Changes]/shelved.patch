@@ -1,0 +1,119 @@
+Index: src/GuestandRoomSystem/HotelDatabase.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>package GuestandRoomSystem;\r\n\r\nimport StaffSystem.Admin;\r\nimport StaffSystem.Receptionist;\r\nimport StaffSystem.Role;\r\nimport StaffSystem.Staff;\r\n\r\nimport java.time.LocalDate;\r\nimport java.util.ArrayList;\r\nimport java.util.Arrays;\r\n\r\npublic class HotelDatabase {\r\n    // 1. The ArrayLists\r\n    public static ArrayList<Guest> guests = new ArrayList<>();\r\n    public static ArrayList<Room> rooms = new ArrayList<>();\r\n    public static ArrayList<Reservation> reservations = new ArrayList<>();\r\n    public static ArrayList<Bill> bills = new ArrayList<>();\r\n    public static ArrayList<Staff> staff = new ArrayList<>();\r\n    public static ArrayList<RoomType> roomTypes = new ArrayList<>();\r\n    public static ArrayList<Amenity> amenities = new ArrayList<>();\r\n\r\n    // 2. The Dummy Data\r\n    public static void loadDummyData() {\r\n        // Room Types\r\n        RoomType single = new RoomType(\"Single\", 1, 120.0, 1);\r\n        RoomType suite = new RoomType(\"Suite\", 4, 400.0, 2);\r\n\r\n        roomTypes.add(single);\r\n        roomTypes.add(suite);\r\n\r\n        // Amenities\r\n        Amenity wifi = new Amenity(1, \"WiFi\", 10.0);\r\n        Amenity pool = new Amenity(2, \"Pool Access\", 25.0);\r\n\r\n        amenities.add(wifi);\r\n        amenities.add(pool);\r\n\r\n        // Rooms\r\n        Room room1 = new Room(101, true, 1, single, new ArrayList<>(Arrays.asList(wifi)), 120.0);\r\n        Room room2 = new Room(201, true, 2, suite, new ArrayList<>(Arrays.asList(wifi, pool)), 400.0);\r\n        rooms.add(room1);\r\n        rooms.add(room2);\r\n\r\n\r\n        // Guests\r\n        Guest guest1 = new Guest(\"Ahmed\", \"password123\", LocalDate.of(1984, 4, 4), 1500.0, \"5th settlement New Cairo , Egypt\", Gender.MALE, \"Single\");\r\n        Guest guest2 = new Guest(\"Fady\", \"246012\", LocalDate.of(1999, 8, 15), 500.0, \"EL Sheikh Zayed Cairo , Egypt\", Gender.MALE, \"Suite\");\r\n        guests.add(guest1);\r\n        guests.add(guest2);\r\n\r\n        // Staff\r\n        Staff receptionist1 = new Receptionist(\"rec_adam123\", \"receptionist\", LocalDate.of(1998, 5, 20), 8);\r\n        Staff admin1 = new Admin(\"admin1234\", \"adminpassword\", LocalDate.of(1985, 11, 2), 8);\r\n\r\n        staff.add(receptionist1);\r\n        staff.add(admin1);\r\n\r\n        // Reservations\r\n        Reservation res1 = new Reservation(guest1, room1, LocalDate.now().plusDays(1), LocalDate.now().plusDays(3));\r\n        //res1.confirm();\r\n\r\n        reservations.add(res1);\r\n\r\n        // Bills\r\n        Bill bill1 = new Bill(res1, PaymentMethod.Credit_Card);\r\n        bills.add(bill1);\r\n    }\r\n}
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/src/GuestandRoomSystem/HotelDatabase.java b/src/GuestandRoomSystem/HotelDatabase.java
+--- a/src/GuestandRoomSystem/HotelDatabase.java	(revision 7d4942010e139e0a78d25e7fbf45faf49f3b6985)
++++ b/src/GuestandRoomSystem/HotelDatabase.java	(date 1776418801712)
+@@ -56,7 +56,7 @@
+         staff.add(admin1);
+ 
+         // Reservations
+-        Reservation res1 = new Reservation(guest1, room1, LocalDate.now().plusDays(1), LocalDate.now().plusDays(3));
++        Reservation res1 = new Reservation(guest1, room1, LocalDate.now().plusDays(1), LocalDate.now().plusDays(2));
+         //res1.confirm();
+ 
+         reservations.add(res1);
+Index: src/GuestandRoomSystem/Main.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>package GuestandRoomSystem;\r\n\r\nimport StaffSystem.Admin;\r\nimport StaffSystem.Receptionist;\r\n\r\nimport java.time.LocalDate;\r\nimport java.util.List;\r\nimport java.util.Scanner;\r\n\r\npublic class Main {\r\n    static Scanner scanner = new Scanner(System.in);\r\n\r\n    public static void main(String []args){\r\n\r\n        HotelDatabase.loadDummyData();\r\n        Receptionist receptionist = (Receptionist)HotelDatabase.staff.get(0);\r\n        Room room = HotelDatabase.rooms.get(0);\r\n        Reservation reservation1 =HotelDatabase.reservations.get(0);\r\n        System.out.println(\"Are you a staff member or a guest?\");\r\n        System.out.println(\"1. Guest \\n2. Staff\");\r\n        int choice = scanner.nextInt();\r\n        scanner.nextLine();\r\n\r\n        if (choice == 1) {\r\n            boolean run = true;\r\n            do {\r\n                try {\r\n                    System.out.println(\"Enter Username : \");\r\n                    String username = scanner.nextLine();\r\n                    System.out.println(\"Enter Password : \");\r\n                    String password = scanner.nextLine();\r\n\r\n                    Guest guest = Guest.login(username, password);\r\n\r\n\r\n                    if (guest != null) {\r\n                        System.out.println(\"View Available Rooms\");\r\n                        guest.viewAvailableRooms();\r\n\r\n                        System.out.println(\"Guest makes reservation test\");\r\n                        System.out.println(\"Enter check in date (YYYY-MM-DD): \");\r\n                        String checkinDateInput = scanner.nextLine();\r\n                        LocalDate checkinDate = LocalDate.parse(checkinDateInput);\r\n\r\n                        System.out.println(\"Enter check out date (YYYY-MM-DD): \");\r\n                        String checkoutDateInput = scanner.nextLine();\r\n                        LocalDate checkoutDate = LocalDate.parse(checkoutDateInput);\r\n\r\n                        guest.makeReservation(room, checkinDate, checkoutDate);\r\n\r\n                        Reservation reservation = new Reservation(guest, room, checkinDate, checkoutDate);\r\n\r\n                        System.out.println(\"Guest in reception\");\r\n                        System.out.println(\"Guest's current balance : $\" + guest.getBalance());\r\n                        System.out.println(\"Guest paying in CASH...\");\r\n\r\n                        receptionist.manageCheckIn(reservation);\r\n                        guest.inPersonCheckout(reservation, PaymentMethod.CASH);\r\n\r\n                        System.out.println(\"Guest's current balance: $\" + guest.getBalance());\r\n\r\n                        System.out.println(\"\\nPrinting all system invoices:\");\r\n                        for (Bill b : HotelDatabase.bills) {\r\n                            b.PrintBill();\r\n                            System.out.println();\r\n                        }\r\n                    }\r\n\r\n                }\r\n                catch (IllegalArgumentException e) {\r\n                    System.out.println(\"Invalid username or password\\n\");\r\n                    run=false;\r\n                }\r\n            }while (run==false);\r\n        }\r\n        else if (choice == 2) {\r\n            System.out.println(\"Are you a receptionist or an admin?\");\r\n            System.out.println(\"1. Receptionist \\n2. Admin\");\r\n            int choice2 = scanner.nextInt();\r\n            scanner.nextLine();\r\n\r\n            if (choice2 == 1) {\r\n                System.out.println(\"Receptionist managing system\");\r\n                System.out.println(\"Enter username: \");\r\n                String receptionistUsername = scanner.nextLine();\r\n                System.out.println(\"Enter password: \");\r\n                String receptionistPassword = scanner.nextLine();\r\n\r\n                receptionist.login(receptionistUsername, receptionistPassword);\r\n\r\n                System.out.println(\"Guest checking in or checking out?\");\r\n                System.out.println(\"1. Checking in\\n2. Checking out\");\r\n                int choice3 = scanner.nextInt();\r\n                scanner.nextLine();\r\n\r\n                if (choice3 == 1) {\r\n                    receptionist.manageCheckIn(reservation1);\r\n                    System.out.println(\"Welcome.\");\r\n                }\r\n                else if (choice3 == 2) {\r\n                    System.out.println(\"Receptionist managing check-out...\");\r\n                    receptionist.manageCheckOut(reservation1, PaymentMethod.Credit_Card);\r\n                    System.out.println(\"Checkout complete. Bill generated.\");\r\n                }\r\n            }\r\n            else if (choice2 == 2) {\r\n                System.out.println(\"Admin checking system\");\r\n                Admin admin = (Admin) HotelDatabase.staff.get(1);\r\n\r\n                System.out.println(\"Enter the Room Id: \");\r\n                int roomId = scanner.nextInt();\r\n                System.out.println(\"Room Availability (true/false): \");\r\n                boolean availability = scanner.nextBoolean();\r\n                System.out.println(\"Room Floor: \");\r\n                int floor = scanner.nextInt();\r\n                System.out.println(\"Price per night: \");\r\n                double pricePerNight = scanner.nextDouble();\r\n\r\n                RoomType roomType = HotelDatabase.roomTypes.get(0);\r\n                List<Amenity> amenities = HotelDatabase.amenities;\r\n\r\n                Room newRoom = new Room(roomId, availability, floor, roomType, amenities, pricePerNight);\r\n                admin.createRoom(newRoom);\r\n                admin.readAllRooms();\r\n\r\n                System.out.println(\"Enter the new price of the room: \");\r\n                double newPrice = scanner.nextDouble();\r\n                admin.updateRoomPrice(room, newPrice);\r\n\r\n                System.out.println(\"Deleting room to test functionality...\");\r\n                admin.deleteRoom(room);\r\n                admin.readAllRooms();\r\n            }\r\n        }\r\n    }\r\n}
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/src/GuestandRoomSystem/Main.java b/src/GuestandRoomSystem/Main.java
+--- a/src/GuestandRoomSystem/Main.java	(revision 7d4942010e139e0a78d25e7fbf45faf49f3b6985)
++++ b/src/GuestandRoomSystem/Main.java	(date 1776426267253)
+@@ -2,7 +2,6 @@
+ 
+ import StaffSystem.Admin;
+ import StaffSystem.Receptionist;
+-
+ import java.time.LocalDate;
+ import java.util.List;
+ import java.util.Scanner;
+@@ -67,6 +66,7 @@
+                     }
+ 
+                 }
++
+                 catch (IllegalArgumentException e) {
+                     System.out.println("Invalid username or password\n");
+                     run=false;
+Index: .idea/workspace.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+><?xml version=\"1.0\" encoding=\"UTF-8\"?>\r\n<project version=\"4\">\r\n  <component name=\"ChangeListManager\">\r\n    <list default=\"true\" id=\"6ef86da0-53f2-4d5d-942d-a70b235a7772\" name=\"Changes\" comment=\"\">\r\n      <change beforePath=\"$PROJECT_DIR$/.idea/workspace.xml\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/.idea/workspace.xml\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/src/GuestandRoomSystem/HotelDatabase.java\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/src/GuestandRoomSystem/HotelDatabase.java\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/src/GuestandRoomSystem/Main.java\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/src/GuestandRoomSystem/Main.java\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/src/GuestandRoomSystem/Reservation.java\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/src/GuestandRoomSystem/Reservation.java\" afterDir=\"false\" />\r\n    </list>\r\n    <option name=\"SHOW_DIALOG\" value=\"false\" />\r\n    <option name=\"HIGHLIGHT_CONFLICTS\" value=\"true\" />\r\n    <option name=\"HIGHLIGHT_NON_ACTIVE_CHANGELIST\" value=\"false\" />\r\n    <option name=\"LAST_RESOLUTION\" value=\"IGNORE\" />\r\n  </component>\r\n  <component name=\"Git.Merge.Settings\">\r\n    <option name=\"BRANCH\" value=\"main\" />\r\n  </component>\r\n  <component name=\"Git.Settings\">\r\n    <option name=\"RECENT_BRANCH_BY_REPOSITORY\">\r\n      <map>\r\n        <entry key=\"$PROJECT_DIR$\" value=\"main\" />\r\n      </map>\r\n    </option>\r\n    <option name=\"RECENT_GIT_ROOT_PATH\" value=\"$PROJECT_DIR$\" />\r\n  </component>\r\n  <component name=\"GitHubPullRequestSearchHistory\">{\r\n  &quot;lastFilter&quot;: {\r\n    &quot;state&quot;: &quot;OPEN&quot;,\r\n    &quot;assignee&quot;: &quot;Sara-abdelsamie&quot;\r\n  }\r\n}</component>\r\n  <component name=\"GithubPullRequestsUISettings\">{\r\n  &quot;selectedUrlAndAccountId&quot;: {\r\n    &quot;url&quot;: &quot;https://github.com/salmaa-tamer/Hotel_oop.git&quot;,\r\n    &quot;accountId&quot;: &quot;c551b227-fb56-42b0-b532-91b712eae42f&quot;\r\n  }\r\n}</component>\r\n  <component name=\"ProjectColorInfo\">{\r\n  &quot;customColor&quot;: &quot;&quot;,\r\n  &quot;associatedIndex&quot;: 5\r\n}</component>\r\n  <component name=\"ProjectId\" id=\"3CQux4zR44ByCVqi9P770S5VBix\" />\r\n  <component name=\"ProjectViewState\">\r\n    <option name=\"hideEmptyMiddlePackages\" value=\"true\" />\r\n    <option name=\"showLibraryContents\" value=\"true\" />\r\n  </component>\r\n  <component name=\"PropertiesComponent\">{\r\n  &quot;keyToString&quot;: {\r\n    &quot;Application.Main.executor&quot;: &quot;Run&quot;,\r\n    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,\r\n    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,\r\n    &quot;git-widget-placeholder&quot;: &quot;Reem__Staff&quot;,\r\n    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;\r\n  }\r\n}</component>\r\n  <component name=\"SharedIndexes\">\r\n    <attachedChunks>\r\n      <set>\r\n        <option value=\"bundled-jdk-30f59d01ecdd-2fc7cc6b9a17-intellij.indexing.shared.core-IU-253.30387.90\" />\r\n      </set>\r\n    </attachedChunks>\r\n  </component>\r\n  <component name=\"TaskManager\">\r\n    <task active=\"true\" id=\"Default\" summary=\"Default task\">\r\n      <changelist id=\"6ef86da0-53f2-4d5d-942d-a70b235a7772\" name=\"Changes\" comment=\"\" />\r\n      <created>1776330373589</created>\r\n      <option name=\"number\" value=\"Default\" />\r\n      <option name=\"presentableId\" value=\"Default\" />\r\n      <updated>1776330373589</updated>\r\n    </task>\r\n    <servers />\r\n  </component>\r\n  <component name=\"XDebuggerManager\">\r\n    <breakpoint-manager>\r\n      <breakpoints>\r\n        <breakpoint enabled=\"true\" type=\"java-exception\">\r\n          <properties class=\"java.lang.IllegalArgumentException\" package=\"java.lang\" />\r\n          <option name=\"timeStamp\" value=\"1\" />\r\n        </breakpoint>\r\n        <breakpoint enabled=\"true\" type=\"java-exception\">\r\n          <properties class=\"java.util.InputMismatchException\" package=\"java.util\" />\r\n          <option name=\"timeStamp\" value=\"3\" />\r\n        </breakpoint>\r\n      </breakpoints>\r\n    </breakpoint-manager>\r\n  </component>\r\n</project>
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/.idea/workspace.xml b/.idea/workspace.xml
+--- a/.idea/workspace.xml	(revision 7d4942010e139e0a78d25e7fbf45faf49f3b6985)
++++ b/.idea/workspace.xml	(date 1776418801758)
+@@ -1,11 +1,10 @@
+ <?xml version="1.0" encoding="UTF-8"?>
+ <project version="4">
+   <component name="ChangeListManager">
+-    <list default="true" id="6ef86da0-53f2-4d5d-942d-a70b235a7772" name="Changes" comment="">
++    <list default="true" id="6ef86da0-53f2-4d5d-942d-a70b235a7772" name="Changes" comment="Updated main">
+       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+       <change beforePath="$PROJECT_DIR$/src/GuestandRoomSystem/HotelDatabase.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/GuestandRoomSystem/HotelDatabase.java" afterDir="false" />
+       <change beforePath="$PROJECT_DIR$/src/GuestandRoomSystem/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/GuestandRoomSystem/Main.java" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/src/GuestandRoomSystem/Reservation.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/GuestandRoomSystem/Reservation.java" afterDir="false" />
+     </list>
+     <option name="SHOW_DIALOG" value="false" />
+     <option name="HIGHLIGHT_CONFLICTS" value="true" />
+@@ -29,12 +28,12 @@
+     &quot;assignee&quot;: &quot;Sara-abdelsamie&quot;
+   }
+ }</component>
+-  <component name="GithubPullRequestsUISettings">{
+-  &quot;selectedUrlAndAccountId&quot;: {
+-    &quot;url&quot;: &quot;https://github.com/salmaa-tamer/Hotel_oop.git&quot;,
+-    &quot;accountId&quot;: &quot;c551b227-fb56-42b0-b532-91b712eae42f&quot;
+-  }
+-}</component>
++  <component name="GithubPullRequestsUISettings"><![CDATA[{
++  "selectedUrlAndAccountId": {
++    "url": "https://github.com/salmaa-tamer/Hotel_oop.git",
++    "accountId": "2d6fde7a-37bd-4816-85af-598a0de0d1ed"
++  }
++}]]></component>
+   <component name="ProjectColorInfo">{
+   &quot;customColor&quot;: &quot;&quot;,
+   &quot;associatedIndex&quot;: 5
+@@ -68,7 +67,31 @@
+       <option name="presentableId" value="Default" />
+       <updated>1776330373589</updated>
+     </task>
++    <task id="LOCAL-00001" summary="Updated main">
++      <option name="closed" value="true" />
++      <created>1776388853155</created>
++      <option name="number" value="00001" />
++      <option name="presentableId" value="LOCAL-00001" />
++      <option name="project" value="LOCAL" />
++      <updated>1776388853155</updated>
++    </task>
++    <option name="localTasksCounter" value="2" />
+     <servers />
++  </component>
++  <component name="Vcs.Log.Tabs.Properties">
++    <option name="TAB_STATES">
++      <map>
++        <entry key="MAIN">
++          <value>
++            <State />
++          </value>
++        </entry>
++      </map>
++    </option>
++  </component>
++  <component name="VcsManagerConfiguration">
++    <MESSAGE value="Updated main" />
++    <option name="LAST_COMMIT_MESSAGE" value="Updated main" />
+   </component>
+   <component name="XDebuggerManager">
+     <breakpoint-manager>
