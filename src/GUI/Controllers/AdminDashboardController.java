@@ -1044,6 +1044,88 @@ public class AdminDashboardController {
 
 
 
+    @FXML
+    public void handleViewProfile(){
+        titleLabel.setText("View Profile");
+        sideBar.getChildren().clear();
+        Label adminLabel = new Label("ADMIN");
+        adminLabel.setStyle("-fx-font-size: 25px; -fx-text-fill: #ffffff; -fx-font-weight: bold;");
+        Separator separator = new Separator();
+        Button backBtn = new Button("Back to Dashboard");
+        backBtn.setStyle("-fx-background-color: #7d97b1; -fx-text-fill: white; -fx-font-size: 14px; -fx-font-weight: bold; -fx-padding: 8px;");
+        backBtn.setPrefWidth(450);
+        backBtn.setOnAction(e -> goBackToDashboard(e));
+        sideBar.getChildren().addAll(adminLabel, separator, backBtn);
+
+        centralBox.getChildren().clear();
+        centralBox.setAlignment(javafx.geometry.Pos.TOP_LEFT);
+        centralBox.setPadding(new javafx.geometry.Insets(20));
+
+        // PROFILE INFO
+        Label titleLbl = new Label("My Profile");
+        titleLbl.setStyle("-fx-font-size: 28px; -fx-text-fill: #2c3e50; -fx-font-weight: bold;");
+        Separator s1 = new Separator();
+
+        Label usernameLbl = new Label("Username: " + admin.getUsername());
+        usernameLbl.setStyle("-fx-font-size: 16px; -fx-text-fill: #2c3e50;");
+        Label roleLbl = new Label("Role: " + admin.getRole());
+        roleLbl.setStyle("-fx-font-size: 16px; -fx-text-fill: #2c3e50;");
+        Label hoursLbl = new Label("Working Hours: " + admin.getWorkingHours() + " hours/day");
+        hoursLbl.setStyle("-fx-font-size: 16px; -fx-text-fill: #2c3e50;");
+        Label dobLbl = new Label("Date of Birth: " + admin.getDateOfBirth());
+        dobLbl.setStyle("-fx-font-size: 16px; -fx-text-fill: #2c3e50;");
+
+        // CHANGE PASSWORD
+        Separator s2 = new Separator();
+        Label changePasswordLbl = new Label("Change Password");
+        changePasswordLbl.setStyle("-fx-font-size: 22px; -fx-text-fill: #2c3e50; -fx-font-weight: bold;");
+        Separator s3 = new Separator();
+
+        Label currentPassLbl = new Label("Current Password:");
+        currentPassLbl.setStyle("-fx-font-size: 16px; -fx-text-fill: #2c3e50; -fx-font-weight: bold;");
+        PasswordField currentPassField = new PasswordField();
+        currentPassField.setPromptText("Enter current password...");
+        currentPassField.setStyle("-fx-font-size: 16px; -fx-background-color: #ecf0f1;");
+        currentPassField.setPrefWidth(450);
+
+        Label newPassLbl = new Label("New Password:");
+        newPassLbl.setStyle("-fx-font-size: 16px; -fx-text-fill: #2c3e50; -fx-font-weight: bold;");
+        PasswordField newPassField = new PasswordField();
+        newPassField.setPromptText("Enter new password...");
+        newPassField.setStyle("-fx-font-size: 16px; -fx-background-color: #ecf0f1;");
+        newPassField.setPrefWidth(450);
+
+        Label confirmPassLbl = new Label("Confirm New Password:");
+        confirmPassLbl.setStyle("-fx-font-size: 16px; -fx-text-fill: #2c3e50; -fx-font-weight: bold;");
+        PasswordField confirmPassField = new PasswordField();
+        confirmPassField.setPromptText("Confirm new password...");
+        confirmPassField.setStyle("-fx-font-size: 16px; -fx-background-color: #ecf0f1;");
+        confirmPassField.setPrefWidth(450);
+
+        Label statusLabel = new Label();
+        statusLabel.setStyle("-fx-font-size: 14px; -fx-font-weight: bold;");
+
+        Button changePassBtn = new Button("CHANGE PASSWORD");
+        changePassBtn.setStyle("-fx-background-color: #7d97b1; -fx-text-fill: white; -fx-font-size: 14px; -fx-font-weight: bold; -fx-padding: 8px 84px;");
+        changePassBtn.setPrefWidth(600);
+        changePassBtn.setOnAction(e -> {
+            try {
+                String current = currentPassField.getText();
+                String newPass = newPassField.getText();
+                String confirm = confirmPassField.getText();
+
+                if(current.isEmpty() || newPass.isEmpty() || confirm.isEmpty()){
+                    throw new IllegalArgumentException("All fields must be filled!");
+                }
+                if(!admin.getPassword().equals(current)){
+                    throw new IllegalArgumentException("Current password is incorrect!");
+                }
+                if(!newPass.equals(confirm)){
+                    throw new IllegalArgumentException("New passwords do not match!");
+                }
+                if(newPass.length() < 8){
+                    throw new IllegalArgumentException("Password must be at least 8 characters!");
+                }
 
 
         // REGISTER BUTTON
