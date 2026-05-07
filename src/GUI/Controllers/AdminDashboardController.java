@@ -1310,15 +1310,31 @@ public class AdminDashboardController {
     //LOG OUT
     //Mohamed
     @FXML private Button logoutButton;
-    @FXML public void handleLogout(javafx.event.ActionEvent event){
+    @FXML
+    public void handleLogout(javafx.event.ActionEvent event) {
         try {
             javafx.scene.Parent root = javafx.fxml.FXMLLoader.load(
                     getClass().getResource("/GUI/FXML/LoginScreen.fxml")
             );
 
             Stage stage = (Stage) ((javafx.scene.Node) event.getSource()).getScene().getWindow();
-            stage.setScene(new Scene(root));
+
+            Scene scene = new Scene(root);
+
+            try {
+                String cssPath = getClass().getResource("/GUI/CSS/styles.css").toExternalForm();
+                scene.getStylesheets().add(cssPath);
+            } catch (NullPointerException ex) {
+                System.out.println("CSS file not found");
+            }
+
+            stage.setScene(scene);
+            stage.setTitle("The Nile Atelier - Login");
+            stage.setResizable(true);
+
+            stage.setMaximized(false);
             stage.setMaximized(true);
+
             stage.show();
 
         } catch (Exception ex) {

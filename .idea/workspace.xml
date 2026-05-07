@@ -4,14 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="239bfdab-dd2f-4159-95eb-3ea4b7b5a9f2" name="Changes" comment="Merge branch 'main' into Reem_Staff&#10;&#10;# Conflicts:&#10;#&#9;.idea/workspace.xml">
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_5_5_2026_8_37_PM__Changes_.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Hotel reservation system/GUI/Controllers/ReceptionistDashboardController.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Hotel reservation system/GUI/Controllers/ReceptionistDashboardController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/GUI/CODE/AdminTestMain.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/GUI/CODE/AdminTestMain.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/GUI/Controllers/AdminDashboardController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/GUI/Controllers/AdminDashboardController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/GUI/FXML/AdminDashboard.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/GUI/FXML/AdminDashboard.fxml" afterDir="false" />
-    </list>
+    <list default="true" id="239bfdab-dd2f-4159-95eb-3ea4b7b5a9f2" name="Changes" comment="fixed admin window size" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -161,7 +154,15 @@
       <option name="project" value="LOCAL" />
       <updated>1778023469924</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="fixed admin window size">
+      <option name="closed" value="true" />
+      <created>1778160642863</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1778160642863</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
@@ -169,7 +170,8 @@
     <MESSAGE value="resizing" />
     <MESSAGE value="Added log out button" />
     <MESSAGE value="added register staff GUI" />
-    <option name="LAST_COMMIT_MESSAGE" value="added register staff GUI" />
+    <MESSAGE value="fixed admin window size" />
+    <option name="LAST_COMMIT_MESSAGE" value="fixed admin window size" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
