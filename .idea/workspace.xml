@@ -4,7 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="239bfdab-dd2f-4159-95eb-3ea4b7b5a9f2" name="Changes" comment="Merge branch 'refs/heads/main' into Reem_Staff&#10;&#10;# Conflicts:&#10;#&#9;.idea/workspace.xml&#10;#&#9;out/production/Hotel reservation system/GUI/Controllers/ReceptionistDashboardController.class&#10;#&#9;out/production/Hotel reservation system/GUI/MainFX.class" />
+    <list default="true" id="239bfdab-dd2f-4159-95eb-3ea4b7b5a9f2" name="Changes" comment="Merge branch 'refs/heads/main' into Reem_Staff&#10;&#10;# Conflicts:&#10;#&#9;.idea/workspace.xml&#10;#&#9;out/production/Hotel reservation system/GUI/Controllers/ReceptionistDashboardController.class&#10;#&#9;out/production/Hotel reservation system/GUI/MainFX.class">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/StaffSystem/Receptionist.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/StaffSystem/Receptionist.java" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -54,7 +57,7 @@
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager.252": "true",
     "RunOnceActivity.git.unshallow": "true",
-    "git-widget-placeholder": "main",
+    "git-widget-placeholder": "Reem__Staff",
     "kotlin-language-version-configured": "true"
   }
 }]]></component>
@@ -63,7 +66,7 @@
       <recent name="C:\Users\Dell\IdeaProjects\Hotel reservation system\src\GUI\FXML" />
     </key>
   </component>
-  <component name="RunManager" selected="Application.M">
+  <component name="RunManager" selected="Application.MainFX">
     <configuration name="AdminMain" type="Application" factoryName="Application">
       <option name="MAIN_CLASS_NAME" value="GUI.CODE.AdminTestMain" />
       <module name="Hotel reservation system" />
