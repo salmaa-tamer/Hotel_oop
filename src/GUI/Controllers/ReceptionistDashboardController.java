@@ -17,65 +17,213 @@ public class ReceptionistDashboardController {
     @FXML private Label roleLabel;
     @FXML private Label hoursLabel;
 
-
     private Receptionist currentReceptionist;
 
     @FXML
     public void initialize() {
+        if (SessionManager.getCurrentStaff() instanceof Receptionist) {
+            currentReceptionist = (Receptionist) SessionManager.getCurrentStaff();
+        } else {
+            currentReceptionist = (Receptionist) HotelDatabase.staff.get(0);
+        }
 
-        currentReceptionist = (Receptionist) HotelDatabase.staff.get(0);
         nameLabel.setText("Name: " + currentReceptionist.getUsername());
-       // roleLabel.setText("Role: " + currentReceptionist.getRole());
-        hoursLabel.setText("working Hours: " + currentReceptionist.getWorkingHours());
+        roleLabel.setText("Role: " + currentReceptionist.getRole());
+        hoursLabel.setText("Working Hours: " + currentReceptionist.getWorkingHours());
     }
 
+    // Reem
     @FXML
-    public void openCheckInScreen(javafx.event.ActionEvent event) {
-        //labels w buttons main dashboard
-        Label lblTitle = new Label("Process Guest Check-In");
+    public void handleViewProfile(javafx.event.ActionEvent event) {
+        Label lblTitle = new Label("View Profile");
         lblTitle.setStyle("-fx-font-size: 24px; -fx-font-weight: bold; -fx-text-fill: white;");
+
         Button btnBack = new Button("Back to Dashboard");
         btnBack.setStyle("-fx-background-color: #e74c3c; -fx-text-fill: white; -fx-font-weight: bold; -fx-cursor: hand; -fx-padding: 8px 15px;");
         btnBack.setOnAction(e -> goBackToDashboard(e));
-        //horizontal listing lel back to dashb
+
         HBox header = new HBox(20);
         header.getChildren().add(btnBack);
         header.getChildren().add(lblTitle);
         header.setStyle("-fx-background-color: #2c3e50; -fx-padding: 20px; -fx-alignment: center-left;");
-        // dropdown lel reservations
+
+        Label titleLbl = new Label("My Profile");
+        titleLbl.setStyle("-fx-font-size: 28px; -fx-text-fill: #2c3e50; -fx-font-weight: bold;");
+
+        Separator s1 = new Separator();
+
+        Label usernameLbl = new Label("Username: " + currentReceptionist.getUsername());
+        usernameLbl.setStyle("-fx-font-size: 16px; -fx-text-fill: #2c3e50;");
+
+        Label roleLbl = new Label("Role: " + currentReceptionist.getRole());
+        roleLbl.setStyle("-fx-font-size: 16px; -fx-text-fill: #2c3e50;");
+
+        Label hoursLbl = new Label("Working Hours: " + currentReceptionist.getWorkingHours() + " hours/day");
+        hoursLbl.setStyle("-fx-font-size: 16px; -fx-text-fill: #2c3e50;");
+
+        Label dobLbl = new Label("Date of Birth: " + currentReceptionist.getDateOfBirth());
+        dobLbl.setStyle("-fx-font-size: 16px; -fx-text-fill: #2c3e50;");
+
+        Separator s2 = new Separator();
+
+        Label changePasswordLbl = new Label("Change Password");
+        changePasswordLbl.setStyle("-fx-font-size: 22px; -fx-text-fill: #2c3e50; -fx-font-weight: bold;");
+
+        Separator s3 = new Separator();
+
+        Label currentPassLbl = new Label("Current Password:");
+        currentPassLbl.setStyle("-fx-font-size: 16px; -fx-text-fill: #2c3e50; -fx-font-weight: bold;");
+
+        PasswordField currentPassField = new PasswordField();
+        currentPassField.setPromptText("Enter current password...");
+        currentPassField.setStyle("-fx-font-size: 16px; -fx-background-color: #ecf0f1;");
+        currentPassField.setPrefWidth(450);
+
+        Label newPassLbl = new Label("New Password:");
+        newPassLbl.setStyle("-fx-font-size: 16px; -fx-text-fill: #2c3e50; -fx-font-weight: bold;");
+
+        PasswordField newPassField = new PasswordField();
+        newPassField.setPromptText("Enter new password...");
+        newPassField.setStyle("-fx-font-size: 16px; -fx-background-color: #ecf0f1;");
+        newPassField.setPrefWidth(450);
+
+        Label confirmPassLbl = new Label("Confirm New Password:");
+        confirmPassLbl.setStyle("-fx-font-size: 16px; -fx-text-fill: #2c3e50; -fx-font-weight: bold;");
+
+        PasswordField confirmPassField = new PasswordField();
+        confirmPassField.setPromptText("Confirm new password...");
+        confirmPassField.setStyle("-fx-font-size: 16px; -fx-background-color: #ecf0f1;");
+        confirmPassField.setPrefWidth(450);
+
+        Label statusLabel = new Label();
+        statusLabel.setStyle("-fx-font-size: 14px; -fx-font-weight: bold;");
+
+        Button changePassBtn = new Button("CHANGE PASSWORD");
+        changePassBtn.setStyle("-fx-background-color: #2980b9; -fx-text-fill: white; -fx-font-size: 14px; -fx-font-weight: bold; -fx-padding: 8px 84px; -fx-cursor: hand;");
+        changePassBtn.setPrefWidth(450);
+
+        changePassBtn.setOnAction(e -> {
+            try {
+                String current = currentPassField.getText();
+                String newPass = newPassField.getText();
+                String confirm = confirmPassField.getText();
+
+                if (current.isEmpty() || newPass.isEmpty() || confirm.isEmpty()) {
+                    throw new IllegalArgumentException("All fields must be filled!");
+                }
+
+                if (!currentReceptionist.getPassword().equals(current)) {
+                    throw new IllegalArgumentException("Current password is incorrect!");
+                }
+
+                if (!newPass.equals(confirm)) {
+                    throw new IllegalArgumentException("New passwords do not match!");
+                }
+
+                if (newPass.length() < 8) {
+                    throw new IllegalArgumentException("Password must be at least 8 characters!");
+                }
+
+                currentReceptionist.setPassword(newPass);
+
+                statusLabel.setText("Password changed successfully!");
+                statusLabel.setStyle("-fx-text-fill: green; -fx-font-size: 14px; -fx-font-weight: bold;");
+
+                currentPassField.clear();
+                newPassField.clear();
+                confirmPassField.clear();
+
+            } catch (IllegalArgumentException ex) {
+                statusLabel.setText("ERROR: " + ex.getMessage());
+                statusLabel.setStyle("-fx-text-fill: red; -fx-font-size: 14px; -fx-font-weight: bold;");
+            }
+        });
+
+        VBox formContent = new VBox(15);
+        formContent.getChildren().addAll(
+                titleLbl,
+                s1,
+                usernameLbl,
+                roleLbl,
+                hoursLbl,
+                dobLbl,
+                s2,
+                changePasswordLbl,
+                s3,
+                currentPassLbl,
+                currentPassField,
+                newPassLbl,
+                newPassField,
+                confirmPassLbl,
+                confirmPassField,
+                changePassBtn,
+                statusLabel
+        );
+
+        formContent.setPadding(new Insets(30));
+        formContent.setStyle("-fx-background-color: transparent;");
+
+        ScrollPane scrollPane = new ScrollPane();
+        scrollPane.setContent(formContent);
+        scrollPane.setFitToWidth(true);
+        scrollPane.setStyle("-fx-background: white; -fx-background-color: white; -fx-border-color: transparent; -fx-focus-color: transparent;");
+
+        BorderPane layout = new BorderPane();
+        layout.setTop(header);
+        layout.setCenter(scrollPane);
+
+        switchScene(event, layout);
+    }
+
+    @FXML
+    public void openCheckInScreen(javafx.event.ActionEvent event) {
+        Label lblTitle = new Label("Process Guest Check-In");
+        lblTitle.setStyle("-fx-font-size: 24px; -fx-font-weight: bold; -fx-text-fill: white;");
+
+        Button btnBack = new Button("Back to Dashboard");
+        btnBack.setStyle("-fx-background-color: #e74c3c; -fx-text-fill: white; -fx-font-weight: bold; -fx-cursor: hand; -fx-padding: 8px 15px;");
+        btnBack.setOnAction(e -> goBackToDashboard(e));
+
+        HBox header = new HBox(20);
+        header.getChildren().add(btnBack);
+        header.getChildren().add(lblTitle);
+        header.setStyle("-fx-background-color: #2c3e50; -fx-padding: 20px; -fx-alignment: center-left;");
+
         ComboBox<Reservation> resCombo = new ComboBox<>();
         resCombo.setPromptText("Select a Reservation...");
         resCombo.setStyle("-fx-font-size: 16px; -fx-background-color: #ecf0f1;");
         resCombo.setPrefWidth(450);
-        // show kol el reservations mn el database
+
         for (Reservation res : HotelDatabase.reservations) {
             resCombo.getItems().add(res);
         }
-        //labels w buttons el check in screen
+
         Button btnConfirm = new Button("Confirm Check-In");
         btnConfirm.setStyle("-fx-background-color: #27ae60; -fx-text-fill: white; -fx-font-size: 16px; -fx-font-weight: bold; -fx-cursor: hand; -fx-padding: 10px;");
         btnConfirm.setPrefWidth(450);
+
         Label lblStatus = new Label();
         lblStatus.setStyle("-fx-font-size: 16px; -fx-font-weight: bold;");
 
-        // handling reservation event
         btnConfirm.setOnAction(e -> {
             try {
                 Reservation selectedRes = resCombo.getValue();
+
                 if (selectedRes == null) {
                     throw new IllegalArgumentException("Please select a reservation first!");
                 }
 
                 currentReceptionist.manageCheckIn(selectedRes);
+
                 lblStatus.setText("Success! " + selectedRes.getGuest().getUsername() + " has been checked in.");
                 lblStatus.setStyle("-fx-text-fill: #27ae60;");
+
             } catch (Exception ex) {
                 lblStatus.setText("Error: " + ex.getMessage());
                 lblStatus.setStyle("-fx-text-fill: #e74c3c;");
-
             }
         });
-        // list el reservations
+
         VBox formLayout = new VBox(25);
         formLayout.getChildren().add(new Label("Select a pending reservation to check in:"));
         formLayout.getChildren().add(resCombo);
@@ -136,20 +284,21 @@ public class ReceptionistDashboardController {
         btnConfirm.setOnAction(e -> {
             try {
                 Reservation selectedRes = resCombo.getValue();
+
                 if (selectedRes == null) {
                     throw new IllegalArgumentException("Select a reservation.");
                 }
 
                 PaymentMethod method = payCombo.getValue();
+
                 if (method == null) {
                     throw new IllegalArgumentException("Select a payment method.");
                 }
 
                 currentReceptionist.manageCheckOut(selectedRes, method);
+
                 lblStatus.setText("Payment successful! Guest checked out.");
                 lblStatus.setStyle("-fx-text-fill: #27ae60;");
-
-                // double total = selectedRes.CalculateTotalPrice();
 
                 String invoice = "====================================\n" +
                         "          OFFICIAL INVOICE          \n" +
@@ -160,7 +309,9 @@ public class ReceptionistDashboardController {
                         "------------------------------------\n" +
                         "TOTAL PAID:     $" + selectedRes.CalculateTotalPrice() + "\n" +
                         "====================================\n";
+
                 txtInvoice.setText(invoice);
+
             } catch (Exception ex) {
                 lblStatus.setText("Error: " + ex.getMessage());
                 lblStatus.setStyle("-fx-text-fill: #e74c3c;");
@@ -199,6 +350,27 @@ public class ReceptionistDashboardController {
         switchToDatabaseView(event, "Reservation Database", HotelDatabase.reservations);
     }
 
+    @FXML
+    public void HandleLogout(javafx.event.ActionEvent event) {
+        try {
+            javafx.scene.Parent root = javafx.fxml.FXMLLoader.load(
+                    getClass().getResource("/GUI/FXML/LoginScreen.fxml")
+            );
+
+            Stage stage = (Stage) ((javafx.scene.Node) event.getSource()).getScene().getWindow();
+
+            double width = stage.getScene().getWidth();
+            double height = stage.getScene().getHeight();
+
+            stage.setScene(new Scene(root, width, height));
+            stage.setMaximized(true);
+            stage.show();
+
+        } catch (Exception ex) {
+            ex.printStackTrace();
+        }
+    }
+
     private void switchToDatabaseView(javafx.event.ActionEvent event, String title, java.util.List<?> databaseList) {
         Label lblTitle = new Label(title);
         lblTitle.setStyle("-fx-font-size: 24px; -fx-font-weight: bold; -fx-text-fill: white;");
@@ -213,10 +385,10 @@ public class ReceptionistDashboardController {
         header.setStyle("-fx-background-color: #2c3e50; -fx-padding: 15px; -fx-alignment: center-left;");
 
         ListView<String> listView = new ListView<>();
+
         if (databaseList.isEmpty()) {
             listView.getItems().add("No records currently found in the system.");
         } else {
-            // list el data
             for (Object item : databaseList) {
                 listView.getItems().add(item.toString());
             }
@@ -226,7 +398,14 @@ public class ReceptionistDashboardController {
         layout.setTop(header);
         layout.setCenter(listView);
 
-        Scene newScene = new Scene(layout, 1024, 576);
+        Stage stage = (Stage) ((javafx.scene.Node) event.getSource()).getScene().getWindow();
+
+        double width = stage.getScene().getWidth();
+        double height = stage.getScene().getHeight();
+
+        layout.setPrefSize(width, height);
+
+        Scene newScene = new Scene(layout, width, height);
 
         try {
             String cssPath = getClass().getResource("/GUI/CSS/styles.css").toExternalForm();
@@ -235,22 +414,47 @@ public class ReceptionistDashboardController {
             System.out.println("CSS file not found ");
         }
 
-        Stage stage = (Stage) ((javafx.scene.Node) event.getSource()).getScene().getWindow();
         stage.setScene(newScene);
+        stage.setMaximized(true);
     }
 
     private void switchScene(javafx.event.ActionEvent event, BorderPane layout) {
-        Scene newScene = new Scene(layout, 1024, 576);
         Stage stage = (Stage) ((javafx.scene.Node) event.getSource()).getScene().getWindow();
+
+        double width = stage.getScene().getWidth();
+        double height = stage.getScene().getHeight();
+
+        layout.setPrefSize(width, height);
+
+        Scene newScene = new Scene(layout, width, height);
+
+        try {
+            String cssPath = getClass().getResource("/GUI/CSS/styles.css").toExternalForm();
+            newScene.getStylesheets().add(cssPath);
+        } catch (NullPointerException ex) {
+            System.out.println("CSS file not found ");
+        }
+
         stage.setScene(newScene);
+        stage.setMaximized(true);
     }
 
     private void goBackToDashboard(javafx.event.ActionEvent event) {
         try {
-            javafx.scene.Parent root = javafx.fxml.FXMLLoader.load(getClass().getResource("/GUI/FXML/ReceptionistDashboard.fxml"));
+            javafx.scene.Parent root = javafx.fxml.FXMLLoader.load(
+                    getClass().getResource("/GUI/FXML/ReceptionistDashboard.fxml")
+            );
+
             Stage stage = (Stage) ((javafx.scene.Node) event.getSource()).getScene().getWindow();
-            stage.setScene(new Scene(root, 1024, 576));
+
+            double width = stage.getScene().getWidth();
+            double height = stage.getScene().getHeight();
+
+            stage.setScene(new Scene(root, width, height));
+            stage.setMaximized(true);
+
         } catch (Exception ex) {
+            ex.printStackTrace();
         }
     }
 }

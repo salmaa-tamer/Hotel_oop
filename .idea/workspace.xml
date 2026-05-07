@@ -1,80 +1,22 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
   <component name="ChangeListManager">
-    <list default="true" id="f58914e5-321c-4f8d-b695-560c0e41e8c3" name="Changes" comment="checkout final screen 2">
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/javafx_base.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_4_17_2026_12_24_AM_[Changes]/shelved.patch" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_4_17_2026_12_24_AM__Changes_.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_5_7_2026_6_33_PM_[Changes]/shelved.patch" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_5_7_2026_6_33_PM__Changes_.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/production/Hotel reservation system/GUI/CODE/AdminTestMain.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/production/Hotel reservation system/GUI/CODE/LoginMain.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/production/Hotel reservation system/GUI/CODE/M.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/production/Hotel reservation system/GUI/CSS/styles.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/production/Hotel reservation system/GUI/Controllers/AdminDashboardController$1.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/production/Hotel reservation system/GUI/Controllers/AdminDashboardController$2.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/production/Hotel reservation system/GUI/Controllers/AdminDashboardController$3.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/production/Hotel reservation system/GUI/Controllers/AdminDashboardController$4.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/production/Hotel reservation system/GUI/Controllers/AdminDashboardController$5.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/production/Hotel reservation system/GUI/Controllers/AdminDashboardController$6.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/production/Hotel reservation system/GUI/Controllers/AdminDashboardController$7.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/production/Hotel reservation system/GUI/Controllers/AdminDashboardController.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/production/Hotel reservation system/GUI/Controllers/CancelReservationController$1.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/production/Hotel reservation system/GUI/Controllers/CancelReservationController.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/production/Hotel reservation system/GUI/Controllers/CheckoutPaymentController.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/production/Hotel reservation system/GUI/Controllers/GuestDashboardController.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/production/Hotel reservation system/GUI/Controllers/LoginController.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/production/Hotel reservation system/GUI/Controllers/MakeReservationController.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/production/Hotel reservation system/GUI/Controllers/MyReservationsController$1.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/production/Hotel reservation system/GUI/Controllers/MyReservationsController.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/production/Hotel reservation system/GUI/Controllers/ReceptionistDashboardController.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/production/Hotel reservation system/GUI/Controllers/RegisterController.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/production/Hotel reservation system/GUI/Controllers/SessionManager.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/production/Hotel reservation system/GUI/FXML/AdminDashboard.fxml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/production/Hotel reservation system/GUI/FXML/CancelReservation.fxml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/production/Hotel reservation system/GUI/FXML/CheckoutPayment.fxml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/production/Hotel reservation system/GUI/FXML/GuestDashboard.fxml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/production/Hotel reservation system/GUI/FXML/LoginScreen.fxml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/production/Hotel reservation system/GUI/FXML/MyReservations.fxml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/production/Hotel reservation system/GUI/FXML/ReceptionistDashboard.fxml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/production/Hotel reservation system/GUI/GuestMain.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/production/Hotel reservation system/GUI/MainFX.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/production/Hotel reservation system/GUI/NileAtelier.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/production/Hotel reservation system/GuestandRoomSystem/Amenity.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/production/Hotel reservation system/GuestandRoomSystem/Bill.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/production/Hotel reservation system/GuestandRoomSystem/Gender.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/production/Hotel reservation system/GuestandRoomSystem/Guest.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/production/Hotel reservation system/GuestandRoomSystem/HotelDatabase.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/production/Hotel reservation system/GuestandRoomSystem/Main.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/production/Hotel reservation system/GuestandRoomSystem/PaymentMethod.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/production/Hotel reservation system/GuestandRoomSystem/Reservation.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/production/Hotel reservation system/GuestandRoomSystem/ReservationStatus.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/production/Hotel reservation system/GuestandRoomSystem/Room.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/production/Hotel reservation system/GuestandRoomSystem/RoomType.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/production/Hotel reservation system/Hotel reservation system.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/production/Hotel reservation system/StaffSystem/Admin.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/production/Hotel reservation system/StaffSystem/Receptionist.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/production/Hotel reservation system/StaffSystem/Role.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/production/Hotel reservation system/StaffSystem/Staff.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/production/Hotel reservation system/exceptions/InvalidPaymentException.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/production/Hotel reservation system/exceptions/InvalidReservationException.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/production/Hotel reservation system/exceptions/InvalidReservationStatus.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/production/Hotel reservation system/exceptions/RoomNotAvailableException.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/GUI/FXML/RegisterScreen.fxml" afterDir="false" />
+    <list default="true" id="239bfdab-dd2f-4159-95eb-3ea4b7b5a9f2" name="Changes" comment="Merge branch 'main' into Reem_Staff&#10;&#10;# Conflicts:&#10;#&#9;.idea/workspace.xml">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Hotel reservation system/GUI/Controllers/ReceptionistDashboardController.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Hotel reservation system/GUI/Controllers/ReceptionistDashboardController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Hotel reservation system/GUI/FXML/ReceptionistDashboard.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Hotel reservation system/GUI/FXML/ReceptionistDashboard.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Hotel reservation system/GUI/MainFX.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Hotel reservation system/GUI/MainFX.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/GUI/CODE/M.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/GUI/CODE/M.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/GUI/Controllers/ReceptionistDashboardController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/GUI/Controllers/ReceptionistDashboardController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/GUI/FXML/ReceptionistDashboard.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/GUI/FXML/ReceptionistDashboard.fxml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
-  </component>
-  <component name="FileTemplateManagerImpl">
-    <option name="RECENT_TEMPLATES">
-      <list>
-        <option value="module-info" />
-        <option value="Class" />
-      </list>
-    </option>
   </component>
   <component name="Git.Merge.Settings">
     <option name="BRANCH" value="origin/main" />
@@ -90,60 +32,84 @@
   <component name="GitHubPullRequestSearchHistory">{
   &quot;lastFilter&quot;: {
     &quot;state&quot;: &quot;OPEN&quot;,
-    &quot;assignee&quot;: &quot;hanaSameh267&quot;
+    &quot;assignee&quot;: &quot;Sara-abdelsamie&quot;
   }
 }</component>
   <component name="GithubPullRequestsUISettings">{
   &quot;selectedUrlAndAccountId&quot;: {
     &quot;url&quot;: &quot;https://github.com/salmaa-tamer/Hotel_oop.git&quot;,
-    &quot;accountId&quot;: &quot;eebf836e-3542-4536-a939-df9511c7cdcb&quot;
+    &quot;accountId&quot;: &quot;2d6fde7a-37bd-4816-85af-598a0de0d1ed&quot;
   }
 }</component>
+  <component name="McpProjectServerCommands">
+    <commands />
+    <urls />
+  </component>
   <component name="ProjectColorInfo">{
-  &quot;associatedIndex&quot;: 7
+  &quot;associatedIndex&quot;: 0
 }</component>
-  <component name="ProjectId" id="3CxZGI0RgAArSar4cIjPwWPCWpk" />
+  <component name="ProjectId" id="3CtBmqpgFyvNdJMy2glpxYHQiUA" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
-    "Application.AdminTestMain.executor": "Run",
-    "Application.GuestMain.executor": "Run",
+    "Application.AdminMain.executor": "Run",
     "Application.LoginMain.executor": "Run",
+    "Application.M.executor": "Run",
     "Application.MainFX.executor": "Run",
-    "Downloaded.Files.Path.Enabled": "false",
-    "Repository.Attach.Annotations": "false",
-    "Repository.Attach.JavaDocs": "false",
-    "Repository.Attach.Sources": "false",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager.252": "true",
     "RunOnceActivity.git.unshallow": "true",
-    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "git-widget-placeholder": "Hana__guestSystem",
-    "kotlin-language-version-configured": "true",
-    "last_opened_file_path": "C:/Users/asus/IdeaProjects/HotelReservationSystem/src/GUI/FXML",
-    "project.structure.last.edited": "Libraries",
-    "project.structure.proportion": "0.15",
-    "project.structure.side.proportion": "0.2814136",
-    "settings.editor.selected.configurable": "configurable.group.language"
+    "git-widget-placeholder": "main",
+    "kotlin-language-version-configured": "true"
   }
 }]]></component>
   <component name="RecentsManager">
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="C:\Users\asus\IdeaProjects\HotelReservationSystem\src\GUI\FXML" />
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\Dell\IdeaProjects\Hotel reservation system\src\GUI\FXML" />
     </key>
   </component>
-  <component name="RunManager">
-    <configuration name="MainFX" type="Application" factoryName="Application">
-      <option name="MAIN_CLASS_NAME" value="GUI.MainFX" />
+  <component name="RunManager" selected="Application.M">
+    <configuration name="AdminMain" type="Application" factoryName="Application">
+      <option name="MAIN_CLASS_NAME" value="GUI.CODE.AdminTestMain" />
       <module name="Hotel reservation system" />
-      <option name="VM_PARAMETERS" value="--module-path &quot;C:\javafx-sdk-26\lib&quot; --add-modules javafx.controls,javafx.fxml" />
+      <option name="VM_PARAMETERS" value="--module-path &quot;C:\Users\Reem Hetta\Downloads\javafx-sdk-26\lib&quot; --add-modules javafx.controls,javafx.fxml" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="LoginMain" type="Application" factoryName="Application">
+      <option name="MAIN_CLASS_NAME" value="GUI.CODE.LoginMain" />
+      <module name="Hotel reservation system" />
+      <option name="VM_PARAMETERS" value="--module-path &quot;C:\Users\Reem Hetta\Downloads\javafx-sdk-26\lib&quot; --add-modules javafx.controls,javafx.fxml" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="M" type="Application" factoryName="Application">
+      <option name="MAIN_CLASS_NAME" value="GUI.CODE.M" />
+      <module name="Hotel reservation system" />
+      <option name="VM_PARAMETERS" value="--module-path &quot;C:\Users\Mohamed\Downloads\javafx-sdk-26\lib&quot; --add-modules javafx.controls,javafx.fxml" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="MainFX" type="Application" factoryName="Application">
+      <option name="MAIN_CLASS_NAME" value="GUI.MainFX" />
+      <module name="Hotel reservation system" />
+      <option name="VM_PARAMETERS" value="--module-path &quot;C:\Users\Reem Hetta\Downloads\javafx-sdk-26\lib&quot; --add-modules javafx.controls,javafx.fxml" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <list>
+      <item itemvalue="Application.MainFX" />
+      <item itemvalue="Application.AdminMain" />
+      <item itemvalue="Application.M" />
+      <item itemvalue="Application.LoginMain" />
+    </list>
   </component>
   <component name="SharedIndexes">
     <attachedChunks>
@@ -153,72 +119,64 @@
     </attachedChunks>
   </component>
   <component name="TaskManager">
-    <task id="LOCAL-00001" summary="login screen is done but no register screen here">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="239bfdab-dd2f-4159-95eb-3ea4b7b5a9f2" name="Changes" comment="" />
+      <created>1777195163897</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1777195163897</updated>
+    </task>
+    <task id="LOCAL-00001" summary="Adding Logout Button and other Buttons">
       <option name="closed" value="true" />
-      <created>1777160399155</created>
+      <created>1777489402133</created>
       <option name="number" value="00001" />
       <option name="presentableId" value="LOCAL-00001" />
       <option name="project" value="LOCAL" />
-      <updated>1777160399155</updated>
+      <updated>1777489402133</updated>
     </task>
-    <task id="LOCAL-00002" summary="register screen">
+    <task id="LOCAL-00002" summary="resizing">
       <option name="closed" value="true" />
-      <created>1777256205774</created>
+      <created>1777492845794</created>
       <option name="number" value="00002" />
       <option name="presentableId" value="LOCAL-00002" />
       <option name="project" value="LOCAL" />
-      <updated>1777256205774</updated>
+      <updated>1777492845794</updated>
     </task>
-    <task id="LOCAL-00003" summary="login main">
+    <task id="LOCAL-00003" summary="Added log out button">
       <option name="closed" value="true" />
-      <created>1777292867295</created>
+      <created>1778021305711</created>
       <option name="number" value="00003" />
       <option name="presentableId" value="LOCAL-00003" />
       <option name="project" value="LOCAL" />
-      <updated>1777292867295</updated>
+      <updated>1778021305711</updated>
     </task>
-    <task active="true" id="Default" summary="Default task">
-      <changelist id="f58914e5-321c-4f8d-b695-560c0e41e8c3" name="Changes" comment="login main" />
-      <created>1777329087148</created>
-      <option name="number" value="Default" />
-      <option name="presentableId" value="Default" />
-      <updated>1777329087148</updated>
-    </task>
-    <task id="LOCAL-00004" summary="final login/register controllers and screens 1">
+    <task id="LOCAL-00004" summary="added register staff GUI">
       <option name="closed" value="true" />
-      <created>1777494448051</created>
+      <created>1778023469924</created>
       <option name="number" value="00004" />
       <option name="presentableId" value="LOCAL-00004" />
       <option name="project" value="LOCAL" />
-      <updated>1777494448052</updated>
+      <updated>1778023469924</updated>
     </task>
-    <task id="LOCAL-00005" summary="checkout controller and screen">
-      <option name="closed" value="true" />
-      <created>1777816248545</created>
-      <option name="number" value="00005" />
-      <option name="presentableId" value="LOCAL-00005" />
-      <option name="project" value="LOCAL" />
-      <updated>1777816248545</updated>
-    </task>
-    <task id="LOCAL-00006" summary="checkout final screen 2">
-      <option name="closed" value="true" />
-      <created>1777820285564</created>
-      <option name="number" value="00006" />
-      <option name="presentableId" value="LOCAL-00006" />
-      <option name="project" value="LOCAL" />
-      <updated>1777820285564</updated>
-    </task>
-    <option name="localTasksCounter" value="7" />
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="login screen is done but no register screen here" />
-    <MESSAGE value="register screen" />
-    <MESSAGE value="login main" />
-    <MESSAGE value="final login/register controllers and screens 1" />
-    <MESSAGE value="checkout controller and screen" />
-    <MESSAGE value="checkout final screen 2" />
-    <option name="LAST_COMMIT_MESSAGE" value="checkout final screen 2" />
+    <MESSAGE value="Adding Logout Button and other Buttons" />
+    <MESSAGE value="resizing" />
+    <MESSAGE value="Added log out button" />
+    <MESSAGE value="added register staff GUI" />
+    <option name="LAST_COMMIT_MESSAGE" value="added register staff GUI" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <breakpoint enabled="true" type="java-exception">
+          <properties class="java.lang.reflect.InvocationTargetException" package="java.lang.reflect" />
+          <option name="timeStamp" value="1" />
+        </breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

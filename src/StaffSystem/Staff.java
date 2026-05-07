@@ -26,8 +26,8 @@ public abstract class Staff{
 
 
     public void setUsername(String username) {
-        if (username== null || username.length()<8){
-            throw new IllegalArgumentException("Username must be at least 8 characters");
+        if (username== null || username.length()<8 || username.length()>20){
+            throw new IllegalArgumentException("Username must be between 8 & 20 characters");
         }
         this.username = username;
     }
@@ -42,14 +42,18 @@ public abstract class Staff{
         }
         this.password = password;
     }
-    private String getPassword(){
+    public String getPassword(){
         return password;
     }
 
     public void setDateOfBirth(LocalDate dateOfBirth) {
-        if(dateOfBirth.isAfter(LocalDate.now()) || dateOfBirth==null){
+        if(dateOfBirth==null ){
             throw new IllegalArgumentException("Date Invalid");
         }
+        if(dateOfBirth.isAfter(LocalDate.now().minusYears(18)) ){
+            throw new IllegalArgumentException("Staff members must be at least 18 years old");
+        }
+
         this.dateOfBirth = dateOfBirth;
     }
 
@@ -58,7 +62,7 @@ public abstract class Staff{
     }
 
     public void setWorkingHours(int workingHours){
-        if(workingHours<0 ){
+        if(workingHours<0 || workingHours>14){
             throw new IllegalArgumentException("Working hours must be greater than zero");
         }
       this.workingHours = workingHours;

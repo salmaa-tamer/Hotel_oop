@@ -1,0 +1,302 @@
+Index: out/production/Hotel reservation system/GUI/FXML/LoginScreen.fxml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+><?xml version=\"1.0\" encoding=\"UTF-8\"?>\r\n\r\n<?import java.net.URL?>\r\n<?import javafx.geometry.Insets?>\r\n<?import javafx.scene.control.Button?>\r\n<?import javafx.scene.control.Label?>\r\n<?import javafx.scene.control.PasswordField?>\r\n<?import javafx.scene.control.Separator?>\r\n<?import javafx.scene.control.TextField?>\r\n<?import javafx.scene.layout.BorderPane?>\r\n<?import javafx.scene.layout.HBox?>\r\n<?import javafx.scene.layout.VBox?>\r\n\r\n<BorderPane prefHeight=\"576.0\" prefWidth=\"1024.0\" xmlns=\"http://javafx.com/javafx/26\" xmlns:fx=\"http://javafx.com/fxml/1\" fx:controller=\"GUI.Controllers.LoginController\">\r\n\r\n    <stylesheets>\r\n        <URL value=\"@../IdeaProjects/HotelReservationSystem/src/GUI/CSS/styles.css\" />\r\n    </stylesheets>\r\n   <left>\r\n        <VBox alignment=\"CENTER\" prefWidth=\"430.0\" spacing=\"18.0\" style=\"-fx-padding: 60px 40px; -fx-background-color: #1a252f;\">\r\n         <Label style=\"-fx-font-size: 64px;\" text=\"\uD83C\uDFE8\" />\r\n            <Label style=\"-fx-font-size: 26px; -fx-font-weight: bold; -fx-text-fill: white;\" text=\"The Nile Atelier\" />\r\n         <Separator prefWidth=\"300.0\" />\r\n         <Label style=\"-fx-font-size: 13px; -fx-text-fill: #bdc3c7;\" text=\"✓  Seamless Check-In and Check-Out\" />\r\n         <Label style=\"-fx-font-size: 13px; -fx-text-fill: #bdc3c7;\" text=\"✓  Browse and Reserve Rooms\" />\r\n         <Label style=\"-fx-font-size: 13px; -fx-text-fill: #bdc3c7;\" text=\"✓  Secure Online Payments\" />\r\n        </VBox>\r\n   </left>\r\n   <center>\r\n      <VBox alignment=\"CENTER\" spacing=\"18.0\" style=\"-fx-background-color: #f0f2f5; -fx-padding: 50px 80px;\">\r\n         <children>\r\n               <Label style=\"-fx-font-size: 28px; -fx-font-weight: bold; -fx-text-fill: #1a252f;\" text=\"Welcome Back\" />\r\n               <Label style=\"-fx-font-size: 14px; -fx-text-fill: #7f8c8d;\" text=\"Sign in to continue\" />\r\n            <HBox alignment=\"CENTER\">\r\n               <children>\r\n                  <Button fx:id=\"btnToggleGuest\" mnemonicParsing=\"false\" onAction=\"#switchToGuest\" prefWidth=\"150.0\" style=\"-fx-background-color: #1a252f; -fx-text-fill: white; -fx-font-weight: bold; -fx-font-size: 14px; -fx-padding: 10; -fx-cursor: hand; -fx-background-radius: 5 0 0 5;\" text=\"Guest\">\r\n                     <padding>\r\n                        <Insets top=\"10.0\" />\r\n                     </padding>\r\n                  </Button>\r\n                  <Button fx:id=\"btnToggleStaff\" mnemonicParsing=\"false\" onAction=\"#switchToStaff\" prefWidth=\"150.0\" style=\"-fx-background-color: #ecf0f1; -fx-text-fill: #7f8c8d; -fx-padding: 10; -fx-cursor: hand; -fx-background-radius: 0550;\" text=\"Staff\" />\r\n               </children>\r\n            </HBox>\r\n            <VBox prefHeight=\"200.0\" prefWidth=\"100.0\">\r\n               <children>\r\n                  <Label style=\"-fx-font-size: 13px; -fx-font-weight: bold; -fx-text-fill: #1a252f;\" text=\"Username\" />\r\n                  <TextField fx:id=\"txtUsername\" prefWidth=\"350.0\" promptText=\"Enter your username\" style=\"-fx-font-size: 14px; -fx-padding: 10; -fx-background-color: white; -fx-border-color: #bdc3c7; -fx-border-radius: 5; -fx-background-radius: 5;\" />\r\n               </children>\r\n            </VBox>\r\n            <VBox prefHeight=\"200.0\" prefWidth=\"100.0\">\r\n               <children>\r\n                  <Label style=\"-fx-font-size: 13px; -fx-font-weight: bold; -fx-text-fill: #1a252f;\" text=\"Password\" />\r\n                  <PasswordField fx:id=\"txtPassword\" prefWidth=\"350.0\" promptText=\"Enter your password\" style=\"-fx-font-size: 14px; -fx-padding: 10; -fx-background-color: white; -fx-border-color: #bdc3c7; -fx-border-radius: 5; -fx-background-radius: 5;\" />\r\n               </children>\r\n            </VBox>\r\n            <Label fx:id=\"lblError\" style=\"-fx-text-fill: #e74c3c; -fx-font-size: 13px; -fx-font-weight: bold;\" />\r\n            <Button fx:id=\"btnLogin\" mnemonicParsing=\"false\" onAction=\"#handleLogin\" prefWidth=\"350.0\" styleClass=\"confirm-button\" text=\"Sign In\" />\r\n            <Separator prefWidth=\"350.0\" />\r\n            <HBox alignment=\"CENTER\" prefHeight=\"100.0\" prefWidth=\"200.0\" spacing=\"8.0\">\r\n               <children>\r\n                  <Label style=\"-fx-font-size: 13px; -fx-text-fill: #7f8c8d;;\" text=\"Don't have an account?\" />\r\n                  <Button fx:id=\"btnGoRegister\" mnemonicParsing=\"false\" onAction=\"#goToRegister\" style=\"-fx-background-color: transparent; -fx-text-fill: #2980b9; -fx-font-size: 13px; -fx-font-weight: bold; -fx-cursor: hand;\" text=\"Register here\" />\r\n               </children>\r\n            </HBox>\r\n         </children>\r\n      </VBox>\r\n   </center>\r\n\r\n</BorderPane>\r\n
+===================================================================
+diff --git a/out/production/Hotel reservation system/GUI/FXML/LoginScreen.fxml b/out/production/Hotel reservation system/GUI/FXML/LoginScreen.fxml
+--- a/out/production/Hotel reservation system/GUI/FXML/LoginScreen.fxml	(revision 9e0c38763d8f5ba3fbed737d5983858cb7ee8f3d)
++++ b/out/production/Hotel reservation system/GUI/FXML/LoginScreen.fxml	(date 1777998140516)
+@@ -11,7 +11,7 @@
+ <?import javafx.scene.layout.HBox?>
+ <?import javafx.scene.layout.VBox?>
+ 
+-<BorderPane prefHeight="576.0" prefWidth="1024.0" xmlns="http://javafx.com/javafx/26" xmlns:fx="http://javafx.com/fxml/1" fx:controller="GUI.Controllers.LoginController">
++<BorderPane prefHeight="720.0" prefWidth="1280.0" xmlns="http://javafx.com/javafx/26" xmlns:fx="http://javafx.com/fxml/1" fx:controller="GUI.Controllers.LoginController">
+ 
+     <stylesheets>
+         <URL value="@../IdeaProjects/HotelReservationSystem/src/GUI/CSS/styles.css" />
+@@ -55,13 +55,17 @@
+             </VBox>
+             <Label fx:id="lblError" style="-fx-text-fill: #e74c3c; -fx-font-size: 13px; -fx-font-weight: bold;" />
+             <Button fx:id="btnLogin" mnemonicParsing="false" onAction="#handleLogin" prefWidth="350.0" styleClass="confirm-button" text="Sign In" />
+-            <Separator prefWidth="350.0" />
+-            <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" spacing="8.0">
+-               <children>
+-                  <Label style="-fx-font-size: 13px; -fx-text-fill: #7f8c8d;;" text="Don't have an account?" />
+-                  <Button fx:id="btnGoRegister" mnemonicParsing="false" onAction="#goToRegister" style="-fx-background-color: transparent; -fx-text-fill: #2980b9; -fx-font-size: 13px; -fx-font-weight: bold; -fx-cursor: hand;" text="Register here" />
+-               </children>
+-            </HBox>
++            <VBox fx:id="registerBox" prefHeight="200.0" prefWidth="100.0">
++               <children>
++                  <Separator prefWidth="350.0" />
++                  <HBox alignment="CENTER" prefHeight="41.0" prefWidth="434.0">
++                     <children>
++                        <Label style="-fx-font-size: 13px; -fx-text-fill: #7f8c8d;;" text="Don't have an account?" />
++                        <Button mnemonicParsing="false" onAction="#goToRegister" style="-fx-background-color: transparent; -fx-text-fill: #2980b9; -fx-font-size: 13px; -fx-font-weight: bold; -fx-cursor: hand;" text="Register here" />
++                     </children>
++                  </HBox>
++               </children>
++            </VBox>
+          </children>
+       </VBox>
+    </center>
+Index: out/production/Hotel reservation system/GUI/FXML/GuestDashboard.fxml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+><?xml version=\"1.0\" encoding=\"UTF-8\"?>\r\n\r\n<?import javafx.scene.control.Button?>\r\n<?import javafx.scene.control.ComboBox?>\r\n<?import javafx.scene.control.Label?>\r\n<?import javafx.scene.control.Separator?>\r\n<?import javafx.scene.control.Slider?>\r\n<?import javafx.scene.control.TableColumn?>\r\n<?import javafx.scene.control.TableView?>\r\n<?import javafx.scene.layout.BorderPane?>\r\n<?import javafx.scene.layout.HBox?>\r\n<?import javafx.scene.layout.StackPane?>\r\n<?import javafx.scene.layout.VBox?>\r\n<?import javafx.geometry.Insets?>\r\n<?import java.net.URL?>\r\n<?import javafx.scene.control.ScrollPane?>\r\n\r\n<BorderPane prefHeight=\"576.0\" prefWidth=\"1024.0\"\r\n            xmlns=\"http://javafx.com/javafx/17\"\r\n            xmlns:fx=\"http://javafx.com/fxml/1\"\r\n            fx:controller=\"GUI.Controllers.GuestDashboardController\">\r\n\r\n    <stylesheets>\r\n        <URL value=\"@../CSS/styles.css\"/>\r\n    </stylesheets>\r\n\r\n    <!-- TOP BAR -->\r\n    <top>\r\n        <HBox styleClass=\"top-bar\" spacing=\"20\" alignment=\"CENTER_LEFT\">\r\n            <Label fx:id=\"welcomelabel\" styleClass=\"welcome-label\" text=\"Welcome\"/>\r\n            <Label fx:id=\"balancelabel\" styleClass=\"balance-label\" text=\"Balance: $0\"/>\r\n        </HBox>\r\n    </top>\r\n\r\n    <!-- SIDEBAR -->\r\n    <left>\r\n        <VBox styleClass=\"sidebar\" prefWidth=\"220\" spacing=\"8\">\r\n            <Label text=\"Guest\"            styleClass=\"sidebar-title\"/>\r\n            <Label text=\"The Nile Atelier\" styleClass=\"sidebar-subtitle\"/>\r\n            <Label text=\"Guest Portal\"     styleClass=\"sidebar-subtitle\"/>\r\n            <Separator/>\r\n            <Label text=\"NAVIGATION\" styleClass=\"sidebar-section-label\"/>\r\n            <Button text=\"\uD83D\uDCCB  Dashboard\"        styleClass=\"sidebar-button-main\"    onAction=\"#showDashboardPanel\"/>\r\n            <Button text=\"\uD83D\uDC64  My Profile\"        styleClass=\"sidebar-button-outline\" onAction=\"#showProfilePanel\"/>\r\n            <Button text=\"\uD83D\uDECF  Browse Rooms\"      styleClass=\"sidebar-button-outline\" onAction=\"#showRoomsPanel\"/>\r\n            <Separator/>\r\n            <Label text=\"ACTIONS\" styleClass=\"sidebar-section-label\"/>\r\n            <Button text=\"\uD83D\uDCC4  My Reservations\"   styleClass=\"sidebar-button-outline\" onAction=\"#goToReservations\"/>\r\n            <Button text=\"\uD83D\uDCB3  Checkout\"           styleClass=\"sidebar-button-danger\"  onAction=\"#goToCheckout\"/>\r\n        </VBox>\r\n    </left>\r\n\r\n    <!-- CENTER -->\r\n    <center>\r\n        <StackPane styleClass=\"center-panel\">\r\n\r\n            <!-- Dashboard Panel -->\r\n            <VBox fx:id=\"dashboardpanel\" visible=\"true\" spacing=\"12\" alignment=\"TOP_LEFT\">\r\n                <Label text=\"Active Reservations\"                    styleClass=\"panel-title\"/>\r\n                <Label text=\"Your current and upcoming reservations\" styleClass=\"panel-subtitle\"/>\r\n                <Separator/>\r\n                <TableView fx:id=\"reservationtable\" prefHeight=\"420\" maxWidth=\"Infinity\" styleClass=\"table-view\">\r\n                    <VBox.margin><Insets top=\"5\"/></VBox.margin>\r\n                    <columns>\r\n                        <TableColumn fx:id=\"roomcol\"         text=\"Room\"      prefWidth=\"140\"/>\r\n                        <TableColumn fx:id=\"statuscol\"       text=\"Status\"    prefWidth=\"160\"/>\r\n                        <TableColumn fx:id=\"checkindatecol\"  text=\"Check-in\"  prefWidth=\"180\"/>\r\n                        <TableColumn fx:id=\"checkoutdatecol\" text=\"Check-out\" prefWidth=\"180\"/>\r\n                    </columns>\r\n                </TableView>\r\n            </VBox>\r\n\r\n            <!-- Profile Panel -->\r\n           <ScrollPane fitToWidth=\"true\"\r\n                        prefHeight=\"400\"\r\n                        style=\"-fx-background-color: transparent;\r\n                   -fx-background: transparent;\r\n                   -fx-border-color: transparent;\">\r\n            <VBox fx:id=\"Guestprofilepanel\" visible=\"false\" spacing=\"8\" alignment=\"TOP_LEFT\" maxWidth=\"580\">\r\n                <Label text=\"My Profile\"           styleClass=\"panel-title\"/>\r\n                <Label text=\"Your account details\" styleClass=\"panel-subtitle\"/>\r\n                <Separator/>\r\n                <Label text=\"USERNAME\"               styleClass=\"profile-field-label\"/>\r\n                <Label fx:id=\"usernamelabel\"         styleClass=\"profile-field-value\" text=\"—\"/>\r\n                <Label text=\"DATE OF BIRTH\"          styleClass=\"profile-field-label\"/>\r\n                <Label fx:id=\"doblabel\"              styleClass=\"profile-field-value\" text=\"—\"/>\r\n                <Label text=\"BALANCE\"                styleClass=\"profile-field-label\"/>\r\n                <Label fx:id=\"balanceprofilelabel\"   styleClass=\"profile-field-value\" text=\"—\"/>\r\n                <Label text=\"ADDRESS\"                styleClass=\"profile-field-label\"/>\r\n                <Label fx:id=\"addresslabel\"          styleClass=\"profile-field-value\" text=\"—\"/>\r\n                <Label text=\"GENDER\"                 styleClass=\"profile-field-label\"/>\r\n                <Label fx:id=\"genderlabel\"           styleClass=\"profile-field-value\" text=\"—\"/>\r\n                <Label text=\"ROOM PREFERENCE\"        styleClass=\"profile-field-label\"/>\r\n                <Label fx:id=\"roompreflabel\"         styleClass=\"profile-field-value\" text=\"—\"/>\r\n             </VBox>\r\n           </ScrollPane>\r\n\r\n            <!-- Browse Rooms Panel -->\r\n            <VBox fx:id=\"AvailableRoomspanel\" visible=\"false\" spacing=\"12\" alignment=\"TOP_LEFT\">\r\n                <Label text=\"Available Rooms\"               styleClass=\"panel-title\"/>\r\n                <Label text=\"Filter and book a room for your stay\" styleClass=\"panel-subtitle\"/>\r\n                <Separator/>\r\n\r\n                <HBox spacing=\"20\" alignment=\"CENTER_LEFT\">\r\n                    <VBox.margin><Insets top=\"4\"/></VBox.margin>\r\n                    <ComboBox fx:id=\"roomtypefilter\" styleClass=\"combo-box\" promptText=\"Room Type\" prefWidth=\"190\"/>\r\n                    <ComboBox fx:id=\"Amenityfilter\"  styleClass=\"combo-box\" promptText=\"Amenity\"   prefWidth=\"190\"/>\r\n                    <VBox spacing=\"6\" alignment=\"CENTER_LEFT\">\r\n                        <Label fx:id=\"pricelabel\" styleClass=\"price-label\" text=\"Max Price: $5000\"/>\r\n                        <Slider fx:id=\"priceslider\" min=\"0\" max=\"5000\" value=\"5000\"\r\n                                styleClass=\"slider\" prefWidth=\"210\"/>\r\n                    </VBox>\r\n                </HBox>\r\n\r\n                <TableView fx:id=\"roomtable\" prefHeight=\"300\" maxWidth=\"Infinity\" styleClass=\"table-view\">\r\n                    <columns>\r\n                        <TableColumn fx:id=\"roomidcol\"       text=\"Room ID\"     prefWidth=\"100\"/>\r\n                        <TableColumn fx:id=\"availabilitycol\" text=\"Available\"   prefWidth=\"100\"/>\r\n                        <TableColumn fx:id=\"floorcol\"        text=\"Floor\"       prefWidth=\"90\"/>\r\n                        <TableColumn fx:id=\"amenitiescol\"    text=\"Amenities\"   prefWidth=\"220\"/>\r\n                        <TableColumn fx:id=\"pricecol\"        text=\"Price/Night\" prefWidth=\"120\"/>\r\n                    </columns>\r\n                </TableView>\r\n\r\n                <!-- Book Now — centered via HBox wrapper -->\r\n                <HBox alignment=\"CENTER\" style=\"-fx-padding: 20px;\">\r\n                    <Button text=\"Book Now\" styleClass=\"book-button\" onAction=\"#onBookNowClicked\" />\r\n                </HBox>\r\n\r\n            </VBox>\r\n\r\n        </StackPane>\r\n    </center>\r\n\r\n</BorderPane>\r\n
+===================================================================
+diff --git a/out/production/Hotel reservation system/GUI/FXML/GuestDashboard.fxml b/out/production/Hotel reservation system/GUI/FXML/GuestDashboard.fxml
+--- a/out/production/Hotel reservation system/GUI/FXML/GuestDashboard.fxml	(revision 9e0c38763d8f5ba3fbed737d5983858cb7ee8f3d)
++++ b/out/production/Hotel reservation system/GUI/FXML/GuestDashboard.fxml	(date 1777998140516)
+@@ -15,7 +15,7 @@
+ <?import java.net.URL?>
+ <?import javafx.scene.control.ScrollPane?>
+ 
+-<BorderPane prefHeight="576.0" prefWidth="1024.0"
++<BorderPane prefHeight="768" prefWidth="1366"
+             xmlns="http://javafx.com/javafx/17"
+             xmlns:fx="http://javafx.com/fxml/1"
+             fx:controller="GUI.Controllers.GuestDashboardController">
+@@ -34,7 +34,7 @@
+ 
+     <!-- SIDEBAR -->
+     <left>
+-        <VBox styleClass="sidebar" prefWidth="220" spacing="8">
++        <VBox styleClass="sidebar" prefWidth="260" spacing="8">
+             <Label text="Guest"            styleClass="sidebar-title"/>
+             <Label text="The Nile Atelier" styleClass="sidebar-subtitle"/>
+             <Label text="Guest Portal"     styleClass="sidebar-subtitle"/>
+@@ -46,13 +46,16 @@
+             <Separator/>
+             <Label text="ACTIONS" styleClass="sidebar-section-label"/>
+             <Button text="📄  My Reservations"   styleClass="sidebar-button-outline" onAction="#goToReservations"/>
+-            <Button text="💳  Checkout"           styleClass="sidebar-button-danger"  onAction="#goToCheckout"/>
++            <Button text="Make Reservation "    styleClass="sidebar-button-outline" onAction="#goToMakeReservation"/>
++            <Button text="❌  Cancel Reservation" styleClass="sidebar-button-outline" onAction="#goToCancelReservation"/>
++            <Button text="💳  Checkout"           styleClass="sidebar-button-outline"  onAction="#goToCheckout"/>
++            <Button text="Logout"           styleClass="sidebar-button-danger"  onAction="#HandleLogout"/>
+         </VBox>
+     </left>
+ 
+     <!-- CENTER -->
+     <center>
+-        <StackPane styleClass="center-panel">
++        <StackPane styleClass="center-panel" style="-fx-padding: 20px;">
+ 
+             <!-- Dashboard Panel -->
+             <VBox fx:id="dashboardpanel" visible="true" spacing="12" alignment="TOP_LEFT">
+@@ -72,7 +75,7 @@
+ 
+             <!-- Profile Panel -->
+            <ScrollPane fitToWidth="true"
+-                        prefHeight="400"
++                        prefHeight="620"
+                         style="-fx-background-color: transparent;
+                    -fx-background: transparent;
+                    -fx-border-color: transparent;">
+@@ -112,7 +115,7 @@
+                     </VBox>
+                 </HBox>
+ 
+-                <TableView fx:id="roomtable" prefHeight="300" maxWidth="Infinity" styleClass="table-view">
++                <TableView fx:id="roomtable" prefHeight="220" maxWidth="Infinity" styleClass="table-view">
+                     <columns>
+                         <TableColumn fx:id="roomidcol"       text="Room ID"     prefWidth="100"/>
+                         <TableColumn fx:id="availabilitycol" text="Available"   prefWidth="100"/>
+@@ -123,7 +126,7 @@
+                 </TableView>
+ 
+                 <!-- Book Now — centered via HBox wrapper -->
+-                <HBox alignment="CENTER" style="-fx-padding: 20px;">
++                <HBox alignment="CENTER" style="-fx-padding: 40px 20px 20px 20px;">
+                     <Button text="Book Now" styleClass="book-button" onAction="#onBookNowClicked" />
+                 </HBox>
+ 
+Index: .idea/workspace.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+><?xml version=\"1.0\" encoding=\"UTF-8\"?>\r\n<project version=\"4\">\r\n  <component name=\"ChangeListManager\">\r\n    <list default=\"true\" id=\"048c1a1a-4166-444d-b2e8-b0354ff0c1cb\" name=\"Changes\" comment=\"\" />\r\n    <option name=\"SHOW_DIALOG\" value=\"false\" />\r\n    <option name=\"HIGHLIGHT_CONFLICTS\" value=\"true\" />\r\n    <option name=\"HIGHLIGHT_NON_ACTIVE_CHANGELIST\" value=\"false\" />\r\n    <option name=\"LAST_RESOLUTION\" value=\"IGNORE\" />\r\n  </component>\r\n  <component name=\"Git.Settings\">\r\n    <option name=\"RECENT_GIT_ROOT_PATH\" value=\"$PROJECT_DIR$\" />\r\n  </component>\r\n  <component name=\"PropertiesComponent\"><![CDATA[{\r\n  \"keyToString\": {\r\n    \"git-widget-placeholder\": \"Reem__Staff\"\r\n  }\r\n}]]></component>\r\n  <component name=\"TaskManager\">\r\n    <servers />\r\n  </component>\r\n</project>
+===================================================================
+diff --git a/.idea/workspace.xml b/.idea/workspace.xml
+--- a/.idea/workspace.xml	(revision 9e0c38763d8f5ba3fbed737d5983858cb7ee8f3d)
++++ b/.idea/workspace.xml	(date 1778002091361)
+@@ -1,7 +1,24 @@
+ <?xml version="1.0" encoding="UTF-8"?>
+ <project version="4">
+   <component name="ChangeListManager">
+-    <list default="true" id="048c1a1a-4166-444d-b2e8-b0354ff0c1cb" name="Changes" comment="" />
++    <list default="true" id="048c1a1a-4166-444d-b2e8-b0354ff0c1cb" name="Changes" comment="">
++      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/out/production/Hotel reservation system/GUI/Controllers/AdminDashboardController.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Hotel reservation system/GUI/Controllers/AdminDashboardController.class" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/out/production/Hotel reservation system/GUI/Controllers/GuestDashboardController.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Hotel reservation system/GUI/Controllers/GuestDashboardController.class" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/out/production/Hotel reservation system/GUI/Controllers/LoginController.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Hotel reservation system/GUI/Controllers/LoginController.class" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/out/production/Hotel reservation system/GUI/Controllers/MakeReservationController.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Hotel reservation system/GUI/Controllers/MakeReservationController.class" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/out/production/Hotel reservation system/GUI/Controllers/MyReservationsController.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Hotel reservation system/GUI/Controllers/MyReservationsController.class" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/out/production/Hotel reservation system/GUI/Controllers/ReceptionistDashboardController.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Hotel reservation system/GUI/Controllers/ReceptionistDashboardController.class" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/out/production/Hotel reservation system/GUI/Controllers/RegisterController.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Hotel reservation system/GUI/Controllers/RegisterController.class" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/out/production/Hotel reservation system/GUI/FXML/AdminDashboard.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Hotel reservation system/GUI/FXML/AdminDashboard.fxml" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/out/production/Hotel reservation system/GUI/FXML/GuestDashboard.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Hotel reservation system/GUI/FXML/GuestDashboard.fxml" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/out/production/Hotel reservation system/GUI/FXML/LoginScreen.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Hotel reservation system/GUI/FXML/LoginScreen.fxml" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/out/production/Hotel reservation system/GUI/FXML/ReceptionistDashboard.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Hotel reservation system/GUI/FXML/ReceptionistDashboard.fxml" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/out/production/Hotel reservation system/GUI/MainFX.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Hotel reservation system/GUI/MainFX.class" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/out/production/Hotel reservation system/GUI/SceneManager.class" beforeDir="false" />
++      <change beforePath="$PROJECT_DIR$/src/GUI/Controllers/AdminDashboardController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/GUI/Controllers/AdminDashboardController.java" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/src/GUI/FXML/AdminDashboard.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/GUI/FXML/AdminDashboard.fxml" afterDir="false" />
++    </list>
+     <option name="SHOW_DIALOG" value="false" />
+     <option name="HIGHLIGHT_CONFLICTS" value="true" />
+     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+@@ -12,10 +29,34 @@
+   </component>
+   <component name="PropertiesComponent"><![CDATA[{
+   "keyToString": {
++    "Application.AdminTestMain.executor": "Run",
++    "Application.LoginMain.executor": "Run",
++    "Application.Unnamed.executor": "Debug",
+     "git-widget-placeholder": "Reem__Staff"
+   }
+ }]]></component>
++  <component name="RunManager">
++    <configuration name="LoginMain" type="Application" factoryName="Application" nameIsGenerated="true">
++      <option name="MAIN_CLASS_NAME" value="GUI.CODE.LoginMain" />
++      <module name="Hotel reservation system" />
++      <option name="VM_PARAMETERS" value="--module-path &quot;C:\Users\Reem Hetta\Downloads\javafx-sdk-26\lib&quot; --add-modules javafx.controls,javafx.fxml" />
++      <method v="2">
++        <option name="Make" enabled="true" />
++      </method>
++    </configuration>
++  </component>
+   <component name="TaskManager">
+     <servers />
+   </component>
++  <component name="Vcs.Log.Tabs.Properties">
++    <option name="TAB_STATES">
++      <map>
++        <entry key="MAIN">
++          <value>
++            <State />
++          </value>
++        </entry>
++      </map>
++    </option>
++  </component>
+ </project>
+\ No newline at end of file
+Index: out/production/Hotel reservation system/GUI/FXML/AdminDashboard.fxml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+><?xml version=\"1.0\" encoding=\"UTF-8\"?>\r\n\r\n<?import javafx.geometry.Insets?>\r\n<?import javafx.scene.control.Button?>\r\n<?import javafx.scene.control.Label?>\r\n<?import javafx.scene.control.Separator?>\r\n<?import javafx.scene.image.Image?>\r\n<?import javafx.scene.image.ImageView?>\r\n<?import javafx.scene.layout.BorderPane?>\r\n<?import javafx.scene.layout.HBox?>\r\n<?import javafx.scene.layout.VBox?>\r\n<?import javafx.scene.text.Font?>\r\n\r\n<BorderPane xmlns=\"http://javafx.com/javafx/26\" xmlns:fx=\"http://javafx.com/fxml/1\" fx:controller=\"GUI.Controllers.AdminDashboardController\">\r\n\r\n    <top>\r\n        <HBox alignment=\"CENTER_RIGHT\" prefHeight=\"21.0\" prefWidth=\"1253.0\" spacing=\"20\" style=\"-fx-background-color: #ecf0f1; -fx-border-color: #bdc3c7; -fx-border-width: 0 0 1 0;\">\r\n            <padding>\r\n                <Insets bottom=\"15\" left=\"25\" right=\"25\" top=\"15\" />\r\n            </padding>\r\n            <Label fx:id=\"titleLabel\" prefHeight=\"40.0\" prefWidth=\"1250.0\" style=\"-fx-font-size: 28px; -fx-font-weight: bold; -fx-text-fill: #2c3e50;\" text=\"System Dashboard\" />\r\n         <Label fx:id=\"nameLabel\" prefHeight=\"40.0\" prefWidth=\"150.0\" style=\"-fx-font-size: 14px; -fx-font-weight: bold; -fx-text-fill: #2c3e50;\" />\r\n         <Label fx:id=\"workingHoursLabel\" prefHeight=\"40.0\" prefWidth=\"196.0\" style=\"-fx-font-size: 14px; -fx-font-weight: bold; -fx-text-fill: #2c3e50;\" />\r\n        </HBox>\r\n    </top>\r\n\r\n    <left>\r\n        <VBox fx:id=\"sideBar\" prefWidth=\"288.0\" spacing=\"15.0\" style=\"-fx-background-color: #2c3e50;\">\r\n            <padding>\r\n                <Insets bottom=\"30\" left=\"20\" right=\"20\" top=\"30\" />\r\n            </padding>\r\n\r\n            <Label prefHeight=\"68.0\" prefWidth=\"254.0\" style=\"-fx-font-size: 28; -fx-font-weight: bold; -fx-text-fill: white;\" text=\"ADMIN\">\r\n            <font>\r\n               <Font size=\"24.0\" />\r\n            </font></Label>\r\n         <Separator style=\"-fx-background-color: #34495e;\" />\r\n            <Label style=\"-fx-text-fill: #95a5a6; -fx-font-size: 16px;\" text=\"Menu\" />\r\n\r\n            <Separator style=\"-fx-background-color: #34495e;\" />\r\n         <Button id=\"blueButtonStyle\" fx:id=\"manageRoomsButton\" mnemonicParsing=\"false\" onAction=\"#handleManageRooms\" prefHeight=\"25.0\" prefWidth=\"245.0\" style=\"-fx-background-color: #7d97b1; -fx-font-weight: Bold;\" text=\"Manage Rooms\" textAlignment=\"CENTER\" textFill=\"WHITE\" wrapText=\"true\">\r\n            <font>\r\n               <Font size=\"14.0\" />\r\n            </font>\r\n         </Button>\r\n         <Button fx:id=\"manageRoomTypesButton\" mnemonicParsing=\"false\" onAction=\"#handleManageRoomTypes\" prefHeight=\"25.0\" prefWidth=\"245.0\" style=\"-fx-background-color: #7d97b1; -fx-font-weight: Bold;\" text=\"Manage Room Types\" textAlignment=\"CENTER\" textFill=\"WHITE\">\r\n            <font>\r\n               <Font size=\"14.0\" />\r\n            </font>\r\n         </Button>\r\n         <Button fx:id=\"manageAmenitiesButton\" mnemonicParsing=\"false\" onAction=\"#handleManageAmenities\" prefHeight=\"25.0\" prefWidth=\"245.0\" style=\"-fx-background-color: #7d97b1; -fx-font-weight: Bold;\" text=\"Manage Amenities\" textAlignment=\"CENTER\" textFill=\"WHITE\">\r\n            <font>\r\n               <Font size=\"14.0\" />\r\n            </font>\r\n         </Button>\r\n         <Button fx:id=\"registerStaffButton\" mnemonicParsing=\"false\" onAction=\"#handleRegisterStaff\" prefHeight=\"25.0\" prefWidth=\"245.0\" style=\"-fx-background-color: #7d97b1; -fx-font-weight: Bold;\" text=\"Register Staff\" textAlignment=\"CENTER\" textFill=\"WHITE\">\r\n            <font>\r\n               <Font size=\"14.0\" />\r\n            </font>\r\n         </Button>\r\n\r\n            <Separator style=\"-fx-background-color: #34495e;\" />\r\n\r\n            <Label style=\"-fx-text-fill: #95a5a6; -fx-font-size: 16px;\" text=\"Databases\" />\r\n         <Separator style=\"-fx-background-color: #34495e;\" />\r\n         <Button fx:id=\"viewGuestsButton\" mnemonicParsing=\"false\" onAction=\"#handleViewGuests\" prefHeight=\"25.0\" prefWidth=\"245.0\" style=\"-fx-background-color: #ffffff; -fx-font-weight: Bold;\" text=\"View Guests\" textAlignment=\"CENTER\" textFill=\"#7d97b1\">\r\n            <font>\r\n               <Font size=\"14.0\" />\r\n            </font>\r\n         </Button>\r\n         <Button fx:id=\"viewReservationsButton\" mnemonicParsing=\"false\" onAction=\"#handleViewReservations\" prefHeight=\"25.0\" prefWidth=\"245.0\" style=\"-fx-background-color: #ffffff; -fx-font-weight: Bold;\" text=\"View Reservation\" textAlignment=\"CENTER\" textFill=\"#7d97b1\">\r\n            <font>\r\n               <Font size=\"14.0\" />\r\n            </font>\r\n         </Button>\r\n         <Button fx:id=\"viewStaffButton\" mnemonicParsing=\"false\" onAction=\"#handleViewStaff\" prefHeight=\"25.0\" prefWidth=\"245.0\" style=\"-fx-background-color: #ffffff; -fx-font-weight: Bold;\" text=\"View Staff Members\" textAlignment=\"CENTER\" textFill=\"#7d97b1\">\r\n            <font>\r\n               <Font size=\"14.0\" />\r\n            </font>\r\n         </Button>\r\n         <Button fx:id=\"viewInvoicesButton\" mnemonicParsing=\"false\" onAction=\"#handleViewInvoices\" prefHeight=\"25.0\" prefWidth=\"245.0\" style=\"-fx-background-color: #ffffff; -fx-font-weight: Bold;\" text=\"View Invoices\" textAlignment=\"CENTER\" textFill=\"#7d97b1\">\r\n            <font>\r\n               <Font size=\"14.0\" />\r\n            </font>\r\n         </Button>\r\n         <Separator style=\"-fx-background-color: #34495e;\" />\r\n        </VBox>\r\n    </left>\r\n\r\n    <center>\r\n        <VBox fx:id=\"centralBox\" alignment=\"CENTER\" prefWidth=\"936.0\" spacing=\"20\" style=\"-fx-background-color: #ffffff;\">\r\n         <children>\r\n            <ImageView fitHeight=\"836.0\" fitWidth=\"965.0\" pickOnBounds=\"true\" preserveRatio=\"true\">\r\n               <image>\r\n                  <Image url=\"@/GUI/NileAtelier.png\" />\r\n               </image>\r\n            </ImageView>\r\n         </children>\r\n        </VBox>\r\n    </center>\r\n\r\n</BorderPane>\r\n
+===================================================================
+diff --git a/out/production/Hotel reservation system/GUI/FXML/AdminDashboard.fxml b/out/production/Hotel reservation system/GUI/FXML/AdminDashboard.fxml
+--- a/out/production/Hotel reservation system/GUI/FXML/AdminDashboard.fxml	(revision 9e0c38763d8f5ba3fbed737d5983858cb7ee8f3d)
++++ b/out/production/Hotel reservation system/GUI/FXML/AdminDashboard.fxml	(date 1778000142730)
+@@ -35,6 +35,12 @@
+                <Font size="24.0" />
+             </font></Label>
+          <Separator style="-fx-background-color: #34495e;" />
++         <Button fx:id="viewProfileButton" layoutX="30.0" layoutY="590.0" mnemonicParsing="false" onAction="#handleViewProfile" prefHeight="25.0" prefWidth="245.0" style="-fx-background-color: #2c3e50 #7d97b1; -fx-alignment: left;" text="View Profile" textAlignment="CENTER" textFill="WHITE">
++            <font>
++               <Font size="14.0" />
++            </font>
++         </Button>
++         <Separator style="-fx-background-color: #34495e;" />
+             <Label style="-fx-text-fill: #95a5a6; -fx-font-size: 16px;" text="Menu" />
+ 
+             <Separator style="-fx-background-color: #34495e;" />
+@@ -79,6 +85,12 @@
+             </font>
+          </Button>
+          <Button fx:id="viewInvoicesButton" mnemonicParsing="false" onAction="#handleViewInvoices" prefHeight="25.0" prefWidth="245.0" style="-fx-background-color: #ffffff; -fx-font-weight: Bold;" text="View Invoices" textAlignment="CENTER" textFill="#7d97b1">
++            <font>
++               <Font size="14.0" />
++            </font>
++         </Button>
++         <Separator style="-fx-background-color: #34495e;" />
++         <Button fx:id="logoutButton" layoutX="30.0" layoutY="653.0" mnemonicParsing="false" onAction="#handlelogout" prefHeight="25.0" prefWidth="245.0" style="-fx-background-color: #2c3e50; -fx-alignment: left;" text="Log Out" textAlignment="CENTER" textFill="WHITE">
+             <font>
+                <Font size="14.0" />
+             </font>
+Index: out/production/Hotel reservation system/GUI/FXML/ReceptionistDashboard.fxml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+><?xml version=\"1.0\" encoding=\"UTF-8\"?>\r\n<?import javafx.scene.layout.*?>\r\n<?import javafx.scene.control.*?>\r\n<?import javafx.geometry.Insets?>\r\n\r\n<BorderPane prefWidth=\"1024.0\" prefHeight=\"576.0\" xmlns=\"http://javafx.com/javafx/17\" xmlns:fx=\"http://javafx.com/fxml/1\" fx:controller=\"GUI.Controllers.ReceptionistDashboardController\">\r\n\r\n    <top>\r\n        <HBox alignment=\"CENTER_RIGHT\" spacing=\"20\" style=\"-fx-background-color: #ecf0f1; -fx-border-color: #bdc3c7; -fx-border-width: 0 0 1 0;\">\r\n            <padding>\r\n                <Insets top=\"15\" right=\"25\" bottom=\"15\" left=\"25\"/>\r\n            </padding>\r\n            <Label fx:id=\"nameLabel\" style=\"-fx-font-weight: bold; -fx-text-fill: #2c3e50; -fx-font-size: 14px;\" />\r\n            <Label fx:id=\"roleLabel\" style=\"-fx-font-weight: bold; -fx-text-fill: #2c3e50; -fx-font-size: 14px;\" />\r\n            <Label fx:id=\"hoursLabel\" style=\"-fx-font-weight: bold; -fx-text-fill: #2c3e50; -fx-font-size: 14px;\" />\r\n        </HBox>\r\n    </top>\r\n\r\n    <left>\r\n        <VBox spacing=\"15.0\" style=\"-fx-background-color: #2c3e50;\" prefWidth=\"250.0\">\r\n            <padding>\r\n                <Insets top=\"30\" right=\"20\" bottom=\"30\" left=\"20\"/>\r\n            </padding>\r\n\r\n            <Label text=\"Receptionist\" style=\"-fx-font-size: 22px; -fx-font-weight: bold; -fx-text-fill: white;\" />\r\n            <Label text=\"Menu\" style=\"-fx-text-fill: #95a5a6; -fx-font-size: 12px;\" />\r\n\r\n            <Separator style=\"-fx-background-color: #34495e;\" />\r\n\r\n            <Button text=\"Check-In Guest\" onAction=\"#openCheckInScreen\" prefWidth=\"210\" style=\"-fx-background-color: #27ae60; -fx-text-fill: white; -fx-font-weight: bold; -fx-alignment: BASELINE_LEFT; -fx-padding: 10 15; -fx-cursor: hand;\"/>\r\n            <Button text=\"Check-Out and Payment\" onAction=\"#openCheckOutScreen\" prefWidth=\"210\" style=\"-fx-background-color: #e74c3c; -fx-text-fill: white; -fx-font-weight: bold; -fx-alignment: BASELINE_LEFT; -fx-padding: 10 15; -fx-cursor: hand;\"/>\r\n\r\n            <Separator style=\"-fx-background-color: #34495e;\" />\r\n\r\n            <Label text=\"Databases\" style=\"-fx-text-fill: #95a5a6; -fx-font-size: 12px;\" />\r\n            <Button text=\"View All Guests\" onAction=\"#handleViewGuests\" prefWidth=\"210\" style=\"-fx-background-color: transparent; -fx-text-fill: white; -fx-border-color: #34495e; -fx-border-radius: 3; -fx-alignment: BASELINE_LEFT; -fx-padding: 10 15; -fx-cursor: hand;\" />\r\n            <Button text=\"View All Rooms\" onAction=\"#handleViewRooms\" prefWidth=\"210\" style=\"-fx-background-color: transparent; -fx-text-fill: white; -fx-border-color: #34495e; -fx-border-radius: 3; -fx-alignment: BASELINE_LEFT; -fx-padding: 10 15; -fx-cursor: hand;\" />\r\n            <Button text=\"View All Reservations\" onAction=\"#handleViewReservations\" prefWidth=\"210\" style=\"-fx-background-color: transparent; -fx-text-fill: white; -fx-border-color: #34495e; -fx-border-radius: 3; -fx-alignment: BASELINE_LEFT; -fx-padding: 10 15; -fx-cursor: hand;\" />\r\n        </VBox>\r\n    </left>\r\n\r\n    <center>\r\n        <VBox alignment=\"CENTER\" spacing=\"20\" style=\"-fx-background-color: #ffffff;\">\r\n            <Label text=\"System Dashboard\" style=\"-fx-font-size: 28px; -fx-font-weight: bold; -fx-text-fill: #2c3e50;\" />\r\n            <Label text=\"Welcome back! Select an action from the sidebar.\" style=\"-fx-font-size: 16px; -fx-text-fill: #7f8c8d;\" />\r\n        </VBox>\r\n    </center>\r\n\r\n</BorderPane>
+===================================================================
+diff --git a/out/production/Hotel reservation system/GUI/FXML/ReceptionistDashboard.fxml b/out/production/Hotel reservation system/GUI/FXML/ReceptionistDashboard.fxml
+--- a/out/production/Hotel reservation system/GUI/FXML/ReceptionistDashboard.fxml	(revision 9e0c38763d8f5ba3fbed737d5983858cb7ee8f3d)
++++ b/out/production/Hotel reservation system/GUI/FXML/ReceptionistDashboard.fxml	(date 1777998140516)
+@@ -3,10 +3,14 @@
+ <?import javafx.scene.control.*?>
+ <?import javafx.geometry.Insets?>
+ 
+-<BorderPane prefWidth="1024.0" prefHeight="576.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="GUI.Controllers.ReceptionistDashboardController">
++<BorderPane prefWidth="1024.0" prefHeight="576.0"
++            xmlns="http://javafx.com/javafx/17"
++            xmlns:fx="http://javafx.com/fxml/1"
++            fx:controller="GUI.Controllers.ReceptionistDashboardController">
+ 
+     <top>
+-        <HBox alignment="CENTER_RIGHT" spacing="20" style="-fx-background-color: #ecf0f1; -fx-border-color: #bdc3c7; -fx-border-width: 0 0 1 0;">
++        <HBox alignment="CENTER_RIGHT" spacing="20"
++              style="-fx-background-color: #ecf0f1; -fx-border-color: #bdc3c7; -fx-border-width: 0 0 1 0;">
+             <padding>
+                 <Insets top="15" right="25" bottom="15" left="25"/>
+             </padding>
+@@ -27,22 +31,51 @@
+ 
+             <Separator style="-fx-background-color: #34495e;" />
+ 
+-            <Button text="Check-In Guest" onAction="#openCheckInScreen" prefWidth="210" style="-fx-background-color: #27ae60; -fx-text-fill: white; -fx-font-weight: bold; -fx-alignment: BASELINE_LEFT; -fx-padding: 10 15; -fx-cursor: hand;"/>
+-            <Button text="Check-Out and Payment" onAction="#openCheckOutScreen" prefWidth="210" style="-fx-background-color: #e74c3c; -fx-text-fill: white; -fx-font-weight: bold; -fx-alignment: BASELINE_LEFT; -fx-padding: 10 15; -fx-cursor: hand;"/>
++            <Button text="Check-In Guest"
++                    onAction="#openCheckInScreen"
++                    prefWidth="210"
++                    style="-fx-background-color: #27ae60; -fx-text-fill: white; -fx-font-weight: bold; -fx-alignment: BASELINE_LEFT; -fx-padding: 10 15; -fx-cursor: hand;"/>
++
++            <Button text="Check-Out and Payment"
++                    onAction="#openCheckOutScreen"
++                    prefWidth="210"
++                    style="-fx-background-color: #e74c3c; -fx-text-fill: white; -fx-font-weight: bold; -fx-alignment: BASELINE_LEFT; -fx-padding: 10 15; -fx-cursor: hand;"/>
+ 
+             <Separator style="-fx-background-color: #34495e;" />
+ 
+             <Label text="Databases" style="-fx-text-fill: #95a5a6; -fx-font-size: 12px;" />
+-            <Button text="View All Guests" onAction="#handleViewGuests" prefWidth="210" style="-fx-background-color: transparent; -fx-text-fill: white; -fx-border-color: #34495e; -fx-border-radius: 3; -fx-alignment: BASELINE_LEFT; -fx-padding: 10 15; -fx-cursor: hand;" />
+-            <Button text="View All Rooms" onAction="#handleViewRooms" prefWidth="210" style="-fx-background-color: transparent; -fx-text-fill: white; -fx-border-color: #34495e; -fx-border-radius: 3; -fx-alignment: BASELINE_LEFT; -fx-padding: 10 15; -fx-cursor: hand;" />
+-            <Button text="View All Reservations" onAction="#handleViewReservations" prefWidth="210" style="-fx-background-color: transparent; -fx-text-fill: white; -fx-border-color: #34495e; -fx-border-radius: 3; -fx-alignment: BASELINE_LEFT; -fx-padding: 10 15; -fx-cursor: hand;" />
++
++            <Button text="View All Guests"
++                    onAction="#handleViewGuests"
++                    prefWidth="210"
++                    style="-fx-background-color: transparent; -fx-text-fill: white; -fx-border-color: #34495e; -fx-border-radius: 3; -fx-alignment: BASELINE_LEFT; -fx-padding: 10 15; -fx-cursor: hand;" />
++
++            <Button text="View All Rooms"
++                    onAction="#handleViewRooms"
++                    prefWidth="210"
++                    style="-fx-background-color: transparent; -fx-text-fill: white; -fx-border-color: #34495e; -fx-border-radius: 3; -fx-alignment: BASELINE_LEFT; -fx-padding: 10 15; -fx-cursor: hand;" />
++
++            <Button text="View All Reservations"
++                    onAction="#handleViewReservations"
++                    prefWidth="210"
++                    style="-fx-background-color: transparent; -fx-text-fill: white; -fx-border-color: #34495e; -fx-border-radius: 3; -fx-alignment: BASELINE_LEFT; -fx-padding: 10 15; -fx-cursor: hand;" />
++
++            <Separator style="-fx-background-color: #34495e;" />
++
++            <Button text="Logout"
++                    onAction="#HandleLogout"
++                    prefWidth="210"
++                    style="-fx-background-color: #c0392b; -fx-text-fill: white; -fx-font-weight: bold; -fx-alignment: BASELINE_LEFT; -fx-padding: 10 15; -fx-cursor: hand;" />
++
+         </VBox>
+     </left>
+ 
+     <center>
+         <VBox alignment="CENTER" spacing="20" style="-fx-background-color: #ffffff;">
+-            <Label text="System Dashboard" style="-fx-font-size: 28px; -fx-font-weight: bold; -fx-text-fill: #2c3e50;" />
+-            <Label text="Welcome back! Select an action from the sidebar." style="-fx-font-size: 16px; -fx-text-fill: #7f8c8d;" />
++            <Label text="System Dashboard"
++                   style="-fx-font-size: 28px; -fx-font-weight: bold; -fx-text-fill: #2c3e50;" />
++            <Label text="Welcome back! Select an action from the sidebar."
++                   style="-fx-font-size: 16px; -fx-text-fill: #7f8c8d;" />
+         </VBox>
+     </center>
+ 

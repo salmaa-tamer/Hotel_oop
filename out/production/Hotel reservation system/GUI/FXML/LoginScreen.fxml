@@ -11,7 +11,7 @@
 <?import javafx.scene.layout.HBox?>
 <?import javafx.scene.layout.VBox?>
 
-<BorderPane prefHeight="720.0" prefWidth="1280.0" xmlns="http://javafx.com/javafx/26" xmlns:fx="http://javafx.com/fxml/1" fx:controller="GUI.Controllers.LoginController">
+<BorderPane prefHeight="576.0" prefWidth="1024.0" xmlns="http://javafx.com/javafx/26" xmlns:fx="http://javafx.com/fxml/1" fx:controller="GUI.Controllers.LoginController">
 
     <stylesheets>
         <URL value="@../IdeaProjects/HotelReservationSystem/src/GUI/CSS/styles.css" />
@@ -55,17 +55,13 @@
             </VBox>
             <Label fx:id="lblError" style="-fx-text-fill: #e74c3c; -fx-font-size: 13px; -fx-font-weight: bold;" />
             <Button fx:id="btnLogin" mnemonicParsing="false" onAction="#handleLogin" prefWidth="350.0" styleClass="confirm-button" text="Sign In" />
-            <VBox fx:id="registerBox" prefHeight="200.0" prefWidth="100.0">
+            <Separator prefWidth="350.0" />
+            <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" spacing="8.0">
                <children>
-                  <Separator prefWidth="350.0" />
-                  <HBox alignment="CENTER" prefHeight="41.0" prefWidth="434.0">
-                     <children>
-                        <Label style="-fx-font-size: 13px; -fx-text-fill: #7f8c8d;;" text="Don't have an account?" />
-                        <Button mnemonicParsing="false" onAction="#goToRegister" style="-fx-background-color: transparent; -fx-text-fill: #2980b9; -fx-font-size: 13px; -fx-font-weight: bold; -fx-cursor: hand;" text="Register here" />
-                     </children>
-                  </HBox>
+                  <Label style="-fx-font-size: 13px; -fx-text-fill: #7f8c8d;;" text="Don't have an account?" />
+                  <Button fx:id="btnGoRegister" mnemonicParsing="false" onAction="#goToRegister" style="-fx-background-color: transparent; -fx-text-fill: #2980b9; -fx-font-size: 13px; -fx-font-weight: bold; -fx-cursor: hand;" text="Register here" />
                </children>
-            </VBox>
+            </HBox>
          </children>
       </VBox>
    </center>
