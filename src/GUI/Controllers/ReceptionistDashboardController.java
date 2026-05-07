@@ -218,9 +218,14 @@ public class ReceptionistDashboardController {
                 lblStatus.setText("Success! " + selectedRes.getGuest().getUsername() + " has been checked in.");
                 lblStatus.setStyle("-fx-text-fill: #27ae60;");
 
-            } catch (Exception ex) {
+            } catch (IllegalArgumentException ex) {
                 lblStatus.setText("Error: " + ex.getMessage());
                 lblStatus.setStyle("-fx-text-fill: #e74c3c;");
+
+            } catch (Exception ex) {
+                lblStatus.setText("Unexpected error occurred.");
+                lblStatus.setStyle("-fx-text-fill: #e74c3c;");
+                ex.printStackTrace();
             }
         });
 
