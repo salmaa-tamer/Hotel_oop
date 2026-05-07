@@ -9,20 +9,23 @@ import javafx.stage.Stage;
 
 public class AdminTestMain extends Application {
 
-        @Override
-        public void start(Stage stage) throws Exception {
+    @Override
+    public void start(Stage stage) throws Exception {
 
-            HotelDatabase.loadDummyData();
-            Parent root = FXMLLoader.load(
-                    getClass().getResource("/GUI/FXML/AdminDashboard.fxml")
-            );
-            Scene scene=new Scene(root);
-            stage.setScene(scene);
-            stage.show();
+        HotelDatabase.loadDummyData();
 
-        }
-        public static void main(String[] args) {
-            launch(args);
-        }
+        Parent root = FXMLLoader.load(
+                getClass().getResource("/GUI/FXML/AdminDashboard.fxml")
+        );
 
+        Scene scene = new Scene(root);
+
+        stage.setScene(scene);
+        stage.setMaximized(true);
+        stage.show();
+    }
+
+    public static void main(String[] args) {
+        launch(args);
+    }
 }
