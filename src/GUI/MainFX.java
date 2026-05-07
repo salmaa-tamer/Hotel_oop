@@ -17,7 +17,7 @@ public class MainFX extends Application {
         String css = getClass().getResource("/GUI/CSS/styles.css").toExternalForm();
         scene.getStylesheets().add(css);
         stage.setScene(scene);
-        stage.setResizable(false);
+        stage.setMaximized(true);
         stage.show();
     }
     public static void main(String[] args) {

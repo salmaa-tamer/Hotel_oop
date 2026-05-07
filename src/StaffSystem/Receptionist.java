@@ -22,9 +22,14 @@ public class Receptionist extends Staff{
 
     public void manageCheckIn(Reservation reservation){
         if (reservation.getStatus()==ReservationStatus.PENDING){
-            reservation.confirm();
-            reservation.getRoom().setAvailablity(false);
-            return;
+            if(reservation.getCheckInDate()==LocalDate.now() || (LocalDate.now().isAfter(reservation.getCheckInDate()) && LocalDate.now().isBefore(reservation.getCheckOutDate()))){
+                reservation.confirm();
+                reservation.getRoom().setAvailablity(false);
+                return;
+            } else {
+                throw new IllegalArgumentException("Check in date is invalid");
+            }
+
         }
         throw new IllegalArgumentException("Reservation not pending");
     }
