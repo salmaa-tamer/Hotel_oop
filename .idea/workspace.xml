@@ -4,9 +4,15 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="239bfdab-dd2f-4159-95eb-3ea4b7b5a9f2" name="Changes" comment="fixed admin window size">
-      <change beforePath="$PROJECT_DIR$/out/production/Hotel reservation system/GUI/Controllers/AdminDashboardController.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Hotel reservation system/GUI/Controllers/AdminDashboardController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/GUI/Controllers/AdminDashboardController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/GUI/Controllers/AdminDashboardController.java" afterDir="false" />
+    <list default="true" id="239bfdab-dd2f-4159-95eb-3ea4b7b5a9f2" name="Changes" comment="Merge branch 'refs/heads/main' into Reem_Staff&#10;&#10;# Conflicts:&#10;#&#9;.idea/workspace.xml&#10;#&#9;out/production/Hotel reservation system/GUI/Controllers/ReceptionistDashboardController.class&#10;#&#9;out/production/Hotel reservation system/GUI/MainFX.class">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Hotel reservation system/GUI/CODE/LoginMain.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Hotel reservation system/GUI/CODE/LoginMain.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Hotel reservation system/GUI/Controllers/CheckoutPaymentController.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Hotel reservation system/GUI/Controllers/CheckoutPaymentController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Hotel reservation system/GUI/Controllers/LoginController.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Hotel reservation system/GUI/Controllers/LoginController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Hotel reservation system/GUI/Controllers/RegisterController.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Hotel reservation system/GUI/Controllers/RegisterController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Hotel reservation system/GUI/MainFX.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Hotel reservation system/GUI/MainFX.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Hotel reservation system/StaffSystem/Receptionist.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/StaffSystem/Receptionist.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/StaffSystem/Receptionist.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -33,7 +39,7 @@
   <component name="GithubPullRequestsUISettings">{
   &quot;selectedUrlAndAccountId&quot;: {
     &quot;url&quot;: &quot;https://github.com/salmaa-tamer/Hotel_oop.git&quot;,
-    &quot;accountId&quot;: &quot;01954553-8266-4029-91c2-c7f2542ddf91&quot;
+    &quot;accountId&quot;: &quot;2d6fde7a-37bd-4816-85af-598a0de0d1ed&quot;
   }
 }</component>
   <component name="McpProjectServerCommands">
@@ -54,15 +60,11 @@
     "Application.LoginMain.executor": "Run",
     "Application.M.executor": "Run",
     "Application.MainFX.executor": "Run",
-    "RunOnceActivity.MCP Project settings loaded": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager.252": "true",
     "RunOnceActivity.git.unshallow": "true",
-    "com.intellij.ml.llm.matterhorn.ej.ui.settings.DefaultModelSelectionForGA.v1": "true",
-    "git-widget-placeholder": "Mohamed__Database",
-    "junie.onboarding.icon.badge.shown": "true",
-    "kotlin-language-version-configured": "true",
-    "to.speed.mode.migration.done": "true"
+    "git-widget-placeholder": "Reem__Staff",
+    "kotlin-language-version-configured": "true"
   }
 }]]></component>
   <component name="RecentsManager">
@@ -74,7 +76,7 @@
     <configuration name="AdminMain" type="Application" factoryName="Application">
       <option name="MAIN_CLASS_NAME" value="GUI.CODE.AdminTestMain" />
       <module name="Hotel reservation system" />
-      <option name="VM_PARAMETERS" value="--module-path &quot;C:\Users\Mohamed\Downloads\javafx-sdk-26\lib&quot; --add-modules javafx.controls,javafx.fxml" />
+      <option name="VM_PARAMETERS" value="--module-path &quot;C:\Users\Reem Hetta\Downloads\javafx-sdk-26\lib&quot; --add-modules javafx.controls,javafx.fxml" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -104,10 +106,10 @@
       </method>
     </configuration>
     <list>
-      <item itemvalue="Application.AdminMain" />
-      <item itemvalue="Application.LoginMain" />
-      <item itemvalue="Application.M" />
       <item itemvalue="Application.MainFX" />
+      <item itemvalue="Application.AdminMain" />
+      <item itemvalue="Application.M" />
+      <item itemvalue="Application.LoginMain" />
     </list>
   </component>
   <component name="SharedIndexes">
@@ -157,23 +159,7 @@
       <option name="project" value="LOCAL" />
       <updated>1778023469924</updated>
     </task>
-    <task id="LOCAL-00005" summary="fixed admin window size">
-      <option name="closed" value="true" />
-      <created>1778160642863</created>
-      <option name="number" value="00005" />
-      <option name="presentableId" value="LOCAL-00005" />
-      <option name="project" value="LOCAL" />
-      <updated>1778160642863</updated>
-    </task>
-    <task id="LOCAL-00006" summary="fixed admin window size">
-      <option name="closed" value="true" />
-      <created>1778161115698</created>
-      <option name="number" value="00006" />
-      <option name="presentableId" value="LOCAL-00006" />
-      <option name="project" value="LOCAL" />
-      <updated>1778161115698</updated>
-    </task>
-    <option name="localTasksCounter" value="7" />
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
@@ -181,8 +167,7 @@
     <MESSAGE value="resizing" />
     <MESSAGE value="Added log out button" />
     <MESSAGE value="added register staff GUI" />
-    <MESSAGE value="fixed admin window size" />
-    <option name="LAST_COMMIT_MESSAGE" value="fixed admin window size" />
+    <option name="LAST_COMMIT_MESSAGE" value="added register staff GUI" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
