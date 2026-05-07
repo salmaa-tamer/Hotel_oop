@@ -49,6 +49,14 @@ public class AdminDashboardController {
 
         workingHoursLabel.setText("Working Hours: " + admin.getWorkingHours());
         workingHoursLabel.setStyle("-fx-font-size: 18px; -fx-text-fill: #2c3e50; -fx-font-weight: bold;");
+
+        titleLabel.setMaxWidth(Double.MAX_VALUE);
+        titleLabel.setAlignment(javafx.geometry.Pos.CENTER_LEFT);
+
+        HBox.setHgrow(nameLabel, javafx.scene.layout.Priority.ALWAYS);
+        nameLabel.setAlignment(javafx.geometry.Pos.CENTER_RIGHT);
+        HBox.setHgrow(workingHoursLabel, javafx.scene.layout.Priority.ALWAYS);
+        workingHoursLabel.setAlignment(javafx.geometry.Pos.CENTER_RIGHT);
     }
 
 //    @FXML

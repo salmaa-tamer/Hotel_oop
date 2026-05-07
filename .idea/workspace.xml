@@ -4,15 +4,19 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="239bfdab-dd2f-4159-95eb-3ea4b7b5a9f2" name="Changes" comment="Merge branch 'refs/heads/main' into Reem_Staff&#10;&#10;# Conflicts:&#10;#&#9;.idea/workspace.xml&#10;#&#9;out/production/Hotel reservation system/GUI/Controllers/ReceptionistDashboardController.class&#10;#&#9;out/production/Hotel reservation system/GUI/MainFX.class">
+    <list default="true" id="239bfdab-dd2f-4159-95eb-3ea4b7b5a9f2" name="Changes" comment="Check in updated">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Hotel reservation system/GUI/CODE/LoginMain.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Hotel reservation system/GUI/CODE/LoginMain.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Hotel reservation system/GUI/Controllers/CheckoutPaymentController.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Hotel reservation system/GUI/Controllers/CheckoutPaymentController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Hotel reservation system/GUI/Controllers/LoginController.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Hotel reservation system/GUI/Controllers/LoginController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Hotel reservation system/GUI/Controllers/RegisterController.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Hotel reservation system/GUI/Controllers/RegisterController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Hotel reservation system/GUI/MainFX.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Hotel reservation system/GUI/MainFX.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Hotel reservation system/StaffSystem/Receptionist.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/StaffSystem/Receptionist.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/StaffSystem/Receptionist.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Hotel reservation system/GUI/Controllers/AdminDashboardController$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Hotel reservation system/GUI/Controllers/AdminDashboardController$1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Hotel reservation system/GUI/Controllers/AdminDashboardController$2.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Hotel reservation system/GUI/Controllers/AdminDashboardController$2.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Hotel reservation system/GUI/Controllers/AdminDashboardController$3.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Hotel reservation system/GUI/Controllers/AdminDashboardController$3.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Hotel reservation system/GUI/Controllers/AdminDashboardController$4.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Hotel reservation system/GUI/Controllers/AdminDashboardController$4.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Hotel reservation system/GUI/Controllers/AdminDashboardController$5.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Hotel reservation system/GUI/Controllers/AdminDashboardController$5.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Hotel reservation system/GUI/Controllers/AdminDashboardController$6.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Hotel reservation system/GUI/Controllers/AdminDashboardController$6.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Hotel reservation system/GUI/Controllers/AdminDashboardController$7.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Hotel reservation system/GUI/Controllers/AdminDashboardController$7.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Hotel reservation system/GUI/Controllers/AdminDashboardController.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Hotel reservation system/GUI/Controllers/AdminDashboardController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Hotel reservation system/GUI/FXML/AdminDashboard.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Hotel reservation system/GUI/FXML/AdminDashboard.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/GUI/Controllers/AdminDashboardController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/GUI/Controllers/AdminDashboardController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/GUI/FXML/AdminDashboard.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/GUI/FXML/AdminDashboard.fxml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -159,7 +163,23 @@
       <option name="project" value="LOCAL" />
       <updated>1778023469924</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="Updated Check in logic">
+      <option name="closed" value="true" />
+      <created>1778190045323</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1778190045323</updated>
+    </task>
+    <task id="LOCAL-00006" summary="Check in updated">
+      <option name="closed" value="true" />
+      <created>1778190076299</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1778190076299</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
@@ -167,7 +187,9 @@
     <MESSAGE value="resizing" />
     <MESSAGE value="Added log out button" />
     <MESSAGE value="added register staff GUI" />
-    <option name="LAST_COMMIT_MESSAGE" value="added register staff GUI" />
+    <MESSAGE value="Updated Check in logic" />
+    <MESSAGE value="Check in updated" />
+    <option name="LAST_COMMIT_MESSAGE" value="Check in updated" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
