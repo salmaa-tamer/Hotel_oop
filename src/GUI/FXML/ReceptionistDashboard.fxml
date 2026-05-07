@@ -3,7 +3,7 @@
 <?import javafx.scene.control.*?>
 <?import javafx.geometry.Insets?>
 
-<BorderPane prefWidth="1024.0" prefHeight="576.0"
+<BorderPane prefWidth="1366.0" prefHeight="768.0"
             xmlns="http://javafx.com/javafx/17"
             xmlns:fx="http://javafx.com/fxml/1"
             fx:controller="GUI.Controllers.ReceptionistDashboardController">
@@ -21,7 +21,7 @@
     </top>
 
     <left>
-        <VBox spacing="15.0" style="-fx-background-color: #2c3e50;" prefWidth="250.0">
+        <VBox spacing="15.0" style="-fx-background-color: #2c3e50;" prefWidth="260.0">
             <padding>
                 <Insets top="30" right="20" bottom="30" left="20"/>
             </padding>
@@ -31,14 +31,19 @@
 
             <Separator style="-fx-background-color: #34495e;" />
 
+            <Button text="View Profile"
+                    onAction="#handleViewProfile"
+                    prefWidth="220"
+                    style="-fx-background-color: #2980b9; -fx-text-fill: white; -fx-font-weight: bold; -fx-alignment: BASELINE_LEFT; -fx-padding: 10 15; -fx-cursor: hand;"/>
+
             <Button text="Check-In Guest"
                     onAction="#openCheckInScreen"
-                    prefWidth="210"
+                    prefWidth="220"
                     style="-fx-background-color: #27ae60; -fx-text-fill: white; -fx-font-weight: bold; -fx-alignment: BASELINE_LEFT; -fx-padding: 10 15; -fx-cursor: hand;"/>
 
             <Button text="Check-Out and Payment"
                     onAction="#openCheckOutScreen"
-                    prefWidth="210"
+                    prefWidth="220"
                     style="-fx-background-color: #e74c3c; -fx-text-fill: white; -fx-font-weight: bold; -fx-alignment: BASELINE_LEFT; -fx-padding: 10 15; -fx-cursor: hand;"/>
 
             <Separator style="-fx-background-color: #34495e;" />
@@ -47,24 +52,24 @@
 
             <Button text="View All Guests"
                     onAction="#handleViewGuests"
-                    prefWidth="210"
+                    prefWidth="220"
                     style="-fx-background-color: transparent; -fx-text-fill: white; -fx-border-color: #34495e; -fx-border-radius: 3; -fx-alignment: BASELINE_LEFT; -fx-padding: 10 15; -fx-cursor: hand;" />
 
             <Button text="View All Rooms"
                     onAction="#handleViewRooms"
-                    prefWidth="210"
+                    prefWidth="220"
                     style="-fx-background-color: transparent; -fx-text-fill: white; -fx-border-color: #34495e; -fx-border-radius: 3; -fx-alignment: BASELINE_LEFT; -fx-padding: 10 15; -fx-cursor: hand;" />
 
             <Button text="View All Reservations"
                     onAction="#handleViewReservations"
-                    prefWidth="210"
+                    prefWidth="220"
                     style="-fx-background-color: transparent; -fx-text-fill: white; -fx-border-color: #34495e; -fx-border-radius: 3; -fx-alignment: BASELINE_LEFT; -fx-padding: 10 15; -fx-cursor: hand;" />
 
             <Separator style="-fx-background-color: #34495e;" />
 
             <Button text="Logout"
                     onAction="#HandleLogout"
-                    prefWidth="210"
+                    prefWidth="220"
                     style="-fx-background-color: #c0392b; -fx-text-fill: white; -fx-font-weight: bold; -fx-alignment: BASELINE_LEFT; -fx-padding: 10 15; -fx-cursor: hand;" />
 
         </VBox>
