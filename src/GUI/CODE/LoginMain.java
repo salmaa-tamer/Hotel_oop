@@ -25,7 +25,7 @@ public class LoginMain extends Application {
 
         stage.setTitle("The Nile Atelier - Login");
         stage.setScene(scene);
-        stage.setResizable(false);
+        stage.setMaximized(true);
         stage.show();
     }
 
