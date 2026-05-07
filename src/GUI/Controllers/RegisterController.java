@@ -115,15 +115,13 @@ public class RegisterController {
         try{
             Parent root=FXMLLoader.load(getClass().getResource(path));
             Stage stage =(Stage)((javafx.scene.Node) e.getSource()).getScene().getWindow();
-            Scene scene =new Scene(root,1024,576);
+            Scene scene =new Scene(root);
             scene.getStylesheets().add(
                     getClass().getResource("/GUI/CSS/styles.css").toExternalForm()
             );
             stage.setScene(scene);
             stage.setTitle(title);
-            stage.setWidth(1366);
-            stage.setHeight(768);
-            stage.setResizable(false);
+            stage.setMaximized(true);
         }
         catch(Exception ex){
             showMessage("Couldn't navigate.", false );
