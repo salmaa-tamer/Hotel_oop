@@ -78,7 +78,7 @@
 
             // Guests
             Guest guest1 = new Guest("Ahmed", "password123", LocalDate.of(1984, 4, 4), 3000.0, "5th settlement New Cairo , Egypt", Gender.MALE, "Single");
-            Guest guest2 = new Guest("Fady", "246012", LocalDate.of(1999, 8, 15), 5000.0, "EL Sheikh Zayed Cairo , Egypt", Gender.MALE, "Suite");
+            Guest guest2 = new Guest("Fady", "fadyfady", LocalDate.of(1999, 8, 15), 5000.0, "EL Sheikh Zayed Cairo , Egypt", Gender.MALE, "Suite");
             guests.add(guest1);
             guests.add(guest2);
 

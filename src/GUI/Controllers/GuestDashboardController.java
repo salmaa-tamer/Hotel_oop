@@ -71,6 +71,8 @@ public class GuestDashboardController {
     private VBox AvailableRoomspanel;
     @FXML
     private Label messagelabel;
+    @FXML
+    private VBox reservationspanel;
 
 
     @FXML
@@ -87,6 +89,7 @@ public class GuestDashboardController {
         dashboardpanel.setVisible(true);
         Guestprofilepanel.setVisible(false);
         AvailableRoomspanel.setVisible(false);
+        reservationspanel.setVisible(false);
     }                                //will be removed after Hana's part
 
     private Guest currentguest;
@@ -242,6 +245,15 @@ public class GuestDashboardController {
         dashboardpanel.setVisible(true);
         Guestprofilepanel.setVisible(false);
         AvailableRoomspanel.setVisible(false);
+        reservationspanel.setVisible(false);
+    }
+    @FXML
+    public void showReservationsPanel() {
+        setupDashboardTable();
+        dashboardpanel.setVisible(false);
+        Guestprofilepanel.setVisible(false);
+        AvailableRoomspanel.setVisible(false);
+        reservationspanel.setVisible(true);
     }
 
     @FXML
@@ -250,6 +262,7 @@ public class GuestDashboardController {
         dashboardpanel.setVisible(false);
         Guestprofilepanel.setVisible(true);
         AvailableRoomspanel.setVisible(false);
+        reservationspanel.setVisible(false);
     }
 
     @FXML
@@ -257,6 +270,7 @@ public class GuestDashboardController {
         dashboardpanel.setVisible(false);
         Guestprofilepanel.setVisible(false);
         AvailableRoomspanel.setVisible(true);
+        reservationspanel.setVisible(false);
     }
 
     @FXML
