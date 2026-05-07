@@ -1409,6 +1409,8 @@ public class AdminDashboardController {
 
         Stage stage = (Stage) ((javafx.scene.Node) event.getSource()).getScene().getWindow();
         stage.setScene(newScene);
+        stage.setResizable(true);
+        stage.setMaximized(false);
         stage.setMaximized(true);
     }
 
@@ -1417,6 +1419,8 @@ public class AdminDashboardController {
         Scene newScene = new Scene(layout);
         Stage stage = (Stage) ((javafx.scene.Node) event.getSource()).getScene().getWindow();
         stage.setScene(newScene);
+        stage.setResizable(true);
+        stage.setMaximized(false);
         stage.setMaximized(true);
     }
 
@@ -1426,6 +1430,8 @@ public class AdminDashboardController {
             javafx.scene.Parent root = javafx.fxml.FXMLLoader.load(getClass().getResource("/GUI/FXML/AdminDashboard.fxml"));
             Stage stage = (Stage) ((javafx.scene.Node) event.getSource()).getScene().getWindow();
             stage.setScene(new Scene(root));
+            stage.setResizable(true);
+            stage.setMaximized(false);
             stage.setMaximized(true);
         } catch (Exception ex) {
         }

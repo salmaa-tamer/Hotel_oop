@@ -4,7 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="239bfdab-dd2f-4159-95eb-3ea4b7b5a9f2" name="Changes" comment="fixed admin window size" />
+    <list default="true" id="239bfdab-dd2f-4159-95eb-3ea4b7b5a9f2" name="Changes" comment="fixed admin window size">
+      <change beforePath="$PROJECT_DIR$/out/production/Hotel reservation system/GUI/Controllers/AdminDashboardController.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Hotel reservation system/GUI/Controllers/AdminDashboardController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/GUI/Controllers/AdminDashboardController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/GUI/Controllers/AdminDashboardController.java" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -162,7 +165,15 @@
       <option name="project" value="LOCAL" />
       <updated>1778160642863</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="fixed admin window size">
+      <option name="closed" value="true" />
+      <created>1778161115698</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1778161115698</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
