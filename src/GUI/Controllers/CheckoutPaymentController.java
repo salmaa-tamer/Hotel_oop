@@ -121,12 +121,15 @@ import javafx.stage.Stage;
                 );
                 Stage stage = (Stage)((javafx.scene.Node) e.getSource()).getScene().getWindow();
 
-                Scene scene = new Scene(root);
+                double w = stage.getWidth();
+                double h = stage.getHeight();
+
+                Scene scene = new Scene(root, w, h);
                 scene.getStylesheets().add(
                         getClass().getResource("/GUI/CSS/styles.css").toExternalForm());
                 stage.setScene(scene);
                 stage.setTitle("Guest Dashboard");
-                stage.setMaximized(true);
+
             } catch (Exception ex) {
                 ex.printStackTrace();
                 showMessage("Could not navigate back.", false);
