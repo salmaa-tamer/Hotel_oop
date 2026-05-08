@@ -280,7 +280,12 @@ public class GuestDashboardController {
             SessionManager.setCurrentGuest(currentguest);
             Parent root = FXMLLoader.load(getClass().getResource("/GUI/FXML/MyReservations.fxml"));
             Stage stage = (Stage) welcomelabel.getScene().getWindow();
-            stage.setScene(new Scene(root, 1366, 768));} catch (Exception e) {
+            double width = stage.getScene().getWidth();
+            double height = stage.getScene().getHeight();
+            Scene scene = new Scene(root, width, height);
+            stage.setScene(scene);
+            stage.setMaximized(true);
+            stage.show();} catch (Exception e) {
             e.printStackTrace();
         }
         // go to salma's My Reservations screen
@@ -294,7 +299,12 @@ public class GuestDashboardController {
             SessionManager.setCurrentGuest(currentguest);
             Parent root = FXMLLoader.load(getClass().getResource("/GUI/FXML/CheckoutPayment.fxml"));
             Stage stage = (Stage) welcomelabel.getScene().getWindow();
-            stage.setScene(new Scene(root, 1366, 768));} catch (Exception e) {
+            double width = stage.getScene().getWidth();
+            double height = stage.getScene().getHeight();
+            Scene scene = new Scene(root, width, height);
+            stage.setScene(scene);
+            stage.setMaximized(true);
+            stage.show();} catch (Exception e) {
             e.printStackTrace();
         }
 
@@ -307,7 +317,12 @@ public class GuestDashboardController {
             HotelDatabase.selectedRoom = null; // no pre-selected room
             Parent root = FXMLLoader.load(getClass().getResource("/GUI/FXML/MakeReservation.fxml"));
             Stage stage = (Stage) welcomelabel.getScene().getWindow();
-            stage.setScene(new Scene(root, 1366, 768));
+            double width = stage.getScene().getWidth();
+            double height = stage.getScene().getHeight();
+            Scene scene = new Scene(root, width, height);
+            stage.setScene(scene);
+            stage.setMaximized(true);
+            stage.show();
         } catch (Exception e) {
             e.printStackTrace();
         }
@@ -319,7 +334,12 @@ public class GuestDashboardController {
             HotelDatabase.currentGuest = null;
             Parent root = FXMLLoader.load(getClass().getResource("/GUI/FXML/LoginScreen.fxml"));
             Stage stage = (Stage) welcomelabel.getScene().getWindow();
-            stage.setScene(new Scene(root, 1366, 768));
+            double width = stage.getScene().getWidth();
+            double height = stage.getScene().getHeight();
+            Scene scene = new Scene(root, width, height);
+            stage.setScene(scene);
+            stage.setMaximized(true);
+            stage.show();
         } catch (Exception e) {
             e.printStackTrace();
         }
@@ -337,7 +357,12 @@ public class GuestDashboardController {
             HotelDatabase.currentGuest = currentguest;
             Parent root = FXMLLoader.load(getClass().getResource("/GUI/FXML/MakeReservation.fxml"));
             Stage stage = (Stage) roomtable.getScene().getWindow();
-            stage.setScene(new Scene(root, 1366, 768));
+            double width = stage.getScene().getWidth();
+            double height = stage.getScene().getHeight();
+            Scene scene = new Scene(root, width, height);
+            stage.setScene(scene);
+            stage.setMaximized(true);
+            stage.show();
 
         } catch (Exception e) {
             if (messagelabel!=null){
@@ -356,8 +381,12 @@ public class GuestDashboardController {
             SessionManager.setCurrentGuest(currentguest); // ← ADD THIS LINE
             Parent root = FXMLLoader.load(getClass().getResource("/GUI/FXML/CancelReservation.fxml"));
             Stage stage = (Stage) welcomelabel.getScene().getWindow();
-            stage.setScene(new Scene(root, 1024, 576));
+            double width = stage.getScene().getWidth();
+            double height = stage.getScene().getHeight();
+            Scene scene = new Scene(root, width, height);
+            stage.setScene(scene);
             stage.setMaximized(true);
+            stage.show();
         } catch (Exception e) {
             e.printStackTrace();
         }

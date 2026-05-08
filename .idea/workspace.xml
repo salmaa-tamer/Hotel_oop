@@ -4,14 +4,14 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="239bfdab-dd2f-4159-95eb-3ea4b7b5a9f2" name="Changes" comment="made my reservation, make reservation and cancel reservation full screen">
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/lib.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/lib.xml" afterDir="false" />
+    <list default="true" id="239bfdab-dd2f-4159-95eb-3ea4b7b5a9f2" name="Changes" comment="made screen switching more smooth">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Hotel reservation system.iml" beforeDir="false" afterPath="$PROJECT_DIR$/Hotel reservation system.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Hotel reservation system/GUI/Controllers/GuestDashboardController.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Hotel reservation system/GUI/Controllers/GuestDashboardController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/GUI/CODE/LoginMain.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/GUI/CODE/LoginMain.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Hotel reservation system/GUI/Controllers/CheckoutPaymentController.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Hotel reservation system/GUI/Controllers/CheckoutPaymentController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Hotel reservation system/GUI/FXML/LoginScreen.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Hotel reservation system/GUI/FXML/LoginScreen.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Hotel reservation system/GUI/SceneManager.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/GUI/Controllers/CheckoutPaymentController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/GUI/Controllers/CheckoutPaymentController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/GUI/Controllers/GuestDashboardController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/GUI/Controllers/GuestDashboardController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/GUI/FXML/GuestDashboard.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/GUI/FXML/GuestDashboard.fxml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -65,10 +65,10 @@
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager.252": "true",
     "RunOnceActivity.git.unshallow": "true",
-    "git-widget-placeholder": "Sara__Roomsystem",
+    "git-widget-placeholder": "main",
     "ignore.virus.scanning.warn.message": "true",
     "kotlin-language-version-configured": "true",
-    "project.structure.last.edited": "Modules",
+    "project.structure.last.edited": "Project",
     "project.structure.proportion": "0.15",
     "project.structure.side.proportion": "0.2"
   }
@@ -90,7 +90,7 @@
     <configuration name="LoginMain" type="Application" factoryName="Application">
       <option name="MAIN_CLASS_NAME" value="GUI.CODE.LoginMain" />
       <module name="Hotel reservation system" />
-      <option name="VM_PARAMETERS" value="--module-path &quot;C:\Users\Dell\Desktop\javafx-sdk-26.0.1\lib&quot; --add-modules javafx.controls,javafx.fxml" />
+      <option name="VM_PARAMETERS" value="--module-path &quot;D:\javafx\javafx-sdk-26.0.1\lib&quot; --add-modules javafx.controls,javafx.fxml,javafx.base,javafx.graphics" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -106,7 +106,7 @@
     <configuration name="MainFX" type="Application" factoryName="Application">
       <option name="MAIN_CLASS_NAME" value="GUI.MainFX" />
       <module name="Hotel reservation system" />
-      <option name="VM_PARAMETERS" value="--module-path &quot;$PROJECT_DIR$/../../../../javafx-sdk/lib&quot; --add-modules javafx.controls,javafx.fxml" />
+      <option name="VM_PARAMETERS" value="--module-path &quot;D:\javafx\javafx-sdk-26.0.1\lib&quot; --add-modules javafx.controls,javafx.fxml,javafx.base,javafx.graphics" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -175,6 +175,17 @@
     </task>
     <option name="localTasksCounter" value="6" />
     <servers />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Adding Logout Button and other Buttons" />
