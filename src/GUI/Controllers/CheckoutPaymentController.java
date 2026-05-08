@@ -6,16 +6,6 @@ import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
-import javafx.scene.control.Button;
-import javafx.scene.control.ComboBox;
-import javafx.scene.control.Label;
-import javafx.stage.Stage;
-import GuestandRoomSystem.*;
-import javafx.event.ActionEvent;
-import javafx.fxml.FXML;
-import javafx.fxml.FXMLLoader;
-import javafx.scene.Parent;
-import javafx.scene.Scene;
 import javafx.scene.control.*;
 import javafx.stage.Stage;
 
@@ -42,6 +32,8 @@ import javafx.stage.Stage;
         private Button btnConfirmPayment;
         private Guest currentGuest;
         private Reservation selectedReservation;
+        @FXML private Label welcomelabel;
+        @FXML private Label balancelabel;
 
         @FXML
         public void initialize() {
@@ -51,6 +43,8 @@ import javafx.stage.Stage;
                 lblMessage.setText("Error: No guest logged in.");
                 return;
             }
+            welcomelabel.setText("Welcome, " + currentGuest.getUsername());
+            balancelabel.setText("Balance: $" + currentGuest.getBalance());
 
             // load only CONFIRMED reservations
             for (Reservation r : HotelDatabase.reservations) {
@@ -126,14 +120,15 @@ import javafx.stage.Stage;
                         getClass().getResource("/GUI/FXML/GuestDashboard.fxml")
                 );
                 Stage stage = (Stage)((javafx.scene.Node) e.getSource()).getScene().getWindow();
-                double width = stage.getScene().getWidth();
-                double height = stage.getScene().getHeight();
-                Scene scene = new Scene(root, width, height);
+
+                Scene scene = new Scene(root);
                 scene.getStylesheets().add(
                         getClass().getResource("/GUI/CSS/styles.css").toExternalForm());
+                stage.setScene(scene);
                 stage.setTitle("Guest Dashboard");
                 stage.setMaximized(true);
             } catch (Exception ex) {
+                ex.printStackTrace();
                 showMessage("Could not navigate back.", false);
             }
         }
