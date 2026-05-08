@@ -79,6 +79,16 @@ public class MakeReservationController {
             Room selectedRoom = roomComboBox.getValue();
             LocalDate checkin = checkInPicker.getValue();
             LocalDate checkout = checkOutPicker.getValue();
+            if (checkin.isBefore(LocalDate.now())){
+                checkInError.setText("Check in date can't be before today");
+                checkInError.setVisible(true);
+                checkInError.setManaged(true);
+                checkInError.setStyle("-fx-text-fill: red; -fx-font-weight: bold; -fx-font-size: 14px;");
+
+                return;
+            }
+
+
             if (selectedRoom == null ) {
                roomError.setText("Please select a room");
                roomError.setVisible(true);

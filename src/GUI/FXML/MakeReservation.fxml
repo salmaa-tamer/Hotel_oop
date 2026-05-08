@@ -25,13 +25,16 @@
                 <VBox spacing="8" HBox.hgrow="ALWAYS">
                     <Label text="Check-in date" style="-fx-font-size: 13px; -fx-text-fill: #7f8c8d;"/>
                     <DatePicker fx:id="checkInPicker" style="-fx-background-color: #ecf0f1;" maxWidth="Infinity" prefHeight="45"/>
-                    <Label fx:id="checkInError" style="-fx-font-size: 13px; -fx-text-fill: #e74c3c;" visible="false" managed="false"/>
+                    <Label fx:id="checkInError"
+                           style="-fx-font-size: 14px; -fx-font-weight: bold; -fx-text-fill: #e74c3c;"
+                           visible="false" managed="false"/>
                 </VBox>
 
                 <VBox spacing="8" HBox.hgrow="ALWAYS">
                     <Label text="Check-out date" style="-fx-font-size: 13px; -fx-text-fill: #7f8c8d;"/>
                     <DatePicker fx:id="checkOutPicker" style="-fx-background-color: #ecf0f1;" maxWidth="Infinity" prefHeight="45"/>
-                    <Label fx:id="checkOutError" style="-fx-font-size: 13px; -fx-text-fill: #e74c3c;" visible="false" managed="false"/>
+                    <Label fx:id="checkOutError"     style="-fx-font-size: 14px; -fx-font-weight: bold; -fx-text-fill: #e74c3c;"
+                           visible="false" managed="false"/>
                 </VBox>
             </HBox>
 
@@ -40,7 +43,8 @@
                 <Label text="Select a room" style="-fx-font-size: 13px; -fx-text-fill: #7f8c8d;"/>
                 <ComboBox fx:id="roomComboBox" promptText="Click to select a room..." maxWidth="Infinity"
                           style="-fx-background-color: #ecf0f1; -fx-font-size: 14px;"/>
-                <Label fx:id="roomError" style="-fx-font-size: 13px; -fx-text-fill: #e74c3c;" visible="false" managed="false"/>
+                <Label fx:id="roomError"                        style="-fx-font-size: 14px; -fx-font-weight: bold; -fx-text-fill: #e74c3c;"
+                       visible="false" managed="false"/>
             </VBox>
 
             <!-- Room info panel -->

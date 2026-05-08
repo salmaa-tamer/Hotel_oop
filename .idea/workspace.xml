@@ -4,33 +4,14 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="239bfdab-dd2f-4159-95eb-3ea4b7b5a9f2" name="Changes" comment="Merge branch 'refs/heads/main' into Reem_Staff&#10;&#10;# Conflicts:&#10;#&#9;.idea/workspace.xml&#10;#&#9;out/production/Hotel reservation system/GUI/Controllers/ReceptionistDashboardController.class&#10;#&#9;out/production/Hotel reservation system/GUI/MainFX.class">
+    <list default="true" id="239bfdab-dd2f-4159-95eb-3ea4b7b5a9f2" name="Changes" comment="made my reservation, make reservation and cancel reservation full screen">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Hotel reservation system.iml" beforeDir="false" afterPath="$PROJECT_DIR$/Hotel reservation system.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Hotel reservation system/GUI/Controllers/CancelReservationController.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Hotel reservation system/GUI/Controllers/CancelReservationController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Hotel reservation system/GUI/Controllers/CheckoutPaymentController.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Hotel reservation system/GUI/Controllers/CheckoutPaymentController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Hotel reservation system/GUI/Controllers/GuestDashboardController.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Hotel reservation system/GUI/Controllers/GuestDashboardController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Hotel reservation system/GUI/Controllers/LoginController.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Hotel reservation system/GUI/Controllers/LoginController.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/Hotel reservation system/GUI/Controllers/MakeReservationController.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Hotel reservation system/GUI/Controllers/MakeReservationController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Hotel reservation system/GUI/Controllers/MyReservationsController.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Hotel reservation system/GUI/Controllers/MyReservationsController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Hotel reservation system/GUI/Controllers/RegisterController.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Hotel reservation system/GUI/Controllers/RegisterController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Hotel reservation system/GUI/FXML/CancelReservation.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Hotel reservation system/GUI/FXML/CancelReservation.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Hotel reservation system/GUI/FXML/CheckoutPayment.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Hotel reservation system/GUI/FXML/CheckoutPayment.fxml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/Hotel reservation system/GUI/FXML/MakeReservation.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Hotel reservation system/GUI/FXML/MakeReservation.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Hotel reservation system/GUI/FXML/MyReservations.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Hotel reservation system/GUI/FXML/MyReservations.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Hotel reservation system/GUI/FXML/RegisterScreen.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Hotel reservation system/GUI/FXML/RegisterScreen.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/GUI/Controllers/CancelReservationController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/GUI/Controllers/CancelReservationController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/GUI/Controllers/CheckoutPaymentController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/GUI/Controllers/CheckoutPaymentController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/GUI/Controllers/GuestDashboardController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/GUI/Controllers/GuestDashboardController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/GUI/Controllers/LoginController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/GUI/Controllers/LoginController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Hotel reservation system/GuestandRoomSystem/Reservation.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Hotel reservation system/GuestandRoomSystem/Reservation.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/GUI/Controllers/MakeReservationController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/GUI/Controllers/MakeReservationController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/GUI/Controllers/MyReservationsController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/GUI/Controllers/MyReservationsController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/GUI/Controllers/RegisterController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/GUI/Controllers/RegisterController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/GUI/FXML/CancelReservation.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/GUI/FXML/CancelReservation.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/GUI/FXML/CheckoutPayment.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/GUI/FXML/CheckoutPayment.fxml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/GUI/FXML/MakeReservation.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/GUI/FXML/MakeReservation.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/GUI/FXML/MyReservations.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/GUI/FXML/MyReservations.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/GUI/FXML/RegisterScreen.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/GUI/FXML/RegisterScreen.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/GuestandRoomSystem/Reservation.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/GuestandRoomSystem/Reservation.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -54,15 +35,18 @@
     &quot;assignee&quot;: &quot;Sara-abdelsamie&quot;
   }
 }</component>
-  <component name="GithubPullRequestsUISettings">{
-  &quot;selectedUrlAndAccountId&quot;: {
-    &quot;url&quot;: &quot;https://github.com/salmaa-tamer/Hotel_oop.git&quot;,
-    &quot;accountId&quot;: &quot;2d6fde7a-37bd-4816-85af-598a0de0d1ed&quot;
+  <component name="GithubPullRequestsUISettings"><![CDATA[{
+  "selectedUrlAndAccountId": {
+    "url": "https://github.com/salmaa-tamer/Hotel_oop.git",
+    "accountId": "5d3af835-9467-479f-9b32-2ffafad84ed8"
   }
-}</component>
+}]]></component>
   <component name="McpProjectServerCommands">
     <commands />
     <urls />
+  </component>
+  <component name="ProblemsViewState">
+    <option name="selectedTabId" value="CurrentFile" />
   </component>
   <component name="ProjectColorInfo">{
   &quot;associatedIndex&quot;: 0
@@ -82,6 +66,7 @@
     "RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager.252": "true",
     "RunOnceActivity.git.unshallow": "true",
     "git-widget-placeholder": "main",
+    "ignore.virus.scanning.warn.message": "true",
     "kotlin-language-version-configured": "true",
     "project.structure.last.edited": "Modules",
     "project.structure.proportion": "0.0",
@@ -136,7 +121,7 @@
   <component name="SharedIndexes">
     <attachedChunks>
       <set>
-        <option value="bundled-jdk-30f59d01ecdd-2fc7cc6b9a17-intellij.indexing.shared.core-IU-253.30387.90" />
+        <option value="bundled-jdk-30f59d01ecdd-2fc7cc6b9a17-intellij.indexing.shared.core-IU-253.31033.145" />
       </set>
     </attachedChunks>
   </component>
@@ -180,7 +165,15 @@
       <option name="project" value="LOCAL" />
       <updated>1778023469924</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="made my reservation, make reservation and cancel reservation full screen">
+      <option name="closed" value="true" />
+      <created>1778255531922</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1778255531922</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
@@ -188,7 +181,8 @@
     <MESSAGE value="resizing" />
     <MESSAGE value="Added log out button" />
     <MESSAGE value="added register staff GUI" />
-    <option name="LAST_COMMIT_MESSAGE" value="added register staff GUI" />
+    <MESSAGE value="made my reservation, make reservation and cancel reservation full screen" />
+    <option name="LAST_COMMIT_MESSAGE" value="made my reservation, make reservation and cancel reservation full screen" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
