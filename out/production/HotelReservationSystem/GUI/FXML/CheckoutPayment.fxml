@@ -10,7 +10,8 @@
 <?import javafx.scene.layout.HBox?>
 <?import javafx.scene.layout.VBox?>
 
-<BorderPane xmlns="http://javafx.com/javafx/26" xmlns:fx="http://javafx.com/fxml/1" fx:controller="GUI.Controllers.CheckoutPaymentController">
+<BorderPane maxHeight="Infinity" maxWidth="Infinity" minHeight="0" minWidth="0"
+            xmlns="http://javafx.com/javafx/26" xmlns:fx="http://javafx.com/fxml/1" fx:controller="GUI.Controllers.CheckoutPaymentController">
 
     <stylesheets>
         <URL value="@../CSS/styles.css" />
