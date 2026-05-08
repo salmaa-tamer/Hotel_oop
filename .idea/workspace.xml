@@ -1,0 +1,271 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="239bfdab-dd2f-4159-95eb-3ea4b7b5a9f2" name="Changes" comment="updated branch">
+      <change beforePath="$PROJECT_DIR$/src/GUI/CODE/AdminTestMain.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/GUI/CODE/M.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/GUI/GuestMain.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/GUI/MainFX.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/GUI/CODE/MainFX.java" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="Git.Merge.Settings">
+    <option name="BRANCH" value="origin/main" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_BRANCH_BY_REPOSITORY">
+      <map>
+        <entry key="$PROJECT_DIR$" value="Mohamed_Database" />
+      </map>
+    </option>
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="GitHubPullRequestSearchHistory">{
+  &quot;lastFilter&quot;: {
+    &quot;state&quot;: &quot;OPEN&quot;,
+    &quot;assignee&quot;: &quot;Sara-abdelsamie&quot;
+  }
+}</component>
+  <component name="GithubPullRequestsUISettings">{
+  &quot;selectedUrlAndAccountId&quot;: {
+    &quot;url&quot;: &quot;https://github.com/salmaa-tamer/Hotel_oop.git&quot;,
+    &quot;accountId&quot;: &quot;01954553-8266-4029-91c2-c7f2542ddf91&quot;
+  }
+}</component>
+  <component name="McpProjectServerCommands">
+    <commands />
+    <urls />
+  </component>
+  <component name="ProblemsViewState">
+    <option name="selectedTabId" value="CurrentFile" />
+  </component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 0
+}</component>
+  <component name="ProjectId" id="3CtBmqpgFyvNdJMy2glpxYHQiUA" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "Application.AdminMain.executor": "Run",
+    "Application.LoginMain.executor": "Run",
+    "Application.M.executor": "Run",
+    "Application.MainFX.executor": "Run",
+    "ModuleVcsDetector.initialDetectionPerformed": "true",
+    "RunOnceActivity.MCP Project settings loaded": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager.252": "true",
+    "RunOnceActivity.git.unshallow": "true",
+    "com.intellij.ml.llm.matterhorn.ej.ui.settings.DefaultModelSelectionForGA.v1": "true",
+    "git-widget-placeholder": "main",
+    "ignore.virus.scanning.warn.message": "true",
+    "junie.onboarding.icon.badge.shown": "true",
+    "kotlin-language-version-configured": "true",
+    "onboarding.tips.debug.path": "C:/Users/Mohamed/Documents/Intellij/Hotel_oop/src/Main.java",
+    "project.structure.last.edited": "Project",
+    "project.structure.proportion": "0.15",
+    "project.structure.side.proportion": "0.2",
+    "to.speed.mode.migration.done": "true"
+  }
+}]]></component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\Mohamed\Documents\Intellij\Hotel_oop\src\GUI\CODE" />
+      <recent name="C:\Users\Dell\IdeaProjects\Hotel reservation system\src\GUI\FXML" />
+    </key>
+  </component>
+  <component name="RunManager" selected="Application.MainFX">
+    <configuration name="AdminMain" type="Application" factoryName="Application">
+      <option name="MAIN_CLASS_NAME" value="GUI.CODE.AdminTestMain" />
+      <module name="Hotel reservation system" />
+      <option name="VM_PARAMETERS" value="--module-path &quot;D:\javafx\javafx-sdk-26.0.1\lib&quot; --add-modules javafx.controls,javafx.fxml,javafx.base,javafx.graphics" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="LoginMain" type="Application" factoryName="Application">
+      <option name="ALTERNATIVE_JRE_PATH" value="openjdk-25" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="true" />
+      <option name="MAIN_CLASS_NAME" value="GUI.CODE.LoginMain" />
+      <option name="VM_PARAMETERS" value="--module-path &quot;C:\Users\Mohamed\Downloads\javafx-sdk-26\lib&quot; --add-modules javafx.controls,javafx.fxml,javafx.base,javafx.graphics" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="M" type="Application" factoryName="Application">
+      <option name="MAIN_CLASS_NAME" value="GUI.CODE.M" />
+      <module name="HotelReservationSystem" />
+      <option name="VM_PARAMETERS" value="--module-path &quot;C:\Users\Mohamed\Downloads\javafx-sdk-26\lib&quot; --add-modules javafx.controls,javafx.fxml,javafx.base,javafx.graphics" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="MainFX" type="Application" factoryName="Application">
+      <option name="MAIN_CLASS_NAME" value="GUI.CODE.MainFX" />
+      <module name="Hotel_oop" />
+      <option name="VM_PARAMETERS" value="--module-path &quot;C:\Users\Mohamed\Downloads\javafx-sdk-26\lib&quot; --add-modules javafx.controls,javafx.fxml,javafx.base,javafx.graphics" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration default="true" type="JetRunConfigurationType">
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration default="true" type="KotlinStandaloneScriptRunConfigurationType">
+      <option name="filePath" />
+      <method v="2" />
+    </configuration>
+    <list>
+      <item itemvalue="Application.MainFX" />
+      <item itemvalue="Application.AdminMain" />
+      <item itemvalue="Application.M" />
+      <item itemvalue="Application.LoginMain" />
+    </list>
+  </component>
+  <component name="SharedIndexes">
+    <attachedChunks>
+      <set>
+        <option value="bundled-jdk-30f59d01ecdd-2fc7cc6b9a17-intellij.indexing.shared.core-IU-253.30387.90" />
+      </set>
+    </attachedChunks>
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="239bfdab-dd2f-4159-95eb-3ea4b7b5a9f2" name="Changes" comment="" />
+      <created>1777195163897</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1777195163897</updated>
+    </task>
+    <task id="LOCAL-00001" summary="Adding Logout Button and other Buttons">
+      <option name="closed" value="true" />
+      <created>1777489402133</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1777489402133</updated>
+    </task>
+    <task id="LOCAL-00002" summary="resizing">
+      <option name="closed" value="true" />
+      <created>1777492845794</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1777492845794</updated>
+    </task>
+    <task id="LOCAL-00003" summary="Added log out button">
+      <option name="closed" value="true" />
+      <created>1778021305711</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1778021305711</updated>
+    </task>
+    <task id="LOCAL-00004" summary="added register staff GUI">
+      <option name="closed" value="true" />
+      <created>1778023469924</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1778023469924</updated>
+    </task>
+    <task id="LOCAL-00005" summary="made my reservation, make reservation and cancel reservation full screen">
+      <option name="closed" value="true" />
+      <created>1778255531922</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1778255531922</updated>
+    </task>
+    <task id="LOCAL-00006" summary="fixed dummy reservation date">
+      <option name="closed" value="true" />
+      <created>1778271875363</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1778271875363</updated>
+    </task>
+    <task id="LOCAL-00007" summary="fixed guest's balance error">
+      <option name="closed" value="true" />
+      <created>1778272868814</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1778272868814</updated>
+    </task>
+    <task id="LOCAL-00008" summary="fixed checkout screen sizing">
+      <option name="closed" value="true" />
+      <created>1778273414261</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1778273414261</updated>
+    </task>
+    <task id="LOCAL-00009" summary="added project report">
+      <option name="closed" value="true" />
+      <created>1778276023996</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1778276023996</updated>
+    </task>
+    <task id="LOCAL-00010" summary="updated branch">
+      <option name="closed" value="true" />
+      <created>1778276324254</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1778276324254</updated>
+    </task>
+    <option name="localTasksCounter" value="11" />
+    <servers />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="Adding Logout Button and other Buttons" />
+    <MESSAGE value="resizing" />
+    <MESSAGE value="Added log out button" />
+    <MESSAGE value="added register staff GUI" />
+    <MESSAGE value="made my reservation, make reservation and cancel reservation full screen" />
+    <MESSAGE value="fixed dummy reservation date" />
+    <MESSAGE value="fixed guest's balance error" />
+    <MESSAGE value="fixed checkout screen sizing" />
+    <MESSAGE value="added project report" />
+    <MESSAGE value="updated branch" />
+    <option name="LAST_COMMIT_MESSAGE" value="updated branch" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <breakpoint enabled="true" type="java-exception">
+          <properties class="java.lang.reflect.InvocationTargetException" package="java.lang.reflect" />
+          <option name="timeStamp" value="1" />
+        </breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
+  </component>
+  <component name="XSLT-Support.FileAssociations.UIState">
+    <expand />
+    <select />
+  </component>
+</project>
