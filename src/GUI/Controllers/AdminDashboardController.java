@@ -49,6 +49,14 @@ public class AdminDashboardController {
 
         workingHoursLabel.setText("Working Hours: " + admin.getWorkingHours());
         workingHoursLabel.setStyle("-fx-font-size: 18px; -fx-text-fill: #2c3e50; -fx-font-weight: bold;");
+
+        titleLabel.setMaxWidth(Double.MAX_VALUE);
+        titleLabel.setAlignment(javafx.geometry.Pos.CENTER_LEFT);
+
+        HBox.setHgrow(nameLabel, javafx.scene.layout.Priority.ALWAYS);
+        nameLabel.setAlignment(javafx.geometry.Pos.CENTER_RIGHT);
+        HBox.setHgrow(workingHoursLabel, javafx.scene.layout.Priority.ALWAYS);
+        workingHoursLabel.setAlignment(javafx.geometry.Pos.CENTER_RIGHT);
     }
 
 //    @FXML
@@ -1397,8 +1405,13 @@ public class AdminDashboardController {
         BorderPane layout = new BorderPane();
         layout.setTop(header);
         layout.setCenter(listView);
-
-        Scene newScene = new Scene(layout);
+        Stage stage = (Stage) ((javafx.scene.Node) event.getSource()).getScene().getWindow();
+        double width = stage.getScene().getWidth();
+        double height = stage.getScene().getHeight();
+        Scene newScene = new Scene(layout, width, height);
+        stage.setScene(newScene);
+        stage.setMaximized(true);
+        stage.show();
 
         try {
             String cssPath = getClass().getResource("/GUI/CSS/styles.css").toExternalForm();
@@ -1407,21 +1420,19 @@ public class AdminDashboardController {
             System.out.println("CSS file not found ");
         }
 
-        Stage stage = (Stage) ((javafx.scene.Node) event.getSource()).getScene().getWindow();
-        stage.setScene(newScene);
-        stage.setResizable(true);
-        stage.setMaximized(false);
-        stage.setMaximized(true);
+
     }
 
     //Mohamed
     private void switchScene(javafx.event.ActionEvent event, BorderPane layout) {
         Scene newScene = new Scene(layout);
         Stage stage = (Stage) ((javafx.scene.Node) event.getSource()).getScene().getWindow();
-        stage.setScene(newScene);
-        stage.setResizable(true);
-        stage.setMaximized(false);
+        double width = stage.getScene().getWidth();
+        double height = stage.getScene().getHeight();
+        Scene scene = new Scene(layout, width, height);
+        stage.setScene(scene);
         stage.setMaximized(true);
+        stage.show();
     }
 
     //Mohamed
@@ -1429,10 +1440,12 @@ public class AdminDashboardController {
         try {
             javafx.scene.Parent root = javafx.fxml.FXMLLoader.load(getClass().getResource("/GUI/FXML/AdminDashboard.fxml"));
             Stage stage = (Stage) ((javafx.scene.Node) event.getSource()).getScene().getWindow();
-            stage.setScene(new Scene(root));
-            stage.setResizable(true);
-            stage.setMaximized(false);
+            double width = stage.getScene().getWidth();
+            double height = stage.getScene().getHeight();
+            Scene scene = new Scene(root, width, height);
+            stage.setScene(scene);
             stage.setMaximized(true);
+            stage.show();
         } catch (Exception ex) {
         }
     }

@@ -18,7 +18,7 @@ public class LoginMain extends Application {
                 getClass().getResource("/GUI/FXML/LoginScreen.fxml")
         );
 
-        Scene scene = new Scene(root, 1024, 576);
+        Scene scene = new Scene(root);
         scene.getStylesheets().add(
                 getClass().getResource("/GUI/CSS/styles.css").toExternalForm()
         );

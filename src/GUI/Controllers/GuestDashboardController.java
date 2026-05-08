@@ -71,6 +71,8 @@ public class GuestDashboardController {
     private VBox AvailableRoomspanel;
     @FXML
     private Label messagelabel;
+    @FXML
+    private VBox reservationspanel;
 
 
     @FXML
@@ -87,12 +89,13 @@ public class GuestDashboardController {
         dashboardpanel.setVisible(true);
         Guestprofilepanel.setVisible(false);
         AvailableRoomspanel.setVisible(false);
+        reservationspanel.setVisible(false);
     }                                //will be removed after Hana's part
 
     private Guest currentguest;
 
     public void setguest(Guest guest) {
-       SessionManager.setCurrentGuest(guest);
+        SessionManager.setCurrentGuest(guest);
         this.currentguest = guest;
         setupTopBar();
         loadprofile();
@@ -242,6 +245,15 @@ public class GuestDashboardController {
         dashboardpanel.setVisible(true);
         Guestprofilepanel.setVisible(false);
         AvailableRoomspanel.setVisible(false);
+        reservationspanel.setVisible(false);
+    }
+    @FXML
+    public void showReservationsPanel() {
+        setupDashboardTable();
+        dashboardpanel.setVisible(false);
+        Guestprofilepanel.setVisible(false);
+        AvailableRoomspanel.setVisible(false);
+        reservationspanel.setVisible(true);
     }
 
     @FXML
@@ -250,6 +262,7 @@ public class GuestDashboardController {
         dashboardpanel.setVisible(false);
         Guestprofilepanel.setVisible(true);
         AvailableRoomspanel.setVisible(false);
+        reservationspanel.setVisible(false);
     }
 
     @FXML
@@ -257,16 +270,17 @@ public class GuestDashboardController {
         dashboardpanel.setVisible(false);
         Guestprofilepanel.setVisible(false);
         AvailableRoomspanel.setVisible(true);
+        reservationspanel.setVisible(false);
     }
 
     @FXML
     public void goToReservations() {
         try{
-        HotelDatabase.currentGuest = currentguest;
-        SessionManager.setCurrentGuest(currentguest);
-        Parent root = FXMLLoader.load(getClass().getResource("/GUI/FXML/MyReservations.fxml"));
-        Stage stage = (Stage) welcomelabel.getScene().getWindow();
-        stage.setScene(new Scene(root, 1366, 768));} catch (Exception e) {
+            HotelDatabase.currentGuest = currentguest;
+            SessionManager.setCurrentGuest(currentguest);
+            Parent root = FXMLLoader.load(getClass().getResource("/GUI/FXML/MyReservations.fxml"));
+            Stage stage = (Stage) welcomelabel.getScene().getWindow();
+            stage.setScene(new Scene(root, 1366, 768));} catch (Exception e) {
             e.printStackTrace();
         }
         // go to salma's My Reservations screen
@@ -276,11 +290,11 @@ public class GuestDashboardController {
     @FXML
     public void goToCheckout() {
         try{
-        HotelDatabase.currentGuest = currentguest;
-        SessionManager.setCurrentGuest(currentguest);
-        Parent root = FXMLLoader.load(getClass().getResource("/GUI/FXML/CheckoutPayment.fxml"));
-        Stage stage = (Stage) welcomelabel.getScene().getWindow();
-        stage.setScene(new Scene(root, 1366, 768));} catch (Exception e) {
+            HotelDatabase.currentGuest = currentguest;
+            SessionManager.setCurrentGuest(currentguest);
+            Parent root = FXMLLoader.load(getClass().getResource("/GUI/FXML/CheckoutPayment.fxml"));
+            Stage stage = (Stage) welcomelabel.getScene().getWindow();
+            stage.setScene(new Scene(root, 1366, 768));} catch (Exception e) {
             e.printStackTrace();
         }
 
@@ -327,14 +341,14 @@ public class GuestDashboardController {
 
         } catch (Exception e) {
             if (messagelabel!=null){
-            messagelabel.setText(e.getMessage());
+                messagelabel.setText(e.getMessage());
+            }
         }
+
+
+
+
     }
-
-
-
-
-}
     @FXML
     public void goToCancelReservation() {
         try {
@@ -349,5 +363,3 @@ public class GuestDashboardController {
         }
     }
 }
-
-

@@ -135,8 +135,12 @@ public class CancelReservationController {
         try {
             Parent root= FXMLLoader.load(getClass().getResource("/GUI/FXML/GuestDashboard.fxml"));
             Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
-            stage.setScene(new Scene(root, 1024, 576));
+            double width = stage.getScene().getWidth();
+            double height = stage.getScene().getHeight();
+            Scene scene = new Scene(root, width, height);
+            stage.setScene(scene);
             stage.setMaximized(true);
+            stage.show();
         } catch (Exception e) {
             e.printStackTrace();
         }
