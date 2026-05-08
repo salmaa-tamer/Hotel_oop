@@ -119,17 +119,28 @@ import javafx.stage.Stage;
                 Parent root = FXMLLoader.load(
                         getClass().getResource("/GUI/FXML/GuestDashboard.fxml")
                 );
-                Stage stage = (Stage)((javafx.scene.Node) e.getSource()).getScene().getWindow();
+
+                Stage stage = (Stage) ((javafx.scene.Node) e.getSource()).getScene().getWindow();
 
                 Scene scene = new Scene(root);
-                scene.getStylesheets().add(
-                        getClass().getResource("/GUI/CSS/styles.css").toExternalForm());
+
+                try {
+                    scene.getStylesheets().add(
+                            getClass().getResource("/GUI/CSS/styles.css").toExternalForm()
+                    );
+                } catch (NullPointerException ex) {
+                    System.out.println("CSS file not found");
+                }
+
                 stage.setScene(scene);
                 stage.setTitle("Guest Dashboard");
+                stage.setResizable(true);
+
+                stage.setMaximized(false);
                 stage.setMaximized(true);
+
             } catch (Exception ex) {
                 ex.printStackTrace();
-                showMessage("Could not navigate back.", false);
             }
         }
 
