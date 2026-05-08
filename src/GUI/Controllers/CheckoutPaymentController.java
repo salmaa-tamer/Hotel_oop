@@ -122,22 +122,14 @@ import javafx.stage.Stage;
 
                 Stage stage = (Stage) ((javafx.scene.Node) e.getSource()).getScene().getWindow();
 
-                Scene scene = new Scene(root);
+                double w = stage.getWidth();
+                double h = stage.getHeight();
 
-                try {
-                    scene.getStylesheets().add(
-                            getClass().getResource("/GUI/CSS/styles.css").toExternalForm()
-                    );
-                } catch (NullPointerException ex) {
-                    System.out.println("CSS file not found");
-                }
-
+                Scene scene = new Scene(root, w, h);
+                scene.getStylesheets().add(
+                        getClass().getResource("/GUI/CSS/styles.css").toExternalForm());
                 stage.setScene(scene);
                 stage.setTitle("Guest Dashboard");
-                stage.setResizable(true);
-
-                stage.setMaximized(false);
-                stage.setMaximized(true);
 
             } catch (Exception ex) {
                 ex.printStackTrace();
