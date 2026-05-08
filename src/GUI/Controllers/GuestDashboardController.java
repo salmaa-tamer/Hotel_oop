@@ -95,7 +95,7 @@ public class GuestDashboardController {
     private Guest currentguest;
 
     public void setguest(Guest guest) {
-       SessionManager.setCurrentGuest(guest);
+        SessionManager.setCurrentGuest(guest);
         this.currentguest = guest;
         setupTopBar();
         loadprofile();
@@ -276,16 +276,11 @@ public class GuestDashboardController {
     @FXML
     public void goToReservations() {
         try{
-        HotelDatabase.currentGuest = currentguest;
-        SessionManager.setCurrentGuest(currentguest);
-        Parent root = FXMLLoader.load(getClass().getResource("/GUI/FXML/MyReservations.fxml"));
-        Stage stage = (Stage) welcomelabel.getScene().getWindow();
-            double width = stage.getScene().getWidth();
-            double height = stage.getScene().getHeight();
-            Scene scene = new Scene(root, width, height);
-            stage.setScene(scene);
-            stage.setMaximized(true);
-            stage.show();} catch (Exception e) {
+            HotelDatabase.currentGuest = currentguest;
+            SessionManager.setCurrentGuest(currentguest);
+            Parent root = FXMLLoader.load(getClass().getResource("/GUI/FXML/MyReservations.fxml"));
+            Stage stage = (Stage) welcomelabel.getScene().getWindow();
+            stage.setScene(new Scene(root, 1366, 768));} catch (Exception e) {
             e.printStackTrace();
         }
         // go to salma's My Reservations screen
@@ -295,16 +290,11 @@ public class GuestDashboardController {
     @FXML
     public void goToCheckout() {
         try{
-        HotelDatabase.currentGuest = currentguest;
-        SessionManager.setCurrentGuest(currentguest);
-        Parent root = FXMLLoader.load(getClass().getResource("/GUI/FXML/CheckoutPayment.fxml"));
-        Stage stage = (Stage) welcomelabel.getScene().getWindow();
-            double width = stage.getScene().getWidth();
-            double height = stage.getScene().getHeight();
-            Scene scene = new Scene(root, width, height);
-            stage.setScene(scene);
-            stage.setMaximized(true);
-            stage.show();} catch (Exception e) {
+            HotelDatabase.currentGuest = currentguest;
+            SessionManager.setCurrentGuest(currentguest);
+            Parent root = FXMLLoader.load(getClass().getResource("/GUI/FXML/CheckoutPayment.fxml"));
+            Stage stage = (Stage) welcomelabel.getScene().getWindow();
+            stage.setScene(new Scene(root, 1366, 768));} catch (Exception e) {
             e.printStackTrace();
         }
 
@@ -317,12 +307,7 @@ public class GuestDashboardController {
             HotelDatabase.selectedRoom = null; // no pre-selected room
             Parent root = FXMLLoader.load(getClass().getResource("/GUI/FXML/MakeReservation.fxml"));
             Stage stage = (Stage) welcomelabel.getScene().getWindow();
-            double width = stage.getScene().getWidth();
-            double height = stage.getScene().getHeight();
-            Scene scene = new Scene(root, width, height);
-            stage.setScene(scene);
-            stage.setMaximized(true);
-            stage.show();
+            stage.setScene(new Scene(root, 1366, 768));
         } catch (Exception e) {
             e.printStackTrace();
         }
@@ -334,12 +319,7 @@ public class GuestDashboardController {
             HotelDatabase.currentGuest = null;
             Parent root = FXMLLoader.load(getClass().getResource("/GUI/FXML/LoginScreen.fxml"));
             Stage stage = (Stage) welcomelabel.getScene().getWindow();
-            double width = stage.getScene().getWidth();
-            double height = stage.getScene().getHeight();
-            Scene scene = new Scene(root, width, height);
-            stage.setScene(scene);
-            stage.setMaximized(true);
-            stage.show();
+            stage.setScene(new Scene(root, 1366, 768));
         } catch (Exception e) {
             e.printStackTrace();
         }
@@ -357,22 +337,18 @@ public class GuestDashboardController {
             HotelDatabase.currentGuest = currentguest;
             Parent root = FXMLLoader.load(getClass().getResource("/GUI/FXML/MakeReservation.fxml"));
             Stage stage = (Stage) roomtable.getScene().getWindow();
-            double width = stage.getScene().getWidth();
-            double height = stage.getScene().getHeight();
-            Scene scene = new Scene(root, width, height);
-            stage.setScene(scene);
-            stage.setMaximized(true);
-            stage.show();
+            stage.setScene(new Scene(root, 1366, 768));
+
         } catch (Exception e) {
             if (messagelabel!=null){
-            messagelabel.setText(e.getMessage());
+                messagelabel.setText(e.getMessage());
+            }
         }
+
+
+
+
     }
-
-
-
-
-}
     @FXML
     public void goToCancelReservation() {
         try {
@@ -380,16 +356,10 @@ public class GuestDashboardController {
             SessionManager.setCurrentGuest(currentguest); // ← ADD THIS LINE
             Parent root = FXMLLoader.load(getClass().getResource("/GUI/FXML/CancelReservation.fxml"));
             Stage stage = (Stage) welcomelabel.getScene().getWindow();
-            double width = stage.getScene().getWidth();
-            double height = stage.getScene().getHeight();
-            Scene scene = new Scene(root, width, height);
-            stage.setScene(scene);
+            stage.setScene(new Scene(root, 1024, 576));
             stage.setMaximized(true);
-            stage.show();
         } catch (Exception e) {
             e.printStackTrace();
         }
     }
 }
-
-
