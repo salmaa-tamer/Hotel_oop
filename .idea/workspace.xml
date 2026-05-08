@@ -4,12 +4,14 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="239bfdab-dd2f-4159-95eb-3ea4b7b5a9f2" name="Changes" comment="added validations in checkin date">
+    <list default="true" id="239bfdab-dd2f-4159-95eb-3ea4b7b5a9f2" name="Changes" comment="made my reservation, make reservation and cancel reservation full screen">
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/lib.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/lib.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Hotel reservation system/GUI/Controllers/AdminDashboardController.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Hotel reservation system/GUI/Controllers/AdminDashboardController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Hotel reservation system/GUI/FXML/CheckoutPayment.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Hotel reservation system/GUI/FXML/CheckoutPayment.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/GUI/Controllers/AdminDashboardController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/GUI/Controllers/AdminDashboardController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/GUI/FXML/CheckoutPayment.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/GUI/FXML/CheckoutPayment.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Hotel reservation system.iml" beforeDir="false" afterPath="$PROJECT_DIR$/Hotel reservation system.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Hotel reservation system/GUI/Controllers/GuestDashboardController.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Hotel reservation system/GUI/Controllers/GuestDashboardController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/GUI/CODE/LoginMain.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/GUI/CODE/LoginMain.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/GUI/Controllers/GuestDashboardController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/GUI/Controllers/GuestDashboardController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/GUI/FXML/GuestDashboard.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/GUI/FXML/GuestDashboard.fxml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -33,12 +35,12 @@
     &quot;assignee&quot;: &quot;Sara-abdelsamie&quot;
   }
 }</component>
-  <component name="GithubPullRequestsUISettings"><![CDATA[{
-  "selectedUrlAndAccountId": {
-    "url": "https://github.com/salmaa-tamer/Hotel_oop.git",
-    "accountId": "5d3af835-9467-479f-9b32-2ffafad84ed8"
+  <component name="GithubPullRequestsUISettings">{
+  &quot;selectedUrlAndAccountId&quot;: {
+    &quot;url&quot;: &quot;https://github.com/salmaa-tamer/Hotel_oop.git&quot;,
+    &quot;accountId&quot;: &quot;5d3af835-9467-479f-9b32-2ffafad84ed8&quot;
   }
-}]]></component>
+}</component>
   <component name="McpProjectServerCommands">
     <commands />
     <urls />
@@ -63,12 +65,12 @@
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager.252": "true",
     "RunOnceActivity.git.unshallow": "true",
-    "git-widget-placeholder": "main",
+    "git-widget-placeholder": "Sara__Roomsystem",
     "ignore.virus.scanning.warn.message": "true",
     "kotlin-language-version-configured": "true",
     "project.structure.last.edited": "Modules",
-    "project.structure.proportion": "0.0",
-    "project.structure.side.proportion": "0.0"
+    "project.structure.proportion": "0.15",
+    "project.structure.side.proportion": "0.2"
   }
 }]]></component>
   <component name="RecentsManager">
@@ -76,7 +78,7 @@
       <recent name="C:\Users\Dell\IdeaProjects\Hotel reservation system\src\GUI\FXML" />
     </key>
   </component>
-  <component name="RunManager" selected="Application.MainFX">
+  <component name="RunManager" selected="Application.LoginMain">
     <configuration name="AdminMain" type="Application" factoryName="Application">
       <option name="MAIN_CLASS_NAME" value="GUI.CODE.AdminTestMain" />
       <module name="Hotel reservation system" />
@@ -88,7 +90,7 @@
     <configuration name="LoginMain" type="Application" factoryName="Application">
       <option name="MAIN_CLASS_NAME" value="GUI.CODE.LoginMain" />
       <module name="Hotel reservation system" />
-      <option name="VM_PARAMETERS" value="--module-path &quot;D:\javafx\javafx-sdk-26.0.1\lib&quot; --add-modules javafx.controls,javafx.fxml,javafx.base,javafx.graphics" />
+      <option name="VM_PARAMETERS" value="--module-path &quot;C:\Users\Dell\Desktop\javafx-sdk-26.0.1\lib&quot; --add-modules javafx.controls,javafx.fxml" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -104,7 +106,7 @@
     <configuration name="MainFX" type="Application" factoryName="Application">
       <option name="MAIN_CLASS_NAME" value="GUI.MainFX" />
       <module name="Hotel reservation system" />
-      <option name="VM_PARAMETERS" value="--module-path &quot;D:\javafx\javafx-sdk-26.0.1\lib&quot; --add-modules javafx.controls,javafx.fxml,javafx.base,javafx.graphics" />
+      <option name="VM_PARAMETERS" value="--module-path &quot;$PROJECT_DIR$/../../../../javafx-sdk/lib&quot; --add-modules javafx.controls,javafx.fxml" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -171,15 +173,7 @@
       <option name="project" value="LOCAL" />
       <updated>1778255531922</updated>
     </task>
-    <task id="LOCAL-00006" summary="added validations in checkin date">
-      <option name="closed" value="true" />
-      <created>1778260691725</created>
-      <option name="number" value="00006" />
-      <option name="presentableId" value="LOCAL-00006" />
-      <option name="project" value="LOCAL" />
-      <updated>1778260691725</updated>
-    </task>
-    <option name="localTasksCounter" value="7" />
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
@@ -188,8 +182,7 @@
     <MESSAGE value="Added log out button" />
     <MESSAGE value="added register staff GUI" />
     <MESSAGE value="made my reservation, make reservation and cancel reservation full screen" />
-    <MESSAGE value="added validations in checkin date" />
-    <option name="LAST_COMMIT_MESSAGE" value="added validations in checkin date" />
+    <option name="LAST_COMMIT_MESSAGE" value="made my reservation, make reservation and cancel reservation full screen" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
