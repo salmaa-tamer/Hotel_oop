@@ -126,11 +126,11 @@ import javafx.stage.Stage;
                         getClass().getResource("/GUI/FXML/GuestDashboard.fxml")
                 );
                 Stage stage = (Stage)((javafx.scene.Node) e.getSource()).getScene().getWindow();
-                Scene scene = new Scene(root);
+                double width = stage.getScene().getWidth();
+                double height = stage.getScene().getHeight();
+                Scene scene = new Scene(root, width, height);
                 scene.getStylesheets().add(
-                        getClass().getResource("/GUI/CSS/styles.css").toExternalForm()
-                );
-                stage.setScene(scene);
+                        getClass().getResource("/GUI/CSS/styles.css").toExternalForm());
                 stage.setTitle("Guest Dashboard");
                 stage.setMaximized(true);
             } catch (Exception ex) {

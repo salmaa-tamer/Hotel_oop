@@ -22,7 +22,7 @@ public class Receptionist extends Staff{
 
     public void manageCheckIn(Reservation reservation){
         if (reservation.getStatus()==ReservationStatus.PENDING){
-            if(reservation.getCheckInDate()==LocalDate.now() || (LocalDate.now().isAfter(reservation.getCheckInDate()) && LocalDate.now().isBefore(reservation.getCheckOutDate()))){
+            if(reservation.getCheckInDate().isEqual(LocalDate.now()) || (LocalDate.now().isAfter(reservation.getCheckInDate()) && LocalDate.now().isBefore(reservation.getCheckOutDate()))){
                 reservation.confirm();
                 reservation.getRoom().setAvailablity(false);
                 return;

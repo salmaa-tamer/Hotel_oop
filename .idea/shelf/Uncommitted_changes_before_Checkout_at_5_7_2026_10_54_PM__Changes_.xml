@@ -1,0 +1,14 @@
+<changelist name="Uncommitted_changes_before_Checkout_at_5_7_2026_10_54_PM_[Changes]" date="1778183660942" recycled="true" deleted="true">
+  <option name="PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_5_7_2026_10_54_PM_[Changes]/shelved.patch" />
+  <option name="DESCRIPTION" value="Uncommitted changes before Checkout at 5/7/2026 10:54 PM [Changes]" />
+  <binary>
+    <option name="BEFORE_PATH" value="out/production/Hotel reservation system/GUI/Controllers/AdminDashboardController.class" />
+    <option name="AFTER_PATH" value="out/production/Hotel reservation system/GUI/Controllers/AdminDashboardController.class" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_5_7_2026_10_54_PM_[Changes]/AdminDashboardController.class" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value="out/production/Hotel reservation system/GUI/MainFX.class" />
+    <option name="AFTER_PATH" value="out/production/Hotel reservation system/GUI/MainFX.class" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_5_7_2026_10_54_PM_[Changes]/MainFX.class" />
+  </binary>
+</changelist>

@@ -15,8 +15,11 @@ public class Reservation {
         status = ReservationStatus.PENDING;
     }
     private void setCheckInDate(LocalDate checkInDate) {
-        if (checkInDate==null){
+        if (checkInDate==null|| checkInDate.isBefore(LocalDate.now())){
             throw new InvalidReservationException("Check in date can't be empty");
+        }
+        if ( checkInDate.isBefore(LocalDate.now())){
+            throw new InvalidReservationException("Check in date must be after today");
         }
         this.checkInDate = checkInDate;
     }

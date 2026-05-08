@@ -79,6 +79,16 @@ public class MakeReservationController {
             Room selectedRoom = roomComboBox.getValue();
             LocalDate checkin = checkInPicker.getValue();
             LocalDate checkout = checkOutPicker.getValue();
+            if (checkin.isBefore(LocalDate.now())){
+                checkInError.setText("Check in date can't be before today");
+                checkInError.setVisible(true);
+                checkInError.setManaged(true);
+                checkInError.setStyle("-fx-text-fill: red; -fx-font-weight: bold; -fx-font-size: 14px;");
+
+                return;
+            }
+
+
             if (selectedRoom == null ) {
                roomError.setText("Please select a room");
                roomError.setVisible(true);
@@ -113,8 +123,12 @@ public void GoBackToDashboard(javafx.event.ActionEvent event){
         try {
             Parent root= FXMLLoader.load(getClass().getResource("/GUI/FXML/GuestDashboard.fxml"));
             Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
-            stage.setScene(new Scene(root, 1024, 576));
+            double width = stage.getScene().getWidth();
+            double height = stage.getScene().getHeight();
+            Scene scene = new Scene(root, width, height);
+            stage.setScene(scene);
             stage.setMaximized(true);
+            stage.show();
         } catch (Exception e) {
             e.printStackTrace();
         }
