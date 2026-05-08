@@ -119,7 +119,8 @@ import javafx.stage.Stage;
                 Parent root = FXMLLoader.load(
                         getClass().getResource("/GUI/FXML/GuestDashboard.fxml")
                 );
-                Stage stage = (Stage)((javafx.scene.Node) e.getSource()).getScene().getWindow();
+
+                Stage stage = (Stage) ((javafx.scene.Node) e.getSource()).getScene().getWindow();
 
                 double w = stage.getWidth();
                 double h = stage.getHeight();
@@ -132,7 +133,6 @@ import javafx.stage.Stage;
 
             } catch (Exception ex) {
                 ex.printStackTrace();
-                showMessage("Could not navigate back.", false);
             }
         }
 
