@@ -4,14 +4,12 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="239bfdab-dd2f-4159-95eb-3ea4b7b5a9f2" name="Changes" comment="made my reservation, make reservation and cancel reservation full screen">
+    <list default="true" id="239bfdab-dd2f-4159-95eb-3ea4b7b5a9f2" name="Changes" comment="added validations in checkin date">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Hotel reservation system/GUI/Controllers/MakeReservationController.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Hotel reservation system/GUI/Controllers/MakeReservationController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Hotel reservation system/GUI/FXML/MakeReservation.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Hotel reservation system/GUI/FXML/MakeReservation.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Hotel reservation system/GuestandRoomSystem/Reservation.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Hotel reservation system/GuestandRoomSystem/Reservation.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/GUI/Controllers/MakeReservationController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/GUI/Controllers/MakeReservationController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/GUI/FXML/MakeReservation.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/GUI/FXML/MakeReservation.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/GuestandRoomSystem/Reservation.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/GuestandRoomSystem/Reservation.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Hotel reservation system/GUI/Controllers/AdminDashboardController.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Hotel reservation system/GUI/Controllers/AdminDashboardController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Hotel reservation system/GUI/FXML/CheckoutPayment.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Hotel reservation system/GUI/FXML/CheckoutPayment.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/GUI/Controllers/AdminDashboardController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/GUI/Controllers/AdminDashboardController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/GUI/FXML/CheckoutPayment.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/GUI/FXML/CheckoutPayment.fxml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -173,7 +171,15 @@
       <option name="project" value="LOCAL" />
       <updated>1778255531922</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="added validations in checkin date">
+      <option name="closed" value="true" />
+      <created>1778260691725</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1778260691725</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
@@ -182,7 +188,8 @@
     <MESSAGE value="Added log out button" />
     <MESSAGE value="added register staff GUI" />
     <MESSAGE value="made my reservation, make reservation and cancel reservation full screen" />
-    <option name="LAST_COMMIT_MESSAGE" value="made my reservation, make reservation and cancel reservation full screen" />
+    <MESSAGE value="added validations in checkin date" />
+    <option name="LAST_COMMIT_MESSAGE" value="added validations in checkin date" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
