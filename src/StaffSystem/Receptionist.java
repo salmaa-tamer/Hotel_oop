@@ -36,10 +36,20 @@ public class Receptionist extends Staff{
 
     public void manageCheckOut(Reservation reservation, PaymentMethod paymentMethod){
         if (reservation.getStatus()==ReservationStatus.CONFIRMED){
-            reservation.complete();
+
+//            reservation.complete();
+//            reservation.getRoom().setAvailablity(true);
+//            Bill bill=reservation.generateBill(paymentMethod);
+//            HotelDatabase.bills.add(bill);
+//            return;
+//        }
+            if (paymentMethod == PaymentMethod.ONLINE) {
+                reservation.getGuest().onlineCheckout(reservation, paymentMethod);
+            } else {
+                reservation.getGuest().inPersonCheckout(reservation, paymentMethod);
+            }
+
             reservation.getRoom().setAvailablity(true);
-            Bill bill=reservation.generateBill(paymentMethod);
-            HotelDatabase.bills.add(bill);
             return;
         }
         throw new IllegalArgumentException("Reservation not confirmed");
