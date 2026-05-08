@@ -3,7 +3,7 @@
 <?import javafx.scene.control.*?>
 <?import javafx.geometry.Insets?>
 
-<BorderPane prefWidth="1024.0" prefHeight="576.0"
+<BorderPane maxHeight="Infinity" maxWidth="Infinity" minHeight="0" minWidth="0"
             xmlns="http://javafx.com/javafx/17"
             xmlns:fx="http://javafx.com/fxml/1"
             fx:controller="GUI.Controllers.CancelReservationController">

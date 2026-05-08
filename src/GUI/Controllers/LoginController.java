@@ -135,17 +135,21 @@ public class LoginController {
     @FXML
     public void goToRegister(ActionEvent e){
         navigateTo(e,"/GUI/FXML/RegisterScreen.fxml", "Register");
+
     }
 
     private void navigateTo(ActionEvent e,String path,String title){
         try{
             Parent root =FXMLLoader.load(getClass().getResource(path));
             Stage stage=(Stage)((javafx.scene.Node) e.getSource()).getScene().getWindow();
-            Scene scene =new Scene(root);
-            scene.getStylesheets().add(getClass().getResource("/GUI/CSS/styles.css").toExternalForm());
+            double width = stage.getScene().getWidth();
+            double height = stage.getScene().getHeight();
+            Scene scene = new Scene(root, width, height);
             stage.setScene(scene);
-            stage.setTitle(title);
             stage.setMaximized(true);
+            stage.show();
+            scene.getStylesheets().add(getClass().getResource("/GUI/CSS/styles.css").toExternalForm());            stage.setTitle(title);
+
         }
         catch(Exception ex){
             showError("Screen is not ready yet.");

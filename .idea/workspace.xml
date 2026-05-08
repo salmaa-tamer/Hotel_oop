@@ -6,7 +6,31 @@
   <component name="ChangeListManager">
     <list default="true" id="239bfdab-dd2f-4159-95eb-3ea4b7b5a9f2" name="Changes" comment="Merge branch 'refs/heads/main' into Reem_Staff&#10;&#10;# Conflicts:&#10;#&#9;.idea/workspace.xml&#10;#&#9;out/production/Hotel reservation system/GUI/Controllers/ReceptionistDashboardController.class&#10;#&#9;out/production/Hotel reservation system/GUI/MainFX.class">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/StaffSystem/Receptionist.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/StaffSystem/Receptionist.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Hotel reservation system.iml" beforeDir="false" afterPath="$PROJECT_DIR$/Hotel reservation system.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Hotel reservation system/GUI/Controllers/CancelReservationController.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Hotel reservation system/GUI/Controllers/CancelReservationController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Hotel reservation system/GUI/Controllers/CheckoutPaymentController.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Hotel reservation system/GUI/Controllers/CheckoutPaymentController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Hotel reservation system/GUI/Controllers/GuestDashboardController.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Hotel reservation system/GUI/Controllers/GuestDashboardController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Hotel reservation system/GUI/Controllers/LoginController.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Hotel reservation system/GUI/Controllers/LoginController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Hotel reservation system/GUI/Controllers/MakeReservationController.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Hotel reservation system/GUI/Controllers/MakeReservationController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Hotel reservation system/GUI/Controllers/MyReservationsController.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Hotel reservation system/GUI/Controllers/MyReservationsController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Hotel reservation system/GUI/Controllers/RegisterController.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Hotel reservation system/GUI/Controllers/RegisterController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Hotel reservation system/GUI/FXML/CancelReservation.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Hotel reservation system/GUI/FXML/CancelReservation.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Hotel reservation system/GUI/FXML/CheckoutPayment.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Hotel reservation system/GUI/FXML/CheckoutPayment.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Hotel reservation system/GUI/FXML/MakeReservation.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Hotel reservation system/GUI/FXML/MakeReservation.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Hotel reservation system/GUI/FXML/MyReservations.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Hotel reservation system/GUI/FXML/MyReservations.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Hotel reservation system/GUI/FXML/RegisterScreen.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Hotel reservation system/GUI/FXML/RegisterScreen.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/GUI/Controllers/CancelReservationController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/GUI/Controllers/CancelReservationController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/GUI/Controllers/CheckoutPaymentController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/GUI/Controllers/CheckoutPaymentController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/GUI/Controllers/GuestDashboardController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/GUI/Controllers/GuestDashboardController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/GUI/Controllers/LoginController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/GUI/Controllers/LoginController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/GUI/Controllers/MakeReservationController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/GUI/Controllers/MakeReservationController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/GUI/Controllers/MyReservationsController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/GUI/Controllers/MyReservationsController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/GUI/Controllers/RegisterController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/GUI/Controllers/RegisterController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/GUI/FXML/CancelReservation.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/GUI/FXML/CancelReservation.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/GUI/FXML/CheckoutPayment.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/GUI/FXML/CheckoutPayment.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/GUI/FXML/MakeReservation.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/GUI/FXML/MakeReservation.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/GUI/FXML/MyReservations.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/GUI/FXML/MyReservations.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/GUI/FXML/RegisterScreen.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/GUI/FXML/RegisterScreen.fxml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -57,8 +81,11 @@
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager.252": "true",
     "RunOnceActivity.git.unshallow": "true",
-    "git-widget-placeholder": "Reem__Staff",
-    "kotlin-language-version-configured": "true"
+    "git-widget-placeholder": "main",
+    "kotlin-language-version-configured": "true",
+    "project.structure.last.edited": "Modules",
+    "project.structure.proportion": "0.0",
+    "project.structure.side.proportion": "0.0"
   }
 }]]></component>
   <component name="RecentsManager">
@@ -70,7 +97,7 @@
     <configuration name="AdminMain" type="Application" factoryName="Application">
       <option name="MAIN_CLASS_NAME" value="GUI.CODE.AdminTestMain" />
       <module name="Hotel reservation system" />
-      <option name="VM_PARAMETERS" value="--module-path &quot;C:\Users\Reem Hetta\Downloads\javafx-sdk-26\lib&quot; --add-modules javafx.controls,javafx.fxml" />
+      <option name="VM_PARAMETERS" value="--module-path &quot;D:\javafx\javafx-sdk-26.0.1\lib&quot; --add-modules javafx.controls,javafx.fxml,javafx.base,javafx.graphics" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -78,7 +105,7 @@
     <configuration name="LoginMain" type="Application" factoryName="Application">
       <option name="MAIN_CLASS_NAME" value="GUI.CODE.LoginMain" />
       <module name="Hotel reservation system" />
-      <option name="VM_PARAMETERS" value="--module-path &quot;C:\Users\Reem Hetta\Downloads\javafx-sdk-26\lib&quot; --add-modules javafx.controls,javafx.fxml" />
+      <option name="VM_PARAMETERS" value="--module-path &quot;D:\javafx\javafx-sdk-26.0.1\lib&quot; --add-modules javafx.controls,javafx.fxml,javafx.base,javafx.graphics" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -86,7 +113,7 @@
     <configuration name="M" type="Application" factoryName="Application">
       <option name="MAIN_CLASS_NAME" value="GUI.CODE.M" />
       <module name="Hotel reservation system" />
-      <option name="VM_PARAMETERS" value="--module-path &quot;C:\Users\Mohamed\Downloads\javafx-sdk-26\lib&quot; --add-modules javafx.controls,javafx.fxml" />
+      <option name="VM_PARAMETERS" value="--module-path &quot;D:\javafx\javafx-sdk-26.0.1\lib&quot; --add-modules javafx.controls,javafx.fxml,javafx.base,javafx.graphics" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -94,7 +121,7 @@
     <configuration name="MainFX" type="Application" factoryName="Application">
       <option name="MAIN_CLASS_NAME" value="GUI.MainFX" />
       <module name="Hotel reservation system" />
-      <option name="VM_PARAMETERS" value="--module-path &quot;C:\Users\Reem Hetta\Downloads\javafx-sdk-26\lib&quot; --add-modules javafx.controls,javafx.fxml" />
+      <option name="VM_PARAMETERS" value="--module-path &quot;D:\javafx\javafx-sdk-26.0.1\lib&quot; --add-modules javafx.controls,javafx.fxml,javafx.base,javafx.graphics" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>

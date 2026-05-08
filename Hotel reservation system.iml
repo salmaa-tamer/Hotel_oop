@@ -7,8 +7,6 @@
     </content>
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
-    <orderEntry type="library" exported="" name="lib" level="project" />
-    <orderEntry type="library" exported="" name="javafx.base" level="project" />
     <orderEntry type="library" name="javafx.controls" level="project" />
     <orderEntry type="library" name="javafx.fxml" level="project" />
     <orderEntry type="library" name="javafx.graphics" level="project" />
@@ -18,5 +16,14 @@
     <orderEntry type="library" name="jdk.jsobject" level="project" />
     <orderEntry type="library" name="jfx.incubator.input" level="project" />
     <orderEntry type="library" name="jfx.incubator.richtext" level="project" />
+    <orderEntry type="module-library">
+      <library>
+        <CLASSES>
+          <root url="jar://D:/javafx/javafx-sdk-26.0.1/lib/javafx.base.jar!/" />
+        </CLASSES>
+        <JAVADOC />
+        <SOURCES />
+      </library>
+    </orderEntry>
   </component>
 </module>
