@@ -93,8 +93,8 @@
             staff.add(admin1);
 
             // Reservations
-            Reservation res1 = new Reservation(guest1, room1, LocalDate.now().plusDays(1), LocalDate.now().plusDays(3));
-            Reservation res2 = new Reservation(guest2, room2, LocalDate.now().plusDays(1), LocalDate.now().plusDays(2));
+            Reservation res1 = new Reservation(guest1, room1, LocalDate.now().plusDays(0), LocalDate.now().plusDays(3));
+            Reservation res2 = new Reservation(guest2, room2, LocalDate.now().plusDays(0), LocalDate.now().plusDays(2));
             reservations.add(res1);
             reservations.add(res2);
 
