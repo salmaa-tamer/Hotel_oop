@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.geometry.Insets?>
+
+<BorderPane maxHeight="Infinity" maxWidth="Infinity" minHeight="0" minWidth="0"
+            xmlns="http://javafx.com/javafx/17"
+            xmlns:fx="http://javafx.com/fxml/1"
+            fx:controller="GUI.Controllers.CancelReservationController">
+
+    <top>
+        <HBox alignment="CENTER_LEFT" spacing="20"
+              style="-fx-background-color: #2c3e50; -fx-padding: 14px 20px;">
+            <Button text="← Back" onAction="#GoToGuestDashboard"
+                    style="-fx-background-color: #e74c3c; -fx-text-fill: white; -fx-font-weight: bold; -fx-cursor: hand; -fx-padding: 6px 14px;"/>
+            <Label text="Cancel a Reservation"
+                   style="-fx-font-size: 18px; -fx-font-weight: bold; -fx-text-fill: white;"/>
+        </HBox>
+    </top>
+
+    <center>
+        <VBox spacing="12" style="-fx-background-color: #ffffff; -fx-padding: 28px;">
+
+            <Label text="Click on a reservation to cancel it"
+                   style="-fx-font-size: 13px; -fx-text-fill: #7f8c8d;"/>
+
+            <ScrollPane fitToWidth="true" style="-fx-background-color: transparent; -fx-background: transparent; -fx-border-color: transparent;">
+                <VBox fx:id="ReservationContainer" spacing="10">
+                    <padding>
+                        <Insets top="5" bottom="5"/>
+                    </padding>
+                </VBox>
+            </ScrollPane>
+
+            <Label fx:id="StatusLabel"
+                   style="-fx-font-size: 16px; -fx-font-weight: bold;"
+                   wrapText="true"
+                   maxWidth="Infinity"
+                   alignment="CENTER"/>
+
+        </VBox>
+    </center>
+
+</BorderPane>
