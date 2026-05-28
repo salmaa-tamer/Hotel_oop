@@ -1,63 +1,308 @@
+# The Nile Atelier — Hotel Management System
 
-1.INTRODUCTION
+A Java Object-Oriented Programming course project that simulates a hotel management workflow for guests, receptionists, and admins. The system combines a Java backend with a JavaFX desktop GUI to manage rooms, reservations, guests, staff accounts, and checkout/payment operations.
 
-  This project focuses on building a Hotel Reservation System using Java, with an emphasis on applying Object-Oriented Programming (OOP) concepts. The goal is to design a system that manages hotel operations such as guest registration, room booking, and payment handling in a structured and organized way.
-In this milestone, the main focus is on developing the backend logic only, without a graphical user interface. The system is built using well-designed classes that represent real-world entities like guests, rooms, reservations, and staff members.
+> Built as a team project for an OOP course.
 
-2.PROBLEM DESCRIPTION
+---
 
-  Managing hotel reservations manually or with unstructured systems can lead to issues such as booking conflicts and difficulty tracking guests and rooms. This system was designed to organize data efficiently and allow both guests and staff to perform their tasks easily and correctly.
+## Preview
 
-3.SYSTEM & DESIGN IMPLEMENTATION
+### Demo Video
 
-  The system is built using multiple classes representing key entities. The Guest class allows users to register, log in, view available rooms, and manage their reservations (create, cancel, and checkout).
-A base Staff class is used, with Admin and Receptionist inheriting from it. The Admin handles managing rooms, room types, and amenities (CRUD operations), while the Receptionist is responsible for reservation-related tasks such as check-in and check-out.
-Rooms are represented by a Room class, which is associated with a RoomType and a list of Amenity objects. The Reservation class stores booking details including guest, room, dates, and status. The Invoice class handles payment information during checkout.
-All data is stored using an in-memory database implemented with ArrayLists for guests, rooms, reservations, and invoices.
+[[Watch the demo]](https://www.youtube.com/watch?v=sGeCcVbCXbA&t)
 
-4.OOP CONCEPTS
+### Screenshots
 
-Encapsulation: Attributes are private and accessed through getters and setters.
-Inheritance: Admin and Receptionist extend the Staff class 
-Enums: Used for gender, roles, reservation status, and payment methods.
-Validation & Exceptions: Ensures correct input and handles errors like unavailable rooms. 
+| Login / Register | Making resirvation  | Receptionist Dashboard                                |
+|---|---------------------------------------------------|-------------------------------------------------------|
+| ![Login screen](assets/screenshots/login.png) | ![Reservation](assets/screenshots/reservation.png) | ![Receptionist dashboard](assets/screenshots/rec.png) |
 
-5.DESIGN DECISIONS
+| Admin Dashboard | View account                                     | Checkout / Payment |
+|---|--------------------------------------------------|---|
+| ![Admin dashboard](assets/screenshots/admin.png) | ![Reservation flow](assets/screenshots/view.png) | ![Checkout payment](assets/screenshots/checkout.png) |
 
-Several design decisions were made to keep the system organized, clear, and easy to extend.
-5.1Separation of responsibilities
-Each class was designed to represent a single real-world entity (Guest, Room, Reservation, etc.), and each class handles its own logic. This makes the system easier to understand, test, and modify without affecting other parts. 
+---
 
+## Project Overview
 
-5.2 Use of inheritance for staff roles
+The system is designed around real hotel entities such as guests, rooms, room types, amenities, reservations, bills, admins, and receptionists. It allows different users to interact with the hotel system depending on their role.
 
-A base Staff class was created to store common attributes such as username and password, while Admin and Receptionist extend it. This avoids code duplication and allows shared behavior to be reused while still supporting role-specific functionality. 
+Guests can register, log in, browse available rooms, make reservations, view their reservation history, cancel reservations, and complete checkout/payment. Receptionists can view guest, room, and reservation data, manage check-ins, and handle check-outs. Admins can manage hotel data such as rooms, room types, amenities, staff members, and system records.
 
+The project uses an in-memory database implemented with `ArrayList` collections, making it simple to test without requiring an external database setup.
 
-5.3 Use of enums instead of strings
+---
 
-Enums were used for values like gender, roles, reservation status, and payment methods. This prevents invalid inputs and makes the code more readable and safer compared to using plain strings. 
+## Main Features
 
+### Guest Features
 
-5.4 In-memory database for simplicity
+- Guest registration and login
+- Guest dashboard with profile and balance details
+- Browse available rooms
+- Filter rooms by room type, amenities, and price
+- Make reservations with check-in and check-out dates
+- View reservations by status
+- Cancel reservations
+- Checkout and payment flow
 
-Instead of connecting to an external database, ArrayLists were used to store system data. This simplifies development and allows easy testing of functionality without dealing with database setup. 
+### Receptionist Features
 
+- Receptionist dashboard
+- View receptionist profile
+- View all guests
+- View all rooms
+- View all reservations
+- Manage guest check-in
+- Manage check-out and payment
 
-5.5 Encapsulation and data protection:
+### Admin Features
 
-All attributes are private and accessed through getters and setters. This ensures that data is not modified directly and allows validation to be applied when values are updated. 
+- Admin dashboard
+- Manage rooms
+- Manage room types
+- Manage amenities
+- Register staff members
+- View guests, reservations, staff, and bills
+- View and update admin profile details
 
+### Backend Features
 
-5.6 Clear relationships between classes:
+- In-memory hotel database using `ArrayList`
+- Reservation status tracking
+- Bill generation
+- Room availability handling
+- Input validation
+- Custom exception handling
+- Role-based staff structure
 
-Objects are connected logically (e.g., a Reservation links a Guest and a Room). This reflects real-world relationships and makes the system more intuitive. 
+---
 
+## Technologies Used
 
-5.7 Basic validation and exception handling:
+- **Java**
+- **JavaFX**
+- **FXML**
+- **CSS** for GUI styling
+- **Object-Oriented Programming principles**
+- **Git / GitHub**
 
-Input validation and custom exceptions were added to handle cases like invalid data or unavailable rooms. This improves system reliability and prevents unexpected behavior.
+---
 
-6.CONCLUSION
+## OOP Concepts Applied
 
-This milestone resulted in a well-structured backend system that simulates hotel operations effectively. It provides a strong foundation for adding a graphical interface and more advanced features in the next stage
+### Encapsulation
+
+Core classes use private attributes with getters and setters to control access and validate data before changing object state.
+
+Examples:
+
+- `Guest`
+- `Room`
+- `Reservation`
+- `RoomType`
+- `Staff`
+
+### Inheritance
+
+The staff system uses inheritance to avoid duplicated code between different staff roles.
+
+```text
+Staff
+├── Admin
+└── Receptionist
+```
+
+`Staff` stores shared staff data such as username, password, date of birth, working hours, and role. `Admin` and `Receptionist` extend it with role-specific behavior.
+
+### Abstraction
+
+`Staff` is implemented as an abstract class, representing the shared idea of a hotel employee while allowing specific staff types to define their own responsibilities.
+
+### Enums
+
+Enums are used instead of raw strings for fixed values, making the system safer and easier to read.
+
+Examples:
+
+- `Gender`
+- `PaymentMethod`
+- `ReservationStatus`
+- `Role`
+
+### Exception Handling
+
+Custom runtime exceptions are used to handle invalid business cases clearly.
+
+Examples:
+
+- `RoomNotAvailableException`
+- `InvalidReservationException`
+- `InvalidPaymentException`
+- `InvalidReservationStatus`
+
+---
+
+## Project Structure
+
+```text
+Hotel_oop/
+├── src/
+│   ├── GuestandRoomSystem/
+│   │   ├── Amenity.java
+│   │   ├── Bill.java
+│   │   ├── Gender.java
+│   │   ├── Guest.java
+│   │   ├── HotelDatabase.java
+│   │   ├── PaymentMethod.java
+│   │   ├── Reservation.java
+│   │   ├── ReservationStatus.java
+│   │   ├── Room.java
+│   │   └── RoomType.java
+│   │
+│   ├── StaffSystem/
+│   │   ├── Admin.java
+│   │   ├── Receptionist.java
+│   │   ├── Role.java
+│   │   └── Staff.java
+│   │
+│   ├── exceptions/
+│   │   ├── InvalidPaymentException.java
+│   │   ├── InvalidReservationException.java
+│   │   ├── InvalidReservationStatus.java
+│   │   └── RoomNotAvailableException.java
+│   │
+│   └── GUI/
+│       ├── CODE/
+│       │   ├── LoginMain.java
+│       │   └── MainFX.java
+│       ├── Controllers/
+│       ├── CSS/
+│       └── FXML/
+│
+├── UML_Diagram.png
+├── ProjectReport.docx
+└── README.md
+```
+
+---
+
+## Main Classes
+
+### `HotelDatabase`
+
+Acts as the in-memory storage layer for the application. It stores collections of guests, rooms, reservations, bills, staff members, room types, amenities, and sample data.
+
+### `Guest`
+
+Represents a hotel guest. Handles guest registration, login, viewing available rooms, making reservations, canceling reservations, and checkout/payment operations.
+
+### `Room`
+
+Represents a hotel room with a room number, floor, availability status, room type, amenities, and price per night.
+
+### `RoomType`
+
+Represents the category of a room, including the room type name, capacity, base price, and ID.
+
+### `Reservation`
+
+Connects a guest with a room and stores check-in date, check-out date, and reservation status. It also calculates total price and generates bills.
+
+### `Bill`
+
+Represents payment information for a completed reservation, including reservation details, final amount, payment method, and payment date.
+
+### `Staff`
+
+An abstract base class for hotel employees. Stores common staff data and shared methods.
+
+### `Admin`
+
+Handles admin-related actions such as managing rooms, room types, amenities, staff registration, and viewing bills.
+
+### `Receptionist`
+
+Handles receptionist-related actions such as confirming reservations, managing check-ins, and completing check-outs.
+
+---
+
+## How to Run
+
+### Requirements
+
+- Java JDK installed
+- JavaFX SDK installed and configured
+- An IDE such as IntelliJ IDEA or VS Code
+
+### Main Entry Point
+
+Run one of the JavaFX launcher classes:
+
+```text
+src/GUI/CODE/MainFX.java
+```
+
+or
+
+```text
+src/GUI/CODE/LoginMain.java
+```
+
+`HotelDatabase.loadDummyData()` is used to load sample rooms, guests, staff members, reservations, and bills before opening the GUI.
+
+### Demo Login Data
+
+The project includes sample data for testing. Example accounts can be found in:
+
+```text
+src/GuestandRoomSystem/HotelDatabase.java
+```
+
+Examples from the dummy data include:
+
+```text
+Guest username: Ahmed
+Guest password: password123
+
+Guest username: Fady
+Guest password: fadyfady
+
+Admin username: admin1234
+Admin password: adminpassword
+
+Receptionist username: rec_adam123
+Receptionist password: receptionist1
+```
+
+---
+
+## UML Diagram
+
+The project includes a UML diagram showing the main backend relationships.
+
+![UML Diagram](UML_Diagram.png)
+
+---
+
+## My Contributions
+
+> Edit this section to match your exact work before publishing.
+
+My main contributions included:
+
+- Implementing and organizing the `HotelDatabase` logic
+- Working on custom exception classes
+- Building and connecting the receptionist dashboard GUI
+- Connecting GUI actions to backend data where needed
+- Helping prepare the project for presentation and discussion
+
+---
+
+## Team Project Note
+
+This project was developed as a team project for an Object-Oriented Programming course. The repository represents collaborative work, with different members contributing to backend logic, GUI screens, reservation handling, staff functionality, and system design.
+
+---
+

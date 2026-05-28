@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.net.URL?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.PasswordField?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<BorderPane maxHeight="Infinity" maxWidth="Infinity" minHeight="0" minWidth="0"
+            xmlns="http://javafx.com/javafx/26" xmlns:fx="http://javafx.com/fxml/1" fx:controller="GUI.Controllers.RegisterController">
+
+    <stylesheets>
+        <URL value="@../CSS/styles.css" />
+    </stylesheets>
+
+    <left>
+        <VBox alignment="CENTER" prefWidth="370.0" spacing="8" style="-fx-background-color: #1a252f; -fx-padding: 60px 40px;">
+         <Label prefHeight="48.0" prefWidth="56.0" style="-fx-font-size: 56px;" text="🏨" />
+            <Label style="-fx-font-size: 22px; -fx-font-weight: bold; -fx-text-fill: white;" text="The Nile Atelier">
+            <opaqueInsets>
+               <Insets />
+            </opaqueInsets></Label>
+            <Label style="-fx-font-size: 13px; -fx-text-fill: #95a5a6;" text="Create your guest account" />
+         <Separator prefWidth="280.0" style="-fx-background-color: white;" />
+            <Label style="-fx-font-size: 13px; -fx-text-fill: #bdc3c7;" text="Already have an account?" />
+         <Button mnemonicParsing="false" onAction="#goToLogin" prefWidth="200.0" style="-fx-background-color: #2c3e50; -fx-text-fill: white; -fx-font-size: 14px; -fx-font-weight: bold; -fx-padding: 10; -fx-background-radius: 5; -fx-cursor: hand;" text="← Back to Login" />
+        </VBox>
+    </left>
+   <center>
+      <ScrollPane fitToWidth="true" style="-fx-background-color: #f0f2f5; -fx-background: #f0f2f5;">
+         <content>
+            <VBox alignment="TOP_CENTER" prefHeight="573.0" prefWidth="652.0" spacing="14.0" style="-fx-background-color: #f0f2f5; -fx-padding: 40px 80px;">
+               <children>
+                  <Label style="-fx-font-size: 26px; -fx-font-weight: bold; -fx-text-fill: #1a252f;" text="Create Account" />
+                  <Label style="-fx-font-size: 13px; -fx-text-fill: #1a252f;" text=" Fill in your details below" />
+                  <HBox spacing="20.0">
+                     <children>
+                        <VBox spacing="5.0" HBox.hgrow="ALWAYS">
+                           <children>
+                              <Label style="-fx-font-size: 12px; -fx-font-weight: bold; -fx-text-fill: #1a252f;" text="Username *" />
+                              <TextField fx:id="txtUsername" promptText="Min 4 characters" style="-fx-font-size: 13px; -fx-padding: 9; -fx-background-color: white; -fx-border-color: #bdc3c7; -fx-border-radius: 4; -fx-background-radius: 4;" />
+                           </children>
+                        </VBox>
+                        <VBox spacing="5.0" HBox.hgrow="ALWAYS">
+                           <children>
+                              <Label style="-fx-text-fill: #1a252f; -fx-font-size: 12px; -fx-font-weight: bold;" text="Password *">
+                                 <opaqueInsets>
+                                    <Insets />
+                                 </opaqueInsets></Label>
+                              <PasswordField fx:id="txtPassword" promptText="Min 6 characters" style="-fx-font-size: 13px; -fx-padding: 9; -fx-background-color: white; -fx-border-color: #bdc3c7; -fx-border-radius: 4; -fx-background-radius: 4;" />
+                           </children>
+                        </VBox>
+                     </children>
+                  </HBox>
+                  <HBox spacing="20.0">
+                     <children>
+                        <VBox spacing="5.0" HBox.hgrow="ALWAYS">
+                           <children>
+                              <Label style="-fx-font-size: 12px; -fx-font-weight: bold; -fx-text-fill: #1a252f;" text="Date of Birth *" />
+                              <TextField fx:id="txtDob" promptText="YYYY-MM-DD" style="-fx-font-size: 13px; -fx-padding: 9; -fx-background-color: white; -fx-border-color: #bdc3c7; -fx-border-radius: 4; -fx-background-radius: 4;" />
+                           </children>
+                        </VBox>
+                        <VBox spacing="5.0" HBox.hgrow="ALWAYS">
+                           <children>
+                              <Label style="-fx-font-size: 12px; -fx-font-weight: bold; -fx-text-fill: #1a252f;" text="Balance ($) *" />
+                              <TextField fx:id="txtBalance" promptText="e.g. 1000.00" style="-fx-font-size: 13px; -fx-padding: 9; -fx-background-color: white; -fx-border-color: #bdc3c7; -fx-border-radius: 4; -fx-background-radius: 4;" />
+                           </children>
+                        </VBox>
+                     </children>
+                  </HBox>
+                  <VBox prefHeight="34.0" prefWidth="492.0" spacing="5.0">
+                     <children>
+                        <Label style="-fx-font-size: 12px; -fx-font-weight: bold; -fx-text-fill: #1a252f;" text="Address *" />
+                        <TextField fx:id="txtAddress" promptText="Min 6 characters" style="-fx-font-size: 13px; -fx-padding: 9; -fx-background-color: white; -fx-border-color: #bdc3c7; -fx-border-radius: 4; -fx-background-radius: 4;" />
+                     </children>
+                  </VBox>
+                  <HBox spacing="20.0">
+                     <children>
+                        <VBox spacing="5.0" HBox.hgrow="ALWAYS">
+                           <children>
+                              <Label style="-fx-font-size: 12px; -fx-font-weight: bold; -fx-text-fill: #1a252f;" text="Gender *" />
+                              <ComboBox fx:id="cmbGender" prefHeight="21.0" prefWidth="226.0" promptText="Select gender" style="-fx-font-size: 13px; -fx-background-color: white; -fx-border-color: #bdc3c7; -fx-border-radius: 4; -fx-background-radius: 4;" styleClass="combo-box">
+                                 <opaqueInsets>
+                                    <Insets />
+                                 </opaqueInsets>
+                              </ComboBox>
+                           </children>
+                        </VBox>
+                        <VBox prefHeight="21.0" prefWidth="248.0">
+                           <children>
+                              <Label prefHeight="22.0" prefWidth="106.0" style="-fx-font-size: 12px; -fx-font-weight: bold; -fx-text-fill: #1a252f;" text="Room Preference *" />
+                              <ComboBox fx:id="cmbRoomPreference" prefHeight="18.0" prefWidth="234.0" promptText="Select preference" style="-fx-font-size: 13px; -fx-background-color: white; -fx-border-color: #bdc3c7; -fx-border-radius: 4; -fx-background-radius: 4;" styleClass="combo-box" />
+                           </children>
+                        </VBox>
+                     </children>
+                  </HBox>
+                  <Label fx:id="lblMessage" style="-fx-font-size: 13px; -fx-font-weight: bold;" wrapText="true" />
+                  <Button fx:id="btnRegister" mnemonicParsing="false" onAction="#handleRegister" prefWidth="560.0" styleClass="confirm-button" text="Create My Account" />
+               </children>
+            </VBox>
+         </content>
+      </ScrollPane>
+   </center>
+
+</BorderPane>
