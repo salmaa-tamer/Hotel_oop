@@ -288,8 +288,6 @@ The project includes a UML diagram showing the main backend relationships.
 
 ## My Contributions
 
-> Edit this section to match your exact work before publishing.
-
 My main contributions included:
 
 - Implementing and organizing the `HotelDatabase` logic
