@@ -286,17 +286,6 @@ The project includes a UML diagram showing the main backend relationships.
 
 ---
 
-## My Contributions
-
-My main contributions included:
-
-- Implementing and organizing the `HotelDatabase` logic
-- Working on custom exception classes
-- Building and connecting the receptionist dashboard GUI
-- Connecting GUI actions to backend data where needed
-- Helping prepare the project for presentation and discussion
-
----
 
 ## Team Project Note
 
